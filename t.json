@@ -1,0 +1,409 @@
+{
+  "navigations": [
+    {
+      "id": 6,
+      "link_type": "route",
+      "properties": {
+        "title": "home",
+        "route": "home.index2"
+      }
+    },
+    {
+      "id": 7,
+      "link_type": "route",
+      "properties": {
+        "title": "rooms",
+        "route": "home.data",
+        "key": "data_type",
+        "value": "room"
+      }
+    },
+    {
+      "id": 8,
+      "link_type": "route",
+      "properties": {
+        "title": "gallery",
+        "route": "home.document",
+        "key": "document_type",
+        "value": "gallery"
+      }
+    },
+    {
+      "id": 9,
+      "link_type": "route",
+      "properties": {
+        "title": "reserve",
+        "route": "home.service",
+        "key": "service_type",
+        "value": "reserve"
+      }
+    }
+  ],
+  "customer_count": 5,
+  "user": null,
+  "data": {
+    "name": {
+      "title": "هتل سه ستاره صبوری",
+      "input_type": "text"
+    },
+    "address": {
+      "title": "نشانی: گیلان ، رشت ، خیابان رسالت (صداوسیما) ، رودبارتان پشت پمپ بنزین خطیبی ، روبروی پارک شهید گلستانی",
+      "input_type": "text"
+    },
+    "description": {
+      "title": "هتل سه ستاره صبوری رشت در فروردین ماه سال 1394 به بهره برداری رسید. این هتل در پنج طبقه بنا شده و دارای 12 واحد اقامتی است. هتل صبوری رشت با قرار گیری در استان سرسبز گیلان، میزبان گردشگران زیادی از نقاط مختلف می باشد. مهمانان گرامی می توانند با اقامت در هتل آپارتمان صبوری به نقاط مختلف شهر دسترسی آسانی داشته باشند. فاصله هتل سه ستاره صبوری رشت تا برخی اماکن تاریخی و مذهبی از جمله ساختمان تاریخی شهرداری سابق رشت و حرم مطهر حضرت فاطمه اخری، حدود سه کیلومتر می باشد که مزیت این هتل محسوب می شود. ",
+      "input_type": "text"
+    },
+    "phone": {
+      "title": [
+        "+98-13-333-55264~8"
+      ],
+      "input_type": "multi-text"
+    },
+    "mobile": {
+      "title": [
+        "+98-911-254-6582"
+      ],
+      "input_type": "multi-text"
+    },
+    "mini_bar": {
+      "title": "1",
+      "input_type": "check"
+    },
+    "satellite_networks": {
+      "title": "1",
+      "input_type": "check"
+    },
+    "store": {
+      "title": "1",
+      "input_type": "check"
+    },
+    "royal_curtains": {
+      "title": "1",
+      "input_type": "check"
+    },
+    "safe_box": {
+      "title": "1",
+      "input_type": "check"
+    },
+    "heater_package": {
+      "title": "1",
+      "input_type": "check"
+    },
+    "free_internet": {
+      "title": "1",
+      "input_type": "check"
+    },
+    "air_conditioner": {
+      "title": "1",
+      "input_type": "check"
+    },
+    "fire_alarm": {
+      "title": "1",
+      "input_type": "check"
+    },
+    "lobby_internet": {
+      "title": "1",
+      "input_type": "check"
+    },
+    "emergency_power": {
+      "title": "1",
+      "input_type": "check"
+    },
+    "taxi": {
+      "title": "1",
+      "input_type": "check"
+    },
+    "tea_house": {
+      "title": "1",
+      "input_type": "check"
+    },
+    "room_service": {
+      "title": "1",
+      "input_type": "check"
+    },
+    "travel_agency": {
+      "title": "1",
+      "input_type": "check"
+    },
+    "lock": {
+      "title": "1",
+      "input_type": "check"
+    }
+  },
+  "slides": [
+    {
+      "id": 33,
+      "document_type": 4,
+      "created_at": null,
+      "updated_at": null,
+      "properties": {
+        "title": "aaaaaaaaaaaaaaaaaa",
+        "path": "http://localhost/online-hotel/public/uploads/slider1.jpg",
+        "date": "1550626369034"
+      }
+    },
+    {
+      "id": 34,
+      "document_type": 4,
+      "created_at": null,
+      "updated_at": null,
+      "properties": {
+        "title": "aaaaaaaaaaaaaaaaaa",
+        "path": "http://localhost/online-hotel/public/uploads/slider2.jpg",
+        "date": "1550626369034"
+      }
+    },
+    {
+      "id": 35,
+      "document_type": 4,
+      "created_at": null,
+      "updated_at": null,
+      "properties": {
+        "title": "aaaaaaaaaaaaaaaaaa",
+        "path": "http://localhost/online-hotel/public/uploads/slider3.jpg",
+        "date": "1550626369034"
+      }
+    }
+  ],
+  "galleries": [
+    {
+      "id": 20,
+      "document_type": 1,
+      "created_at": "2019-02-20 00:39:01",
+      "updated_at": "2019-02-20 00:39:01",
+      "properties": {
+        "title": "simply dummy text",
+        "path": "http://localhost/online-hotel/public/uploads/post1.jpg",
+        "date": "1550623141657"
+      }
+    },
+    {
+      "id": 21,
+      "document_type": 1,
+      "created_at": "2019-02-20 01:24:52",
+      "updated_at": "2019-02-20 01:24:52",
+      "properties": {
+        "title": "gdfgdfgfdg",
+        "path": "http://localhost/online-hotel/public/uploads/post2.jpg",
+        "date": "1550625892278"
+      }
+    },
+    {
+      "id": 22,
+      "document_type": 1,
+      "created_at": "2019-02-20 01:27:24",
+      "updated_at": "2019-02-20 01:27:24",
+      "properties": {
+        "title": "sssssssssssssssssssssss",
+        "path": "http://localhost/online-hotel/public/uploads/post3.jpg",
+        "date": "1550626044651"
+      }
+    },
+    {
+      "id": 23,
+      "document_type": 1,
+      "created_at": "2019-02-20 01:32:48",
+      "updated_at": "2019-02-20 01:32:48",
+      "properties": {
+        "title": "aaaaaaaaaaaaaaaaaa",
+        "path": "http://localhost/online-hotel/public/uploads/post4.jpg",
+        "date": "1550626369034"
+      }
+    },
+    {
+      "id": 36,
+      "document_type": 1,
+      "created_at": null,
+      "updated_at": null,
+      "properties": {
+        "title": "aaaaaaaaaaaaaaaaaa",
+        "path": "http://localhost/online-hotel/public/uploads/post5.jpg",
+        "date": "1550626369034"
+      }
+    },
+    {
+      "id": 37,
+      "document_type": 1,
+      "created_at": null,
+      "updated_at": null,
+      "properties": {
+        "title": "aaaaaaaaaaaaaaaaaa",
+        "path": "http://localhost/online-hotel/public/uploads/post6.jpg",
+        "date": "1550626369034"
+      }
+    },
+    {
+      "id": 38,
+      "document_type": 1,
+      "created_at": null,
+      "updated_at": null,
+      "properties": {
+        "title": "aaaaaaaaaaaaaaaaaa",
+        "path": "http://localhost/online-hotel/public/uploads/post7.jpg",
+        "date": "1550626369034"
+      }
+    },
+    {
+      "id": 39,
+      "document_type": 1,
+      "created_at": null,
+      "updated_at": null,
+      "properties": {
+        "title": "aaaaaaaaaaaaaaaaaa",
+        "path": "http://localhost/online-hotel/public/uploads/post8.jpg",
+        "date": "1550626369034"
+      }
+    }
+  ],
+  "useful_links": [
+    {
+      "id": 21,
+      "link_type": "route",
+      "properties": {
+        "title": "website settings",
+        "route": "data.index",
+        "key": "data_type",
+        "value": "website"
+      }
+    },
+    {
+      "id": 22,
+      "link_type": "route",
+      "properties": {
+        "title": "website settings",
+        "route": "data.index",
+        "key": "data_type",
+        "value": "website"
+      }
+    },
+    {
+      "id": 23,
+      "link_type": "route",
+      "properties": {
+        "title": "website settings",
+        "route": "data.index",
+        "key": "data_type",
+        "value": "website"
+      }
+    },
+    {
+      "id": 24,
+      "link_type": "route",
+      "properties": {
+        "title": "website settings",
+        "route": "data.index",
+        "key": "data_type",
+        "value": "website"
+      }
+    },
+    {
+      "id": 25,
+      "link_type": "route",
+      "properties": {
+        "title": "website settings",
+        "route": "data.index",
+        "key": "data_type",
+        "value": "website"
+      }
+    }
+  ],
+  "facility_links": [
+    {
+      "id": 26,
+      "link_type": "route",
+      "properties": {
+        "title": "website settings",
+        "route": "data.index",
+        "key": "data_type",
+        "value": "website"
+      }
+    },
+    {
+      "id": 27,
+      "link_type": "route",
+      "properties": {
+        "title": "website settings",
+        "route": "data.index",
+        "key": "data_type",
+        "value": "website"
+      }
+    },
+    {
+      "id": 28,
+      "link_type": "route",
+      "properties": {
+        "title": "website settings",
+        "route": "data.index",
+        "key": "data_type",
+        "value": "website"
+      }
+    },
+    {
+      "id": 29,
+      "link_type": "route",
+      "properties": {
+        "title": "website settings",
+        "route": "data.index",
+        "key": "data_type",
+        "value": "website"
+      }
+    },
+    {
+      "id": 30,
+      "link_type": "route",
+      "properties": {
+        "title": "website settings",
+        "route": "data.index",
+        "key": "data_type",
+        "value": "website"
+      }
+    },
+    {
+      "id": 31,
+      "link_type": "route",
+      "properties": {
+        "title": "website settings",
+        "route": "data.index",
+        "key": "data_type",
+        "value": "website"
+      }
+    }
+  ],
+  "data_type": "room",
+  "object": {
+    "id": "8",
+    "properties": {
+      "title": {
+        "title": "سوئیت 56 متری 5 نفره",
+        "input_type": "text"
+      },
+      "description": {
+        "title": "سوئیت 56 متری 5 نفره",
+        "input_type": "text"
+      },
+      "internet": {
+        "title": "on",
+        "input_type": "check"
+      },
+      "parking": {
+        "title": "on",
+        "input_type": "check"
+      },
+      "available": {
+        "title": "1",
+        "input_type": "check"
+      },
+      "slide-images": {
+        "slides": [
+          "http://localhost/online-hotel/public/uploads/room-001.jpg",
+          "http://localhost/online-hotel/public/uploads/room-002.jpg",
+          "http://localhost/online-hotel/public/uploads/room-003.jpg",
+          "http://localhost/online-hotel/public/uploads/room-004.jpg",
+          "http://localhost/online-hotel/public/uploads/room-005.jpg"
+        ],
+        "input_type": "multi-relation-document-images"
+      }
+    }
+  }
+}

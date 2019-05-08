@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>آرشیو هتل ها</title>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="style/materialize.min.css">
+        <link rel="stylesheet" href="style/rtl.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" href="style/jquery.slide.css">
+        <link rel="stylesheet" href="style/lightslider.css">
+        <link rel="stylesheet" href="style/jquerysctipttop.css">
+        <link rel="stylesheet" href="style/pwt-datepicker.css">
+
+        <link rel="stylesheet" href="style/style.css">
+        <link rel="stylesheet" href="style/style_single.css">
+        <link rel="stylesheet" href="style/style_information.css">
+        <link rel="stylesheet" href="style/style_archive.css">
+
+
+        <script src="scripts/jquery-3.3.1.min.js"></script>
+        <script src="scripts/lightslider.js"></script>
+        <script src="scripts/pwt-date.js"></script>
+        <script src="scripts/pwt-datepicker.js"></script>
+
+
+        <script>
+
+            $(document).ready(function () {
+                $('#lightSlider').lightSlider({
+
+                    gallery: true,
+                    item: 1,
+                    loop: true,
+                    slideMargin: 0,
+                    thumbItem: 9,
+                    responsive: [
+                        {
+                            breakpoint: 800,
+                            settings: {
+                                item: 1,
+                                slideMove: 1,
+                                slideMargin: 6,
+                            }
+                        },
+                        {
+                            breakpoint: 480,
+                            settings: {
+                                item: 1,
+
+                                slideMove: 1
+                            }
+                        }
+                    ]
+
+                });
+
+
+            });
+
+            var dp;
+            $(document).ready(function () {
+                var options = {
+                    format: "YYYY/MM/DD",
+                    formatter: function (unix) {
+                        var pdate = new persianDate(unix);
+                        pdate.formatPersian = false;
+                        return pdate.format("YYYY/MM/DD");
+//return new persinDate(unix).format("YYYY/MM/DD");
+                    },
+                    daysTitleFormat: "YYYY MMMM",
+                    observer: true,
+                    sendOption: "p",
+//position : [2, 2],
+                    autoclose: true,
+                    toolbox: true,
+                    altField: "#alternateField",
+                    altFormat: "u",
+                    altFieldFormatter: function (unix) {
+                        var pdate = new persianDate(unix);
+                        pdate.formatPersian
+                        pdate.formatPersian = false;
+                        return pdate.format("YYYY MM DD");
+                    },
+                    onShow: function () {
+//console.log("user config onShow event ")
+                    },
+                    onHide: function () {
+//console.log("user config onHide event ")
+                    },
+                    onSelect: function (unix) {
+//console.log("user config onSelect event as : "+unix)
+
+                    }
+                };
+                $(".datePicker").persianDatepicker(options);
+                dp = $(".datePicker").data("datepicker");
+            });
+
+        </script>
+
+
+    </head>
+
+    <body class="rtl">
+
+
+        <nav class="headerm" role="navigation">
+            <div class="nav-wrapper container">
+
+
+                <a id="logo-container" href="#" class="brand-logo center logo-bg"><img class="responsive-img img-logo"
+                                                                                       src="images/main_logo.png"></a>
+
+
+                <div class="left hide-on-med-and-down">
+
+                    <span>09112546582</span>
+                    <img class="icon10 responsive-img" src="images/telephone.png">
+
+
+                </div>
+
+                <div class="row flags hide-on-med-and-down">
+
+                    <a href="#"><img class=" responsive-img img-flag" src="images/united-kingdom.png"></a>
+                    <a href="#"><img class=" responsive-img img-flag" src="images/saudi-arabia.png"></a>
+                    <a href="#"><img class=" responsive-img img-flag" src="images/iran.png"></a>
+
+
+                </div>
+
+                <!--todo add right claa-->
+                <a href="#" data-target="mobile-demo" class="sidenav-trigger hide-on-large-only right"><i
+                        class="material-icons">menu</i></a>
+
+
+            </div>
+
+
+        </nav>
+
+        <ul class="sidenav" id="mobile-demo">
+            <li><a href="#">رزرو اتاق ها هتل صبوری</a></li>
+            <li><a href="#">سامانه پیگیری رزواسیون</a></li>
+            <li><a href="#">گالری تصاویر هتل</a></li>
+            <li><a href="#">تماس با ما</a></li>
+            <li><a href="#">قوانین و خط مشی ها</a></li>
+            <li><a href="#">تماس با ما</a></li>
+        </ul>
+
+        <!--mini menu-->
+
+        <div class="mini-menu ">
+
+
+            <div class="container">
+                <div class="row hide-on-med-and-down">
+
+
+                    <span class="important-inf">اطلاعات مهم :</span>
+                    <span class="important-txt">سامانه رزرواسیون هتل سه ستاره صبوری راه اندازی شد </span>
+
+                    <div class="left mini-menu-left-side ">
+
+
+                        <span>ورورد یا عضویت</span>
+                        <img class="icon10 responsive-img" src="images/login-square-arrow-button-outline.png">
+
+                        <span class="track-booking-span">پیگیری رزرو</span>
+                        <img class="icon10 responsive-img" src="images/verified.png">
+
+
+                    </div>
+
+                </div>
+            </div>
+
+
+        </div>
+
+        <!--main menu-->
+
+        <div class="main-menu hide-on-med-and-down">
+
+
+            <div class="container">
+
+
+                <div class="row">
+
+                    <div class="main-menu-parent col l3 s12 menu-hover">
+
+                        <img class="center" src="images/door-hanger.png">
+                        <div class="main-menu-child">
+                            <a href="#">رزرو اتاق ها هتل صبوری</a>
+                            <br>
+                            <span>Reservation</span>
+                        </div>
+
+                    </div>
+
+                    <div class="main-menu-parent col l3 s12 menu-hover">
+                        <img src="images/newspaper.png">
+                        <div class="main-menu-child">
+                            <a href="#">سامانه پیگیری رزرواسیون</a>
+                            <br>
+                            <span>Track booking</span>
+                        </div>
+
+                    </div>
+
+                    <div class="main-menu-parent col l3 s12 menu-hover">
+                        <img src="images/image.png">
+                        <div class="main-menu-child">
+                            <a href="#">گالری تصاویر هتل</a>
+                            <br>
+                            <span>Multimedia</span>
+                        </div>
+
+                    </div>
+
+                    <div class="main-menu-parent col l3 s12 menu-hover">
+                        <img src="images/telephone2.png">
+                        <div class="main-menu-child">
+                            <a href="#">تماس با ما</a>
+                            <br>
+                            <span>Contact Us</span>
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+        <h6 class="center contact_us_h6_2">آرشیو هتل ها</h6>
+        <span class="center contact_us_span_2"
+              style="display: block">اینجا می توانید انواع اتاق های ما را مشاهده کنید</span>
+
+
+        <!--todo add posts-archive class-->
+
+        <div class="container posts-archive">
+            <div class="row">
+
+                <div class="col s12 l4">
+                    <div class="reservation-div-1">
+
+                        <div class="reservation-div">
+                            <div class="reservation-img" id="reservation10"></div>
+                            <h6>سوییت 65 متری 5 نفره</h6>
+                            <a class="more-information" href="#"><img class="left responsive-img"
+                                                                      src="images/left-arrow.png">اطلاعات بیشتر</a>
+                            <a href="single.html" class="reservation-btn left">رزرو کنید</a>
+
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="col s12 l4">
+                    <div class="reservation-div-1">
+
+                        <div class="reservation-div">
+                            <div class="reservation-img" id="reservation11"></div>
+
+                            <h6 class="center-on-small-only">اتاق 40متري 2 نفره دو تخت سينگل نوع D </h6>
+                            <a class="more-information" href="#"><img class="left responsive-img"
+                                                                      src="images/left-arrow.png">اطلاعات بیشتر</a>
+                            <a href="single.html" class="reservation-btn left">رزرو کنید</a>
+
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="col s12 l4">
+                    <div class="reservation-div-1">
+
+                        <div class="reservation-div">
+                            <div class="reservation-img" id="reservation12"></div>
+                            <h6>سوییت 65 متری 5 نفره</h6>
+                            <a class="more-information" href="#"><img class="left responsive-img"
+                                                                      src="images/left-arrow.png">اطلاعات بیشتر</a>
+                            <a href="single.html" class="reservation-btn left">رزرو کنید</a>
+
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="col s12 l4">
+                    <div class="reservation-div-1">
+
+                        <div class="reservation-div">
+                            <div class="reservation-img" id="reservation13"></div>
+                            <h6>سوییت 65 متری 5 نفره</h6>
+                            <a class="more-information" href="#"><img class="left responsive-img"
+                                                                      src="images/left-arrow.png">اطلاعات بیشتر</a>
+                            <a href="single.html" class="reservation-btn left">رزرو کنید</a>
+
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="col s12 l4">
+                    <div class="reservation-div-1">
+
+                        <div class="reservation-div">
+                            <div class="reservation-img" id="reservation14"></div>
+                            <h6>سوییت 65 متری 5 نفره</h6>
+                            <a class="more-information" href="#"><img class="left responsive-img"
+                                                                      src="images/left-arrow.png">اطلاعات بیشتر</a>
+                            <a href="single.html" class="reservation-btn left">رزرو کنید</a>
+
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="col s12 l4">
+                    <div class="reservation-div-1">
+
+                        <div class="reservation-div">
+                            <div class="reservation-img" id="reservation15"></div>
+                            <h6>سوییت 65 متری 5 نفره</h6>
+                            <a class="more-information" href="#"><img class="left responsive-img"
+                                                                      src="images/left-arrow.png">اطلاعات بیشتر</a>
+                            <a href="single.html" class="reservation-btn left">رزرو کنید</a>
+
+                        </div>
+
+                    </div>
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+        <div class="mini-footer">
+            <div class="container center-on-small-only">
+
+
+                <span>تمامی حقوق این سایت نزد هتل سه ستاره صبوری محفوظ است.</span>
+
+            </div>
+
+        </div>
+
+
+        <!--scripts-->
+
+
+        <script src="scripts/materialize.min.js"></script>
+        <script src="scripts/jquery.slide.min.js"></script>
+        <script src="scripts/init.js"></script>
+
+
+        <script>
+
+
+            document.addEventListener('DOMContentLoaded', function () {
+                var elems = document.querySelectorAll('.parallax');
+                var instances = M.Parallax.init(elems, options);
+            });
+
+            // Or with jQuery
+
+            $(document).ready(function () {
+                $('.parallax').parallax();
+                $('.modal').modal();
+                $('select').formSelect();
+
+            });
+
+
+            document.addEventListener('DOMContentLoaded', function () {
+                var elems = document.querySelectorAll('.modal');
+                var instances = M.Modal.init(elems, options);
+            });
+
+            // Or with jQuery
+
+            $(document).ready(function () {
+
+
+            });
+
+
+        </script>
+
+
+    </body>
+
+
+</html>
