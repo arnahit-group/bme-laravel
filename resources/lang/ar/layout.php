@@ -16,7 +16,6 @@ return [
 
     ],
 
-
     'room'=>[
         'your location'=>'موقفك:',
         'price per night'=>'سعر الليلة الواحدة',

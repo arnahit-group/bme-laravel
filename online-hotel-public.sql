@@ -11,7 +11,7 @@
  Target Server Version : 100128
  File Encoding         : 65001
 
- Date: 07/05/2019 22:17:19
+ Date: 09/05/2019 01:23:18
 */
 
 SET NAMES utf8mb4;
@@ -978,7 +978,7 @@ CREATE TABLE `navigation_item_assigned_properties`  (
   `created_at` timestamp(0) NULL DEFAULT NULL,
   `updated_at` timestamp(0) NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 161 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 166 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of navigation_item_assigned_properties
@@ -1119,6 +1119,11 @@ INSERT INTO `navigation_item_assigned_properties` VALUES (157, 30, 2, 'data.prop
 INSERT INTO `navigation_item_assigned_properties` VALUES (158, 30, 3, 'data_type', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (159, 30, 4, 'hotel', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (160, 30, 9, '1', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties` VALUES (161, 31, 1, 'complaints', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties` VALUES (162, 31, 2, 'home.document', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties` VALUES (163, 31, 3, 'document_type', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties` VALUES (164, 31, 4, 'complaints', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties` VALUES (165, 31, 9, '1', NULL, NULL);
 
 -- ----------------------------
 -- Table structure for navigation_item_properties
@@ -1163,7 +1168,7 @@ CREATE TABLE `navigation_items`  (
   `created_at` timestamp(0) NULL DEFAULT NULL,
   `updated_at` timestamp(0) NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 31 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 32 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of navigation_items
@@ -1197,6 +1202,7 @@ INSERT INTO `navigation_items` VALUES (27, 5, 'route', 0, NULL, NULL);
 INSERT INTO `navigation_items` VALUES (28, 1, 'route', 0, NULL, NULL);
 INSERT INTO `navigation_items` VALUES (29, 1, 'route', 0, NULL, NULL);
 INSERT INTO `navigation_items` VALUES (30, 1, 'route', 0, NULL, NULL);
+INSERT INTO `navigation_items` VALUES (31, 4, 'route', 0, NULL, NULL);
 
 -- ----------------------------
 -- Table structure for navigations
@@ -1958,12 +1964,12 @@ CREATE TABLE `translations`  (
 -- ----------------------------
 INSERT INTO `translations` VALUES (1, 'en', 'data_assigned_properties', 'value', 32, 'room number 5 desription .', NULL, NULL);
 INSERT INTO `translations` VALUES (12, 'en', 'data_properties', 'title', 3, 'عنوان', NULL, NULL);
-INSERT INTO `translations` VALUES (13, 'en', 'data_assigned_properties', 'value', 161, 'سوییت 65 متري 5 نفره نوع A', NULL, NULL);
-INSERT INTO `translations` VALUES (14, 'ar', 'data_assigned_properties', 'value', 161, 'سوییت 65 متري 5 نفره نوع A', NULL, NULL);
+INSERT INTO `translations` VALUES (13, 'en', 'data_assigned_properties', 'value', 161, '65 meter four-person suite type A', NULL, NULL);
+INSERT INTO `translations` VALUES (14, 'ar', 'data_assigned_properties', 'value', 161, 'جناح 65 متر من أربعة أشخاص من النوع A', NULL, NULL);
 INSERT INTO `translations` VALUES (15, 'en', 'data_assigned_properties', 'value', 162, NULL, NULL, NULL);
 INSERT INTO `translations` VALUES (16, 'ar', 'data_assigned_properties', 'value', 162, NULL, NULL, NULL);
-INSERT INTO `translations` VALUES (17, 'en', 'data_assigned_properties', 'value', 166, 'سوییت 65 متري 4 نفره نوع B', NULL, NULL);
-INSERT INTO `translations` VALUES (18, 'ar', 'data_assigned_properties', 'value', 166, 'سوییت 65 متري 4 نفره نوع B', NULL, NULL);
+INSERT INTO `translations` VALUES (17, 'en', 'data_assigned_properties', 'value', 166, '65 meter four-person suite type B', NULL, NULL);
+INSERT INTO `translations` VALUES (18, 'ar', 'data_assigned_properties', 'value', 166, 'جناح 65 متر من أربعة أشخاص من النوع B', NULL, NULL);
 INSERT INTO `translations` VALUES (19, 'en', 'data_assigned_properties', 'value', 167, NULL, NULL, NULL);
 INSERT INTO `translations` VALUES (20, 'ar', 'data_assigned_properties', 'value', 167, NULL, NULL, NULL);
 INSERT INTO `translations` VALUES (21, 'en', 'data_assigned_properties', 'value', 171, 'اتاق 40متري 3 نفره دو تخت سينگل نوع C', NULL, NULL);
@@ -2823,7 +2829,7 @@ CREATE TABLE `widget_parts`  (
   `created_at` timestamp(0) NULL DEFAULT NULL,
   `updated_at` timestamp(0) NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 20 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 21 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of widget_parts
@@ -2846,6 +2852,7 @@ INSERT INTO `widget_parts` VALUES (16, 16, 2, 'widgets.documents.public.rules', 
 INSERT INTO `widget_parts` VALUES (17, 17, 2, 'widgets.data.hotel', NULL, NULL);
 INSERT INTO `widget_parts` VALUES (18, 18, 2, 'widgets.documents.document', NULL, NULL);
 INSERT INTO `widget_parts` VALUES (19, 19, 2, 'widgets.data.property', NULL, NULL);
+INSERT INTO `widget_parts` VALUES (20, 20, 2, 'widgets.documents.public.complaints', NULL, NULL);
 
 -- ----------------------------
 -- Table structure for widgets
@@ -2860,7 +2867,7 @@ CREATE TABLE `widgets`  (
   `created_at` timestamp(0) NULL DEFAULT NULL,
   `updated_at` timestamp(0) NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 20 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 21 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of widgets
@@ -2884,5 +2891,6 @@ INSERT INTO `widgets` VALUES (16, 'public.document', 'home.document.all', 4, 8, 
 INSERT INTO `widgets` VALUES (17, 'data.index', NULL, 1, 1, NULL, NULL);
 INSERT INTO `widgets` VALUES (18, 'document.index', NULL, 4, 2, NULL, NULL);
 INSERT INTO `widgets` VALUES (19, 'data.property.index', NULL, 1, 1, NULL, NULL);
+INSERT INTO `widgets` VALUES (20, 'public.document', 'home.document.all', 4, 10, NULL, NULL);
 
 SET FOREIGN_KEY_CHECKS = 1;
