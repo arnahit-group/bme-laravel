@@ -5,7 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1ec86a4c-ad95-4786-a574-5925047a136e" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/online-hotel-public.sql" afterPath="$PROJECT_DIR$/online-hotel-public.sql" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.env" afterPath="$PROJECT_DIR$/.env" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/widgets/documents/public/about_us.blade.php" afterPath="$PROJECT_DIR$/resources/views/widgets/documents/public/about_us.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/widgets/documents/public/complaints.blade.php" afterPath="$PROJECT_DIR$/resources/views/widgets/documents/public/complaints.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/widgets/documents/public/contact_us.blade.php" afterPath="$PROJECT_DIR$/resources/views/widgets/documents/public/contact_us.blade.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -33,22 +37,12 @@
     <favorites_list name="online-hotel" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="layout.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/lang/ar/layout.php">
+    <leaf>
+      <file leaf-file-name="complaints.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/widgets/documents/public/complaints.blade.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="221">
-              <caret line="13" column="36" lean-forward="false" selection-start-line="13" selection-start-column="36" selection-end-line="13" selection-end-column="36" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="room.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/widgets/data/public/room.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="325">
-              <caret line="313" column="32" lean-forward="true" selection-start-line="313" selection-start-column="32" selection-end-line="313" selection-end-column="32" />
+              <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -58,7 +52,7 @@
         <entry file="file://$PROJECT_DIR$/.env">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="102">
-              <caret line="6" column="19" lean-forward="true" selection-start-line="6" selection-start-column="19" selection-end-line="6" selection-end-column="19" />
+              <caret line="6" column="19" lean-forward="false" selection-start-line="6" selection-start-column="19" selection-end-line="6" selection-end-column="19" />
               <folding />
             </state>
           </provider>
@@ -152,18 +146,18 @@
         <option value="$PROJECT_DIR$/resources/lang/ar/layout/public.php" />
         <option value="$PROJECT_DIR$/resources/views/layouts/public.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/layouts/public2.blade.php" />
-        <option value="$PROJECT_DIR$/.env" />
-        <option value="$PROJECT_DIR$/resources/views/widgets/documents/public/about_us.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/widgets/documents/public/contact_us.blade.php" />
         <option value="$PROJECT_DIR$/resources/lang/en/messages.php" />
         <option value="$PROJECT_DIR$/resources/lang/fa/messages.php" />
         <option value="$PROJECT_DIR$/resources/lang/ar/messages.php" />
         <option value="$PROJECT_DIR$/config/base.php" />
-        <option value="$PROJECT_DIR$/resources/views/widgets/documents/public/complaints.blade.php" />
         <option value="$PROJECT_DIR$/resources/lang/en/layout.php" />
-        <option value="$PROJECT_DIR$/resources/lang/ar/layout.php" />
         <option value="$PROJECT_DIR$/resources/lang/fa/layout.php" />
         <option value="$PROJECT_DIR$/resources/views/widgets/data/public/room.blade.php" />
+        <option value="$PROJECT_DIR$/resources/lang/ar/layout.php" />
+        <option value="$PROJECT_DIR$/resources/views/widgets/documents/public/contact_us.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/widgets/documents/public/about_us.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/widgets/documents/public/complaints.blade.php" />
+        <option value="$PROJECT_DIR$/.env" />
       </list>
     </option>
   </component>
@@ -314,6 +308,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -850,8 +846,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1109,12 +1103,13 @@
       <workItem from="1556517713465" duration="76099000" />
       <workItem from="1556864694118" duration="114266000" />
       <workItem from="1557220360098" duration="53377000" />
-      <workItem from="1557355526993" duration="1261000" />
+      <workItem from="1557355526993" duration="4371000" />
+      <workItem from="1557423755425" duration="412000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1397203000" />
+    <option name="totallyTimeSpent" value="1400725000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1125,11 +1120,11 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17004265" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17750533" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17910448" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22860238" sideWeight="0.5362473" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1168,35 +1163,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/mdl25/main_page.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="54" lean-forward="true" selection-start-line="13" selection-start-column="54" selection-end-line="13" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/lang/fa/pagination.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/temp/pdf.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-600">
-          <caret line="273" column="86" lean-forward="true" selection-start-line="273" selection-start-column="86" selection-end-line="273" selection-end-column="86" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/widgets/users/public/enter.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="24" column="66" lean-forward="true" selection-start-line="24" selection-start-column="66" selection-end-line="24" selection-end-column="66" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/widgets/documents/document.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1222,7 +1188,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-333">
           <caret line="836" column="20" lean-forward="false" selection-start-line="836" selection-start-column="20" selection-end-line="836" selection-end-column="20" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1230,7 +1195,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1259,7 +1223,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
           <caret line="104" column="47" lean-forward="true" selection-start-line="104" selection-start-column="47" selection-end-line="104" selection-end-column="47" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1311,7 +1274,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="228">
           <caret line="589" column="13" lean-forward="false" selection-start-line="589" selection-start-column="13" selection-end-line="589" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1364,7 +1326,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
           <caret line="37" column="53" lean-forward="true" selection-start-line="37" selection-start-column="53" selection-end-line="37" selection-end-column="53" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1422,7 +1383,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
           <caret line="284" column="0" lean-forward="true" selection-start-line="284" selection-start-column="0" selection-end-line="284" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1431,20 +1391,6 @@
         <state relative-caret-position="323">
           <caret line="19" column="32" lean-forward="true" selection-start-line="19" selection-start-column="32" selection-end-line="19" selection-end-column="32" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/widgets/documents/public/about_us.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="680">
-          <caret line="58" column="0" lean-forward="true" selection-start-line="55" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/widgets/documents/public/contact_us.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="580">
-          <caret line="43" column="0" lean-forward="true" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -1468,21 +1414,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="368">
           <caret line="45" column="26" lean-forward="false" selection-start-line="45" selection-start-column="26" selection-end-line="45" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/widgets/documents/public/complaints.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="119" lean-forward="false" selection-start-line="1" selection-start-column="119" selection-end-line="1" selection-end-column="119" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/lang/ar/layout.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="36" lean-forward="false" selection-start-line="13" selection-start-column="36" selection-end-line="13" selection-end-column="36" />
           <folding />
         </state>
       </provider>
@@ -1523,6 +1454,66 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="325">
           <caret line="313" column="32" lean-forward="true" selection-start-line="313" selection-start-column="32" selection-end-line="313" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/lang/ar/layout.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/composer.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/composer.lock">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-561">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.htaccess">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/pdf.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/widgets/documents/public/about_us.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/widgets/documents/public/contact_us.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="291">
+          <caret line="20" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/widgets/documents/public/complaints.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1530,7 +1521,7 @@
     <entry file="file://$PROJECT_DIR$/.env">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
-          <caret line="6" column="19" lean-forward="true" selection-start-line="6" selection-start-column="19" selection-end-line="6" selection-end-column="19" />
+          <caret line="6" column="19" lean-forward="false" selection-start-line="6" selection-start-column="19" selection-end-line="6" selection-end-column="19" />
           <folding />
         </state>
       </provider>

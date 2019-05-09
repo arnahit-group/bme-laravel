@@ -1,5 +1,6 @@
 <h6 class="center contact_us_h6">ثبت شکایات</h6>
-<span class="center contact_us_span" style="display: block">در صورت مواجه با هر مشکلی میتوانید شکایت خود را ثبت نمایید.</span>
+<span class="center contact_us_span"
+      style="display: block">در صورت مواجه با هر مشکلی میتوانید شکایت خود را ثبت نمایید.</span>
 
 
 <div class="container" style="margin-top: 35px; margin-bottom: 35px;">
@@ -11,8 +12,11 @@
 
             <div id="right-side-content" class="col l6 s12  content-right-side center"
                  style="padding: 15px !important;">
-
                 <img class="logo_cu responsive-img" src="{{asset('images/main_logo_cu.png')}}">
+                <h6>
+                    به مدیریت :
+                    فریبرز صبوری ویشکایی
+                </h6>
 
                 <br>
                 <br>
@@ -51,7 +55,7 @@
 
 
                     <input type="text" id="input-name" name="input-name" class="input-cu dp4 col s12 left"
-                           placeholder="نام و نام خانوادگی" >
+                           placeholder="نام و نام خانوادگی">
 
                     <span id="spn-name-alert" class="invalid-feedback" role="alert" hidden>
                         <strong>نام خود را وارد کنید</strong>
@@ -60,7 +64,7 @@
 
 
                     <input type="text" id="input-email" name="input-email" class="input-cu col s12 left"
-                           placeholder="آدرس ایمیل" >
+                           placeholder="آدرس ایمیل">
 
                     <span id="spn-email-alert" class="invalid-feedback" role="alert" hidden>
                         <strong>ایمیل خود را وارد کنید</strong>
@@ -69,7 +73,7 @@
 
 
                     <input type="text" id="input-mobile" name="input-mobile" class="input-cu col s12 left"
-                           placeholder="شماره تماس" >
+                           placeholder="شماره تماس">
                     <span id="spn-mobile-alert" class="invalid-feedback" role="alert" hidden>
                         <strong>شماره تلفن همراه خود را وارد کنید</strong>
                     </span>
@@ -77,7 +81,7 @@
 
 
                     <input type="text" id="input-location" name="input-location" class="input-cu col s12 left"
-                           placeholder="محل زندگی" >
+                           placeholder="محل زندگی">
 
                     <span id="spn-location-alert" class="invalid-feedback" role="alert" hidden>
                         <strong>شهر محل اقامت خود را وارد کنید</strong>

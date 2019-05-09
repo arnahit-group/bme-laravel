@@ -13,6 +13,10 @@
                  style="padding: 15px !important;">
 
                 <img class="logo_cu responsive-img" src="{{asset('images/main_logo_cu.png')}}">
+                <h6>
+                    به مدیریت :
+                    فریبرز صبوری ویشکایی
+                </h6>
 
                 <br>
                 <br>
@@ -35,7 +39,6 @@
                     @foreach($data['phone']->title as $t)
                         <span dir="ltr">{{$t}}</span>
                     @endforeach
-
                 </div>
 
 

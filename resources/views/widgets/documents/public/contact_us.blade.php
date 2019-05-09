@@ -14,6 +14,10 @@
 
                 <img class="logo_cu responsive-img" src="{{asset('images/main_logo_cu.png')}}">
 
+                <h6>
+                    به مدیریت :
+                    فریبرز صبوری ویشکایی
+                </h6>
                 <br>
                 <br>
                 <br>
