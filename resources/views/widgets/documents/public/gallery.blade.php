@@ -1,20 +1,25 @@
-<h6 class="center contact_us_h6">گالری تصاویر هتل</h6>
+<h6 class="center contact_us_h6">
+    {{__('layout.pages.hotel gallery')}}
+</h6>
 <span class="center contact_us_span"
-      style="display: block">از تصاویر انواع هتل های هتل سه ستاره صبوری لذت ببرید</span>
+      style="display: block">
+                        {{__('layout.pages.enjoy to see hotel pictures')}}
+
+</span>
 
 
 <div class="container center" style="margin-top: 35px; margin-bottom: 35px;">
 
     <div class="row">
         @foreach($datas as $data)
-                <a style="direction: ltr" class="elem"
-                   href="{{$data->properties->path }}"
-                   title="image 1"
-                   data-lcl-txt="هتل سه ستاره صبوری"
-                   data-lcl-author="هتل سه ستاره صبوری"
-                   data-lcl-thumb="{{$data->properties->path }}">
-                    <span style="background-image: url({{$data->properties->path }});"></span>
-                </a>
+            <a style="direction: ltr" class="elem"
+               href="{{$data->properties->path }}"
+               title="image 1"
+               data-lcl-txt="هتل سه ستاره صبوری"
+               data-lcl-author="هتل سه ستاره صبوری"
+               data-lcl-thumb="{{$data->properties->path }}">
+                <span style="background-image: url({{$data->properties->path }});"></span>
+            </a>
         @endforeach
 
     </div>

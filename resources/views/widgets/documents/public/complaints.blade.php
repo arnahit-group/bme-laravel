@@ -1,6 +1,10 @@
-<h6 class="center contact_us_h6">ثبت شکایات</h6>
+<h6 class="center contact_us_h6">
+    {{__('layout.pages.register your complaints')}}
+</h6>
 <span class="center contact_us_span"
-      style="display: block">در صورت مواجه با هر مشکلی میتوانید شکایت خود را ثبت نمایید.</span>
+      style="display: block">
+        {{__('layout.pages.if you have any problem please let us know')}}
+</span>
 
 
 <div class="container" style="margin-top: 35px; margin-bottom: 35px;">
@@ -14,7 +18,7 @@
                  style="padding: 15px !important;">
                 <img class="logo_cu responsive-img" src="{{asset('images/main_logo_cu.png')}}">
                 <h6>
-                    به مدیریت :
+                    {{__('layout.pages.manager')}}
                     فریبرز صبوری ویشکایی
                 </h6>
 
@@ -58,7 +62,9 @@
                            placeholder="نام و نام خانوادگی">
 
                     <span id="spn-name-alert" class="invalid-feedback" role="alert" hidden>
-                        <strong>نام خود را وارد کنید</strong>
+                        <strong>
+                            {{__('layout.pages.enter your name')}}
+</strong>
                     </span>
                     <br>
 
@@ -67,7 +73,9 @@
                            placeholder="آدرس ایمیل">
 
                     <span id="spn-email-alert" class="invalid-feedback" role="alert" hidden>
-                        <strong>ایمیل خود را وارد کنید</strong>
+                        <strong>
+                                                {{__('layout.pages.enter your email')}}
+                        </strong>
                     </span>
                     <br>
 
@@ -75,7 +83,10 @@
                     <input type="text" id="input-mobile" name="input-mobile" class="input-cu col s12 left"
                            placeholder="شماره تماس">
                     <span id="spn-mobile-alert" class="invalid-feedback" role="alert" hidden>
-                        <strong>شماره تلفن همراه خود را وارد کنید</strong>
+                        <strong>
+                                                {{__('layout.pages.enter your mobile number')}}
+
+                        </strong>
                     </span>
                     <br>
 
@@ -84,7 +95,10 @@
                            placeholder="محل زندگی">
 
                     <span id="spn-location-alert" class="invalid-feedback" role="alert" hidden>
-                        <strong>شهر محل اقامت خود را وارد کنید</strong>
+                        <strong>
+                                                {{__('layout.pages.enter your origin city')}}
+
+                        </strong>
                     </span>
 
                     <br>
@@ -94,12 +108,14 @@
 
 
                     <span id="spn-content-alert" class="invalid-feedback" role="alert" hidden>
-                        <strong>پیغام خود را وارد کنید</strong>
+                        <strong>
+                                                {{__('layout.pages.write your message')}}
+                        </strong>
                     </span>
                     <br>
 
                     <input id="btn-send-message-contact" type="button" class="btn-small btn-sendd left"
-                           value="ارسال کن">
+                           value="{{__('layout.pages.send')}}">
                 </form>
 
 

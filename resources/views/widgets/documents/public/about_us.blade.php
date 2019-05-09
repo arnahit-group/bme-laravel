@@ -1,5 +1,9 @@
-<h6 class="center contact_us_h6">درباره ما</h6>
-<span class="center contact_us_span" style="display: block">کمی بیشتر با هتل سه ستاره صبوری آشنا شوید</span>
+<h6 class="center contact_us_h6">
+    {{__('layout.pages.about us')}}
+</h6>
+<span class="center contact_us_span" style="display: block">
+    {{__('layout.pages.get more info about us')}}
+</span>
 
 
 <div class="container" style="margin-top: 35px; margin-bottom: 35px;">
@@ -14,7 +18,8 @@
 
                 <img class="logo_cu responsive-img" src="{{asset('images/main_logo_cu.png')}}">
                 <h6>
-                    به مدیریت :
+                    {{__('layout.pages.manager')}}
+
                     فریبرز صبوری ویشکایی
                 </h6>
 

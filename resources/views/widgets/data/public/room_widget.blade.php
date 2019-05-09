@@ -7,12 +7,14 @@
                href="{{route('home.data' , ['data_type'=>'room' , 'id'=>$data->id])}}">
                 <img class="left responsive-img"
                      src="{{asset('images/left-arrow.png')}}">
-                اطلاعات بیشتر
+                {{__('layout.room.more information')}}
             </a>
             @if(isset($data->properties['available']) and $data->properties['available']->title==1 )
                 @if(isset($data->situation) and $data->situation == 'free')
                     <a href="{{route('home.data' , ['data_type'=>'room' , 'id'=>$data->id])}}"
-                       class="reservation-btn left">رزرو کنید</a>
+                       class="reservation-btn left">
+                        {{__('layout.room.reserve it')}}
+                    </a>
                 @endif
             @else
                 {{--<a href="#" class="reservation-btn left">غیر فعال</a>--}}

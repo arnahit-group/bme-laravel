@@ -3,7 +3,7 @@
 
 return [
 
-    'public'=>[
+    'public' => [
         'important notification' => 'معلومات مهمة:',
         'has been launched' => 'أطلقت.',
         'hotel online reservation system version' => 'نظام حجز الفنادق الآمن في الفندق',
@@ -16,32 +16,57 @@ return [
 
     ],
 
-    'room'=>[
-        'your location'=>'موقفك:',
-        'price per night'=>'سعر الليلة الواحدة',
-        'tooman'=>'تومان',
+    'room' => [
+        'your location' => 'موقفك:',
+        'price per night' => 'سعر الليلة الواحدة',
+        'tooman' => 'تومان',
         'reserve it' => 'إبداء تحفظ',
         'you cant reserve it right now' => 'الحجز غير ممكن الآن',
-        'enter date'=>'تاريخ الوصول:',
-        'duration'=>'مدة الاقامة:',
-        'choose duration'=>'اختيار رقم الليل',
-        '1 night'=>'ليلة واحدة',
-        '2 nights'=>'ليلتين',
-        '3 nights'=>'ثلاث ليال',
-        '4 nights'=>'أربع ليال',
-        '5 nights'=>'خمس ليال',
-        '6 nights'=>'ست ليال',
-        '7 nights'=>'سبع ليال',
-        'last step'=>'الخطوة الاخيرة',
-        'add to favorites'=>'أضف إلى المفضلة',
-        'guest exit time'=>'ضيف تحقق من 12:00',
-        'special offers for reserving rooms'=>'خدمات خاصة لحجز بعض غرف الفندق',
-        'rasht location tours'=>'جولة لمشاهدة معالم المدينة التاريخية في رشت',
-        'facilities'=>'مرافق',
-        'more information'=>'مزيد من المعلومات',
-        'reserve'=>'الحجز',
-        'per night price'=>'البقاء كل ليلة',
-        'extra bed costs'=>'خدمة سرير إضافي:',
+        'enter date' => 'تاريخ الوصول:',
+        'duration' => 'مدة الاقامة:',
+        'choose duration' => 'اختيار رقم الليل',
+        '1 night' => 'ليلة واحدة',
+        '2 nights' => 'ليلتين',
+        '3 nights' => 'ثلاث ليال',
+        '4 nights' => 'أربع ليال',
+        '5 nights' => 'خمس ليال',
+        '6 nights' => 'ست ليال',
+        '7 nights' => 'سبع ليال',
+        'last step' => 'الخطوة الاخيرة',
+        'add to favorites' => 'أضف إلى المفضلة',
+        'guest exit time' => 'ضيف تحقق من 12:00',
+        'special offers for reserving rooms' => 'خدمات خاصة لحجز بعض غرف الفندق',
+        'rasht location tours' => 'جولة لمشاهدة معالم المدينة التاريخية في رشت',
+        'facilities' => 'مرافق',
+        'more information' => 'مزيد من المعلومات',
+        'reserve' => 'الحجز',
+        'per night price' => 'البقاء كل ليلة',
+        'extra bed costs' => 'خدمة سرير إضافي:',
+
+
+        'hotel archives' => 'فندق المحفوظات',
+        'you can see our rooms here' => 'هنا يمكنك رؤية أنواع غرفنا هنا ، ويمكنك رؤية مجموعة متنوعة من الغرف هنا',
+
+    ],
+
+    'pages' => [
+        'manager' => 'لإدارة:',
+        'about us' => 'عنا',
+        'get more info about us' => 'تعرف على فندق 3 نجوم الفاخر أكثر قليلاً',
+
+        'register your complaints' => 'تسجيل الشكاوى',
+        'if you have any problem please let us know' => 'إذا واجهت أي مشاكل ، يمكنك تقديم شكوى',
+        'enter your name' => 'أدخل اسمك',
+        'enter your email' => 'أدخل بريدك الالكتروني',
+        'enter your mobile number' => 'أدخل رقم هاتفك المحمول',
+        'enter your origin city' => 'أدخل مدينة إقامتك',
+        'write your message' => 'أدخل رسالتك',
+        'send' => 'أرسلها',
+        'contact us' => 'اتصل بنا',
+        'we will be happy to answer you question' => 'إذا كان لديك مشكلة أو لديك أسئلة ، اسألنا',
+        'hotel gallery' => 'معرض الفندق',
+        'enjoy to see hotel pictures' => 'استمتع بصور الفندق الرائعة من فئة 3 نجوم',
+
     ],
 
 
