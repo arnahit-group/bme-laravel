@@ -187,7 +187,6 @@
 
         $(".se-image").click(function () {
 
-
             var c = $(this).attr('data-content');
             if (c == 0) {
                 $(this).css('border', '2px solid red');
@@ -195,9 +194,7 @@
             } else {
                 $(this).css('border', '2px none red');
                 $(this).attr('data-content', 0);
-
             }
-
 
         });
 

@@ -11,7 +11,8 @@
     <label for="{{$property->title}}">{{ __('messages.input_titles')[$property->title]}}</label>
 </div>
 <div class="input-field col s12 m12">
-    <button type="button" class="btn-flat red-text" id="add-locale-{{$property->title}}" onclick="$('#container-locale-{{$property->title}}').slideToggle()">
+    <button type="button" class="btn-flat red-text" id="add-locale-{{$property->title}}"
+            onclick="$('#container-locale-{{$property->title}}').slideToggle()">
         {{ __('messages.operations')['add locale']}}
     </button>
 </div>
@@ -24,7 +25,13 @@
             </div>
             <div class="input-field col s12 m8">
                 <input id="{{$property->title}}-{{$locale}}" name="{{$property->title}}-{{$locale}}"
-                       value=""
+
+                       @php($s= 'assigned-'. $locale)
+                       @if(isset($property->{$s}) )
+                       @php($t =$property->{$s} )
+                            value="{{$t}}"
+                       @endif
+
                        type="{{$property->input_type}}">
                 <label for="{{$property->title}}-{{$locale}}"> {{__('messages.languages')[$locale]}}</label>
             </div>

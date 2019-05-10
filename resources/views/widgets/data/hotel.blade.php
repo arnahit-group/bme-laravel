@@ -57,7 +57,7 @@
                 </div>
 
                 <div class="card-action">
-                    <button class="btn red left">{{ __('messages.operations')['confirm']}}</button>
+                    <button type="submit" class="btn red left">{{ __('messages.operations')['confirm']}}</button>
 
                 </div>
 

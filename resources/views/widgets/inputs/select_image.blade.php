@@ -1,13 +1,3 @@
-{{--@if(isset($property->assigned) and  $property->assigned != "")--}}
-{{--<button id="{{$property->title}}" name="{{$property->title}}" class="btn waves-effect waves-light" type="button">--}}
-{{--{{ __('messages.input_titles')[$property->title]}}--}}
-{{--</button>--}}
-{{--@else--}}
-{{--<button id="{{$property->title}}" name="{{$property->title}}" class="btn waves-effect waves-light" type="button">--}}
-{{--{{ __('messages.input_titles')[$property->title]}}--}}
-{{--</button>--}}
-{{--@endif--}}
-
 <a class="waves-effect waves-light btn modal-trigger"
    href="#modal1">{{ __('messages.input_titles')[$property->title]}}</a>
 
@@ -24,7 +14,7 @@
             <div class="row" id="rw-images">
                 @foreach($images as $image)
                     <div class="col m3 l3">
-                        <input type="hidden" name="{{$property->title}}[]" value="{{$image->properties->path}}">
+                        {{--<input type="hidden" name="{{$property->title}}[]" value="{{$image->properties->path}}">--}}
                         <img class="se-image" src="{{$image->properties->path}}" style="width: 90%" data-content="0">
                     </div>
                 @endforeach
@@ -35,11 +25,12 @@
             <button type="button" id="btn-add-image" class="btn waves-effect waves-light">Add</button>
         </div>
     </div>
-
-
     {{--<div class="modal-fixed-footer">--}}
     {{--</div>--}}
 </div>
+
+
+
 
 
 <div class="row">
@@ -53,11 +44,14 @@
         <h5 class="center">تصاویر انتخابی</h5>
     </div>
 
-    @foreach($property->assigned as $s_img)
-        <div class="col m3 l3">
-            <input type="hidden" name="{{$property->title}}[]" value="{{$s_img->value}}">
-            <img src="{{$s_img->value}}" style="width: 100%">
-        </div>
-    @endforeach
+
+    @if(isset($property->assigned ))
+        @foreach($property->assigned as $s_img)
+            <div class="col m3 l3">
+                <input type="hidden" name="{{$property->title}}[]" value="{{$s_img->value}}">
+                <img src="{{$s_img->value}}" style="width: 100%">
+            </div>
+        @endforeach
+    @endif
 
 </div>

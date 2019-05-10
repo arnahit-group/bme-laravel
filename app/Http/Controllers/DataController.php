@@ -356,7 +356,6 @@ class DataController extends Controller
     {
         $locales = ['en', 'ar'];
 
-
         $bt_id = DataType::where('title', '=', $data_type)->first();
         $properties = DataProperty::where('data_type', '=', $bt_id->id)->get();
         $keys = $request->keys();
@@ -370,8 +369,11 @@ class DataController extends Controller
                 $k_t = $keys[array_search($property->title, $keys)];
                 $value = $request->input($k_t);
 
+
                 if ($property->input_type == 'multi-relation-document-images') {
 
+
+//                    continue;
 
                     $paths = $value;
                     $dp_id = DB::table('data_assigned_properties')->insertGetId(
@@ -395,7 +397,7 @@ class DataController extends Controller
 
 
                         $relation = new Relation();
-                        $relation->title = 'test';
+                        $relation->title = 'raleted image to room';
                         $relation->relation_type = 1;
                         $relation->save();
                         $r_id = $relation->id;
@@ -422,7 +424,6 @@ class DataController extends Controller
 
                 } elseif ($property->input_type == 'single-relation-price') {
 
-
                     $dp_id = DB::table('data_assigned_properties')->insertGetId(
                         [
                             'property' => $property->id,
@@ -432,10 +433,11 @@ class DataController extends Controller
                     );
 
                     $relation = new Relation();
-                    $relation->title = 'test';
+                    $relation->title = 'related room to price';
                     $relation->relation_type = 5;
                     $relation->save();
                     $r_id = $relation->id;
+
 
                     DB::table('relation_objects')->insert(
                         [
@@ -447,15 +449,19 @@ class DataController extends Controller
 
 
                     $r_props = RelationProperty::where('relation_type', '=', config('base.relation_types.price'))->get();
+
                     foreach ($r_props as $r_prop) {
 
+//                        echo $r_props->id;
+//                        echo "<br>";
+//                        continue;
                         if ($r_prop->title == $property->title) {
 
                             DB::table('relation_assigned_properties')
                                 ->insert(
                                     [
                                         'relation' => $r_id,
-                                        'property' => $r_props->id,
+                                        'property' => $r_prop->id,
                                         'value' => $value,
                                     ]
                                 );
@@ -466,15 +472,15 @@ class DataController extends Controller
                                 ->insert(
                                     [
                                         'relation' => $r_id,
-                                        'property' => $r_props->id,
+                                        'property' => $r_prop->id,
                                         'value' => 0,
                                     ]
                                 );
-
                         }
                     }
 
                 } elseif ($property->input_type == 'multi-text') {
+
 
                     $vs = $value;
                     $dp_id = DB::table('data_assigned_properties')->insertGetId(
@@ -486,13 +492,16 @@ class DataController extends Controller
                     );
 
                     foreach ($vs as $v) {
-                        DB::table('data_assigned_properties')->insert(
+                        DB::table('data_assigned_property_values')->insert(
                             [
                                 'assigned_property' => $dp_id,
                                 'value' => $v
                             ]
                         );
                     }
+
+
+
 
                 } else {
 
@@ -646,6 +655,7 @@ class DataController extends Controller
                     $properties[$i]->assigned = $rels;
                 } elseif ($properties[$i]->input_type == 'multi-text') {
 
+
                     $dps_id = 0;
                     foreach ($assigned as $item) {
                         if ($item->property == $properties[$i]->id) {
@@ -662,15 +672,36 @@ class DataController extends Controller
                         ->get(['data_assigned_property_values.value']);
 
                     $ds = [];
+
+
+
                     foreach ($dpsvs as $dpsv) {
                         $ds[] = $dpsv->value;
                     }
+
+
+
+
                     $properties[$i]->assigned = $ds;
 
                 } else {
                     foreach ($assigned as $item) {
                         if ($item->property == $properties[$i]->id) {
                             $properties[$i]->assigned = $item->value;
+
+                            if ($properties[$i]->input_type == 'text') {
+                                $trs = DB::table('translations')
+                                    ->where('table', '=', 'data_assigned_properties')
+                                    ->where('field', '=', 'value')
+                                    ->where('record', '=', $item->id)
+                                    ->get(['locale', 'value']);
+
+                                foreach ($trs as $tr) {
+                                    $k = 'assigned-'.$tr->locale;
+                                    $properties[$i]->{$k} = $tr->value;
+                                }
+                            }
+
                             break;
                         }
                     }
@@ -681,7 +712,6 @@ class DataController extends Controller
 
             for ($i = 0; $i < count($objects); $i++) {
                 $objects[$i]->properties = DataController::getDataProperties($objects[$i]->id);
-
             }
         }
 
@@ -760,11 +790,11 @@ class DataController extends Controller
     public function store(Request $request, $data_type)
     {
 
+//        dd($request);
 
 //        dd($request);
 //        return $data_type;
         $bt_id = DataType::where('title', '=', $data_type)->first();
-
 
         $data = new Data();
         $data->data_type = $bt_id->id;
@@ -790,7 +820,7 @@ class DataController extends Controller
         RelationController::createRelation($data_type, $rels);
 
         //        return;
-//        return redirect()->route("data.index", ['data_type' => $data_type]);
+        return redirect()->route("data.index", ['data_type' => $data_type]);
     }
 
     /**
@@ -841,6 +871,7 @@ class DataController extends Controller
         $data ['images'] = DocumentController::getDocuments('general');
         $data['data_type'] = $data_type;
 
+
         for ($i = 0; $i < count($properties); $i++) {
             $properties[$i]->assigned = "";
             if ($properties[$i]->input_type == 'multi-relation-document-images') {
@@ -867,15 +898,70 @@ class DataController extends Controller
                     ->where('document_assigned_properties.property', '=', 4)
                     ->get(['document_assigned_properties.value', 'document_assigned_properties.document']);
                 $properties[$i]->assigned = $rels;
-            } else {
+
+            } elseif ($properties[$i]->input_type == 'single-relation-price') {
+
+
+                $ds_id = 0;
                 foreach ($assigned as $item) {
                     if ($item->property == $properties[$i]->id) {
-                        $properties[$i]->assigned = $item->value;
+                        $ds_id = $item->id;
                         break;
                     }
                 }
+
+                $rels = DB::table('relation_objects')
+                    ->where('object_type', '=', config('base.object_types.data_assigned_property'))
+                    ->where('object_id', '=', $ds_id)
+                    ->get();
+
+                if (count($rels) > 0) {
+                    $relations = [];
+                    foreach ($rels as $rel) {
+                        $relations[] = $rel->relation;
+                    }
+
+                    $rel_id = $relations[0];
+
+                    $rs_props = DB::table('relation_assigned_properties')
+                        ->where('relation', '=', $rel_id)
+                        ->where('property', '=', 1)
+                        ->get();
+
+                    $properties[$i]->assigned = $rs_props[0]->value;
+
+                }
+
+
+            } else {
+
+
+                foreach ($assigned as $item) {
+                    if ($item->property == $properties[$i]->id) {
+                        $properties[$i]->assigned = $item->value;
+
+                        if ($properties[$i]->input_type == 'text') {
+                            $trs = DB::table('translations')
+                                ->where('table', '=', 'data_assigned_properties')
+                                ->where('field', '=', 'value')
+                                ->where('record', '=', $item->id)
+                                ->get(['locale', 'value']);
+
+                            foreach ($trs as $tr) {
+
+                                $k = 'assigned-'.$tr->locale;
+                                $properties[$i]->{$k} = $tr->value;
+                            }
+                        }
+
+                        break;
+                    }
+                }
+
+
             }
         }
+
 
         $data['properties'] = $properties;
 //        $data['properties'] = self::getDataProperties($id);

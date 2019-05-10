@@ -136,7 +136,7 @@
             var name = input_name.val();
             var mobile = input_mobile.val();
             var location = input_location.val();
-            var content = txt_area.html();
+            var content = txt_area.val();
 
 //            alert(email + " " + name + " " + mobile + " " + location + " " + message);
 //            return;
