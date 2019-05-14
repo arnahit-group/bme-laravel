@@ -1,0 +1,32 @@
+<?php
+
+namespace App\Http\Middleware;
+
+use Closure;
+use Illuminate\Http\Response;
+
+class AdminMiddleware
+{
+    /**
+     * Handle an incoming request.
+     *
+     * @param  \Illuminate\Http\Request $request
+     * @param  \Closure $next
+     * @return mixed
+     */
+    public function handle($request, Closure $next)
+    {
+
+        if ($request->user() && $request->user()->user_type != 1) {
+
+//            dd($request);
+//            return "error";
+
+            return redirect()->route('home.index2');
+//            return new Response(view('public.index2'));
+        }
+
+        return $next($request);
+
+    }
+}

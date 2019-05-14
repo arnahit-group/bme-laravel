@@ -73,6 +73,8 @@ return [
         'navigation' => 'منوها',
         'room properties' => 'خاصیت های اتاق ها',
         'hotel properties' => 'خاصیت های هتل',
+        'user properties' => 'خاصیت های کاربر',
+        'customer properties' => 'خاصیت های مشتری',
         'offer' => 'پکیج های ویژه',
         'website settings' => 'تنظیمات وبسایت',
         'hotel settings' => 'تنظیمات هتل',

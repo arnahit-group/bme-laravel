@@ -105,10 +105,9 @@
 
 @section('container')
 
-
-    @include('widgets.users.public.enter')
-
-
+    @if(count($widgets) > 0 and $widgets[0]->type == 'main')
+        @include($widgets[0]->name)
+    @endif
 
 @endsection
 

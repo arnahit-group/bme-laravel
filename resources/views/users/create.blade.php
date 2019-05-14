@@ -26,6 +26,22 @@
                                   action="{{route("users.store", ['user_type'=> $user_type])}}"
                                   method="post">
                                 {{@csrf_field()}}
+                                <div class="row">
+                                    <div class="input-field col s12 m12">
+                                        <input id="email" name="email"
+                                               type="email">
+                                        <label for="email">email</label>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="input-field col s12 m12">
+                                        <input id="password" name="password"
+                                               type="text">
+                                        <label for="password">password</label>
+                                    </div>
+                                </div>
+
+
                                 @foreach($properties as $property)
                                     <div class="row">
 

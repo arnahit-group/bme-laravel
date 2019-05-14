@@ -3,4 +3,4 @@
 @else
     <input type="checkbox" id="{{$property->title}}" name="{{$property->title}}" value="1"/>
 @endif
-<label for="{{$property->title}}">{{ __('messages.input_titles')[$property->title]}}</label>
+<label for="{{$property->title}}">{{isset($property->locales[app()->getLocale()])?$property->locales[app()->getLocale()]:$property->title}}</label>

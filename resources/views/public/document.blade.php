@@ -5,21 +5,29 @@
     <link rel="stylesheet" href="{{asset('style/style_contact.css')}}">
     <link rel="stylesheet" href="{{asset('style/style_about_us.css')}}">
 
-    <link rel="stylesheet" href="{{asset('style/style_single.css')}}">
-    <link rel="stylesheet" href="{{asset('style/style_information.css')}}">
-    <link rel="stylesheet" href="{{asset('style/style_information_step2.css')}}">
-
-    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.52.0/mapbox-gl.js'></script>
-    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.52.0/mapbox-gl.css' rel='stylesheet'/>
+    <link rel="stylesheet" href="{{asset('style/style_single-rtl.css')}}">
+    <link rel="stylesheet" href="{{asset('style/style_information-rtl.css')}}">
+    <link rel="stylesheet" href="{{asset('style/style_information_step2-rtl.css')}}">
 
 
     <link rel="stylesheet" href="{{asset('style/style_contact.css')}}">
+
+
 
     <link rel="stylesheet" href="{{asset('style/lc_lightbox.css')}}">
     <link rel="stylesheet" href="{{asset('style/dark.css')}}">
     <link rel="stylesheet" href="{{asset('style/light.css')}}">
     <link rel="stylesheet" href="{{asset('style/minimal.css')}}">
+
+
+
     <link rel="stylesheet" href="{{asset('style/style_image_gallery.css')}}">
+
+
+
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.52.0/mapbox-gl.css' rel='stylesheet'/>
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.52.0/mapbox-gl.js'></script>
+
 
     <script src="{{asset('scripts/jquery-3.3.1.min.js')}}"></script>
     <script src="{{asset('scripts/lightslider.js')}}"></script>

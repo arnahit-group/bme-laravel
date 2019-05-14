@@ -4,14 +4,14 @@
 
 
         <div id="example-basic">
-            <h3>تکمیل اطلاعات</h3>
+            <h3>{{__('layout.reserve.fill information')}}</h3>
             <section style="padding: 0 !important;  width: 100%">
 
                 <div class="row">
 
                     <!--right side of post header-->
                     <div class="col l6 s12 center-on-small-only">
-                        <h6 id="title-h6">اطلاعات فردی رزرو کننده</h6>
+                        <h6 id="title-h6">{{__('layout.reserve.reservatore information')}}</h6>
 
                     </div>
 
@@ -60,8 +60,9 @@
 
                     <!--left side of post header-->
                     <div class="col l6 s12 center-on-small-only" style="padding-left: 0 !important;">
-                        <a href="#modal1" class="btn-small left btn-cream margin-top modal-trigger" id="btn-res2">رزرو
-                            کنید</a>
+                        <a href="#modal1" class="btn-small btn-cream margin-top modal-trigger" id="btn-res2">
+                            {{__('layout.reserve.reserve it')}}
+                        </a>
 
                     {{--<span id="span-res" class="span-res left">شناسه رزرو شما</span>--}}
 
@@ -74,7 +75,7 @@
                                     <form>
                                         <div class="col l4 s12 height100">
 
-                                            <p>تاریخ ورود:</p>
+                                            <p>{{__('layout.room.enter date')}}</p>
                                             <input style="z-index: 5 !important;" type="text" class="datePicker dp1"
                                                    value="09-22-2019"/>
                                             <input style="z-index: 5 !important; display: block;" type="hidden"
@@ -84,26 +85,27 @@
                                         </div>
                                         <div class="col l4 s12 height100">
 
-                                            <p>مدت اقامت:</p>
+                                            <p>{{__('layout.room.duration')}}</p>
                                             <!--<input type="text">-->
                                             <div class="padding-option">
                                                 <select class="slct-night " name="count" id="count">
-                                                    <option value="" disabled selected>تعداد شب را انتخاب کنید</option>
-                                                    <option value="1">یک شب</option>
-                                                    <option value="2">دو شب</option>
-                                                    <option value="3">سه شب</option>
-                                                    <option value="4">چهار شب</option>
-                                                    <option value="5">پنج شب</option>
-                                                    <option value="6">شش شب</option>
-                                                    <option value="7">هفت شب</option>
-
+                                                    <option value="" disabled selected>
+                                                        {{__('layout.room.choose duration')}}
+                                                    </option>
+                                                    <option value="1">{{__('layout.room.1 night')}}</option>
+                                                    <option value="2">{{__('layout.room.2 nights')}}</option>
+                                                    <option value="3">{{__('layout.room.3 nights')}}</option>
+                                                    <option value="4">{{__('layout.room.4 nights')}}</option>
+                                                    <option value="5">{{__('layout.room.5 nights')}}</option>
+                                                    <option value="6">{{__('layout.room.6 nights')}}</option>
+                                                    <option value="7">{{__('layout.room.7 nights')}}</option>
                                                 </select>
                                             </div>
 
                                         </div>
                                         <div class="col l4 s12 height100">
 
-                                            <p>گام آخر</p>
+                                            <p>{{__('layout.room.last step')}}</p>
                                             <input id="btn-update-service-form" type="button" value="درج مشخصات"
                                                    class="btn-small center btn-red btn-submit">
 
@@ -187,13 +189,14 @@
                         <div class="special-service hide-on-med-and-down col l11">
 
                             <div>
-                                <span class="center special-service-title">اطلاعیه مهم</span>
+                                <span class="center special-service-title">
+                                    {{__('layout.reserve.important notes')}}
+                                </span>
                             </div>
 
                             <p class="special-service-description">
 
-                                لطفا شماره موبایلتان را بررسی کنید، ما از این طریق رزورتان را بررسی میکنیم.
-
+                                {{__('layout.reserve.check mobile phone')}}
                             </p>
                         </div>
 
@@ -231,7 +234,9 @@
                         @endif
 
                         <div class="col l6 s12 center-on-small-only">
-                            <h6 id="title-h6" class="title-of-form">مشخصات تکمیلی</h6>
+                            <h6 id="title-h6" class="title-of-form">
+                                {{__('layout.reserve.additional details')}}
+                            </h6>
 
                         </div>
 
@@ -239,12 +244,14 @@
                         <div class="special-service hide-on-med-and-down col l11">
 
                             <div>
-                                <span class="center special-service-title">اطلاعیه مهم</span>
+                                <span class="center special-service-title">
+                                    {{__('layout.reserve.important notice')}}
+                                </span>
                             </div>
 
                             <p class="special-service-description">
 
-                                برای کودکان بالای شش سال باید از تخت اضافه استفاده کنید.
+                                {{__('layout.reserve.for children over 6 years of age')}}
 
                             </p>
 
@@ -253,7 +260,9 @@
                         <div class="col l7 s5 padding-option" style="padding: 0 !important;" id="input-kids">
 
                             <select class="slct-kid">
-                                <option value="" disabled selected>سن کودک را انتخاب کنید</option>
+                                <option value="" disabled selected>
+                                    {{__('layout.reserve.choose the child age')}}
+                                </option>
                                 <option value="1">یک ال 5</option>
                                 <option value="2">6 الی یازده</option>
                                 <option value="3">یازده الی شانزده</option>
@@ -268,7 +277,9 @@
                         <div class="col l7 s5 padding-option" style="padding: 0 !important;" id="input-beds">
 
                             <select class="slct-kid">
-                                <option value="" disabled selected>تعداد تخت را انتخاب کنید</option>
+                                <option value="" disabled selected>
+                                    {{__('layout.reserve.choose the number of beds')}}
+                                </option>
                                 <option value="1">یک تخت</option>
                                 <option value="2">دو تخت</option>
                                 <option value="3">سه تخت</option>
@@ -283,7 +294,9 @@
 
 
                         <div class="col l8 s12 center-on-small-only">
-                            <h6 id="title-h6" class="title-of-form">آیا برای کار سفر می کنید؟</h6>
+                            <h6 id="title-h6" class="title-of-form">
+                                {{__('layout.reserve.do you travel for work')}}
+                            </h6>
 
                         </div>
 
@@ -310,13 +323,17 @@
                             <p style="display: inline-block">
                                 <label>
                                     <input name="group2" type="radio"/>
-                                    <span class="radio-span">قوانین را مطالعه کرده ام و قبول دارم.</span>
+                                    <span class="radio-span">
+                                        {{__('layout.reserve.i have read and accept the rules')}}
+                                    </span>
                                 </label>
                             </p>
 
                             <div id="more-inf" class="more-inf center-on-small-only"
                                  style="margin-right: 0 !important;">
-                                <a href="#">اطلاعات بیشتر</a>
+                                <a href="#">
+                                    {{__('layout.reserve.more information')}}
+                                </a>
                                 <img class="responsive-img" src="{{asset('images/left-arrow.png')}}">
                             </div>
 
@@ -336,16 +353,20 @@
 
                         <div class="col s6 room-date">
 
-                            <span class="span-date grey-text">تاریخ ورود</span>
-                            <span class="span-date black-text left" id="spn-start-date">{{$dates[0]}}</span>
+                            <span class="span-date grey-text">
+                                {{__('layout.reserve.entry date')}}
+                            </span>
+                            <span class="span-date black-text " id="spn-start-date">{{$dates[0]}}</span>
 
 
                         </div>
 
                         <div class="col s6  room-date rd2">
 
-                            <span class="span-date grey-text">تاریخ خروج</span>
-                            <span class="span-date black-text left" id="spn-end-date">{{$dates[count($dates)-1]}}</span>
+                            <span class="span-date grey-text">
+                                {{__('layout.reserve.date of departure')}}
+                            </span>
+                            <span class="span-date black-text " id="spn-end-date">{{$dates[count($dates)-1]}}</span>
 
                         </div>
 
@@ -354,8 +375,9 @@
                             @php($p=0)
                             @foreach($dates as $d)
                                 <span class="black-text">{{$d}}</span>
-                                <span class="left">{{number_format($object->properties['price']->prices[0])}}
-                                    تومان</span>
+                                <span class="txt-red-price">{{number_format($object->properties['price']->prices[0])}}
+                                    {{__('layout.reserve.tooman')}}
+                                </span>
                                 <br>
                                 @php($p+=$object->properties['price']->prices[0])
                             @endforeach
@@ -370,8 +392,9 @@
                         </div>
 
                         <input type="hidden" id="input-price" value="{{$p}}">
-                        <a id="btn-grey" href="#"
-                           class="btn-small left btn-grey ">مجموع {{number_format($p)}}</a>
+                        <a id="btn-grey" href="#" class="btn-small btn-grey "> {{number_format($p)}}
+                            {{__('layout.reserve.total')}}
+                        </a>
                         <a href="#modal1" class="btn-small left btn-dash modal-trigger">ویرایش تقویم</a>
 
                         <div class="col s12 more-bedroom-services">
@@ -390,16 +413,20 @@
 
                         <div class="col s12 more-bedroom-des">
 
-                            <span>در صورت کنسل‌کردن رزرو، بر‌اساس قوانین کنسلی هتل مبلغ پرداخت‌شده حداکثر تا 7 روز کاری به حساب کاربری شما باز‌می‌گردد.</span>
-
-
+                            <span>
+                                {{__('layout.reserve.in case of cancellation')}}
+                            </span>
                         </div>
 
 
-                        <div class="col s12 left" id="btn-green" style="text-align: left">
+                        <div class="col s12 left" id="btn-green">
 
 
-                            <a class="btn-green" href="#">مجموع {{ number_format($p) }} هزار تومان</a>
+                            <a class="btn-green" href="#">
+                                {{__('layout.reserve.total')}}
+                                {{ number_format($p) }}
+                                {{__('layout.reserve.tooman')}}
+                            </a>
 
                         </div>
 
@@ -410,14 +437,14 @@
                 <div class="row">
                     <div class="col s12">
                         <input type="button" href="#" value="تایید اطلاعات و رزرو"
-                               class="btn-small btn-red btn-submit left" id="btn-go-to-step-2">
+                               class="btn-small btn-red btn-submit" id="btn-go-to-step-2">
                     </div>
                 </div>
 
             </section>
 
 
-            <h3>بازبینی و پرداخت</h3>
+            <h3>{{__('layout.reserve.review and pay')}}</h3>
             <section style="padding: 0 !important;  width: 100%; display: block !important;">
 
 
@@ -453,7 +480,7 @@
                 <div class="row">
                     <div class="col l6 s12 rs-col">
                         <div class="center-on-small-only btn-bg">
-                            <span class="">شناسه رزرو شما</span>
+                            <span class="">{{__('layout.reserve.your reservation id')}}</span>
                             <a href="#" class="btn-small  btn-cream bc-2" id="reservation-code">51654615</a>
                         </div>
 
@@ -477,16 +504,16 @@
 
 
                             <div>
-                                <span class="center ss-title">هورا ! فقط یه گام دیگه تا رزرو اتاق</span>
+                                <span class="center ss-title">{{__('layout.reserve.just take another step')}}</span>
                             </div>
 
 
                             <div id="total-price" class="total-price center-on-small-only">
 
                                 <img class="responsive-img" src="{{asset('images/green-check.png')}}">
-                                <span id="btn-grey-2">مجموع:
+                                <span id="btn-grey-2">{{__('layout.reserve.total')}}:
                                     {{number_format($p)}}
-                                    ریال</span>
+                                    {{__('layout.reserve.tooman')}}</span>
 
                             </div>
 
@@ -502,8 +529,8 @@
 
                             <div class="sup-box hide-on-med-and-down">
 
-                                <span>پشتیبانی هتل</span>
-                                <a class="btn-green_2" href="#">تماس بگیرید</a>
+                                <span>{{__('layout.reserve.hotel support')}}</span>
+                                <a class="btn-green_2" href="#">{{__('layout.reserve.contact us')}}</a>
                             </div>
 
                         </div>
@@ -518,7 +545,7 @@
 
                     <div class="col s12 l12 center-on-small-only title-in-post">
 
-                        <h6>شیوه پرداخت</h6>
+                        <h6>{{__('layout.reserve.payment method')}}</h6>
 
                     </div>
 
@@ -532,7 +559,7 @@
                         <div class="pay-box-bg">
                             <div class="pay-box">
 
-                                <span>پرداخت اینترنتی</span>
+                                <span>{{__('layout.reserve.internet payment')}}</span>
 
                             </div>
 
@@ -541,7 +568,7 @@
 
                                 <label>
                                     <input name="group1" type="radio" checked/>
-                                    <span>از طریق بانک ملت</span>
+                                    <span>{{__('layout.reserve.through the mellat Bank')}}</span>
                                 </label>
 
                                 <div class="left img-bank-div  center-align">
@@ -556,7 +583,7 @@
 
                                 <label>
                                     <input name="group1" type="radio" checked/>
-                                    <span>از طریق بانک سامان</span>
+                                    <span>{{__('layout.reserve.through the saman Bank')}}</span>
                                 </label>
 
                                 <div class="left img-bank-div  center-align">
@@ -583,10 +610,11 @@
                             </div>
 
                             <div class="bank-div-p center-align ">
-                                <p>شما میتوانید مبلغ تعیین شده را از طریق کارت به کارت
-                            <br>
-                                    واریز نمایید و رسید را ارسال
-                                    کنید.</p>
+                                <p>
+                                    {{__('layout.reserve.you can set the amount by card to card')}}
+                                    <br>
+                                    {{__('layout.reserve.deposit and send the receipt do')}}
+                                </p>
 
                                 <br>
                             </div>
@@ -603,12 +631,13 @@
                     <div id="pay-box-bg2" class="col l4 s12 height110 pay-col3" hidden>
                         <div class="pay-box-bg">
                             <div class="pay-box">
-                                <span>پرداخت از طریق اعتبار</span>
+                                <span>{{__('layout.reserve.payment through credit')}}</span>
                             </div>
 
                             <div class="bank-div-p center-align">
-                                <p>شما میتوانید مبلغ تعیین شده را از اعتبار ریالی موجود در پروفایل کاربری خود استفاده
-                                    نمایید.</p>
+                                <p>
+                                    {{__('layout.reserve.you can use the assigned amount')}}
+                                </p>
                             </div>
 
                             <div class="bank-div bottom-class">
@@ -620,12 +649,8 @@
                 </div>
 
 
-                <div class="col s12 l12 center-on-small-only"
-                     style="border-right: solid #9d0808 7px; padding: 0 !important; height: 40px">
-
-
-                    <h6 style="line-height: 40px; margin: 0 30px 0 0 !important;">قوانین رزرو در ایام تعطیل</h6>
-
+                <div class="col s12 l12 center-on-small-only res-rules">
+                    <h6>{{__('layout.reserve.reservation rules on holidays')}}</h6>
                 </div>
 
 
@@ -633,12 +658,9 @@
 
                     <div class="col s12 row-rules-div">
 
-                        <p>هیچ فرد حقیقی و حقوقی نباید از محتویات هتل صبوری، شامل اطلاعات، عکس‌ها، شیوه سازماندهی و
-                            دسته‌بندی مطالب، نقشه‌ها، طرح‌ها، ایده‌ها، لوگو و... سوءاستفاده کند. در صورت سوءاستفاده هتل
-                            صبوری می‌تواند از طریق قانونی این مسئله را پیگیری کند. استفاده از مطالب هتب صبوری در اینترنت
-                            فقط با ذکر نام وآدرس اینترنتی وب‌سایت هتل صبوری و لینک به مطلب موردنظر مجاز است. همچنین برای
-                            استفاده از مطالب وب‌سایت در رسانه‌های چاپی دریافت اجازه کتبی از مسئولان وب‌سایت ضروری
-                            است.</p>
+                        <p>
+                            {{__('layout.reserve.no person or legal person')}}
+                        </p>
 
                     </div>
 
@@ -660,10 +682,13 @@
 
                             <div class=" col l11 s12">
 
-                                <h6 class="sup-title">پشتیبانی هتل سه ستاره صبوری</h6>
-                                <p style="display: inline-block">در صورت بروز هر گونه سوال یا وجود مشکل در روند پرداخت
-                                    یا عملکرد سایت با پشتیبانی ما ارتباط برقرار نمایید تا مشکل موجود رفع شود و شما همچون
-                                    روال رزرو به پرداخت خود ادامه دهید و مشکلی نباشد.</p>
+                                <h6 class="sup-title">{{__('layout.reserve.support for the 3-star hotel patio')}}</h6>
+
+
+                                <p style="display: inline-block">
+
+                                    {{__('layout.reserve.contact us if you have any questions')}}
+                                </p>
 
                             </div>
 
@@ -681,7 +706,7 @@
 
 
             </section>
-            <h3>دریافت واچر هتل</h3>
+            <h3>{{__('layout.reserve.get hotel voucher')}}</h3>
             <section style="padding: 0 !important; width: 100%; margin: 0 !important;">
 
 
@@ -689,7 +714,7 @@
 
                     <div class="col s12 pay-msg">
 
-                        <span>تبریک ، پرداخت شما با موفقیت صورت گرفت. لطفا واچر خود را پرینت نمایید.</span>
+                        <span>{{__('layout.reserve.your payment has been successfully completed')}}</span>
 
                     </div>
                     <div class="col l6 s12 right-s">
@@ -704,12 +729,13 @@
 
                             <div class="col l8 s12 desc-bg center-on-small-only">
 
-                                <h6>واچرز رزرو اتاق شما</h6>
-                                <p>برای مستقر شدن در اتاق خود نیاز به واچر پیگیری دارید که از این قسمت باید پرینت و نزد
-                                    خود گهداری نمایید.</p>
+                                <h6>{{__('layout.reserve.your room reservation voucher')}}</h6>
+                                <p>
+                                    {{__('layout.reserve.you need a witch to stay in your room')}}
+                                </p>
                                 <a href="{{route('home.voucher.print')}}" id="btn-print-voucher"
                                    class="btn-small btn-red btn-submit btn-print" target="_blank">
-                                    پرینت واچر هتل
+                                    {{__('layout.reserve.print hotel voucher')}}
 
                                 </a>
 
@@ -733,8 +759,10 @@
 
                             <div class="col l8 s12 desc-bg center-on-small-only">
 
-                                <h6>فاکتور پرداخت</h6>
-                                <p>فاکتور پرداخت دروازه بانکی با شناسه تراکش شما اکنون قابل دریافت میباشد.</p>
+                                <h6>{{__('layout.reserve.payment invoice')}}</h6>
+                                <p>
+                                    {{__('layout.reserve.the payment gateway payment invoice')}}
+                                </p>
                                 <input type="button" href="#" value="پرینت فاکتور پرداخت"
                                        class="btn-small btn-red btn-submit btn-print btn-unavailable">
 
@@ -749,10 +777,10 @@
                 </div>
 
 
-                <div class="col s12 l12 " style="border-right: solid #9d0808 7px; padding: 0 !important; height: 40px">
+                <div class="col s12 l12 res-rules">
 
 
-                    <h6 style="line-height: 40px; margin: 0 30px 0 0 !important;">چگونه پیگیری کنیم ؟</h6>
+                    <h6>{{__('layout.reserve.how to track')}}</h6>
 
                 </div>
 
@@ -761,12 +789,9 @@
 
                     <div class="col s12 row-rules-div">
 
-                        <p>هیچ فرد حقیقی و حقوقی نباید از محتویات هتل صبوری، شامل اطلاعات، عکس‌ها، شیوه سازماندهی و
-                            دسته‌بندی مطالب، نقشه‌ها، طرح‌ها، ایده‌ها، لوگو و... سوءاستفاده کند. در صورت سوءاستفاده هتل
-                            صبوری می‌تواند از طریق قانونی این مسئله را پیگیری کند. استفاده از مطالب هتب صبوری در اینترنت
-                            فقط با ذکر نام وآدرس اینترنتی وب‌سایت هتل صبوری و لینک به مطلب موردنظر مجاز است. همچنین برای
-                            استفاده از مطالب وب‌سایت در رسانه‌های چاپی دریافت اجازه کتبی از مسئولان وب‌سایت ضروری
-                            است.</p>
+                        <p>
+                            {{__('layout.reserve.no person or legal person')}}
+                        </p>
 
                     </div>
 
@@ -788,10 +813,12 @@
 
                             <div class=" col l11 s12">
 
-                                <h6 class="sup-title">پشتیبانی هتل سه ستاره صبوری</h6>
-                                <p style="display: inline-block">در صورت بروز هر گونه سوال یا وجود مشکل در روند پرداخت
-                                    یا عملکرد سایت با پشتیبانی ما ارتباط برقرار نمایید تا مشکل موجود رفع شود و شما همچون
-                                    روال رزرو به پرداخت خود ادامه دهید و مشکلی نباشد.</p>
+                                <h6 class="sup-title">
+                                    {{__('layout.reserve.support for the 3-star hotel patio')}}
+                                </h6>
+                                <p style="display: inline-block">
+                                    {{__('layout.reserve.in case of any questions or problems')}}
+                                </p>
 
                             </div>
 

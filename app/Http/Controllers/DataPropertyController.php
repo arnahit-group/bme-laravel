@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\DataProperty;
 use App\DataPropertyValue;
 use App\DataType;
-use App\Property;
+use App\Translation;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -26,11 +26,26 @@ class DataPropertyController extends Controller
     {
         $data = BaseController::createBaseInformations();
         DataPropertyController::getBaseInforamation($data);
-
+        $data ['data_type'] = $data_type;
 
         $bt_id = DataType::where('title', '=', $data_type)->first();
         $properties = DataProperty::where('data_type', '=', $bt_id->id)->get();
-        $data ['data_type'] = $data_type;
+
+        for ($i = 0; $i < count($properties); $i++) {
+
+            $trs = Translation::where('table', '=', 'data_properties')
+                ->where('field', '=', 'title')
+                ->where('record', '=', $properties[$i]->id)
+                ->get(['locale', 'value']);
+
+            $ts = [];
+            foreach ($trs as $tr) {
+                $ts[$tr->locale] = $tr->value;
+            }
+
+            $properties[$i]->locales = $ts;
+        }
+
         $data ['properties'] = $properties;
 
         $data ['widgets'] = WidgetController::getWidgets("data.property.index", 'data', $data_type);
@@ -67,7 +82,10 @@ class DataPropertyController extends Controller
 
         $bt_id = DataType::where('title', '=', $data_type)->first();
 
-        $title = $request->input('title');
+        $title_en = $request->input("title-en");
+        $title = str_replace(' ', '-', trim($title_en));
+
+        //        $title = $request->input('title');
         $default_value = $request->input('default_value');
         $input_type = $request->input('input_type');
         $level = $request->input('level');
@@ -81,6 +99,7 @@ class DataPropertyController extends Controller
         $dp->parent = 0;
         $dp->save();
 
+
         if ($request->input('values') != null) {
             $values = $request->input('values');
             foreach ($values as $value) {
@@ -93,10 +112,18 @@ class DataPropertyController extends Controller
             }
         }
 
+
         $translates = [];
+        $translates[] = [
+            'locale' => 'fa',
+            'table' => 'data_properties',
+            'field' => 'title',
+            'record' => $dp->id,
+            'value' => $request->input('title')
+        ];
+
         $locales = config('base.locales');
         foreach ($locales as $locale) {
-
             $title_loc = $request->input("title-{$locale}");
             $translates[] = [
                 'locale' => $locale,
@@ -107,15 +134,17 @@ class DataPropertyController extends Controller
             ];
         }
 
+
         DB::table('translations')->insert(
             $translates
         );
-
 
 //        return;
 
 
         return redirect()->route('data.properties.index', ['data_type' => $data_type]);
+
+
         //
     }
 
@@ -147,7 +176,35 @@ class DataPropertyController extends Controller
         $data['id'] = $id;
 
         $props = DataProperty::find($id);
+
+
+        $trs = Translation::where('table', '=', 'data_properties')
+            ->where('field', '=', 'title')
+            ->where('record', '=', $id)
+            ->get(['locale', 'value']);
+
+        $ts = [];
+        foreach ($trs as $tr) {
+            $ts[$tr->locale] = $tr->value;
+        }
+
+        $props->locales = $ts;
+
+        $vls = DB::table('data_property_values')
+            ->where('property', '=', $id)
+            ->get();
+
+
+        $values = [];
+        foreach ($vls as $vl) {
+            $values [] = $vl->value;
+
+        }
+
+        $props->values = $values;
+
         $data['property'] = $props;
+
 
 //        return $data;
         return view("data.property.edit", $data);
@@ -166,7 +223,10 @@ class DataPropertyController extends Controller
 
         $bt_id = DataType::where('title', '=', $data_type)->first();
 
-        $title = $request->input('title');
+        $title_en = $request->input("title-en");
+        $title = str_replace(' ', '-', trim($title_en));
+
+
         $default_value = $request->input('default_value');
         $input_type = $request->input('input_type');
         $level = $request->input('level');
@@ -180,10 +240,15 @@ class DataPropertyController extends Controller
         $dp->parent = 0;
         $dp->save();
 
+
         if ($request->input('values') != null) {
             $values = $request->input('values');
-            foreach ($values as $value) {
 
+            DB::table('data_property_values')
+                ->where('property', '=', $id)
+                ->delete();
+
+            foreach ($values as $value) {
                 $dpv = new DataPropertyValue();
                 $dpv->property = $dp->id;
                 $dpv->value = $value;
@@ -191,6 +256,41 @@ class DataPropertyController extends Controller
 
             }
         }
+
+
+        $translates = [];
+        $translates[] = [
+            'locale' => 'fa',
+            'table' => 'data_properties',
+            'field' => 'title',
+            'record' => $dp->id,
+            'value' => $request->input('title')
+        ];
+
+        $locales = config('base.locales');
+        foreach ($locales as $locale) {
+            $title_loc = $request->input("title-{$locale}");
+            $translates[] = [
+                'locale' => $locale,
+                'table' => 'data_properties',
+                'field' => 'title',
+                'record' => $dp->id,
+                'value' => $title_loc,
+            ];
+        }
+
+
+        DB::table('translations')
+            ->where('table', '=', 'data_properties')
+            ->where('field', '=', 'title')
+            ->where('record', '=', $id)
+            ->delete();
+
+
+        DB::table('translations')->insert(
+            $translates
+        );
+
 
         return redirect()->route('data.properties.index', ['data_type' => $data_type]);
 

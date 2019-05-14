@@ -74,7 +74,11 @@ Route::post('/service/{service_type}/store', 'ServiceController@store')->name('h
 
 
 Route::post('/communication/{communication_type}/send', 'CommunicationController@send')->name('home.service.store');
+
+
 Route::get('/user/{user_type}/enter', 'HomeController@showEnterPage')->name('home.user.enter');
+Route::get('/user/{user_type}/login', 'HomeController@showLoginPage')->name('home.user.login');
+Route::get('/user/{user_type}/register', 'HomeController@showRegisterPage')->name('home.user.register');
 
 
 Route::post('/documents/ajax/save', 'HomeController@saveMessage')->name('home.message.store');
@@ -82,7 +86,7 @@ Route::post('/documents/ajax/save', 'HomeController@saveMessage')->name('home.me
 Route::get('/documents/ajax/voucher/{code?}', 'HomeController@printVoucher')->name('home.voucher.print');
 
 
-Route::middleware('auth')->group(function () {
+Route::middleware('App\Http\Middleware\AdminMiddleware')->group(function () {
 
     Route::get('/admin', 'AdminController@index')->name('admin.index');
 
@@ -113,12 +117,22 @@ Route::middleware('auth')->group(function () {
     Route::post('/admin/ajax/data/properties/destroy', 'DataPropertyController@destroy_property')->name('data.properties.ajax.destroy');
 
 
+    Route::get('/admin/users/{user_type}/properties', 'UserPropertyController@index')->name('users.properties.index');
+    Route::get('/admin/users/{user_type}/properties/{id}', 'UserPropertyController@show')->name('users.properties.show')->where('id', '[0-9]+');
+    Route::get('/admin/users/{user_type}/properties/create', 'UserPropertyController@create')->name('users.properties.create');
+    Route::get('/admin/users/{user_type}/properties/{id}/edit', 'UserPropertyController@edit')->name('users.properties.edit');
+    Route::post('/admin/users/{user_type}/properties/store', 'UserPropertyController@store')->name('users.properties.store');
+    Route::post('/admin/users/{user_type}/properties/{id}/update', 'UserPropertyController@update')->name('users.properties.update');
+    Route::post('/admin/users/{user_type}/properties/{id}/destroy', 'UserPropertyController@destroy')->name('users.properties.destroy');
+    Route::post('/admin/ajax/users/properties/destroy', 'UserPropertyController@destroy_property')->name('users.properties.ajax.destroy');
+
+
     Route::get('/admin/users/{user_type}', 'UserController@index')->name('users.index');
     Route::get('/admin/users/{user_type}/{id}', 'UserController@show')->name('users.show')->where('id', '[0-9]+');
     Route::get('/admin/users/{user_type}/create', 'UserController@create')->name('users.create');
     Route::get('/admin/users/{user_type}/{id}/edit', 'UserController@edit')->name('users.edit');
     Route::post('/admin/users/{user_type}/store', 'UserController@store')->name('users.store');
-    Route::post('/admin/users/{user_type}/$id/update', 'UserController@update')->name('users.update');
+    Route::post('/admin/users/{user_type}/{id}/update', 'UserController@update')->name('users.update');
 
 
     Route::get('/admin/documents/{document_type}', 'DocumentController@index')->name('documents.index');

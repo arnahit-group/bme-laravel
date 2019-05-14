@@ -2,7 +2,7 @@
     <input id="txt-add-multi-text-{{$property->title}}" name="txt-add-multi-text-{{$property->title}}"
            type="{{$property->input_type}}">
 
-    <label for="{{$property->title}}">{{ __('messages.input_titles')[$property->title]}}</label>
+    <label for="{{$property->title}}">{{isset($property->locales[app()->getLocale()])?$property->locales[app()->getLocale()]:$property->title}}</label>
 </div>
 <div class="input-field col s12 m2">
     <button type="button" class="btn" id="btn-add-multi-text-{{$property->title}}">

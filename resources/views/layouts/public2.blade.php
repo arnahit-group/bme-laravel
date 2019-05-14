@@ -8,30 +8,60 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <link rel="stylesheet" href="{{asset('style/materialize.min.css')}}">
-        <link rel="stylesheet" href="{{asset('style/test.css')}}">
-        <link rel="stylesheet" href="{{asset('style/rtl.css')}}">
+
+        @if(in_array(app()->getLocale() , config('base.rtl_locales')) == true)
+            <link rel="stylesheet" href="{{asset('style/jquery.steps-rtl.css')}}">
+        @else
+            <link rel="stylesheet" href="{{asset('style/jquery.steps-ltr.css')}}">
+        @endif
+
+        @if(in_array(app()->getLocale() , config('base.rtl_locales')) == true)
+            <link rel="stylesheet" href="{{asset('style/rtl.css')}}">
+        @endif
+
+
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link rel="stylesheet" href="{{asset('style/jquery.slide.css')}}">
         <link rel="stylesheet" href="{{asset('style/lightslider.css')}}">
         <link href="{{asset('style/jquerysctipttop.css')}}" rel="stylesheet" type="text/css">
         <link rel="stylesheet" href="{{asset('style/pwt-datepicker.css')}}">
 
-        <link rel="stylesheet" href="{{asset('style/style.css')}}">
-        <link rel="stylesheet" href="{{asset('style/style_single.css')}}">
-        <link rel="stylesheet" href="{{asset('style/style_information.css')}}">
-        <link rel="stylesheet" href="{{asset('style/style_information_step2.css')}}">
-        <link rel="stylesheet" href="{{asset('style/style_information_step3.css')}}">
+
+        @if(in_array(app()->getLocale() , config('base.rtl_locales')) == true)
+            <link rel="stylesheet" href="{{asset('style/style-rtl.css')}}">
+            <link rel="stylesheet" href="{{asset('style/style_single-rtl.css')}}">
+        @else
+            <link rel="stylesheet" href="{{asset('style/style-ltr.css')}}">
+            <link rel="stylesheet" href="{{asset('style/style_single-ltr.css')}}">
+        @endif
+
+        @if(in_array(app()->getLocale() , config('base.rtl_locales')) == true)
+            <link rel="stylesheet" href="{{asset('style/style_information-rtl.css')}}">
+            <link rel="stylesheet" href="{{asset('style/style_information_step2-rtl.css')}}">
+            <link rel="stylesheet" href="{{asset('style/style_information_step3-rtl.css')}}">
+        @else
+            <link rel="stylesheet" href="{{asset('style/style_information-ltr.css')}}">
+            <link rel="stylesheet" href="{{asset('style/style_information_step2-ltr.css')}}">
+            <link rel="stylesheet" href="{{asset('style/style_information_step3-ltr.css')}}">
+        @endif
+
+
+
+
+
         <link rel="stylesheet" href="{{asset('style/modal.css')}}">
+
 
         <script type="text/javascript" src="{{asset('vendors/jquery-3.2.1.min.js')}}"></script>
         <script src="{{asset('scripts/lightslider.js')}}"></script>
         <script src="{{asset('scripts/jquery.simple.timer.js')}}"></script>
         <script src="{{asset('scripts/pwt-date.js')}}"></script>
         <script src="{{asset('scripts/pwt-datepicker.js')}}"></script>
-
-
         <script src="{{asset('scripts/jquery.steps.js')}}"></script>
         <script src="{{asset('scripts/jquery.countdown360.min.js')}}"></script>
+
+
+
 
         @yield('header')
 
@@ -50,20 +80,19 @@
                             src="{{asset('images/main_logo.png')}}"></a>
 
 
-                <div class="left hide-on-med-and-down">
+                <div class="mini-phone-left-side hide-on-med-and-down">
 
                     @foreach($data['mobile']->title as $t)
                         <span dir="ltr">{{$t}}</span>
                     @endforeach
                     <img class="icon10 responsive-img" src="{{asset('images/telephone.png')}}">
 
-
                 </div>
 
                 <div class="row flags hide-on-med-and-down">
 
-                    <a href="{{ url('locale/en') }} hidden"><img class=" responsive-img img-flag"
-                                                                 src="{{asset('images/united-kingdom.png')}}"></a>
+                    <a href="{{ url('locale/en') }}"><img class=" responsive-img img-flag"
+                                                          src="{{asset('images/united-kingdom.png')}}"></a>
                     <a href="{{ url('locale/ar') }}"><img class=" responsive-img img-flag"
                                                           src="{{asset('images/saudi-arabia.png')}}"></a>
                     <a href="{{ url('locale/fa') }}"><img class=" responsive-img img-flag"
@@ -109,19 +138,26 @@
                         {{__('layout.public.has been launched')}}
                     </span>
 
-                    <div class="left mini-menu-left-side ">
+                    <div class="mini-menu-left-side ">
 
-                        <a href="{{route('home.user.enter' , ['user_type'=>'customer'])}}">
-                            <span>{{__('layout.public.login or register')}}</span>
-                        </a>
-                        <img class="icon10 responsive-img"
-                             src="{{asset('images/login-square-arrow-button-outline.png')}}">
+                        @if(Auth::check() ==false)
+                            <a href="{{route('home.user.login' , ['user_type'=>'customer'])}}">
+                                <span>{{__('layout.public.login or register')}}</span>
+                            </a>
+                            <img class="icon10 responsive-img"
+                                 src="{{asset('images/login-square-arrow-button-outline.png')}}">
+                        @else
+                            <a href="{{route('logout')}}">
+                                <span>logout</span>
+                            </a>
+                            <img class="icon10 responsive-img"
+                                 src="{{asset('images/login-square-arrow-button-outline.png')}}">
+                        @endif
 
                         <a href="#">
                             <span class="track-booking-span">{{__('layout.public.check reservation')}}</span>
                         </a>
                         <img class="icon10 responsive-img" src="{{asset('images/verified.png')}}">
-
 
                     </div>
 

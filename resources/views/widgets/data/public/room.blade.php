@@ -22,11 +22,11 @@
                     <div class="col l6 m12 s12 center-on-small-only" style="padding-left: 10px !important;">
 
                         @if((isset($data->properties['available']) and $data->properties['available']->title ==1) and (isset($data->situation) and $data->situation=='free'))
-                            <a href="#modal1" class="btn-small btn-cream margin-top modal-trigger left" id="btn-res">
+                            <a href="#modal1" class="btn-small btn-cream margin-top modal-trigger" id="btn-res">
                                 {{__('layout.room.reserve it')}}
                             </a>
                         @else
-                            <a href="#" class="btn-small btn-cream margin-top modal-trigger left" id="btn-res">
+                            <a href="#" class="btn-small btn-cream margin-top modal-trigger" id="btn-res">
                                 {{__('layout.room.you cant reserve it right now')}}
                             </a>
 
@@ -59,7 +59,8 @@
 
                                             <select class="slct-night" name="count" required>
                                                 <option value="" disabled selected>
-                                                    {{__('layout.room.choose duration')}}                                                </option>
+                                                    {{__('layout.room.choose duration')}}
+                                                </option>
                                                 <option value="1">{{__('layout.room.1 night')}}</option>
                                                 <option value="2">{{__('layout.room.2 nights')}}</option>
                                                 <option value="3">{{__('layout.room.3 nights')}}</option>
@@ -146,18 +147,18 @@
 
 
                         <!--todo id btn-fav sakhte shod-->
-                        <a id="btn-fav" href="#" class="btn-small left btn-reserve ">
+                        <a id="btn-fav" href="#" class="btn-small btn-reserve ">
                             {{__('layout.room.add to favorites')}}
                         </a>
                         <!--todo bareye img yek id tarif shod-->
                         <img id="img-share" src="{{asset('images/share.png')}}"
-                             class="responsive-img left  img-share center-on-small-only">
+                             class="responsive-img img-share center-on-small-only">
                     </div>
 
 
                 </div>
                 <!--Image gallery-->
-                <div class="img-gallery left" id="image-gallery">
+                <div class="img-gallery" id="image-gallery">
                     <ul id="lightSlider">
                         @if(isset($data->properties['slide-images']) == true and isset($data->properties['slide-images']->slides)  )
                             @foreach( $data->properties['slide-images']->slides as $slide)
@@ -251,7 +252,7 @@
                                 @if($v->input_type == 'check')
                                     <div class="check-txt-img">
                                         <img class="responsive-img" src="{{asset('images/checked.png')}}">
-                                        <span>{{ __('messages.input_titles')[$k]}}</span>
+                                        <span>{{isset($v->locales[app()->getLocale()])?$v->locales[app()->getLocale()]:$v->title}}</span>
                                     </div>
                                 @endif
                             @endforeach
@@ -264,8 +265,8 @@
                                 @if($v->input_type=='text' and $v->level== 2)
 
                                     <li class="collection-item">
-                                        <div> {{ __('messages.input_titles')[$k]}} <span href="#!"
-                                                                                         class="secondary-content">{{ $v->title}}</span>
+                                        <div> {{isset($v->locales[app()->getLocale()])?$v->locales[app()->getLocale()]:$v->title}}
+                                            <span class="secondary-content">{{ $v->title}}</span>
                                         </div>
                                     </li>
                                 @endif
@@ -307,7 +308,7 @@
                     <div class="col l5 s5 height110">
                         {{--<a href="#" class="btn-small left btn-cream btn-reserve2">رزرو کنید</a>--}}
                         @if( isset($data->properties['price']) )
-                            <a href="#" class="btn-small left btn-red btn-price">
+                            <a href="#" class="btn-small btn-red btn-price">
                                 {{__('layout.room.per night price')}}
                                 {{number_format($data->properties['price']->prices[0])}}
                                 {{__('layout.room.tooman')}}

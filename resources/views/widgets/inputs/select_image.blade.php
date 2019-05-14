@@ -1,5 +1,5 @@
 <a class="waves-effect waves-light btn modal-trigger"
-   href="#modal1">{{ __('messages.input_titles')[$property->title]}}</a>
+   href="#modal1">{{isset($property->locales[app()->getLocale()])?$property->locales[app()->getLocale()]:$property->title}}</a>
 
 <!-- Modal Structure -->
 <div id="modal1" class="modal" style="width: 75% !important; padding: 10px; overflow-x: hidden; overflow-y: visible">

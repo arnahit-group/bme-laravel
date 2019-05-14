@@ -12,7 +12,7 @@
                 <span>در وارد کردن مشخصات دقت کنید، نام کاربری وارد شده در سیستم موجود نمی باشد.</span>
             </div>
 
-            <div class="col s12 red-msg">
+            <div class="col s12 red-msg" hidden>
                 <span>سایت در حال بروز رسانی میباشد.</span>
             </div>
 
@@ -26,29 +26,28 @@
                 {{csrf_field()}}
                 <!--todo space ghable place holder-->
 
-
                     @if ($errors->has('email'))
                         <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('email') }}</strong>
-                                    </span>
+                            <strong>
+                                {{ $errors->first('email') }}
+                            </strong>
+                        </span>
                     @endif
                     <input type="text" name="email" id="email" class="dp2 col l11 s12" placeholder="  آدرس ایمیل">
 
 
                     @if ($errors->has('password'))
                         <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('password') }}</strong>
-                                    </span>
+                            <strong>
+                                {{ $errors->first('password') }}
+                            </strong>
+                        </span>
                     @endif
-
                     <input type="password" name="password" id="password" class="dp2 col l11 s12"
                            placeholder="  رمز عبور">
 
-
                     <div class="col s12 btn-div left-align">
-
                         <input type="submit" value="ورود به سایت" class="btn-small btn-red btn-log  ">
-
                     </div>
 
                 </form>
@@ -62,11 +61,19 @@
             </div>
 
 
+
+
+
+
+
             <div id="right-side-content" class="col l6 s12  right-side-cn " style="padding: 15px !important;">
                 <h6 class="col s12 center-on-small-only">عضویت در سایت</h6>
                 <form method="post" action="{{ route('register')}}">
                     {{csrf_field()}}
                     <input type="hidden" name="user_type" value="2" id="user_type">
+
+
+
 
                     <!--todo space ghable place holder-->
                     @if ($errors->has('email'))
@@ -74,23 +81,30 @@
                                         <strong>{{ $errors->first('email')}}</strong>
                                     </span>
                     @endif
+
                     <input dir="ltr" type="text" id="email" name="email" class="dp2 col l11 s12"
                            placeholder=" آدرس ایمیل"
                            value="{{env('DEBUG_MODE') == 1? "k@ya.com"  : ""  }}">
 
+
                     @if ($errors->has('password'))
-                        <span class="invalid-feedback" role="alert">
+                        <p class="invalid-feedback" role="alert">
                                         <strong>{{ $errors->first('password')}}</strong>
-                                    </span>
+                                    </p>
                     @endif
+
                     <input dir="ltr" type="password" id="password" name="password" class="dp2 col l11 s12"
                            placeholder="  رمز عبور"
                            value="{{env('DEBUG_MODE') == 1? "1234"  : ""  }}">
 
+
+
+
+
                     <span class="invalid-feedback" role="alert" id="spn-password-confirmation" hidden>
                                         <strong>password not matched</strong>
                                     </span>
-                    <input dir="ltr" type="password" id="password-confirm" name="password_confirmation"
+                    <input dir="ltr" type="password" id="rg-password-confirm" name="rg-password_confirmation"
                            class="dp2 col l11 s12"
                            placeholder="  رمز عبور مجدد" value="{{env('DEBUG_MODE') == 1? "1234"  : ""  }}">
 

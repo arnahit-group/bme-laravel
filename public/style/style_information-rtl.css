@@ -51,7 +51,6 @@
 
 }
 
-
 .span-res {
 
     margin-top: 33px;
@@ -65,8 +64,6 @@
     padding-right: 30px !important;
     padding-left: 10px !important;
 
-
-
 }
 
 .content-right-side .special-service {
@@ -77,7 +74,6 @@
 }
 
 .content-left-side {
-
 
     padding-right: 10px !important;
     padding-left: 30px !important;
@@ -124,22 +120,18 @@
 
 .slct-kid {
 
-
     margin-top: 15px !important;
     padding-top: 40px !important;
 
 }
 
-.padding-option{
-
-
+.padding-option {
 
 }
 
+.padding-option ul {
 
-.padding-option ul{
-
-    padding-right:0 !important;
+    padding-right: 0 !important;
 
 }
 
@@ -225,6 +217,7 @@
 .span-date {
 
     line-height: 60px;
+
 
 }
 
@@ -357,7 +350,7 @@
 
 }
 
-.mini-footer{
+.mini-footer {
 
     width: 100%;
     background-color: #9d0808;
@@ -366,7 +359,7 @@
 
 }
 
-.mini-footer span{
+.mini-footer span {
 
     color: #fff;
     line-height: 65px;
@@ -374,13 +367,11 @@
 
 }
 
-.btn-submit{
+.btn-submit {
 
     font-family: iransans;
 
 }
-
-
 
 .post-single {
 
@@ -394,106 +385,130 @@
 
 }
 
+#btn-grey {
+    float: left;
+}
+
+#btn-green {
+    text-align: left !important;
+}
+
+#btn-go-to-step-2 {
+    float: left !important;
+}
+
+#btn-res2 {
+    float: left;
+}
+
+#spn-start-date{
+    float: left;
+}
+
+#spn-end-date{
+    float: left;
+}
+
+.txt-red-price {
+    float: left;
+}
+
+.res-rules{
+    border-right: solid #9d0808 7px;
+    padding: 0 !important;
+    height: 40px;
+}
+
+.res-rules. h6 {
+    line-height: 40px;
+    margin: 0 30px 0 0 !important;
+}
+
 /*todo tablet version*/
 
 @media screen and (max-width: 900px) {
 
-    #input-email , #input-phone , #input-name , #input-mobile  {
+    #input-email, #input-phone, #input-name, #input-mobile {
 
         margin-right: 25px !important;
 
-
-
-
     }
 
-    #input-beds{
+    #input-beds {
 
         margin: 0;
         padding: 0 30px !important;
 
-
     }
 
-    #radios-div{
+    #radios-div {
 
         text-align: center !important;
         margin: 0 auto !important;
 
-
     }
 
-    #rule-radio{
-
+    #rule-radio {
 
         margin-right: 10px;
 
     }
 
-    #input-kids{
-
+    #input-kids {
 
         margin: 0;
-        padding: 0 30px ;
-
+        padding: 0 30px;
 
     }
 
-    #right-side-content{
-
+    #right-side-content {
 
         padding: 0 !important;
         margin: 0 !important;
 
     }
 
-    #more-inf{
+    #more-inf {
 
         margin-bottom: 20px;
         margin-top: 140px !important;
 
-
     }
 
-    #left-side-content{
+    #left-side-content {
 
         padding-right: 10px !important;
         padding-left: 10px !important;
 
     }
 
-    #btn-green{
-
-
+    #btn-green {
 
         text-align: center !important;
         margin-bottom: 25px;
         margin-top: 25px;
 
-
-
     }
 
-    #btn-grey{
+    #btn-grey {
 
         margin-left: 22px;
-
+        float: left;
 
     }
 
-    #btn-res2{
+    #btn-res2 {
 
         display: block !important;
         float: none !important;
         text-align: center;
         width: 110px;
         margin: 30px auto 0 auto;
-
-
+        /*float: left;*/
 
     }
 
-    #span-res{
+    #span-res {
 
         display: block !important;
         width: 100%;
@@ -501,98 +516,86 @@
 
         margin-left: 0;
 
-
     }
 
-    #slct-kid{
+    #slct-kid {
 
         font-size: 8px !important;
 
     }
 
-
 }
-
 
 /*todo mobile version*/
 
 @media screen and (max-width: 600px) {
 
-    #input-email , #input-phone , #input-name , #input-mobile  {
+    #input-email, #input-phone, #input-name, #input-mobile {
 
         margin-right: 14px !important;
 
-
-
     }
 
-    #input-beds{
+    #input-beds {
 
-        margin: 0 25px 0 0!important;
+        margin: 0 25px 0 0 !important;
         padding: 0 !important;
 
-
     }
 
-    #input-kids{
+    #input-kids {
 
         margin: 0 14px 0 0 !important;
-        padding: 0 ;
+        padding: 0;
     }
 
-    #right-side-content{
+    #right-side-content {
 
         padding-right: 0 !important;
 
     }
 
-    #more-inf{
+    #more-inf {
 
         margin-bottom: 20px;
         margin-top: 10px !important;
 
-
     }
 
-    #left-side-content{
+    #left-side-content {
 
         padding-right: 10px !important;
         padding-left: 10px !important;
 
     }
 
-    #btn-green{
-
-
+    #btn-green {
 
         text-align: center !important;
         margin-bottom: 25px;
         margin-top: 25px;
 
-
-
     }
 
-    #btn-grey{
+    #btn-grey {
 
         margin-left: 22px;
-
+        float: left;
 
     }
 
-    #btn-res2{
+    #btn-res2 {
 
         display: block !important;
         float: none !important;
         text-align: center;
         width: 110px;
         margin: 30px auto 0 auto;
-
-
+        /*float: left;*/
 
     }
 
-    #span-res{
+    #span-res {
 
         display: block !important;
         width: 100%;
@@ -600,22 +603,19 @@
 
         margin-left: 0;
 
-
     }
 
-    #slct-kid{
+    #slct-kid {
 
         font-size: 8px !important;
 
     }
 
-    #rule-radio{
-
+    #rule-radio {
 
         margin-right: 0;
 
     }
-
 
 }
 

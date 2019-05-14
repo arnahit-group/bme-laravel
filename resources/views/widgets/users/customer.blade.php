@@ -19,6 +19,14 @@
 
 
             </p>
+
+
+            <div class="card-action">
+                <a href="#">View Activities</a>
+                <a href="{{route('users.edit',['user_type'=>$user_type , 'id'=>$data->id])}}">Edit</a>
+            </div>
+
         </div>
     </div>
+
 </div>

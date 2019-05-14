@@ -72,6 +72,8 @@ return [
         'navigation' => 'Navigation',
         'room properties' => 'Room Properties',
         'hotel properties' => 'Room Properties',
+        'user properties' => 'User Properties',
+        'customer properties' => 'Customer Properties',
         'offer' => 'Offers',
         'website settings' => 'Website Settings',
         'hotel settings' => 'Hotel Settings',

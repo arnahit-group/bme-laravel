@@ -3,13 +3,25 @@
 @section("header")
 
     <link rel="stylesheet" href="{{asset('style/lightslider.css')}}">
-    <link rel="stylesheet" href="{{asset('style/style_single.css')}}">
+
+
+    @if(in_array(app()->getLocale() , config('base.rtl_locales')) == true)
+        <link rel="stylesheet" href="{{asset('style/style_single-rtl.css')}}">
+    @else
+        <link rel="stylesheet" href="{{asset('style/style_single-ltr.css')}}">
+    @endif
+
     <!--<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>-->
     <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.52.0/mapbox-gl.js'></script>
     <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.52.0/mapbox-gl.css' rel='stylesheet'/>
 
+
     <link href="{{asset('style/jquerysctipttop.css')}}" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="{{asset('style/pwt-datepicker.css')}}">
+
+
+
+
     <link rel="stylesheet" href="{{asset('style/style_archive.css')}}">
 
 
@@ -304,8 +316,6 @@
             $(".datePicker").persianDatepicker(options);
             dp = $(".datePicker").data("datepicker");
         });
-
-
 
 
     </script>

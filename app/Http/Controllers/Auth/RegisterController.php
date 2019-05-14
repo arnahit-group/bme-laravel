@@ -6,9 +6,7 @@ use App\Http\Controllers\Controller;
 use App\User;
 use App\UserProperty;
 use DB;
-use Illuminate\Auth\Events\Registered;
 use Illuminate\Foundation\Auth\RegistersUsers;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 
@@ -32,7 +30,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/';
+    protected $redirectTo = '/home';
 
     /**
      * Create a new controller instance.
@@ -52,6 +50,13 @@ class RegisterController extends Controller
      */
     protected function validator(array $data)
     {
+//        $data['email'] = $data['rg-email'];
+//        unset($data['rg-email']);
+
+
+//        $data['password'] = $data['rg-password'];
+//        unset($data['rg-password']);
+
         return Validator::make($data, [
 //            'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],

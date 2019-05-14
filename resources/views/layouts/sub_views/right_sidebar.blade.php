@@ -45,7 +45,7 @@
             <ul class="collapsible">
                 @foreach($navigations as $navigation)
                     @if(isset($navigation->properties->key) and  isset($navigation->properties->value) )
-                        <li >
+                        <li>
                             <a href="{{route($navigation->properties->route, [$navigation->properties->key=>$navigation->properties->value])}}">
                                 <i class="material-icons">dashboard</i>
                                 <span class="nav-text">{{__('messages.navigation_titles')[$navigation->properties->title] }}</span>
@@ -60,6 +60,19 @@
                         </li>
                     @endif
                 @endforeach
+
+                <li>
+                    <a href="#">
+                        <span class="nav-text"></span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <span class="nav-text"></span>
+                    </a>
+                </li>
+
             </ul>
         </li>
     </ul>

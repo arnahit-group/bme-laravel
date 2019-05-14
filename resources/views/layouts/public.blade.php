@@ -8,10 +8,27 @@
         <meta name="_token" content="{{csrf_token()}}"/>
 
         <link rel="stylesheet" href="{{asset('style/materialize.min.css')}}">
-        <link rel="stylesheet" href="{{asset('style/rtl.css')}}">
+
+
+        @if(in_array(app()->getLocale() , config('base.rtl_locales')) == true)
+            <link rel="stylesheet" href="{{asset('style/rtl.css')}}">
+        @endif
+
+
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+
         <link rel="stylesheet" href="{{asset('style/jquery.slide.css')}}">
-        <link rel="stylesheet" href="{{asset('style/style.css')}}">
+
+
+        @if(in_array(app()->getLocale() , config('base.rtl_locales')) == true)
+            <link rel="stylesheet" href="{{asset('style/style-rtl.css')}}">
+        @else
+            <link rel="stylesheet" href="{{asset('style/style-ltr.css')}}">
+        @endif
+
+
+
 
         @yield('header')
 
@@ -27,26 +44,26 @@
                 </a>
 
 
-                <div class="left hide-on-med-and-down">
+                <div class="mini-phone-left-side hide-on-med-and-down">
 
                     @foreach($data['mobile']->title as $t)
                         <span dir="ltr">{{$t}}</span>
                     @endforeach
+
                     <img class="icon10 responsive-img" src="{{asset('images/telephone.png')}}">
                 </div>
 
                 <div class="row flags hide-on-med-and-down">
 
-                    <a href="{{ url('locale/en') }} " hidden><img class=" responsive-img img-flag"
-                                                                  src="{{asset('images/united-kingdom.png')}}"></a>
+                    <a href="{{ url('locale/en') }}"><img class=" responsive-img img-flag"
+                                                          src="{{asset('images/united-kingdom.png')}}"></a>
                     <a href="{{ url('locale/ar') }}"><img class=" responsive-img img-flag"
                                                           src="{{asset('images/saudi-arabia.png')}}"></a>
                     <a href="{{ url('locale/fa') }}"><img class=" responsive-img img-flag"
                                                           src="{{asset('images/iran.png')}}"></a>
 
 
-
-{{--                    <p>{{$locale1}}</p>--}}
+                    {{--                    <p>{{$locale1}}</p>--}}
 
                 </div>
 
@@ -102,14 +119,23 @@
                         {{__('layout.public.has been launched')}}
                     </span>
 
-                    <div class="left mini-menu-left-side ">
+                    <div class="mini-menu-left-side ">
+
+                        @if(Auth::check() ==false)
+                            <a href="{{route('home.user.login' , ['user_type'=>'customer'])}}">
+                                <span>{{__('layout.public.login or register')}}</span>
+                            </a>
+                            <img class="icon10 responsive-img"
+                                 src="{{asset('images/login-square-arrow-button-outline.png')}}">
+                        @else
+                            <a href="{{route('logout')}}">
+                                <span>logout</span>
+                            </a>
+                            <img class="icon10 responsive-img"
+                                 src="{{asset('images/login-square-arrow-button-outline.png')}}">
+                        @endif
 
 
-                        <a href="{{route('home.user.enter' , ['user_type'=>'customer'])}}">
-                            <span>{{__('layout.public.login or register')}}</span>
-                        </a>
-                        <img class="icon10 responsive-img"
-                             src="{{asset('images/login-square-arrow-button-outline.png')}}">
                         <a href="#">
                             <span class="track-booking-span">
                                 {{__('layout.public.check reservation')}}
@@ -337,10 +363,10 @@
                                 {{__('layout.public.we are ready to serve you')}}
                             </span>
 
-                            <img class="left" src="{{asset('images/telephone_num.png')}}">
+                            <img src="{{asset('images/telephone_num.png')}}">
 
                             @foreach($data['phone']->title as $t)
-                                <span class="left" dir="ltr">{{$t}}</span>
+                                <span dir="ltr">{{$t}}</span>
                             @endforeach
                         </div>
 
@@ -348,9 +374,10 @@
                             {{__('layout.public.hotel online reservation system is very safe online system')}}
                         </p>
 
-                        <input type="text" placeholder="{{__('layout.public.check reservation ...')}}" class="col s10">
+                        <input type="text" placeholder="{{__('layout.public.check reservation place holder')}}"
+                               class="col s10">
 
-                        <button class="col l2 btn-send left btn waves-effect waves-light" type="submit" name="action">
+                        <button class="col l2 btn-send btn waves-effect waves-light" type="submit" name="action">
                             <i class="material-icons right">send</i>
                         </button>
 

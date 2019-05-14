@@ -9,5 +9,5 @@
                type="number">
 
     @endif
-    <label for="{{$property->title}}">{{ __('messages.input_titles')[$property->title]}}</label>
+    <label for="{{$property->title}}">{{isset($property->locales[app()->getLocale()])?$property->locales[app()->getLocale()]:$property->title}}</label>
 </div>

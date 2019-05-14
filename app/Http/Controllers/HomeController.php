@@ -192,6 +192,9 @@ class HomeController extends Controller
 
 
 //        return $data;
+
+//        app()->setLocale('en');
+
         return view('public.index2', $data);
     }
 
@@ -251,9 +254,54 @@ class HomeController extends Controller
 
         $data ['widgets'] = WidgetController::getWidgets2("public.user", 'user', $user_type, Route::currentRouteName());
         return view("public.user", $data);
-
-
     }
+
+
+    public function showLoginPage($user_type)
+    {
+        $data = BaseController::createBaseInformations();
+        HomeController::getBaseInforamation($data);
+
+        $data['navigations'] = NavigationController::getNavigation('public');
+        $cc = User::where('user_type', '=', 2)->count();
+        $data['customer_count'] = $cc;
+        $data ['user_type'] = $user_type;
+
+        $bt_id = DataType::where('title', '=', 'application')->first();
+        $bt_id = Data::where('data_type', '=', $bt_id->id)->first();
+        $data['application'] = DataController::getDataProperties($bt_id->id);
+
+        $bt_id = DataType::where('title', '=', 'hotel')->first();
+        $data['data'] = DataController::getDataProperties($bt_id->id);
+
+
+        $data ['widgets'] = WidgetController::getWidgets2("public.user", 'user', $user_type, Route::currentRouteName());
+        return view("public.user", $data);
+    }
+
+    public function showRegisterPage($user_type)
+    {
+        $data = BaseController::createBaseInformations();
+        HomeController::getBaseInforamation($data);
+
+        $data['navigations'] = NavigationController::getNavigation('public');
+        $cc = User::where('user_type', '=', 2)->count();
+        $data['customer_count'] = $cc;
+        $data ['user_type'] = $user_type;
+
+        $bt_id = DataType::where('title', '=', 'application')->first();
+        $bt_id = Data::where('data_type', '=', $bt_id->id)->first();
+        $data['application'] = DataController::getDataProperties($bt_id->id);
+
+        $bt_id = DataType::where('title', '=', 'hotel')->first();
+        $data['data'] = DataController::getDataProperties($bt_id->id);
+
+
+        $data ['widgets'] = WidgetController::getWidgets2("public.user", 'user', $user_type, Route::currentRouteName());
+        return view("public.user", $data);
+    }
+
+
 
     public function showService($service_type = null, Request $request)
     {
@@ -899,6 +947,10 @@ class HomeController extends Controller
 
         $data ['widgets'] = WidgetController::getWidgets2("public.data", 'data', $data_type, Route::currentRouteName());
 //        return $data;
+
+
+//        App::setLocale('en');
+
         return view("public.data", $data);
     }
 

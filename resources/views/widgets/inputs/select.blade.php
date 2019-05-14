@@ -9,5 +9,5 @@
             @endforeach
         @endif
     </select>
-    <label>{{ __('messages.input_titles')[$property->title]}}</label>
+    <label>{{isset($property->locales[app()->getLocale()])?$property->locales[app()->getLocale()]:$property->title}}</label>
 </div>

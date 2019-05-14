@@ -8,7 +8,7 @@
                type="{{$property->input_type}}">
 
     @endif
-    <label for="{{$property->title}}">{{ __('messages.input_titles')[$property->title]}}</label>
+    <label for="{{$property->title}}">{{isset($property->locales[app()->getLocale()])?$property->locales[app()->getLocale()]:$property->title}}</label>
 </div>
 <div class="input-field col s12 m12">
     <button type="button" class="btn-flat red-text" id="add-locale-{{$property->title}}"
@@ -29,7 +29,7 @@
                        @php($s= 'assigned-'. $locale)
                        @if(isset($property->{$s}) )
                        @php($t =$property->{$s} )
-                            value="{{$t}}"
+                       value="{{$t}}"
                        @endif
 
                        type="{{$property->input_type}}">

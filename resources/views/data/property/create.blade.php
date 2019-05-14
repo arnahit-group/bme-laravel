@@ -30,20 +30,18 @@
 
                                     <div class="input-field col s12">
                                         <input id="title" name="title"
-                                               type="text">
+                                               type="text" required>
                                         <label for="title">{{ __('messages.input_titles')['title']}}</label>
                                     </div>
 
                                     <div class="input-field col s12 m12">
                                         <button type="button" class="btn-flat red-text"
-                                                id="add-locale-title"
-                                                onclick="$('#container-locale-title').slideToggle()">
+                                                id="add-locale-title">
                                             {{ __('messages.operations')['add locale']}}
                                         </button>
                                     </div>
 
-                                    <div class="input-field col s12 m12" id="container-locale-title"
-                                         hidden>
+                                    <div class="input-field col s12 m12" id="container-locale-title">
                                         @foreach($locales as $locale)
                                             <div class="row">
                                                 <div class="input-field col s12 m2">
@@ -52,7 +50,7 @@
                                                     <input id="title-{{$locale}}"
                                                            name="title-{{$locale}}"
                                                            value=""
-                                                           type="text">
+                                                           type="text" required>
                                                     <label for="title-{{$locale}}">{{__('messages.languages')[$locale]}}</label>
                                                 </div>
                                             </div>
@@ -60,23 +58,22 @@
                                     </div>
 
                                     <div class="input-field col s12 m12">
-                                        <select id="input_type" name="input_type">
+                                        <select id="input_type" name="input_type" required>
                                             <option value="" disabled
                                                     selected>{{ __('messages.input_titles')['input_type']}}</option>
                                             <option value="text">text</option>
                                             <option value="select">select</option>
                                             <option value="check">check</option>
+                                            <option value="multi_upload">multi_upload</option>
+                                            <option value="array_date"> array_date</option>
+                                            <option value="multi-relation-document-images">
+                                                multi-relation-document-images
+                                            </option>
+                                            <option value="single-relation-price"> single-relation-price</option>
+                                            <option value="multi-text"> multi-text</option>
                                         </select>
-                                        <label>{{ __('messages.input_titles')['input_type']}}</label>
+                                        <label for="input_type">{{ __('messages.input_titles')['input_type']}}</label>
                                     </div>
-
-
-                                    <div class="input-field col s12">
-                                        <input id="default_value" name="default_value"
-                                               type="text">
-                                        <label for="title">{{ __('messages.input_titles')['default_value']}}</label>
-                                    </div>
-
 
                                     <div class="row" id="values_container" style="display: none">
 
@@ -109,16 +106,22 @@
                                         </div>
                                     </div>
 
+                                    <div class="input-field col s12">
+                                        <input id="default_value" name="default_value"
+                                               type="text">
+                                        <label for="title">{{ __('messages.input_titles')['default_value']}}</label>
+                                    </div>
+
 
                                     <div class="input-field col s12 m12">
-                                        <select id="level" name="level">
+                                        <select id="level" name="level" required>
                                             <option value="" disabled
                                                     selected>{{ __('messages.input_titles')['level']}}</option>
                                             <option value="1">level 1</option>
                                             <option value="2">level 2</option>
                                             <option value="3">level 3</option>
                                         </select>
-                                        <label>{{ __('messages.input_titles')['level']}}</label>
+                                        <label for="level">{{ __('messages.input_titles')['level']}}</label>
                                     </div>
 
 

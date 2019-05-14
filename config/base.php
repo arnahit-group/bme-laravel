@@ -68,4 +68,14 @@ return [
         'ar'
     ],
 
+
+    'rtl_locales' => [
+        'ar',
+        'dv',
+        'he',
+        'fa',
+        'ur',
+        'ku',
+    ],
+
 ];

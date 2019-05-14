@@ -8,6 +8,7 @@ use App\DataPropertyValue;
 use App\DataType;
 use App\Relation;
 use App\RelationProperty;
+use App\Translation;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use stdClass;
@@ -31,22 +32,8 @@ class DataController extends Controller
     public static function getDataProperties($data_id)
     {
 
-//        echo 'data_id:' . $data_id;
-//        echo "<br>";
-
-//        echo app()->getLocale();
-
         $base_locale = DataController::getPropertyValue('website', 'base_locale');
         $use_translates = $base_locale != app()->getLocale() ? true : false;
-
-
-//        echo app()->getLocale();
-//        echo "<br>";
-//        echo $base_locale;
-//        echo "<br>";
-//        echo $use_translates;
-//        echo "<br>";
-
 
         $ds = DB::table('data_assigned_properties')
             ->where('data_assigned_properties.data', '=', $data_id)
@@ -61,14 +48,12 @@ class DataController extends Controller
             )
             ->get();
 
-//        echo $ds;
-
         $props = [];
 
         foreach ($ds as $d) {
 
-
             $cds = new stdClass();
+
             if ($use_translates == true) {
 
                 if ($d->input_type == 'multi-text') {
@@ -246,17 +231,29 @@ class DataController extends Controller
 
             }
 
+            // data property title translation
+            $trs = Translation::where('table', '=', 'data_properties')
+                ->where('field', '=', 'title')
+                ->where('record', '=', $d->did)
+                ->get(['locale', 'value']);
+
+            $ts = [];
+            foreach ($trs as $tr) {
+                $ts[$tr->locale] = $tr->value;
+            }
+            $cds->locales = $ts;
+
 
             $cds->input_type = $d->input_type;
             $cds->level = $d->level;
 
             $props[$d->title] = $cds;
 
+
         }
 
         return $props;
     }
-
 
     public static function getItems($data_type)
     {
@@ -345,12 +342,6 @@ class DataController extends Controller
 
         return $objects[0]->value;
     }
-
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
 
     public static function saveProperties(Request $request, $data_type, $data_id)
     {
@@ -501,8 +492,6 @@ class DataController extends Controller
                     }
 
 
-
-
                 } else {
 
                     $to_add_arr = [
@@ -589,6 +578,18 @@ class DataController extends Controller
             if (count($values) > 0)
                 $properties[$i]->values = $values;
 
+            $trs = Translation::where('table', '=', 'data_properties')
+                ->where('field', '=', 'title')
+                ->where('record', '=', $properties[$i]->id)
+                ->get(['locale', 'value']);
+
+            $ts = [];
+            foreach ($trs as $tr) {
+                $ts[$tr->locale] = $tr->value;
+            }
+
+            $properties[$i]->locales = $ts;
+
         }
 
         return $properties;
@@ -674,12 +675,9 @@ class DataController extends Controller
                     $ds = [];
 
 
-
                     foreach ($dpsvs as $dpsv) {
                         $ds[] = $dpsv->value;
                     }
-
-
 
 
                     $properties[$i]->assigned = $ds;
@@ -697,7 +695,7 @@ class DataController extends Controller
                                     ->get(['locale', 'value']);
 
                                 foreach ($trs as $tr) {
-                                    $k = 'assigned-'.$tr->locale;
+                                    $k = 'assigned-' . $tr->locale;
                                     $properties[$i]->{$k} = $tr->value;
                                 }
                             }
@@ -710,9 +708,11 @@ class DataController extends Controller
             $objects[0]->properties = $properties;
         } else {
 
+
             for ($i = 0; $i < count($objects); $i++) {
                 $objects[$i]->properties = DataController::getDataProperties($objects[$i]->id);
             }
+
         }
 
         $data ['datas'] = $objects;
@@ -775,7 +775,6 @@ class DataController extends Controller
         $data['data_type'] = $data_type;
         $data['properties'] = DataController::getProperties($data_type);
         $data['id'] = $id;
-
 
         return view("translation.create", $data);
 
@@ -949,7 +948,7 @@ class DataController extends Controller
 
                             foreach ($trs as $tr) {
 
-                                $k = 'assigned-'.$tr->locale;
+                                $k = 'assigned-' . $tr->locale;
                                 $properties[$i]->{$k} = $tr->value;
                             }
                         }
@@ -982,7 +981,6 @@ class DataController extends Controller
     public function update(Request $request, $data_type, $id)
     {
         $bt_id = DataType::where('title', '=', $data_type)->first();
-
         DB::table('data_assigned_properties')
             ->where('data', '=', $id)
             ->delete();

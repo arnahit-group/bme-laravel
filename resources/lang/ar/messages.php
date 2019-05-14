@@ -72,6 +72,8 @@ return [
         'navigation' => 'التنقل',
         'room properties' => 'خصائص الغرفة',
         'hotel properties' => 'خصائص الفندق',
+        'user properties' => 'خصائص الکابر',
+        'customer properties' => 'خصائص المشتری',
         'offer' => 'عروض',
         'website settings' => 'إعدادات الموقع',
         'hotel settings' => 'إعدادات الفندق',

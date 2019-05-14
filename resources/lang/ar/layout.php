@@ -11,7 +11,7 @@ return [
         'check reservation' => 'تتبع الحجز',
         'we are ready to serve you' => 'نحن مسؤولون',
         'hotel online reservation system is very safe online system' => 'نظام الحجز الخاص هو فندق مرموق ، الموقع الآمن متاح للحجز على صبر الفندق.',
-        'check reservation ...' => 'رمز تتبع الحجز الخاص بك ...',
+        'check reservation place holder' => 'رمز تتبع الحجز الخاص بك ...',
         'All right reserved to Hotel Sabouri' => 'جميع الحقوق محفوظة في فندق سورابايا ذو الـ 3 نجوم.',
 
     ],
@@ -68,6 +68,60 @@ return [
         'enjoy to see hotel pictures' => 'استمتع بصور الفندق الرائعة من فئة 3 نجوم',
 
     ],
+
+
+
+
+
+
+    'reserve' => [
+        'fill information' => 'ملء المعلومات',
+        'reservatore information' => 'معلومات الحجز',
+        'reserve it' => 'حجزها',
+        'important notes' => 'ملاحظات هامة',
+        'check mobile phone' => 'تحقق الهاتف المحمول للحصول على معلومات الاحتياطي',
+        'additional details' => 'تفاصيل اضافية',
+        'important notice' => 'ملاحظة هامة',
+        'for children over 6 years of age' => 'للأطفال الذين تزيد أعمارهم عن 6 سنوات ، يجب استخدام سرير إضافي.',
+        'choose the child age' => 'اختر عمر الطفل',
+        'choose the number of beds' => 'اختيار عدد الأسرة',
+        'do you travel for work' => 'هل تسافر للعمل',
+        'i have read and accept the rules' => 'لقد قرأت وقبلت القواعد',
+        'more information' => 'معلومات اكثر',
+        'entry date' => 'موعد الدخول',
+        'date of departure' => 'موعد المغادرة',
+        'tooman' => 'تومان',
+        'total' => 'مجموع',
+        'in case of cancellation' => 'في حالة إلغاء الحجز بناءً على إلغاء الفندق ، سيتم رد الدفعة إلى حسابك على الأكثر حتى يوم العمل.',
+        'review and pay' => 'مراجعة ودفع',
+        'your reservation id' => 'معرف الحجز الخاص بك',
+        'just take another step' => 'الصيحة! فقط قم بخطوة أخرى لحجز الغرفة',
+        'hotel support' => 'دعم الفندق',
+        'contact us' => 'اتصل بنا',
+        'payment method' => 'طريقة الدفع او السداد',
+        'internet payment' => 'الدفع عبر الإنترنت',
+        'through the mellat Bank' => 'من خلال بنك ملات',
+        'through the saman Bank' => 'من خلال بنك سامان',
+        'you can set the amount by card to card' => 'يمكنك ضبط المبلغ عن طريق البطاقة على البطاقة',
+        'deposit and send the receipt do' => 'إيداع وإرسال إيصال القيام به.',
+        'payment through credit' => 'الدفع عن طريق الائتمان',
+        'you can use the assigned amount' => 'يمكنك استخدام المبلغ المخصص لائتمان الريال في ملف تعريف حسابك',
+        'reservation rules on holidays' => 'قواعد الحجز في أيام العطلات',
+        'no person or legal person' => 'يجب ألا يسيء أي شخص أو شخص اعتباري محتويات خدمة الضيافة ، بما في ذلك المعلومات ، والصور ، وتنظيم وتصنيف المحتوى والرسومات والخطط والأفكار والشعارات و .... في حالة سوء استخدام الفندق ، يمكن للصبر متابعة هذه المشكلة بشكل قانوني. يُسمح باستخدام محتوى الصبر على الإنترنت فقط عن طريق تسمية موقع الويب الخاص بالفندق وتوجيهه ومجاملة للموقع. من الضروري أيضًا الحصول على إذن كتابي من مسؤولي الموقع لاستخدام محتوى الموقع في الوسائط المطبوعة.',
+        'support for the 3-star hotel patio' => 'دعم لفناء فندق 3 نجوم',
+        'contact us if you have any questions' => 'اتصل بنا إذا كانت لديك أي أسئلة أو كانت هناك مشكلة في عملية الدفع أو أداء الموقع. لحل المشكلة والاستمرار في الدفع كما تفعل في إجراء الحجز ، ولا توجد مشكلة.',
+        'get hotel voucher' => 'الحصول على قسيمة الفندق',
+        'your payment has been successfully completed' => 'تهانينا ، لقد تم إكمال دفعتك بنجاح. يرجى طباعة الخواض الخاص بك.',
+        'your room reservation voucher' => 'قسيمة حجز الغرفة الخاصة بك',
+        'print hotel voucher' => 'طباعة قسيمة الفندق',
+        'you need a witch to stay in your room' => 'تحتاج إلى ساحرة للبقاء في غرفتك. من هذا القسم ، تحتاج إلى الطباعة إلى نفسك.',
+        'payment invoice' => 'فاتورة الدفع',
+        'the payment gateway payment invoice' => 'أصبحت فاتورة سداد بوابة الدفع بمعرف معاملتك متاحة الآن.',
+        'how to track' => 'كيف تتبع؟',
+        'in case of any questions or problems' => 'في حال وجود أي أسئلة أو مشاكل مع عملية الدفع أو تشغيل الموقع مع دعمنا لحل المشكلة وتريد أن تستمر في تقديم طلب دفع وليس هناك مشكلة.',
+
+    ],
+
 
 
 ];
