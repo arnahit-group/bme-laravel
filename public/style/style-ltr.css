@@ -458,6 +458,21 @@
 
 }
 
+.reservation-div h5 {
+
+    text-align: center;
+    position: absolute;
+    top: 110px;
+    width: 100%;
+    font-weight: bold;
+    color: #ff1d2c;
+    font-size: 12px;
+    left: 0;
+
+}
+
+
+
 .reservation-btn {
 
     text-align: center;
@@ -829,4 +844,35 @@ float: right;
 
     }
 
+}
+.marker-green {
+    background-image: url('../images/marker_green.png');
+    background-size: cover;
+    width: 50px;
+    height: 50px;
+    /*border-radius: 50%;*/
+    cursor: pointer;
+}
+.marker-pink {
+    background-image: url('../images/marker_pink_right.png');
+    background-size: cover;
+    width: 50px;
+    height: 50px;
+    /*border-radius: 50%;*/
+    cursor: pointer;
+}
+
+
+.mapboxgl-popup {
+    max-width: 200px;
+}
+
+.mapboxgl-popup-content {
+    text-align: center;
+    font-family: irsans;
+}
+
+a.disabled {
+    pointer-events: none;
+    cursor: default;
 }

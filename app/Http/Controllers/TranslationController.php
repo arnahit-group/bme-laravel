@@ -14,27 +14,52 @@ class TranslationController extends Controller
      * @return \Illuminate\Http\Response
      */
 
+    public static function getTranslationsForTable($table, $field, $records = null, $normalize = false)
+    {
+        $trs = null;
+        if (is_null($records)) {
+            $trs = Translation::where('table', '=', $table)
+                ->where('field', '=', $field)
+                ->orderBy('record', 'asc')
+                ->get(['locale', 'record', 'value']);
+        } elseif (is_array($records)) {
+            $trs = Translation::where('table', '=', $table)
+                ->where('field', '=', $field)
+                ->whereIn('record', $records)
+                ->orderBy('record', 'asc')
+                ->get(['locale', 'record', 'value']);
+        } else {
+            $trs = Translation::where('table', '=', $table)
+                ->where('field', '=', $field)
+                ->where('record', $records)
+                ->orderBy('record', 'asc')
+                ->get(['locale', 'record', 'value']);
+        }
+
+
+        if (is_null($trs))
+            return null;
+
+
+        if (!$normalize)
+            return $trs;
+
+
+        $translates = [];
+
+        foreach ($trs as $tr) {
+//            echo $tr->record;
+//            echo "<br>";
+            $translates[$tr->record][$tr->locale] = $tr->value;
+        }
+
+        return $translates;
+
+    }
+
+
     public static function getTranslatedForCell($locale, $table, $field, $record)
     {
-
-//        echo "<br>";
-//        echo "<br>";
-//        echo "<br>";
-//        echo "start";
-//        echo "<br>";
-//
-//        echo $locale;
-//        echo "<br>";
-//        echo $table;
-//        echo "<br>";
-//        echo $field;
-//        echo "<br>";
-//        echo $record;
-//        echo "<br>";
-//        echo "end";
-//        echo "<br>";
-//        echo "<br>";
-//        echo "<br>";
 
         $obj = Translation::where('locale', '=', $locale)
             ->where('table', '=', $table)
@@ -45,9 +70,6 @@ class TranslationController extends Controller
 
         if (count($obj) == 0)
             return null;
-
-//        echo $obj[0]->value;
-//        echo "<br>";
 
         return $obj[0]->value;
 

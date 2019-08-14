@@ -45,7 +45,7 @@ class RegisterController extends Controller
     /**
      * Get a validator for an incoming registration request.
      *
-     * @param  array $data
+     * @param array $data
      * @return \Illuminate\Contracts\Validation\Validator
      */
     protected function validator(array $data)
@@ -69,7 +69,7 @@ class RegisterController extends Controller
 //        return "test";
 
         $data = [];
-        $users = UserProperty::where('user_type', '=', 2)->get();
+        $users = UserProperty::where('type', '=', 2)->get();
         $data ['users'] = $users;
 //        return $data;
         return view('auth.register', $data);
@@ -91,7 +91,7 @@ class RegisterController extends Controller
     /**
      * Create a new user instance after a valid registration.
      *
-     * @param  array $data
+     * @param array $data
      * @return \App\User
      */
     protected function create(array $data)
@@ -100,14 +100,20 @@ class RegisterController extends Controller
 //        dd($data);
 //        return;
 
-        $user = User::create([
-//            'name' => $data['name'],
-            'user_type' => 2,
-            'email' => $data['email'],
-            'password' => Hash::make($data['password']),
-        ]);
+        $user = new User();
+        $user->type = 2;
+        $user->email = $data['email'];
+        $user->password = Hash::make($data['password']);
+        $user->save();
 
-        $properties = UserProperty::where('user_type', '=', 2)->get();
+//        $user = User::create([
+//            'type' => '2',
+//            'email' => $data['email'],
+//            'password' => Hash::make($data['password']),
+//        ]);
+
+
+        $properties = UserProperty::where('type', '=', 2)->get();
 
         foreach ($data as $key => $value) {
             foreach ($properties as $property) {

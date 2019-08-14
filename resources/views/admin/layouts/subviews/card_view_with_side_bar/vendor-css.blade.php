@@ -1,0 +1,1 @@
+<link href="{{asset('app-assets/vendors/noUiSlider/nouislider.min.css')}}" rel="stylesheet" type="text/css">

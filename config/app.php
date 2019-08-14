@@ -179,6 +179,10 @@ return [
 //        Barryvdh\DomPDF\ServiceProvider::class,
 //        niklasravnsborg\LaravelPdf\PdfServiceProvider::class,
 
+
+        Spatie\Permission\PermissionServiceProvider::class,
+        Jenssegers\Agent\AgentServiceProvider::class,
+        Larabookir\Gateway\GatewayServiceProvider::class, // <-- add this line at the end of provider array
     ],
 
     /*
@@ -231,7 +235,9 @@ return [
         'jDate' => Morilog\Jalali\Facades\jDate::class,
 //        'PDF' => Barryvdh\DomPDF\Facade::class,
 //        'PDF' => niklasravnsborg\LaravelPdf\Facades\Pdf::class,
+        'Agent' => Jenssegers\Agent\Facades\Agent::class,
 
+        'Gateway' => \Larabookir\Gateway\Gateway::class, // <-- add this line at the end of aliases array
     ],
 
 ];

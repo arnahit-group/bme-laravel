@@ -7,6 +7,26 @@ use Illuminate\Http\Request;
 
 class RelationPropertyController extends Controller
 {
+
+    public static function createValidationRules($type_id, $is_setting = false)
+    {
+        $props = RelationProperty::where('type', '=', $type_id)->where('is_setting', '=', $is_setting == true ? 1 : 0)->get();
+        return PropertyController::createValidationRules($props);
+    }
+
+    public static function getPermissions($type)
+    {
+        $permissions = [];
+        $permissions['create'] = "relations.properties.create" . ":" . $type;
+        $permissions['store'] = "relations.properties.store" . ":" . $type;
+        $permissions['update'] = "relations.properties.update" . ":" . $type;
+        $permissions['edit'] = "relations.properties.edit" . ":" . $type;
+        $permissions['destroy'] = "relations.properties.destroy" . ":" . $type;
+
+        return $permissions;
+
+    }
+
     /**
      * Display a listing of the resource.
      *

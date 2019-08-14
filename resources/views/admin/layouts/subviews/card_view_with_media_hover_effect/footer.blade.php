@@ -1,0 +1,1 @@
+<script src="{{asset('app-assets/js/scripts/media-hover-effects.js')}}" type="text/javascript"></script>

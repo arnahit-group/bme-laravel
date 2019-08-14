@@ -2,11 +2,15 @@
 
 namespace App\Http\Controllers;
 
-use App\Service;
-use App\ServiceType;
+use DateTime;
 
 class AdminController extends Controller
 {
+
+    function __construct()
+    {
+//        $this->middleware(['auth', 'authAdmin']);
+    }
 
 
     public function index()
@@ -19,39 +23,28 @@ class AdminController extends Controller
 
         $data['customer_count'] = UserController::getUserCount(config('base.user_types.customer'));
         $data['user_count'] = UserController::getUserCount(config('base.user_types.user'));
-        $data['gallery_count'] = DocumentController::getDocumentsCount(config('base.document_types.gallery'));
+//        $data['gallery_count'] = DocumentController::getDocumentsCount(config('base.document_types.gallery'));
+
 
         $d = ServiceController::getServices('reserve');
         $data = array_merge($data, $d);
-
-//        $bt_id = ServiceType::where('title', '=', 'reserve')->first();
-//        $objects = Service::where('service_type', '=', $bt_id->id)->get();
-//        $waiting_reserves = [];
-//        $all_reserves = [];
-//        $verified_reserves = [];
-//        for ($i = 0; $i < count($objects); $i++) {
-//            $objects[$i]->properties = ServiceController::getServiceProperties($objects[$i]->id);
-//            $all_reserves [] = $objects[$i];
-//            if (isset($objects[$i]->properties['situation']) && ($objects[$i]->properties['situation']->title == 1 || $objects[$i]->properties['situation']->title == 3)) {
-//                $waiting_reserves[] = $objects[$i];
-//            } else {
-//                $verified_reserves[] = $objects[$i];
-//            }
-//        }
-//
-//
-//        $data['verified_reserves'] = $verified_reserves;
-//        $data['waiting_reserves'] = $waiting_reserves;
-//        $data['all_reserves'] = $all_reserves;
 
         $data['users'] = UserController::get('user');
         $data['customers'] = UserController::get('customer');
         $data['rooms'] = DataController::getItems('room');
 
 
-//        return $data['rooms'];
+        $d = date('d');
+        $m = date('m');
+        $y = date('Y');
 
-//        return;
+        $gr_st_date = new DateTime("$m/$d/$y");
+        $today_timestamp = round($gr_st_date->getTimestamp() * 1000, 0);
+
+
+        $data['today'] =  $d . "-" . $m . ' - ' . $y;
+
+//        return $data;
         return view('admin.index', $data);
     }
 

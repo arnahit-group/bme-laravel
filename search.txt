@@ -1,0 +1,30 @@
+="../../../(.*)"
+="{{asset('$1')}}"
+
+
+
+
+<img class="responsive-img left" id = 'jxlzwlaofukzwlaojzpeoeuk' style = 'cursor:pointer' onclick = 'window.open("https://logo.samandehi.ir/Verify.aspx?id=146478&p=rfthaodsgvkaaodsjyoemcsi", "Popup","toolbar=no, scrollbars=no, location=no, statusbar=no, menubar=no, resizable=0, width=450, height=630, top=30")' alt = 'logo-samandehi' src = 'https://logo.samandehi.ir/logo.aspx?id=146478&p=nbpdshwlwlbqshwlyndtaqgw' />
+
+<img class="responsive-img left" src="https://trustseal.enamad.ir/logo.aspx?id=123600&amp;p=QGD1iXxIbp7BR99k" alt="" onclick="window.open(&quot;https://trustseal.enamad.ir/Verify.aspx?id=123600&amp;p=QGD1iXxIbp7BR99k&quot;, &quot;Popup&quot;,&quot;toolbar=no, location=no, statusbar=no, menubar=no, scrollbars=1, resizable=0, width=580, height=600, top=30&quot;)" style="cursor:pointer" id="QGD1iXxIbp7BR99k">
+
+<img class="responsive-img left" id = 'jxlzwlaofukzwlaojzpeoeuk' style = 'cursor:pointer' onclick = 'window.open("https://logo.samandehi.ir/Verify.aspx?id=146478&p=rfthaodsgvkaaodsjyoemcsi", "Popup","toolbar=no, scrollbars=no, location=no, statusbar=no, menubar=no, resizable=0, width=450, height=630, top=30")' alt = 'logo-samandehi' src = 'https://logo.samandehi.ir/logo.aspx?id=146478&p=nbpdshwlwlbqshwlyndtaqgw' />
+
+ <img class="responsive-img left" src="https://trustseal.enamad.ir/logo.aspx?id=123600&amp;p=QGD1iXxIbp7BR99k" alt="" onclick="window.open(&quot;https://trustseal.enamad.ir/Verify.aspx?id=123600&amp;p=QGD1iXxIbp7BR99k&quot;, &quot;Popup&quot;,&quot;toolbar=no, location=no, statusbar=no, menubar=no, scrollbars=1, resizable=0, width=580, height=600, top=30&quot;)" style="cursor:pointer" id="QGD1iXxIbp7BR99k">
+
+
+
+<script type="text/javascript">!function(){function t(){var t=document.createElement("script");t.type="text/javascript",t.async=!0,localStorage.getItem("rayToken")?t.src="https://app.raychat.io/scripts/js/"+o+"?rid="+localStorage.getItem("rayToken")+"&href="+window.location.href:t.src="https://app.raychat.io/scripts/js/"+o;var e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(t,e)}var e=document,a=window,o="629d6450-a954-425f-966f-9699993b5304";"complete"==e.readyState?t():a.attachEvent?a.attachEvent("onload",t):a.addEventListener("load",t,!1)}();</script>
+
+
+
+
+<script type="text/javascript">var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();(function () {var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];s1.async = true;s1.src = 'https://embed.tawk.to/5cea6742a667a0210d597b7b/default';s1.charset = 'UTF-8';s1.setAttribute('crossorigin', '*');s0.parentNode.insertBefore(s1, s0);})();</script>
+
+
+aJYxrW99Lc7wjLkxcarq63sMbg/C4l8xrjqgaayMJLY=
+
+
+
+
+_token=AyfU7u06xru8dJlbLf22o9TR3AZzIjhgBvwoiZNV&title=%D8%B3%D9%88%DB%8C%DB%8C%D8%AA%2065%20%D9%85%D8%AA%D8%B1%D9%8A%204%20%D9%86%D9%81%D8%B1%D9%87%20%D9%86%D9%88%D8%B9%20B&title-en=65%20meter%20four-person%20suite%20type%20B&title-ar=%D8%AC%D9%86%D8%A7%D8%AD%2065%20%D9%85%D8%AA%D8%B1%20%D9%85%D9%86%20%D8%A3%D8%B1%D8%A8%D8%B9%D8%A9%20%D8%A3%D8%B4%D8%AE%D8%A7%D8%B5%20%D9%85%D9%86%20%D8%A7%D9%84%D9%86%D9%88%D8%B9%20B&floor=%D8%A7%D9%88%D9%84&description=%DA%86%D9%87%D8%A7%D8%B1%20%D8%AA%D8%AE%D8%AA%20%D8%AB%D8%A7%D8%A8%D8%AA%20%D9%88%20%DB%8C%DA%A9%20%D8%B3%D8%B1%D9%88%DB%8C%D8%B3%20%D8%AE%D9%88%D8%A7%D8%A8%20%D8%A7%D8%B8%D8%A7%D9%81%20(%DA%A9%D8%A7%D9%86%D8%A7%D9%BE%D9%87%20%D8%AF%D9%88%20%D9%86%D9%81%D8%B1%D9%87%20)-(%D8%B3%D9%87%20%D8%B3%DB%8C%D9%86%DA%AF%D9%84%20-%DB%8C%DA%A9%20%D8%AF%D8%A8%D9%84%20)&description-en=&description-ar=&available=1&slide-images%5B%5D=http%3A%2F%2Flocalhost%2Fonline-hotel%2Fpublic%2Fuploads%2Froom-013.jpg&slide-images%5B%5D=http%3A%2F%2Flocalhost%2Fonline-hotel%2Fpublic%2Fuploads%2Froom-015.jpg&slide-images%5B%5D=http%3A%2F%2Flocalhost%2Fonline-hotel%2Fpublic%2Fuploads%2Froom-016.jpg&slide-images%5B%5D=http%3A%2F%2Flocalhost%2Fonline-hotel%2Fpublic%2Fuploads%2Froom-007.jpg&slide-images%5B%5D=http%3A%2F%2Flocalhost%2Fonline-hotel%2Fpublic%2Fuploads%2Froom-009.jpg&price=397200&content=%3Cp%3E%D9%84%D9%84%D9%84%D9%84%D9%84%3C%2Fp%3E&content-en=%3Cp%3E%3Cbr%20data-mce-bogus%3D%221%22%3E%3C%2Fp%3E&content-ar=%3Cp%3E%3Cbr%20data-mce-bogus%3D%221%22%3E%3C%2Fp%3E&internet=1&parking=1

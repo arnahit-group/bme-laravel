@@ -1,0 +1,674 @@
+
+#main {
+    padding-left: initial;
+    padding-right: 0;
+}
+
+#main.main-full {
+    padding-left: initial !important;
+    padding-right: 0 !important;
+}
+
+#main .content-wrapper-before {
+    left: initial;
+    right: 0;
+}
+
+
+footer {
+    padding-left: initial;
+    padding-right: 0;
+}
+
+.container .dropdown-settings i.right {
+    margin-left: initial;
+    margin-right: 0;
+}
+
+@media only screen and (min-width: 993px) {
+    #main {
+        padding-left: initial;
+        padding-right: 260px;
+    }
+
+    #main.main-full {
+        padding-left: initial;
+        padding-right: 64px;
+    }
+
+    footer {
+        padding-left: initial;
+        padding-right: 260px;
+    }
+}
+
+.text-shadow {
+    text-shadow: 1px 2px 4px black;
+}
+
+ul.list-type-bullet {
+    padding-left: initial;
+    padding-right: 40px;
+}
+
+.avatar-status i {
+    right: initial;
+    left: -2px;
+}
+
+.avatar-status.avatar-50 i {
+    right: initial;
+    left: -1px;
+}
+
+.avatar-status.avatar-lg i {
+    right: initial;
+    left: 0;
+}
+
+.avatar-status.avatar-md i {
+    right: initial;
+    left: 0;
+}
+
+.dropdown-content li > a > i {
+    margin: 0 0 0 12px;
+}
+
+.material-icons {
+    direction: rtl;
+}
+
+.navbar .header-search-wrapper {
+    margin: 10px 285px 0 auto !important;
+    /*margin: 10px auto 0 285px;*/
+}
+
+.navbar .header-search-wrapper i {
+    left: initial;
+    right: 24px;
+}
+
+.navbar .nav-collapsed .header-search-wrapper {
+    margin: 10px 100px 0 auto;
+}
+
+.navbar input.header-search-input {
+    padding: 8px 72px 8px 8px;
+}
+
+.navbar .notification-badge {
+    right: initial;
+    left: 5px;
+}
+
+.navbar #notifications-dropdown li > a > span {
+    margin-right: initial;
+    margin-left: 5px;
+}
+
+.navbar #notifications-dropdown li > time {
+    margin-left: initial;
+    margin-right: 38px;
+}
+
+
+.sidenav.right-aligned {
+    left: 0;
+    transform: translateX(-105%);
+    right: auto;
+    transform: translateX(-100%);
+}
+
+/*.side-nav.left-aligned {*/
+/*left: 0 !important;*/
+/*transform: translateX(105%);*/
+/*right: initial;*/
+/*transform: translateX(100%);*/
+/*}*/
+
+/*.sidenav.right-aligned{*/
+/*left: 0 !important;*/
+/*}*/
+
+/*.slide-out-right-sidenav{*/
+/*left: 0 !important;*/
+/*}*/
+
+/*.rightside-navigation {*/
+/*left: 0 !important;*/
+/*right: initial;*/
+/*}*/
+
+/*.sidenav.right-aligned {*/
+/*left: 0 !important;*/
+/*right: initial;*/
+/*}*/
+
+/*.test {*/
+/*left: 0 !important;*/
+/*right: initial !important;*/
+/*}*/
+
+@media only screen and (max-width: 600px) {
+    .navbar .nav-wrapper .dropdown-content {
+        left: initial !important;
+        right: 0 !important;
+    }
+}
+
+.brand-sidebar {
+    left: initial;
+    right: 0;
+}
+
+.brand-sidebar .logo-wrapper a.navbar-toggler {
+    right: initial;
+    left: 22px;
+}
+
+.brand-sidebar span.logo-text {
+    padding-left: initial;
+    padding-right: 8px;
+}
+
+.brand-sidebar .brand-logo.center {
+    left: initial;
+    right: 50%;
+}
+
+@media only screen and (max-width: 992px) {
+    .brand-sidebar .brand-logo {
+        left: initial;
+        right: 50%;
+    }
+
+    .brand-sidebar .brand-logo.left {
+        left: initial;
+        right: .5rem;
+    }
+
+    .brand-sidebar .brand-logo.right {
+        left: .5rem;
+        right: auto;
+    }
+}
+
+.brand-sidebar .brand-logo.right {
+    right: initial;
+    left: .5rem;
+}
+
+.brand-sidebar .brand-logo i,
+.brand-sidebar .brand-logo [class^='mdi-'],
+.brand-sidebar .brand-logo [class*='mdi-'],
+.brand-sidebar .brand-logo i.material-icons {
+    float: right;
+    margin-right: initial;
+    margin-left: 15px;
+}
+
+.sidenav.sidenav-fixed {
+    right: 0;
+    left: initial;
+    transform: none;
+    padding-right: 0;
+}
+
+.collapsible {
+    padding-right: 0;
+}
+
+.sidenav li a i {
+    float: right;
+    margin-right: initial;
+    margin-left: 1rem;
+}
+
+.sidenav .collapsible-header:after {
+    right: initial;
+    left: 16px;
+    transform: scaleX(-1);
+}
+
+.sidenav li > a > i.material-icons,
+.sidenav li a.collapsible-header > i.material-icons {
+    margin: 0 0 0 20px;
+}
+
+.nav-collapsible span.badge.pill {
+    right: initial;
+    left: 10px;
+}
+
+.sidenav-active-rounded .sidenav li > a.active {
+    border-radius: 25px 0 0 25px;
+}
+
+.sidenav-active-rounded .sidenav li:not(.active) > a:hover {
+    margin-right: initial;
+    margin-left: 16px;
+    border-radius: 25px 0 0 25px;
+}
+
+.sidenav-active-rounded .sidenav li > a,
+.sidenav-active-rounded .sidenav li a.collapsible-header {
+    margin-right: initial;
+    margin-left: 16px;
+    padding: 0 16px 0 0 !important;
+}
+
+.sidenav-active-rounded .sidenav .collapsible-header:after {
+    right: initial;
+    left: 9px;
+}
+
+.sidenav-active-rounded.nav-collapsed li > a,
+.sidenav-active-rounded.nav-collapsed li a.collapsible-header {
+    margin-right: initial;
+    margin-left: 10px;
+}
+
+.sidenav-active-square .sidenav li > a.active {
+    border-radius: 5px 0 0 5px;
+}
+
+.sidenav-active-square .sidenav li:not(.active) > a:hover {
+    margin-right: initial;
+    margin-left: 16px;
+    border-radius: 5px 0 0 5px;
+}
+
+.sidenav-active-square .sidenav li > a,
+.sidenav-active-square .sidenav li a.collapsible-header {
+    margin-right: initial;
+    margin-left: 16px;
+    padding: 0 16px 0 0 !important;
+}
+
+.sidenav-active-square .sidenav .collapsible-header:after {
+    right: initial;
+    left: 9px;
+}
+
+.sidenav-active-square.nav-collapsed li > a,
+.sidenav-active-square.nav-collapsed li a.collapsible-header {
+    margin-right: initial;
+    margin-left: 10px;
+}
+
+@media only screen and (max-width: 992px) {
+
+    .sidenav-main .brand-sidebar {
+        left: initial;
+        right: 80px;
+    }
+
+    .sidenav-main .btn-sidenav-toggle {
+        left: initial;
+        right: 10px;
+    }
+
+}
+
+@media only screen and (max-width: 600px) {
+    .sidenav-main .btn-sidenav-toggle {
+        left: initial;
+        right: 6px;
+    }
+}
+
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+
+    .sidenav li.active > .collapsible-header:after {
+        right: initial;
+        left: 0;
+    }
+}
+
+#slide-out-right.sidenav #messages .header-search-input {
+    padding-left: initial;
+    padding-right: 1rem;
+}
+
+#slide-out-right.sidenav #messages .collection ul.collection li .user-content {
+    margin-left: initial;
+    margin-right: 1rem;
+}
+
+.chat-close-collapse {
+    padding: 5px 0 0 15px;
+}
+
+#activity .collection::before {
+    left: initial;
+    right: 4%;
+
+    margin-left: initial;
+    margin-right: -1px;
+}
+
+#activity .collection-item::before {
+    left: initial;
+    right: 1.6%;
+}
+
+#activity .collection .collection-item {
+    padding-left: initial;
+    padding-right: 2rem;
+}
+
+#slide-out-chat .chat-footer input {
+    margin-left: initial;
+    margin-right: -2rem;
+    padding-left: initial;
+    padding-right: 1rem;
+}
+
+#slide-out-chat .chat-footer label {
+    margin-left: initial;
+    margin-right: 2rem;
+}
+
+#slide-out-chat .speech-bubble {
+    margin-left: initial;
+    margin-right: 1rem;
+}
+
+#slide-out-chat .speech-bubble:after {
+    left: initial;
+    right: -9px;
+    border-right-color: transparent;
+    border-left-color: #eceff1;
+    border-left: initial;
+    border-right: 0;
+}
+
+#slide-out-chat .speech-bubble-right {
+    margin-left: initial;
+    margin-right: 1rem;
+}
+
+#slide-out-chat .speech-bubble-right:after {
+    right: initial;
+    left: 0;
+    margin-right: initial;
+    margin-left: -8px;
+
+    border-right: initial;
+    border-left: 0;
+    border-left-color: transparent;
+    border-right-color: #3f51b5;
+}
+
+#breadcrumbs-wrapper .breadcrumbs > li + li::before {
+    padding: 0 4px 0 5px;
+}
+
+#breadcrumbs-wrapper.breadcrumbs-inline .breadcrumbs-title {
+    padding-right: initial;
+    padding-left: 20px;
+    border-right: 1px none #bdbdbd;
+    border-left: 1px solid #bdbdbd;
+}
+
+#breadcrumbs-wrapper.breadcrumbs-inline .breadcrumbs {
+    padding-left: initial;
+    padding-right: 20px;
+}
+
+#breadcrumbs-wrapper .breadcrumbs-right .breadcrumbs {
+    float: left;
+}
+
+.input-field div.error {
+    left: initial;
+    right: 0rem;
+}
+
+.left-alert input[type=text] + label:after,
+.left-alert input[type=password] + label:after,
+.left-alert input[type=email] + label:after,
+.left-alert input[type=url] + label:after,
+.left-alert input[type=time] + label:after,
+.left-alert input[type=date] + label:after,
+.left-alert input[type=datetime-local] + label:after,
+.left-alert input[type=tel] + label:after,
+.left-alert input[type=number] + label:after,
+.left-alert input[type=search] + label:after,
+.left-alert textarea.materialize-textarea + label:after {
+    left: 70px;
+}
+
+.right-alert input[type=text] + label:after,
+.right-alert input[type=password] + label:after,
+.right-alert input[type=email] + label:after,
+.right-alert input[type=url] + label:after,
+.right-alert input[type=time] + label:after,
+.right-alert input[type=date] + label:after,
+.right-alert input[type=datetime-local] + label:after,
+.right-alert input[type=tel] + label:after,
+.right-alert input[type=number] + label:after,
+.right-alert input[type=search] + label:after,
+.right-alert textarea.materialize-textarea + label:after {
+    right: 0;
+}
+
+.card-alert .alert-circle {
+    left: initial;
+    right: -2px;
+}
+
+.card-alert button {
+    right: initial;
+    left: 10px;
+}
+
+.card-alert .card .card-content {
+    padding: 20px 20px 20px 40px;
+}
+
+#flight-card .flight-state-two {
+    border-left: 1px none #bdbdbd;
+    border-right: 1px dashed #bdbdbd;
+}
+
+#task-card .task-add {
+    right: initial;
+    left: 10px;
+}
+
+#task-card .task-cat {
+    margin-left: initial;
+    margin-right: 37px;
+}
+
+#profile-card .btn-move-up {
+    right: initial;
+    left: -18px;
+    margin-right: initial !important;
+    margin-left: 10px !important;
+}
+
+#profile-card .card-content .profile-card-i {
+    margin-right: initial;
+    margin-left: 10px;
+}
+
+@media screen and (min-width: 1290px) {
+    .icon-background {
+        margin-left: 1.25rem;
+        margin-right: 2rem;
+    }
+}
+
+@media screen and (max-width: 1366px) {
+    .icon-background {
+        margin-left: initial;
+        margin-right: 1.25rem;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    .icon-background {
+        margin-left: initial;
+        margin-right: 2rem;
+    }
+}
+
+@media screen and (min-width: 1680px) {
+    .icon-background {
+        margin-left: initial;
+        margin-right: 2.6875rem;
+    }
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1365px) {
+    .icon-background {
+        margin-left: initial;
+        margin-right: .25rem;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .icon-background {
+        margin-left: initial;
+        margin-right: 1.875rem;
+    }
+}
+
+@media screen and (max-width: 786px) {
+    .icon-background {
+        margin-left: initial;
+        margin-right: .9375rem;
+    }
+}
+
+@media screen and (max-width: 540px) {
+    .icon-background {
+        margin-left: initial;
+        margin-right: .625rem;
+    }
+}
+
+.chart-revenue {
+    float: left;
+}
+
+.chart-revenue-switch {
+    padding-right: initial;
+    padding-left: 10px;
+}
+
+.doughnut-chart-status {
+    left: initial;
+    right: 0;
+}
+
+.doughnut-chart-legend li:before {
+    float: right;
+    margin-right: initial;
+    margin-left: 4px;
+}
+
+a.button-collapse.top-nav {
+    left: initial;
+    right: 7.5%;
+    margin-left: initial;
+    margin-right: 1.5rem;
+}
+
+.btn-move-up {
+    right: initial;
+    left: -18px;
+    margin-right: initial !important;
+    margin-left: 10px !important;
+}
+
+.socialbox .logo {
+    left: initial;
+    right: 20px;
+}
+
+.socialbox .info {
+    right: initial;
+    left: 20px;
+}
+
+.browser-window .circle {
+    margin-right: initial;
+    margin-left: 1px;
+}
+
+.theme-cutomizer .sidenav-close {
+    right: initial;
+    left: 10px;
+}
+
+.theme-cutomizer .menu-options .menu-color-option,
+.theme-cutomizer .menu-options .menu-bg-color-option,
+.theme-cutomizer .menu-options .navbar-color-option,
+.theme-cutomizer .navbar-options .menu-color-option,
+.theme-cutomizer .navbar-options .menu-bg-color-option,
+.theme-cutomizer .navbar-options .navbar-color-option {
+    margin-right: initial;
+    margin-left: 8px;
+}
+
+.btn-buy-now {
+    right: initial;
+    left: -2px;
+}
+
+.theme-cutomizer-trigger {
+    right: initial;
+    left: -2px;
+}
+
+.flipX
+{
+    transform: scaleX(-1);
+}
+
+
+.navbar-list{
+    float: left !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

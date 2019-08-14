@@ -12,10 +12,35 @@ use stdClass;
 class RelationController extends Controller
 {
 
-    public static function getBaseInforamation(&$data)
+    public static function getBaseInforamation(&$data,$type)
     {
-        $data['navigations'] = NavigationController::getNavigation('admin');
+        $navs = NavigationController::getNavigation('admin');
+
+        for ($i = 0; $i < count($navs); $i++) {
+            if (in_array($navs[$i]->properties->route, config('base.routes.relations.items'))
+                && $navs[$i]->properties->value == $type) {
+                $navs[$i]->active = true;
+            } else {
+                $navs[$i]->active = false;
+            }
+        }
+
+        $data['navigations'] = $navs;
+
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -23,7 +48,7 @@ class RelationController extends Controller
     {
         $relation = new Relation();
         $relation->title = 'insert ' . $relation_type;
-        $relation->relation_type = '1';
+        $relation->type = '1';
         $relation->save();
 
         foreach ($rels as $rel) {
@@ -44,13 +69,13 @@ class RelationController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index($relation_type)
+    public function index($type)
     {
 
         $data = BaseController::createBaseInformations();
-        RelationController::getBaseInforamation($data);
+        RelationController::getBaseInforamation($data,$type);
 
-        $bt_id = RelationType::where('title', '=', $relation_type)->first();
+        $bt_id = RelationType::where('title', '=', $type)->first();
 
         $children = RelationType::where('parent', '=', $bt_id->id)->get();
         if (count($children) > 0) {
@@ -61,9 +86,9 @@ class RelationController extends Controller
             $data['relation'] = $children;
         }
 
-        $data['relation_type'] = $relation_type;
+        $data['type'] = $type;
 
-        $data ['widgets'] = WidgetController::getWidgets("relation.index", 'relation', $relation_type);
+        $data ['widgets'] = WidgetController::getWidgets("relation.index", 'relation', $type);
 
 //        return $data ['widgets'];
 
@@ -80,16 +105,16 @@ class RelationController extends Controller
      * @return \Illuminate\Http\Response
      */
     public
-    function create($relation_type)
+    function create($type)
     {
         $data = BaseController::createBaseInformations();
-        RelationController::getBaseInforamation($data);
+        RelationController::getBaseInforamation($data,$type);
 
-        $data['relation_type'] = $relation_type;
+        $data['type'] = $type;
 
 
-        $bt_id = RelationType::where('title', '=', $relation_type)->first();
-        $properties = RelationProperty::where('relation_type', '=', $bt_id->id)->get();
+        $bt_id = RelationType::where('title', '=', $type)->first();
+        $properties = RelationProperty::where('type', '=', $bt_id->id)->get();
 
 //        for ($i = 0; $i < count($properties); $i++) {
 //            if ($properties[$i]->input_type == 'select') {
@@ -118,17 +143,17 @@ class RelationController extends Controller
      * @return \Illuminate\Http\Response
      */
     public
-    function store(Request $request, $relation_type)
+    function store(Request $request, $type)
     {
 
-        $bt_id = RelationType::where('title', '=', $relation_type)->first();
+        $bt_id = RelationType::where('title', '=', $type)->first();
 
         $relationType = new RelationType();
         $relationType->parent = $bt_id->id;
         $relationType->title = $request->input('title');
         $relationType->save();
 
-        $properties = RelationProperty::where('relation_type', '=', $bt_id->id)->get(['id', 'title']);
+        $properties = RelationProperty::where('type', '=', $bt_id->id)->get(['id', 'title']);
 
 
         $to_add = [];
@@ -158,7 +183,7 @@ class RelationController extends Controller
 
             $relation = new Relation();
             $relation->title = "";
-            $relation->relation_type = $relationType->id;
+            $relation->type = $relationType->id;
             $relation->save();
 
             $rel_obj = DB::table('relation_objects')
@@ -194,7 +219,7 @@ class RelationController extends Controller
         }
 
 
-        return redirect()->route("relations.index", ['relation_type' => $relation_type]);
+        return redirect()->route("relations.index", ['type' => $type]);
         //
     }
 
@@ -263,7 +288,7 @@ class RelationController extends Controller
     {
 
         $id = $request->input('id');
-        $items = Relation::where('relation_type', '=', $id)->get(['id', 'relation_type']);
+        $items = Relation::where('type', '=', $id)->get(['id', 'type']);
 
         for ($i = 0; $i < count($items); $i++) {
 

@@ -7,6 +7,13 @@ use Illuminate\Http\Request;
 
 class NavigationItemPropertyController extends Controller
 {
+
+    public static function createValidationRules($navigation_id, $is_setting = false)
+    {
+        $props = NavigationItemProperty::where('navigation', '=', $navigation_id)->where('is_setting', '=', $is_setting == true ? 1 : 0)->get();
+        return PropertyController::createValidationRules($props);
+    }
+
     /**
      * Display a listing of the resource.
      *

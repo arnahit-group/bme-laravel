@@ -1,0 +1,1 @@
+<script src="{{asset('app-assets/vendors/noUiSlider/nouislider.min.js')}}" type="text/javascript"></script>

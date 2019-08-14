@@ -1,0 +1,42 @@
+/*----------------------------------------
+  Contacts Page
+------------------------------------------*/
+.content-area.content-left {
+    float: right;
+}
+
+.content-area.content-right {
+    float: left;
+}
+
+/*.content-area .app-wrapper .dataTables_wrapper .dataTables_info {*/
+/*    margin-left: initial !important;*/
+/*    margin-right: 18px;*/
+/*}*/
+
+.content-area .app-wrapper .dataTables_wrapper .dataTables_paginate {
+    margin-right: initial !important;
+    margin-left: .35rem;
+}
+
+.content-area .app-wrapper .datatable-search .search-icon {
+    left: 0 !important;
+    right: 15px !important;
+}
+
+.content-area .app-wrapper .datatable-search .app-filter {
+    padding: .2rem;
+    padding-left: .2rem;
+    padding-right: 2.75rem;
+}
+
+@media only screen and (max-width: 992px) {
+    table.responsive-table thead tr {
+        padding: 0 0 0 10px;
+    }
+}
+
+/* TODO MINE*/
+.contact-list {
+    padding-right: 0 !important;
+}

@@ -14,7 +14,11 @@ return [
         'we are ready to serve you' => 'we are ready to serve you',
         'hotel online reservation system is very safe online system' => 'hotel online reservation system is very safe online system',
         'check reservation place holder' => 'check reservation ...',
-        'All right reserved to Hotel Sabouri' => 'All right reserved to Hotel Sabouri',
+        'all right reserved to hotel sabouri' => 'All right reserved to Hotel Sabouri',
+        'hotel sabouri facilities' => 'Hotel Sabouri Facilities',
+        'useful links' => 'Useful Links',
+        'get to know us a bit' => 'Get to Know us a Bit',
+         'logout'=>'Logout',
     ],
 
     'room' => [
@@ -118,8 +122,33 @@ return [
         'how to track' => 'How to track?',
         'in case of any questions or problems' => 'In case of any questions or problems with the payment process Or function the site with our support to resolve the problem and you like that Continue to make a payment order and there is no problem.',
 
+        'tracking reserve' => 'Tracking Reserve',
     ],
 
+    'user' => [
+        'please login' => 'Please Login',
+        'email place holder' => 'Email ',
+        'password place holder' => 'Password   ',
+        'repeat password place holder' => 'Repeat Password   ',
+        'mobile place holder' => 'Mobile   ',
+        'login' => 'Login',
+        'forgot your password' => 'Forgot your password?',
+        'register' => 'Register',
+        'check website rules' => 'Check website rules',
+    ],
+
+    'permissions' => [
+        'access items'=>'Access items',
+        'create new item'=>'Create new item',
+        'edit items'=>'Edit items',
+        'delete item'=>'Delete item',
+        'access properties'=>'Access properties',
+        'create new property'=>'Create new property',
+        'edit properties'=>'Edit properties',
+        'delete property'=>'Delete property',
+        'access settings'=>'Access settings',
+        'admin dashboard'=>'Admin dashboard',
+    ],
 
 ];
 

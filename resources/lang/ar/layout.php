@@ -12,8 +12,11 @@ return [
         'we are ready to serve you' => 'نحن مسؤولون',
         'hotel online reservation system is very safe online system' => 'نظام الحجز الخاص هو فندق مرموق ، الموقع الآمن متاح للحجز على صبر الفندق.',
         'check reservation place holder' => 'رمز تتبع الحجز الخاص بك ...',
-        'All right reserved to Hotel Sabouri' => 'جميع الحقوق محفوظة في فندق سورابايا ذو الـ 3 نجوم.',
-
+        'all right reserved to hotel sabouri' => 'جميع الحقوق محفوظة في فندق سورابايا ذو الـ 3 نجوم.',
+        'hotel sabouri facilities'=>'مرافق الفندق هي الصبر',
+        'useful links'=>'روابط مفيدة',
+        'get to know us a bit'=>'تعرف علينا قليلا',
+        'logout'=>'الخروج',
     ],
 
     'room' => [
@@ -120,6 +123,19 @@ return [
         'how to track' => 'كيف تتبع؟',
         'in case of any questions or problems' => 'في حال وجود أي أسئلة أو مشاكل مع عملية الدفع أو تشغيل الموقع مع دعمنا لحل المشكلة وتريد أن تستمر في تقديم طلب دفع وليس هناك مشكلة.',
 
+        'tracking reserve' => 'Tracking Reserve',
+    ],
+
+    'user' => [
+        'please login'=>'الرجاء تسجيل الدخول',
+        'email place holder'=>'البريد الإلكتروني   ',
+        'password place holder'=>'كلمه السر   ',
+        'repeat password place holder'=>'اعد كلمة السر   ',
+        'mobile place holder'=>'التليفون المحمول',
+        'login'=>'تسجيل الدخول',
+        'forgot your password'=>'نسيت رقمك السري؟',
+        'register'=>'تسجيل',
+        'check website rules'=>'تحقق قواعد الموقع',
     ],
 
 

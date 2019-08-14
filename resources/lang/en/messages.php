@@ -55,6 +55,9 @@ return [
         'floors_count' => 'Floors Count',
         'rooms_count' => 'Rooms Count',
         'base_locale' => 'Base Locale',
+        'template' => 'Template',
+        'navigation' => 'Navigation',
+        'role' => 'Role',
 
 
     ],
@@ -71,12 +74,14 @@ return [
         'reserve' => 'Reserve',
         'navigation' => 'Navigation',
         'room properties' => 'Room Properties',
-        'hotel properties' => 'Room Properties',
+        'hotel properties' => 'Hotel Properties',
         'user properties' => 'User Properties',
         'customer properties' => 'Customer Properties',
+        'reserve properties' => 'Reserve Properties',
         'offer' => 'Offers',
         'website settings' => 'Website Settings',
         'hotel settings' => 'Hotel Settings',
+        'application settings' => 'Application Settings',
         'media' => 'Media',
         'homepage' => 'Home',
         'contact us' => 'Contact Us',
@@ -85,6 +90,7 @@ return [
         'coffee shop' => 'Coffee Shop',
         'restaurant' => 'Restaurant & Fast Food',
         'rules' => 'Rules',
+        'pages' => 'Pages',
 
     ],
 
@@ -107,14 +113,26 @@ return [
     ],
 
 
-    'email' => 'E-Mail Address',
+    'service_situations' => [
+        '1' => 'room requested',
+        '2' => 'room rejected',
+        '3' => 'room confirmed',
+        '4' => 'room time out',
+        '5' => 'pay off requested',
+        '6' => 'pay off rejected',
+        '7' => 'pay off confirmed',
+        '8' => 'pay off timeout',
+        '9' => 'pay off online confirmed',
+    ],
+
+    'email' => 'E - Mail Address',
     'password' => 'Password',
     'remember' => 'Remember Me',
     'login' => 'Login',
     'register' => 'Register',
     'register_now' => 'Register Now!',
-    'have_account' => 'Already have an account?',
-    'forgot_password' => 'Forgot password?',
+    'have_account' => 'Already have an account ? ',
+    'forgot_password' => 'Forgot password ? ',
 
 
     /*
@@ -127,7 +145,7 @@ return [
     |
     | The following language lines are used during authentication for various
     | messages that we need to display to the user. You are free to modify
-    | these language lines according to your application's requirements.
+    | these language lines according to your application's requirements .
     |
     */
 

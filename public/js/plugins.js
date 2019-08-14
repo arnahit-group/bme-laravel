@@ -172,7 +172,9 @@ $(function () {
 
     //Main Left Sidebar Menu
     $('.sidebar-collapse').sideNav({
-        edge: 'left', // Choose the horizontal origin
+        edge: 'right', // Choose the horizontal origin
+        // TODO MINE
+        // edge: 'left', // Choose the horizontal origin
     });
 
     // Overlay Menu (Full screen menu)

@@ -1,0 +1,8 @@
+202	messages
+207	message properties
+212	comments
+217	comment properties
+222	complaints
+227	complaint properties
+232	ratings
+237	rating properties

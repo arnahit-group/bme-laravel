@@ -1,8 +1,30 @@
+@font-face {
+    font-family: 'iransans';
+    src: url('../fonts/iransans.eot');
+    src: url('../fonts/iransans.woff') format('woff'), url('../fonts/iransans.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    line-height: inherit;
+}
 
 .content2 {
 
-    background-color: white;
-    height: 1150px;
+    min-height: 500px !important;
+    font-family: iransans !important;
+    background: transparent !important;
+}
+
+.pc2{
+
+    height: 250px !important;
+    z-index: -1 !important;
+
+}
+
+.post-parallax {
+
+    height: 150px;
+    font-family: iransans;
 
 }
 
@@ -11,8 +33,10 @@
     border-radius: 15px;
     background-color: #fff;
     box-shadow: 0px 5px 15px rgba(177, 177, 177, 0.15);
-    min-height: 1020px;
-    margin-top: 15px;
+    min-height: 1020px !important;
+    z-index: 1 !important;
+    font-family: iransans !important;
+    padding-bottom:25px;
 }
 
 .post-single span {
@@ -89,12 +113,6 @@
 
 }
 
-.post-parallax {
-
-    height: 200px;
-    font-family: iransans;
-
-}
 
 .span-location {
 
@@ -144,22 +162,18 @@
 }
 
 .span-exit {
-
     color: #9d0808;
     font-size: 14px !important;
     margin-right: 10px;
-
 }
 
 .special-service {
-
     background-color: #fff;
     height: 150px;
     margin-right: 30px;
     border-radius: 6px;
     border: solid 1px #f4eee5;
     padding: 0 !important;
-
 }
 
 .special-service div {
@@ -186,10 +200,20 @@
     font-size: 14px;
 }
 
+.post-txt-div{
+
+    margin: 0 !important;
+    min-height: 160px;
+    padding: 0 15px;
+
+}
+
 .post-txt {
 
     margin-right: 30px;
     margin-left: 15px;
+    display: block;
+    min-height: 150px;
 
 }
 
@@ -236,7 +260,6 @@
     width: 300px;
     margin-right: 70px;
     margin-top: 18px;
-
 }
 
 .options-title-txt {
@@ -347,6 +370,7 @@
     width: 200px;
     height: 30px;
     margin-right: 30px;
+    margin-bottom: 30px;
     border-radius: 0 0 8px 8px;
     background-color: #f4eee5;
 
@@ -469,7 +493,6 @@
     margin-top: 12px;
 
 }
-
 /*todo*/
 .date-picked-first div {
 
@@ -478,12 +501,10 @@
     width: 100%;
 
 }
-
 /*todo*/
 .date-picked {
 
     padding: 0 10px;
-
 }
 
 .date-picked div {
@@ -584,9 +605,7 @@
 @media screen and (max-width: 900px) {
 
     #image-gallery {
-
         width: 100%;
-
         margin-left: auto !important;
         display: block !important;
         margin-right: auto !important;
@@ -595,13 +614,15 @@
         float: left !important;
 
     }
+    #image-gallery img{
+        margin: 0 auto;
+    }
 
     #btn-res {
 
         width: 100%;
         margin: 30px 0;
         float:left !important;
-
     }
 
     #btn-fav {
@@ -645,7 +666,7 @@
 
     #content-2 {
 
-        height: 1450px;
+        min-height: 500px;
 
     }
 
@@ -722,7 +743,7 @@
 
     #content-2 {
 
-        height: 1650px;
+        min-height: 500px;
 
     }
 

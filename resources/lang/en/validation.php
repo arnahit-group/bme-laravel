@@ -128,8 +128,9 @@ return [
     */
 
     'custom' => [
-        'attribute-name' => [
-            'rule-name' => 'custom-message',
+        'mobile' => [
+            'app_unique' => 'The :attribute should be unique',
+            'check_language' => 'The :attribute has wrong language',
         ],
     ],
 
