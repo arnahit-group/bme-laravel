@@ -26,6 +26,7 @@
 
 
 @section("footer")
+
     @include('admin.layouts.subviews.modern_dashboard.footer')
 
 

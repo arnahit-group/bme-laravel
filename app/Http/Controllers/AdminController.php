@@ -16,6 +16,12 @@ class AdminController extends Controller
     public function index()
     {
 
+
+
+
+
+
+
         $data = [];
         $data ['user'] = UserController::getCurrentUserData();
 
