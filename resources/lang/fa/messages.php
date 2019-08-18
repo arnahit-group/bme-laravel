@@ -3,6 +3,26 @@
 return [
 
     'hotel' => 'هتل',
+    'list of' => 'فهرست ',
+    'properties' => 'خاصیت های ',
+    'create new property' => 'ایجاد خاصیت جدید',
+    'create new item' => 'ایجاد آیتم جدید',
+    'create new type' => 'ایجاد نوع جدید',
+
+    'edit existing property' => 'ویرایش خاصیت موجود',
+    'edit existing item' => 'ویرایش آیتم موجود',
+    'edit existing type' => 'ویرایش نوع موجود',
+
+
+    'types' => [
+        'data' => 'نوع داده ها',
+        'users' => 'نوع کاربران',
+        'documents' => 'نوع اسناد',
+        'services' => 'نوع سرویس',
+        'communications' => 'نوع ارتباط',
+        'conversations' => 'نوع مکالمه',
+    ],
+
 
     'base_types' => [
         'hotel' => 'هتل',

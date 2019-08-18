@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\ConversationType;
+use App\Libraries\MyLib\MyPluralizer;
 use Illuminate\Http\Request;
 use Validator;
 
@@ -25,6 +26,17 @@ class ConversationTypeController extends Controller
         return $permissions;
 
     }
+    public static function getUrls($id = 0)
+    {
+        $urls = [];
+        $urls['index'] = route("conversations.types.index");
+        $urls['create'] = route("conversations.types.create");
+        $urls['destroy'] = route("conversations.types.destroy");
+        $urls['store'] = route("conversations.types.store");
+        $urls['update'] = route("conversations.types.update", ['id' => $id]);
+        return $urls;
+
+    }
 
 
     /**
@@ -41,16 +53,24 @@ class ConversationTypeController extends Controller
         $datas = ConversationType::all();
 
         $data['datas'] = $datas;
+        $data ['widgets'] = WidgetController::getWidgets("conversations.types.index", 'conversation');
 
-
-        $urls = [];
-        $urls['create'] = route("conversations.types.create");
-        $urls['destroy'] = route("conversations.types.destroy");
-        $urls['index'] = route("conversations.types.index");
-        $data['urls'] = $urls;
+        $data['urls'] = self::getUrls();
 
         $data['permissions'] = self::getPermissions();
 
+
+        $data['page_title'] = trans('messages.list of') . MyPluralizer::plural(trans('messages.types.conversations'));
+        $data['breadcrumbs'] = [
+            [
+                'title' => trans('messages.navigation_titles.dashboard'),
+                'url' => route('admin.index')
+            ],
+            [
+                'title' => MyPluralizer::plural(trans('messages.types.conversations')),
+                'url' => ''
+            ]
+        ];
 
         return view('admin.types.views.index', $data);
 
@@ -68,13 +88,25 @@ class ConversationTypeController extends Controller
         $data = BaseController::createBaseInformations();
         self::getBaseInforamation($data);
 
-        $urls = [];
-        $urls['store'] = route("conversations.types.store");
-        $urls['index'] = route("conversations.types.index");
-        $data['urls'] = $urls;
+        $data['urls'] = self::getUrls();
 
         $data['permissions'] = self::getPermissions();
 
+        $data['page_title'] = trans('messages.list of') . MyPluralizer::plural(trans('messages.types.conversations'));
+        $data['breadcrumbs'] = [
+            [
+                'title' => trans('messages.navigation_titles.dashboard'),
+                'url' => route('admin.index')
+            ],
+            [
+                'title' => MyPluralizer::plural(trans('messages.types.conversations')),
+                'url' => route('conversations.types.index')
+            ],
+            [
+                'title' => trans('messages.create new type'),
+                'url' => ''
+            ]
+        ];
 
         return view('admin.types.views.create', $data);
 
@@ -133,12 +165,27 @@ class ConversationTypeController extends Controller
         $dt = ConversationType::find($id);
         $data['data'] = $dt;
         $data['id'] = $id;
-        $urls = [];
-        $urls['update'] = route("conversations.types.update", ['id' => $id]);
-        $urls['index'] = route("conversations.types..index");
-        $data['urls'] = $urls;
+        $data['urls'] = self::getUrls($id);
 
         $data['permissions'] = self::getPermissions();
+
+
+        $data['page_title'] = trans('messages.list of') . MyPluralizer::plural(trans('messages.types.conversations'));
+        $data['breadcrumbs'] = [
+            [
+                'title' => trans('messages.navigation_titles.dashboard'),
+                'url' => route('admin.index')
+            ],
+            [
+                'title' => MyPluralizer::plural(trans('messages.types.conversations')),
+                'url' => route('conversations.types.index')
+            ],
+            [
+                'title' => trans('messages.edit existing type'),
+                'url' => ''
+            ]
+        ];
+
 
         return view('admin.types.views.edit', $data);
 

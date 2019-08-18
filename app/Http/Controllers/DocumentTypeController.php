@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\DocumentType;
+use App\Libraries\MyLib\MyPluralizer;
 use Illuminate\Http\Request;
 use Validator;
 
@@ -27,6 +28,18 @@ class DocumentTypeController extends Controller
 
     }
 
+    public static function getUrls($id = 0)
+    {
+        $urls = [];
+        $urls['index'] = route("documents.types.index");
+        $urls['create'] = route("documents.types.create");
+        $urls['destroy'] = route("documents.types.destroy");
+        $urls['store'] = route("documents.types.store");
+        $urls['update'] = route("documents.types.update", ['id' => $id]);
+        return $urls;
+
+    }
+
 
     /**
      * Display a listing of the resource.
@@ -42,15 +55,23 @@ class DocumentTypeController extends Controller
 
         $data['datas'] = $datas;
 
-
-        $urls = [];
-        $urls['create'] = route("documents.types.create");
-        $urls['destroy'] = route("documents.types.destroy");
-        $urls['index'] = route("documents.types.index");
-        $data['urls'] = $urls;
+        $data ['widgets'] = WidgetController::getWidgets("documents.types.index", 'document');
+        $data['urls'] = self::getUrls();
 
         $data['permissions'] = self::getPermissions();
 
+
+        $data['page_title'] = trans('messages.list of') . MyPluralizer::plural(trans('messages.types.documents'));
+        $data['breadcrumbs'] = [
+            [
+                'title' => trans('messages.navigation_titles.dashboard'),
+                'url' => route('admin.index')
+            ],
+            [
+                'title' => MyPluralizer::plural(trans('messages.types.documents')),
+                'url' => ''
+            ]
+        ];
 
         return view('admin.types.views.index', $data);
 
@@ -67,12 +88,25 @@ class DocumentTypeController extends Controller
         $data = BaseController::createBaseInformations();
         self::getBaseInforamation($data);
 
-        $urls = [];
-        $urls['store'] = route("documents.types.store");
-        $urls['index'] = route("documents.types.index");
-        $data['urls'] = $urls;
+        $data['urls'] = self::getUrls();
 
         $data['permissions'] = self::getPermissions();
+
+        $data['page_title'] = trans('messages.list of') . MyPluralizer::plural(trans('messages.types.documents'));
+        $data['breadcrumbs'] = [
+            [
+                'title' => trans('messages.navigation_titles.dashboard'),
+                'url' => route('admin.index')
+            ],
+            [
+                'title' => MyPluralizer::plural(trans('messages.types.documents')),
+                'url' => route('documents.types.index')
+            ],
+            [
+                'title' => trans('messages.create new type'),
+                'url' => ''
+            ]
+        ];
 
 
         return view('admin.types.views.create', $data);
@@ -131,12 +165,26 @@ class DocumentTypeController extends Controller
         $data['data'] = $dt;
 
         $data['id'] = $id;
-        $urls = [];
-        $urls['update'] = route("documents.types.update", ['id' => $id]);
-        $urls['index'] = route("documents.types.index");
-        $data['urls'] = $urls;
+        $data['urls'] = self::getUrls($id);
 
         $data['permissions'] = self::getPermissions();
+
+        $data['page_title'] = trans('messages.list of') . MyPluralizer::plural(trans('messages.types.documents'));
+        $data['breadcrumbs'] = [
+            [
+                'title' => trans('messages.navigation_titles.dashboard'),
+                'url' => route('admin.index')
+            ],
+            [
+                'title' => MyPluralizer::plural(trans('messages.types.documents')),
+                'url' => route('documents.types.index')
+            ],
+            [
+                'title' => trans('messages.edit existing type'),
+                'url' => ''
+            ]
+        ];
+
 
         return view('admin.types.views.edit', $data);
 

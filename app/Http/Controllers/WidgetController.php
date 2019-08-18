@@ -34,33 +34,35 @@ class WidgetController extends Controller
     }
 
 
-    public static function getWidgets($view, $type, $sub_type)
+    public static function getWidgets($view, $type, $sub_type = '')
     {
-//        echo $view;
-//        echo "<br>";
-//        echo config('base.object_types.' . $type);
-//
-//        echo "<br>";
-//
-//        echo config('base.' . $type . '_types.' . $sub_type);
+        $s_type_id = 0;
+        if ($sub_type == '' || $sub_type == 'base') {
+            $s_type_id = 0;
+        } else {
+            $s_type_id = config('base.' . $type . '_types.' . $sub_type);
+        }
 
         $widgets = Widget::where('view', '=', $view)
             ->join('widget_parts', 'widgets.id', '=', 'widget_parts.widget')
             ->join('widget_part_types', 'widget_part_types.id', '=', 'widget_parts.widget_part_type')
             ->where('object_type', '=', config('base.object_types.' . $type))
-            ->where('object_id', '=', config('base.' . $type . '_types.' . $sub_type))
+            ->where('object_id', '=', $s_type_id)
             ->get(['widget_parts.name', 'widget_part_types.title as type']);
+
 
 
         if (count($widgets) > 0) {
             $name = $widgets[0]->name;
-            $arrs = explode(',', $name);
+            $arrs = explode('|', $name);
             foreach ($arrs as $arr) {
                 $vs = explode(':', $arr);
                 if (count($vs) == 2)
                     $widgets[0]->{$vs[0]} = $vs[1];
             }
         }
+
+
 
         return $widgets;
     }

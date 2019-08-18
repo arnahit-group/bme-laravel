@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App;
+use App\Libraries\MyLib\MyPluralizer;
 use App\Relation;
 use App\Service;
 use App\ServiceProperty;
@@ -13,6 +15,9 @@ use stdClass;
 
 class ServiceController extends Controller
 {
+
+    protected static $types_table_name = 'service_types';
+
 
     public static function getBaseInforamation(&$data,$type)
     {
@@ -43,6 +48,20 @@ class ServiceController extends Controller
         return $permissions;
 
     }
+
+
+    public static function getUrls($type, $id = 0)
+    {
+
+        $urls = [];
+        $urls['index'] = route("services.index", ['type' => $type]);
+        $urls['change'] = route("services.change", ['type' => $type]);
+        $urls['destroy'] = route("services.destroy", ['type' => $type]);
+
+        return $urls;
+
+    }
+
 
     public static function getDataProperties2($service_id)
     {
@@ -115,20 +134,25 @@ class ServiceController extends Controller
         $data['waiting_reserves'] = $d['waiting_reserves'];
         $data['all_reserves'] = $d['all_reserves'];
 
-//        return $data;
-        $urls = [];
-        $urls['create'] = route("services.index", ['type' => $type]);
-        $urls['destroy'] = route("services.destroy", ['type' => $type]);
-        $urls['index'] = route("services.index", ['type' => $type]);
-
         $data['permissions'] = self::getPermissions($type);
-        $data['urls'] = $urls;
-
-
-
-
+        $data['urls'] = self::getUrls($type);
         $data ['widgets'] = WidgetController::getWidgets("service.index", 'service', $type);
 
+
+
+        $data['page_title'] = trans('messages.list of') . MyPluralizer::plural(TranslationController::getTranslatedForCell(App::getLocale(), self::$types_table_name, 'title', $bt_id->id));
+
+
+        $data['breadcrumbs'] = [
+            [
+                'title' => trans('messages.navigation_titles.dashboard'),
+                'url' => route('admin.index')
+            ],
+            [
+                'title' => MyPluralizer::plural(TranslationController::getTranslatedForCell(App::getLocale(), self::$types_table_name, 'title', $bt_id->id)),
+                'url' => ''
+            ]
+        ];
 
         return view("admin.items.views.index", $data);
         //

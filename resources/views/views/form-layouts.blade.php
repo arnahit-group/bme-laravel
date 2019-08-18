@@ -36,7 +36,8 @@
                             <ul class="dropdown-content" id="dropdown1" tabindex="0">
                                 <li tabindex="0"><a class="grey-text text-darken-2" href="user-profile-page.html">Profile<span
                                                 class="new badge red">2</span></a></li>
-                                <li tabindex="0"><a class="grey-text text-darken-2" href="app-contacts.html">Contacts</a>
+                                <li tabindex="0"><a class="grey-text text-darken-2"
+                                                    href="app-contacts.html">Contacts</a>
                                 </li>
                                 <li tabindex="0"><a class="grey-text text-darken-2" href="page-faq.html">FAQ</a>
                                 </li>
@@ -50,7 +51,7 @@
             </div>
             <div class="col s12">
                 <div class="container">
-                    <div class="seaction">
+                    <div class="section">
 
                         <div class="card">
                             <div class="card-content">
@@ -134,7 +135,8 @@
                                             <div class="row">
                                                 <div class="input-field col s12">
                                                         <textarea class="materialize-textarea"
-                                                                  id="message2" placeholder="Oh WoW! Let me check this one too."></textarea>
+                                                                  id="message2"
+                                                                  placeholder="Oh WoW! Let me check this one too."></textarea>
                                                     <label for="message">Message</label>
                                                 </div>
                                                 <div class="row">
@@ -310,6 +312,18 @@
                                 </div>
                             </div>
 
+
+
+
+
+
+
+
+
+
+
+
+
                             <!-- Form Advance -->
                             <div class="col s12 m12 l12">
                                 <div class="card card card-default scrollspy" id="Form-advance">
@@ -389,8 +403,25 @@
                                     </div>
                                 </div>
                             </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                         </div>
-                    </div><!-- START RIGHT SIDEBAR NAV -->
+                    </div>
+
+
+                    <!-- START RIGHT SIDEBAR NAV -->
                     <aside id="right-sidebar-nav">
                         <div class="slide-out-right-sidenav sidenav rightside-navigation" id="slide-out-right">
                             <div class="row">
@@ -427,7 +458,8 @@
                                 <div class="slide-out-right-body">
                                     <div class="col s12" id="messages">
                                         <div class="collection border-none">
-                                            <input class="header-search-input mt-4 mb-2" name="Search" placeholder="Search Messages"
+                                            <input class="header-search-input mt-4 mb-2" name="Search"
+                                                   placeholder="Search Messages"
                                                    type="text"/>
                                             <ul class="collection p-0">
                                                 <li class="collection-item sidenav-trigger display-flex avatar pl-5 pb-0"
@@ -750,7 +782,8 @@
                                             <ul class="collection with-header">
                                                 <li class="collection-item">
                                                     <div class="font-weight-900">
-                                                        Homepage mockup design <span class="secondary-content">Just now</span>
+                                                        Homepage mockup design <span
+                                                                class="secondary-content">Just now</span>
                                                     </div>
                                                     <p class="mt-0 mb-2">Melissa liked your activity.</p>
                                                     <span class="new badge amber"
@@ -768,7 +801,8 @@
                                                 </li>
                                                 <li class="collection-item">
                                                     <div class="font-weight-900">
-                                                        12 new users registered <span class="secondary-content">30 mins</span>
+                                                        12 new users registered <span
+                                                                class="secondary-content">30 mins</span>
                                                     </div>
                                                     <p class="mt-0 mb-2">Here are some news feed interactions
                                                         concepts.</p>
@@ -783,7 +817,8 @@
                                                 </li>
                                                 <li class="collection-item">
                                                     <div class="font-weight-900">
-                                                        Josh is now following you <span class="secondary-content">5 hrs</span>
+                                                        Josh is now following you <span
+                                                                class="secondary-content">5 hrs</span>
                                                     </div>
                                                     <p class="mt-0 mb-2">Here are some news feed interactions
                                                         concepts.</p>
@@ -808,7 +843,8 @@
                                                 </li>
                                                 <li class="collection-item">
                                                     <div class="font-weight-900">
-                                                        Database overloaded 89% <span class="secondary-content">20 min</span>
+                                                        Database overloaded 89% <span
+                                                                class="secondary-content">20 min</span>
                                                     </div>
                                                     <p class="mt-0 mb-2">Here are some news feed interactions
                                                         concepts.</p>
@@ -823,7 +859,8 @@
                                                 </li>
                                                 <li class="collection-item">
                                                     <div class="font-weight-900">
-                                                        Production server down. <span class="secondary-content">1 hrs</span>
+                                                        Production server down. <span
+                                                                class="secondary-content">1 hrs</span>
                                                     </div>
                                                     <p class="mt-0 mb-2">Here are some news feed interactions
                                                         concepts.</p>
@@ -973,9 +1010,11 @@
                             </li>
                             <li><a class="btn-floating green" href="cards-extended.html"><i class="material-icons">widgets</i></a>
                             </li>
-                            <li><a class="btn-floating amber" href="app-calendar.html"><i class="material-icons">today</i></a>
+                            <li><a class="btn-floating amber" href="app-calendar.html"><i
+                                            class="material-icons">today</i></a>
                             </li>
-                            <li><a class="btn-floating red" href="app-email.html"><i class="material-icons">mail_outline</i></a>
+                            <li><a class="btn-floating red" href="app-email.html"><i
+                                            class="material-icons">mail_outline</i></a>
                             </li>
                         </ul>
                     </div>

@@ -7,7 +7,7 @@ $(document).ready(function () {
         // alert($(window).height() - 425 + "px");
         // return $(window).height() - 425 + "px";
         //TODO MINE
-        return $(window).height() - 545 + "px";
+        return $(window).height() - 525 + "px";
     };
 
     var table = $("#data-table-contact").DataTable({
@@ -16,23 +16,23 @@ $(document).ready(function () {
         paging: true,
         responsive: true,
         lengthMenu: [15],
-        aoColumns: [
-            {
-                bSortable: false
-            },
-            {
-                bSortable: false
-            },
-            null,
-            null,
-            null,
-            {
-                bSortable: false
-            },
-            {
-                bSortable: false
-            }
-        ]
+        // aoColumns: [
+        //     {
+        //         bSortable: false
+        //     },
+        //     {
+        //         bSortable: false
+        //     },
+        //     null,
+        //     null,
+        //     null,
+        //     {
+        //         bSortable: false
+        //     },
+        //     {
+        //         bSortable: false
+        //     }
+        // ]
     });
 
     // Custom search

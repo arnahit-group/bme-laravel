@@ -16,6 +16,9 @@ use Validator;
 class DataController extends Controller
 {
 
+    protected static $types_table_name = 'data_types';
+
+
     public static function getBaseInforamation(&$data, $type)
     {
         $navs = NavigationController::getNavigation('admin');
@@ -35,6 +38,8 @@ class DataController extends Controller
     public static function getPermissions($type)
     {
         $permissions = [];
+        $permissions['index'] = "data.index" . ":" . $type;
+        $permissions['show'] = "data.show" . ":" . $type;
         $permissions['create'] = "data.create" . ":" . $type;
         $permissions['store'] = "data.store" . ":" . $type;
         $permissions['update'] = "data.update" . ":" . $type;
@@ -47,7 +52,6 @@ class DataController extends Controller
 
     public static function getUrls($type, $id = 0)
     {
-
         $urls = [];
         $urls['index'] = route("data.index", ['type' => $type]);
         $urls['create'] = route("data.create", ['type' => $type]);
@@ -214,13 +218,14 @@ class DataController extends Controller
         $data['urls'] = self::getUrls($type);
         $data['permissions'] = self::getPermissions($type);
 
+        $data['page_title'] = trans('messages.list of') . MyPluralizer::plural(TranslationController::getTranslatedForCell(App::getLocale(), self::$types_table_name, 'title', $bt_id->id));
         $data['breadcrumbs'] = [
             [
                 'title' => trans('messages.navigation_titles.dashboard'),
                 'url' => route('admin.index')
             ],
             [
-                'title' => MyPluralizer::plural(TranslationController::getTranslatedForCell(App::getLocale(), 'data_types', 'title', $bt_id->id)),
+                'title' => MyPluralizer::plural(TranslationController::getTranslatedForCell(App::getLocale(), self::$types_table_name, 'title', $bt_id->id)),
                 'url' => ''
             ]
         ];
@@ -252,6 +257,26 @@ class DataController extends Controller
 
         $data['urls'] = self::getUrls($type);
         $data['permissions'] = self::getPermissions($type);
+
+
+        $bt_id = DataType::where('title', '=', $type)->first();
+
+        $data['page_title'] = trans('messages.list of') . MyPluralizer::plural(TranslationController::getTranslatedForCell(App::getLocale(), self::$types_table_name, 'title', $bt_id->id));
+
+        $data['breadcrumbs'] = [
+            [
+                'title' => trans('messages.navigation_titles.dashboard'),
+                'url' => route('admin.index')
+            ],
+            [
+                'title' => MyPluralizer::plural(TranslationController::getTranslatedForCell(App::getLocale(), self::$types_table_name, 'title', $bt_id->id)),
+                'url' => route('data.index', ['type'=>$type])
+            ],
+            [
+                'title' => trans('messages.create new item'),
+                'url' => ''
+            ]
+        ];
 
 
         return view("admin.items.views.create", $data);
@@ -354,6 +379,26 @@ class DataController extends Controller
 
         $data['urls'] = self::getUrls($type, $id);
         $data['permissions'] = self::getPermissions($type);
+
+        $bt_id = DataType::where('title', '=', $type)->first();
+
+        $data['page_title'] = trans('messages.list of') . MyPluralizer::plural(TranslationController::getTranslatedForCell(App::getLocale(), self::$types_table_name, 'title', $bt_id->id));
+
+        $data['breadcrumbs'] = [
+            [
+                'title' => trans('messages.navigation_titles.dashboard'),
+                'url' => route('admin.index')
+            ],
+            [
+                'title' => MyPluralizer::plural(TranslationController::getTranslatedForCell(App::getLocale(), self::$types_table_name, 'title', $bt_id->id)),
+                'url' => route('data.index', ['type' => $type])
+            ],
+            [
+                'title' => trans('messages.edit existing item'),
+                'url' => ''
+            ]
+        ];
+
 
         //        return $data;
         return view("admin.items.views.edit", $data);

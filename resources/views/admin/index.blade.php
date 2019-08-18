@@ -5,7 +5,6 @@
 
     @include('admin.layouts.subviews.modern_dashboard.vendor-css')
 
-
 @endsection
 
 

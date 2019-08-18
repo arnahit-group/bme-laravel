@@ -25,7 +25,16 @@ class MyPluralizer extends Pluralizer
         }
 
         if ($count == 2 && $max_key == 'fa') {
-            return $value . ' ها';
+
+            if (count(explode(' ', trim($value))) == 1) {
+                return $value . ' ها';
+            } else {
+                $words = explode(' ', $value);
+                $words[0] = $words[0] . 'های';
+//                array_splice($words, 1, 0, ['های']);
+                return implode(' ', $words);
+            }
+
         } else {
             return parent::plural($value, $count);
         }

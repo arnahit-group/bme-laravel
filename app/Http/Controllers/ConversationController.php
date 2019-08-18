@@ -15,8 +15,9 @@ use Validator;
 
 class ConversationController extends Controller
 {
+    protected static $types_table_name = 'conversation_types';
 
-    public static function getBaseInforamation(&$data,$type)
+    public static function getBaseInforamation(&$data, $type)
     {
         $navs = NavigationController::getNavigation('admin');
 
@@ -183,7 +184,7 @@ class ConversationController extends Controller
 
 
         $data = BaseController::createBaseInformations();
-        self::getBaseInforamation($data,$type);
+        self::getBaseInforamation($data, $type);
 
         $bt_id = ConversationType::where('title', '=', $type)->first();
 
@@ -195,13 +196,16 @@ class ConversationController extends Controller
         $data['permissions'] = self::getPermissions($type);
         $data['urls'] = self::getUrls($type);
 
+
+        $data['page_title'] = trans('messages.list of') . MyPluralizer::plural(TranslationController::getTranslatedForCell(App::getLocale(), self::$types_table_name, 'title', $bt_id->id));
+
         $data['breadcrumbs'] = [
             [
                 'title' => trans('messages.navigation_titles.dashboard'),
                 'url' => route('admin.index')
             ],
             [
-                'title' => 'تست',
+                'title' => MyPluralizer::plural(TranslationController::getTranslatedForCell(App::getLocale(), self::$types_table_name, 'title', $bt_id->id)),
                 'url' => ''
             ]
         ];
@@ -220,7 +224,7 @@ class ConversationController extends Controller
     {
 
         $data = BaseController::createBaseInformations();
-        self::getBaseInforamation($data,$type);
+        self::getBaseInforamation($data, $type);
 
         $data['type'] = $type;
 //        $data ['user'] = UserController::getCurrentUserData();
@@ -231,7 +235,29 @@ class ConversationController extends Controller
         $data['permissions'] = self::getPermissions($type);
         $data['urls'] = self::getUrls($type);
 
+
+        $bt_id = ConversationType::where('title', '=', $type)->first();
+
+        $data['page_title'] = trans('messages.list of') . MyPluralizer::plural(TranslationController::getTranslatedForCell(App::getLocale(), self::$types_table_name, 'title', $bt_id->id));
+
+        $data['breadcrumbs'] = [
+            [
+                'title' => trans('messages.navigation_titles.dashboard'),
+                'url' => route('admin.index')
+            ],
+            [
+                'title' => MyPluralizer::plural(TranslationController::getTranslatedForCell(App::getLocale(), self::$types_table_name, 'title', $bt_id->id)),
+                'url' => route('conversations.index', ['type'=>$type])
+            ],
+            [
+                'title' => trans('messages.create new item'),
+                'url' => ''
+            ]
+        ];
+
 //        return $data;
+
+
         return view("admin.items.views.create", $data);
 
     }
@@ -325,7 +351,7 @@ class ConversationController extends Controller
     {
 
         $data = BaseController::createBaseInformations();
-        self::getBaseInforamation($data,$type);
+        self::getBaseInforamation($data, $type);
 //        $bt_id = DataType::where('title', '=', $data_type)->first();
 //        $properties = DataProperty::where('data_type', '=', $bt_id->id)->get();
 //        $assigned = DB::table("data_assigned_properties")->where('data', '=', $id)->get();
@@ -343,6 +369,24 @@ class ConversationController extends Controller
         $data['permissions'] = self::getPermissions($type);
         $data['urls'] = self::getUrls($type, $id);
 
+        $bt_id = ConversationType::where('title', '=', $type)->first();
+
+        $data['page_title'] = trans('messages.list of') . MyPluralizer::plural(TranslationController::getTranslatedForCell(App::getLocale(), self::$types_table_name, 'title', $bt_id->id));
+
+        $data['breadcrumbs'] = [
+            [
+                'title' => trans('messages.navigation_titles.dashboard'),
+                'url' => route('admin.index')
+            ],
+            [
+                'title' => MyPluralizer::plural(TranslationController::getTranslatedForCell(App::getLocale(), self::$types_table_name, 'title', $bt_id->id)),
+                'url' => route('conversations.index', ['type'=>$type])
+            ],
+            [
+                'title' => trans('messages.create new item'),
+                'url' => ''
+            ]
+        ];
 
 //        return $data;
         return view("admin.items.views.edit", $data);

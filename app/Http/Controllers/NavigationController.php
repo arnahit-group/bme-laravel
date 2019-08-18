@@ -356,8 +356,7 @@ class NavigationController extends Controller
         //
     }
 
-    public
-    static function getNavigation($navigation)
+    public static function getNavigation($navigation)
     {
 
 
@@ -407,11 +406,6 @@ class NavigationController extends Controller
 
 
         }
-
-
-
-
-
 
 
         return $ex_items;

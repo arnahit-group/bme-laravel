@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Libraries\MyLib\MyPluralizer;
 use App\ServiceType;
 use Illuminate\Http\Request;
 use Validator;
@@ -27,6 +28,18 @@ class ServiceTypeController extends Controller
 
     }
 
+    public static function getUrls($id = 0)
+    {
+        $urls = [];
+        $urls['index'] = route("services.types.index");
+        $urls['create'] = route("services.types.create");
+        $urls['destroy'] = route("services.types.destroy");
+        $urls['store'] = route("services.types.store");
+        $urls['update'] = route("services.types.update", ['id' => $id]);
+        return $urls;
+
+    }
+
 
     /**
      * Display a listing of the resource.
@@ -43,14 +56,23 @@ class ServiceTypeController extends Controller
 
         $data['datas'] = $datas;
 
+        $data ['widgets'] = WidgetController::getWidgets("services.types.index", 'service');
 
-        $urls = [];
-        $urls['create'] = route("services.types.create");
-        $urls['destroy'] = route("services.types.destroy");
-        $urls['index'] = route("services.types.index");
-        $data['urls'] = $urls;
+        $data['urls'] = self::getUrls();
 
         $data['permissions'] = self::getPermissions();
+
+        $data['page_title'] = trans('messages.list of') . MyPluralizer::plural(trans('messages.types.services'));
+        $data['breadcrumbs'] = [
+            [
+                'title' => trans('messages.navigation_titles.dashboard'),
+                'url' => route('admin.index')
+            ],
+            [
+                'title' => MyPluralizer::plural(trans('messages.types.services')),
+                'url' => ''
+            ]
+        ];
 
 
         return view('admin.types.views.index', $data);
@@ -69,12 +91,25 @@ class ServiceTypeController extends Controller
         $data = BaseController::createBaseInformations();
         self::getBaseInforamation($data);
 
-        $urls = [];
-        $urls['store'] = route("services.types.store");
-        $urls['index'] = route("services.types.index");
-        $data['urls'] = $urls;
+        $data['urls'] = self::getUrls();
 
         $data['permissions'] = self::getPermissions();
+
+        $data['page_title'] = trans('messages.list of') . MyPluralizer::plural(trans('messages.types.services'));
+        $data['breadcrumbs'] = [
+            [
+                'title' => trans('messages.navigation_titles.dashboard'),
+                'url' => route('admin.index')
+            ],
+            [
+                'title' => MyPluralizer::plural(trans('messages.types.services')),
+                'url' => route('services.types.index')
+            ],
+            [
+                'title' => trans('messages.create new type'),
+                'url' => ''
+            ]
+        ];
 
 
         return view('admin.types.views.create', $data);
@@ -134,12 +169,26 @@ class ServiceTypeController extends Controller
         $dt = ServiceType::find($id);
         $data['data'] = $dt;
         $data['id'] = $id;
-        $urls = [];
-        $urls['update'] = route("services.types.update", ['id' => $id]);
-        $urls['index'] = route("services.index");
-        $data['urls'] = $urls;
+        $data['urls'] = self::getUrls($id);
 
         $data['permissions'] = self::getPermissions();
+
+        $data['page_title'] = trans('messages.list of') . MyPluralizer::plural(trans('messages.types.services'));
+        $data['breadcrumbs'] = [
+            [
+                'title' => trans('messages.navigation_titles.dashboard'),
+                'url' => route('admin.index')
+            ],
+            [
+                'title' => MyPluralizer::plural(trans('messages.types.services')),
+                'url' => route('services.types.index')
+            ],
+            [
+                'title' => trans('messages.edit existing type'),
+                'url' => ''
+            ]
+        ];
+
 
         return view('admin.types.views.edit', $data);
 

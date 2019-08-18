@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App;
+use App\Libraries\MyLib\MyPluralizer;
 use App\Translation;
 use App\User;
 use App\UserProperty;
@@ -14,6 +16,8 @@ use Validator;
 
 class UserPropertyController extends Controller
 {
+    protected static $types_table_name = 'user_types';
+
 
     public static function getBaseInforamation(&$data, $type)
     {
@@ -116,10 +120,23 @@ class UserPropertyController extends Controller
 
     }
 
+    public static function getUrls($type, $id = 0)
+    {
+        $urls = [];
+        $urls['create'] = route("users.properties.create", ['type' => $type]);
+        $urls['destroy'] = route("users.properties.ajax.destroy", ['type' => $type]);
+        $urls['store'] = route("users.properties.store", ['type' => $type]);
+        $urls['index'] = route("users.properties.index", ['type' => $type]);
+        $urls['update'] = route("users.properties.update", ['type' => $type, 'id' => $id]);
+        return $urls;
+
+    }
+
+
     public function settings($type)
     {
         $data = BaseController::createBaseInformations();
-        self::getBaseInforamation($data);
+        self::getBaseInforamation($data, $type);
 
         $bt_id = UserType::where('title', '=', $type)->first();
         $setts = UserProperty::where('is_setting', '=', 1)->where('type', '=', $bt_id->id)->get();
@@ -232,12 +249,25 @@ class UserPropertyController extends Controller
 
         $data ['widgets'] = WidgetController::getWidgets("users.property.index", 'user', $type);
 
-        $urls = [];
-        $urls['create'] = route("users.properties.create", ['type' => $type]);
-        $urls['destroy'] = route("users.properties.ajax.destroy", ['type' => $type]);
-
         $data['permissions'] = self::getPermissions($type);
-        $data['urls'] = $urls;
+        $data['urls'] = self::getUrls($type);
+
+
+        $bt_id = UserType::where('title', '=', $type)->first();
+
+        $data['page_title'] = trans('messages.list of') . trans('messages.properties') . MyPluralizer::plural(TranslationController::getTranslatedForCell(App::getLocale(), self::$types_table_name, 'title', $bt_id->id));
+
+        $data['breadcrumbs'] = [
+            [
+                'title' => trans('messages.navigation_titles.dashboard'),
+                'url' => route('admin.index')
+            ],
+            [
+                'title' => trans('messages.properties') . MyPluralizer::plural(TranslationController::getTranslatedForCell(App::getLocale(), self::$types_table_name, 'title', $bt_id->id)),
+                'url' => ''
+            ]
+        ];
+
 
         return view("admin.properties.views.index", $data);
 
@@ -252,18 +282,33 @@ class UserPropertyController extends Controller
     {
 
         $data = BaseController::createBaseInformations();
-        self::getBaseInforamation($data,$type);
+        self::getBaseInforamation($data, $type);
 
         $data['type'] = $type;
 
-
-        $urls = [];
-        $urls['store'] = route("users.properties.store", ['type' => $type]);
-        $urls['index'] = route("users.properties.index", ['type' => $type]);
-
         $data['permissions'] = self::getPermissions($type);
-        $data['urls'] = $urls;
+        $data['urls'] = self::getUrls($type);
 
+
+        $bt_id = UserType::where('title', '=', $type)->first();
+
+        $data['page_title'] = trans('messages.list of') . trans('messages.properties') . MyPluralizer::plural(TranslationController::getTranslatedForCell(App::getLocale(), self::$types_table_name, 'title', $bt_id->id));
+
+        $data['breadcrumbs'] = [
+            [
+                'title' => trans('messages.navigation_titles.dashboard'),
+                'url' => route('admin.index')
+            ],
+            [
+                'title' => trans('messages.properties') . MyPluralizer::plural(TranslationController::getTranslatedForCell(App::getLocale(), self::$types_table_name, 'title', $bt_id->id)),
+                'url' => route('data.properties.index', ['type' => $type])
+            ],
+            [
+                'title' => trans('messages.create new property'),
+                'url' => ''
+            ]
+
+        ];
 
         return view("admin.properties.views.create", $data);
         //
@@ -374,21 +419,36 @@ class UserPropertyController extends Controller
     public function edit($type, $id)
     {
         $data = BaseController::createBaseInformations();
-        self::getBaseInforamation($data,$type);
+        self::getBaseInforamation($data, $type);
 
-        $bt_id = UserType::where('title', '=', $type)->first();
 //        return $bt_id->id;
         $data['type'] = $type;
         $data['id'] = $id;
 
         $data['property'] = self::getItem($id);
 
-        $urls = [];
-        $urls['update'] = route("users.properties.update", ['type' => $type, 'id' => $id]);
-        $urls['index'] = route("users.properties.index", ['type' => $type]);
-
         $data['permissions'] = self::getPermissions($type);
-        $data['urls'] = $urls;
+        $data['urls'] = self::getUrls($type, $id);
+
+        $bt_id = UserType::where('title', '=', $type)->first();
+
+        $data['page_title'] = trans('messages.list of') . trans('messages.properties') . MyPluralizer::plural(TranslationController::getTranslatedForCell(App::getLocale(), self::$types_table_name, 'title', $bt_id->id));
+
+        $data['breadcrumbs'] = [
+            [
+                'title' => trans('messages.navigation_titles.dashboard'),
+                'url' => route('admin.index')
+            ],
+            [
+                'title' => trans('messages.properties') . MyPluralizer::plural(TranslationController::getTranslatedForCell(App::getLocale(), self::$types_table_name, 'title', $bt_id->id)),
+                'url' => route('data.properties.index', ['type' => $type])
+            ],
+            [
+                'title' => trans('messages.edit existing property'),
+                'url' => ''
+            ]
+        ];
+
 
         return view("admin.properties.views.edit", $data);
         //

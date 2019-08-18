@@ -421,8 +421,7 @@ return [
     'communication_types' => [
         'email' => 1,
         'sms' => 2,
-        'iransmspanel' => 3,
-        'external-chat-system' => 4,
+        'external-chat-system' => 3,
     ],
 
     'data_types' => [

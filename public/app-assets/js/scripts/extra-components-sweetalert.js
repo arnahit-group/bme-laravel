@@ -108,7 +108,7 @@ $(function () {
 				element: el,
 			}
 		});
-	})
+	});
 
 
 	$('.btn-input').click(function () {

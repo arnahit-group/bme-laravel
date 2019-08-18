@@ -11,7 +11,7 @@
  Target Server Version : 100128
  File Encoding         : 65001
 
- Date: 13/08/2019 07:48:05
+ Date: 18/08/2019 20:39:22
 */
 
 SET NAMES utf8mb4;
@@ -34,16 +34,12 @@ CREATE TABLE `communication_assigned_properties`  (
 -- ----------------------------
 -- Records of communication_assigned_properties
 -- ----------------------------
-INSERT INTO `communication_assigned_properties` VALUES (1, 1, 1, 'sabouri-hotel', NULL, NULL);
-INSERT INTO `communication_assigned_properties` VALUES (2, 1, 2, 'sabourihotel', NULL, NULL);
-INSERT INTO `communication_assigned_properties` VALUES (3, 1, 3, '10002972', NULL, NULL);
-INSERT INTO `communication_assigned_properties` VALUES (4, 1, 4, '1', NULL, NULL);
-INSERT INTO `communication_assigned_properties` VALUES (26, 2, 5, '', NULL, NULL);
-INSERT INTO `communication_assigned_properties` VALUES (27, 2, 6, '<script type=\"text/javascript\">!function(){function t(){var t=document.createElement(\"script\");t.type=\"text/javascript\",t.async=!0,localStorage.getItem(\"rayToken\")?t.src=\"https://app.raychat.io/scripts/js/\"+o+\"?rid=\"+localStorage.getItem(\"rayToken\")+\"&href=\"+window.location.href:t.src=\"https://app.raychat.io/scripts/js/\"+o;var e=document.getElementsByTagName(\"script\")[0];e.parentNode.insertBefore(t,e)}var e=document,a=window,o=\"629d6450-a954-425f-966f-9699993b5304\";\"complete\"==e.readyState?t():a.attachEvent?a.attachEvent(\"onload\",t):a.addEventListener(\"load\",t,!1)}();</script>', NULL, NULL);
-INSERT INTO `communication_assigned_properties` VALUES (28, 2, 7, '0', NULL, NULL);
-INSERT INTO `communication_assigned_properties` VALUES (29, 3, 5, 'tawk.io', NULL, NULL);
-INSERT INTO `communication_assigned_properties` VALUES (30, 3, 6, '<script type=\"text/javascript\">var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();(function () {var s1 = document.createElement(\"script\"), s0 = document.getElementsByTagName(\"script\")[0];s1.async = true;s1.src = \'https://embed.tawk.to/5cea6742a667a0210d597b7b/default\';s1.charset = \'UTF-8\';s1.setAttribute(\'crossorigin\', \'*\');s0.parentNode.insertBefore(s1, s0);})();</script>', NULL, NULL);
-INSERT INTO `communication_assigned_properties` VALUES (31, 3, 7, '1', NULL, NULL);
+INSERT INTO `communication_assigned_properties` VALUES (26, 1, 5, '', NULL, NULL);
+INSERT INTO `communication_assigned_properties` VALUES (27, 1, 6, '<script type=\"text/javascript\">!function(){function t(){var t=document.createElement(\"script\");t.type=\"text/javascript\",t.async=!0,localStorage.getItem(\"rayToken\")?t.src=\"https://app.raychat.io/scripts/js/\"+o+\"?rid=\"+localStorage.getItem(\"rayToken\")+\"&href=\"+window.location.href:t.src=\"https://app.raychat.io/scripts/js/\"+o;var e=document.getElementsByTagName(\"script\")[0];e.parentNode.insertBefore(t,e)}var e=document,a=window,o=\"629d6450-a954-425f-966f-9699993b5304\";\"complete\"==e.readyState?t():a.attachEvent?a.attachEvent(\"onload\",t):a.addEventListener(\"load\",t,!1)}();</script>', NULL, NULL);
+INSERT INTO `communication_assigned_properties` VALUES (28, 1, 7, '0', NULL, NULL);
+INSERT INTO `communication_assigned_properties` VALUES (29, 2, 5, 'tawk.io', NULL, NULL);
+INSERT INTO `communication_assigned_properties` VALUES (30, 2, 6, '<script type=\"text/javascript\">var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();(function () {var s1 = document.createElement(\"script\"), s0 = document.getElementsByTagName(\"script\")[0];s1.async = true;s1.src = \'https://embed.tawk.to/5cea6742a667a0210d597b7b/default\';s1.charset = \'UTF-8\';s1.setAttribute(\'crossorigin\', \'*\');s0.parentNode.insertBefore(s1, s0);})();</script>', NULL, NULL);
+INSERT INTO `communication_assigned_properties` VALUES (31, 2, 7, '1', NULL, NULL);
 
 -- ----------------------------
 -- Table structure for communication_assigned_property_values
@@ -149,15 +145,14 @@ CREATE TABLE `communication_types`  (
   `created_at` timestamp(0) NULL DEFAULT NULL,
   `updated_at` timestamp(0) NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 5 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 4 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of communication_types
 -- ----------------------------
-INSERT INTO `communication_types` VALUES (1, 'email', 1, 0, 0, NULL, NULL);
-INSERT INTO `communication_types` VALUES (2, 'sms', 1, 0, 0, NULL, NULL);
-INSERT INTO `communication_types` VALUES (3, 'iransmspanel', 1, 0, 2, NULL, NULL);
-INSERT INTO `communication_types` VALUES (4, 'external-chat-system', 1, 0, 0, NULL, NULL);
+INSERT INTO `communication_types` VALUES (1, 'email', 127, 0, 0, NULL, NULL);
+INSERT INTO `communication_types` VALUES (2, 'sms', 127, 0, 0, NULL, NULL);
+INSERT INTO `communication_types` VALUES (3, 'external-chat-system', 127, 0, 0, NULL, NULL);
 
 -- ----------------------------
 -- Table structure for communications
@@ -170,14 +165,13 @@ CREATE TABLE `communications`  (
   `created_at` timestamp(0) NULL DEFAULT NULL,
   `updated_at` timestamp(0) NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 4 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 3 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of communications
 -- ----------------------------
-INSERT INTO `communications` VALUES (1, 'iransmspanel-1', 3, NULL, NULL);
-INSERT INTO `communications` VALUES (2, 'raychat', 4, NULL, NULL);
-INSERT INTO `communications` VALUES (3, 'tawk', 4, NULL, NULL);
+INSERT INTO `communications` VALUES (1, 'raychat', 3, NULL, NULL);
+INSERT INTO `communications` VALUES (2, 'tawk', 3, NULL, NULL);
 
 -- ----------------------------
 -- Table structure for conversation_assigned_properties
@@ -191,27 +185,7 @@ CREATE TABLE `conversation_assigned_properties`  (
   `created_at` timestamp(0) NULL DEFAULT NULL,
   `updated_at` timestamp(0) NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 24 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
-
--- ----------------------------
--- Records of conversation_assigned_properties
--- ----------------------------
-INSERT INTO `conversation_assigned_properties` VALUES (8, 3, 2, '581', NULL, NULL);
-INSERT INTO `conversation_assigned_properties` VALUES (9, 3, 1, 'test', NULL, NULL);
-INSERT INTO `conversation_assigned_properties` VALUES (10, 3, 3, '1562399727083', NULL, NULL);
-INSERT INTO `conversation_assigned_properties` VALUES (11, 3, 4, '', NULL, NULL);
-INSERT INTO `conversation_assigned_properties` VALUES (12, 4, 2, '634', NULL, NULL);
-INSERT INTO `conversation_assigned_properties` VALUES (13, 4, 1, '345435435', NULL, NULL);
-INSERT INTO `conversation_assigned_properties` VALUES (14, 4, 3, '1562977073079', NULL, NULL);
-INSERT INTO `conversation_assigned_properties` VALUES (15, 4, 4, '', NULL, NULL);
-INSERT INTO `conversation_assigned_properties` VALUES (16, 5, 2, '635', NULL, NULL);
-INSERT INTO `conversation_assigned_properties` VALUES (17, 5, 1, '345345', NULL, NULL);
-INSERT INTO `conversation_assigned_properties` VALUES (18, 5, 3, '1563053610410', NULL, NULL);
-INSERT INTO `conversation_assigned_properties` VALUES (19, 5, 4, '', NULL, NULL);
-INSERT INTO `conversation_assigned_properties` VALUES (20, 6, 2, '636', NULL, NULL);
-INSERT INTO `conversation_assigned_properties` VALUES (21, 6, 1, '23423423434', NULL, NULL);
-INSERT INTO `conversation_assigned_properties` VALUES (22, 6, 3, '1563056267860', NULL, NULL);
-INSERT INTO `conversation_assigned_properties` VALUES (23, 6, 4, '', NULL, NULL);
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Table structure for conversation_assigned_property_values
@@ -310,15 +284,7 @@ CREATE TABLE `conversations`  (
   `created_at` timestamp(0) NULL DEFAULT NULL,
   `updated_at` timestamp(0) NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 7 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
-
--- ----------------------------
--- Records of conversations
--- ----------------------------
-INSERT INTO `conversations` VALUES (3, 2, '2019-07-06 07:55:27', '2019-07-06 07:55:27');
-INSERT INTO `conversations` VALUES (4, 2, '2019-07-13 00:17:52', '2019-07-13 00:17:52');
-INSERT INTO `conversations` VALUES (5, 2, '2019-07-13 21:33:30', '2019-07-13 21:33:30');
-INSERT INTO `conversations` VALUES (6, 2, '2019-07-13 22:17:47', '2019-07-13 22:17:47');
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Table structure for data
@@ -1411,7 +1377,7 @@ CREATE TABLE `navigation_item_assigned_properties`  (
   `created_at` timestamp(0) NULL DEFAULT NULL,
   `updated_at` timestamp(0) NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 328 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 368 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of navigation_item_assigned_properties
@@ -1602,32 +1568,32 @@ INSERT INTO `navigation_item_assigned_properties` VALUES (212, 41, 1, 'comments'
 INSERT INTO `navigation_item_assigned_properties` VALUES (213, 41, 2, 'conversations.index', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (214, 41, 3, 'conversation_type', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (215, 41, 4, 'comment', NULL, NULL);
-INSERT INTO `navigation_item_assigned_properties` VALUES (216, 41, 9, '0', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties` VALUES (216, 41, 9, '1', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (217, 42, 1, 'comment properties', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (218, 42, 2, 'conversations.properties.index', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (219, 42, 3, 'conversation_type', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (220, 42, 4, 'comment', NULL, NULL);
-INSERT INTO `navigation_item_assigned_properties` VALUES (221, 42, 9, '0', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties` VALUES (221, 42, 9, '1', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (222, 43, 1, 'complaints', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (223, 43, 2, 'conversations.index', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (224, 43, 3, 'conversation_type', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (225, 43, 4, 'complaint', NULL, NULL);
-INSERT INTO `navigation_item_assigned_properties` VALUES (226, 43, 9, '0', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties` VALUES (226, 43, 9, '1', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (227, 44, 1, 'complaint properties', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (228, 44, 2, 'conversations.properties.index', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (229, 44, 3, 'conversation_type', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (230, 44, 4, 'complaint', NULL, NULL);
-INSERT INTO `navigation_item_assigned_properties` VALUES (231, 44, 9, '0', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties` VALUES (231, 44, 9, '1', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (232, 45, 1, 'ratings', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (233, 45, 2, 'conversations.index', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (234, 45, 3, 'conversation_type', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (235, 45, 4, 'rating', NULL, NULL);
-INSERT INTO `navigation_item_assigned_properties` VALUES (236, 45, 9, '0', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties` VALUES (236, 45, 9, '1', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (237, 46, 1, 'rating properties', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (238, 46, 2, 'conversations.properties.index', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (239, 46, 3, 'conversation_type', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (240, 46, 4, 'rating', NULL, NULL);
-INSERT INTO `navigation_item_assigned_properties` VALUES (241, 46, 9, '0', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties` VALUES (241, 46, 9, '1', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (249, 48, 1, 'test page 10', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (250, 48, 2, 'home.document', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (251, 48, 3, 'document_type', NULL, NULL);
@@ -1707,6 +1673,46 @@ INSERT INTO `navigation_item_assigned_properties` VALUES (324, 65, 9, '1', NULL,
 INSERT INTO `navigation_item_assigned_properties` VALUES (325, 66, 1, 'conversation types', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (326, 66, 2, 'conversations.types.index', NULL, NULL);
 INSERT INTO `navigation_item_assigned_properties` VALUES (327, 66, 9, '1', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties` VALUES (328, 1, 20, 'dashboard', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties` VALUES (329, 2, 20, 'room', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties` VALUES (330, 3, 20, 'face', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties` VALUES (331, 4, 20, 'people', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties` VALUES (332, 5, 20, 'image', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties` VALUES (333, 10, 20, 'menu', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties` VALUES (334, 11, 20, 'grain', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties` VALUES (335, 12, 20, 'book', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties` VALUES (336, 13, 20, 'local_offer', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties` VALUES (337, 14, 20, 'slideshow', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties` VALUES (338, 15, 20, 'slideshow', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties` VALUES (339, 20, 20, 'web', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties` VALUES (340, 28, 20, 'hotel', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties` VALUES (341, 29, 20, 'image', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties` VALUES (342, 30, 20, 'grain', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties` VALUES (343, 32, 20, 'grain', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties` VALUES (344, 33, 20, 'grain', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties` VALUES (345, 34, 20, 'grain', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties` VALUES (346, 35, 20, 'settings_applications', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties` VALUES (347, 36, 20, 'pages', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties` VALUES (348, 39, 20, 'message', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties` VALUES (349, 40, 20, 'grain', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties` VALUES (350, 41, 20, 'comment', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties` VALUES (351, 42, 20, 'grain', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties` VALUES (352, 43, 20, 'mode_comment', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties` VALUES (353, 44, 20, 'grain', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties` VALUES (354, 45, 20, 'rate_review', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties` VALUES (355, 46, 20, 'grain', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties` VALUES (356, 49, 20, 'accessibility', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties` VALUES (357, 56, 20, 'map', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties` VALUES (358, 57, 20, 'location_on', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties` VALUES (359, 58, 20, 'ondemand_video', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties` VALUES (360, 59, 20, 'flash_on', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties` VALUES (361, 60, 20, 'chat', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties` VALUES (362, 61, 20, 'filter_tilt_shift', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties` VALUES (363, 62, 20, 'filter_tilt_shift', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties` VALUES (364, 63, 20, 'filter_tilt_shift', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties` VALUES (365, 64, 20, 'filter_tilt_shift', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties` VALUES (366, 65, 20, 'filter_tilt_shift', NULL, NULL);
+INSERT INTO `navigation_item_assigned_properties` VALUES (367, 66, 20, 'filter_tilt_shift', NULL, NULL);
 
 -- ----------------------------
 -- Table structure for navigation_item_assigned_property_values
@@ -1763,7 +1769,7 @@ CREATE TABLE `navigation_item_properties`  (
   `created_at` timestamp(0) NULL DEFAULT NULL,
   `updated_at` timestamp(0) NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 20 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 21 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of navigation_item_properties
@@ -1787,6 +1793,7 @@ INSERT INTO `navigation_item_properties` VALUES (16, 'max-navigation-items', '3'
 INSERT INTO `navigation_item_properties` VALUES (17, 'max-navigation-items', '10', 'number', 1, 4, 1, '-', 0, '', 0, 0, 'direct', 0, 1, 0, NULL, NULL);
 INSERT INTO `navigation_item_properties` VALUES (18, 'max-navigation-items', '2', 'number', 1, 5, 1, '-', 0, '', 0, 0, 'direct', 0, 1, 0, NULL, NULL);
 INSERT INTO `navigation_item_properties` VALUES (19, 'max-navigation-items', '0', 'number', 1, 6, 1, '-', 0, '', 0, 0, 'direct', 0, 1, 0, NULL, NULL);
+INSERT INTO `navigation_item_properties` VALUES (20, 'materialize_icon', 'dashboard', 'select-icon', 1, 1, 0, 'route', 0, '', 0, 0, 'direct', 0, 1, 0, NULL, NULL);
 
 -- ----------------------------
 -- Table structure for navigation_item_property_values
@@ -5409,11 +5416,12 @@ CREATE TABLE `translations`  (
   `created_at` timestamp(0) NULL DEFAULT NULL,
   `updated_at` timestamp(0) NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 1289 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 1388 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of translations
 -- ----------------------------
+INSERT INTO `translations` VALUES (0, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 INSERT INTO `translations` VALUES (1, 'en', 'data_assigned_properties', 'value', 32, 'room number 5 desription .', NULL, NULL);
 INSERT INTO `translations` VALUES (12, 'en', 'data_properties', 'title', 3, 'عنوان', NULL, NULL);
 INSERT INTO `translations` VALUES (13, 'en', 'data_assigned_properties', 'value', 161, '65 meter four-person suite type A', NULL, NULL);
@@ -6596,6 +6604,105 @@ INSERT INTO `translations` VALUES (1285, 'en', 'data_assigned_properties', 'valu
 INSERT INTO `translations` VALUES (1286, 'ar', 'data_assigned_properties', 'value', 853, NULL, NULL, NULL);
 INSERT INTO `translations` VALUES (1287, 'en', 'data_assigned_properties', 'value', 857, NULL, NULL, NULL);
 INSERT INTO `translations` VALUES (1288, 'ar', 'data_assigned_properties', 'value', 857, NULL, NULL, NULL);
+INSERT INTO `translations` VALUES (1289, 'fa', 'data_types', 'title', 1, 'هتل', NULL, NULL);
+INSERT INTO `translations` VALUES (1290, 'en', 'data_types', 'title', 1, 'hotel', NULL, NULL);
+INSERT INTO `translations` VALUES (1291, 'ar', 'data_types', 'title', 1, 'الهتل', NULL, NULL);
+INSERT INTO `translations` VALUES (1292, 'fa', 'data_types', 'title', 2, 'اتاق', NULL, NULL);
+INSERT INTO `translations` VALUES (1293, 'en', 'data_types', 'title', 2, 'room', NULL, NULL);
+INSERT INTO `translations` VALUES (1294, 'ar', 'data_types', 'title', 2, 'الاتاق', NULL, NULL);
+INSERT INTO `translations` VALUES (1295, 'fa', 'data_types', 'title', 3, 'وبسایت', NULL, NULL);
+INSERT INTO `translations` VALUES (1296, 'en', 'data_types', 'title', 3, 'website', NULL, NULL);
+INSERT INTO `translations` VALUES (1297, 'ar', 'data_types', 'title', 3, 'الوبسایت', NULL, NULL);
+INSERT INTO `translations` VALUES (1298, 'fa', 'data_types', 'title', 4, 'سیستم', NULL, NULL);
+INSERT INTO `translations` VALUES (1299, 'en', 'data_types', 'title', 4, 'application', NULL, NULL);
+INSERT INTO `translations` VALUES (1300, 'ar', 'data_types', 'title', 4, 'السیستم', NULL, NULL);
+INSERT INTO `translations` VALUES (1301, 'fa', 'data_types', 'title', 7, 'نقشه', NULL, NULL);
+INSERT INTO `translations` VALUES (1302, 'en', 'data_types', 'title', 7, 'map', NULL, NULL);
+INSERT INTO `translations` VALUES (1303, 'ar', 'data_types', 'title', 7, 'النقشه', NULL, NULL);
+INSERT INTO `translations` VALUES (1304, 'fa', 'data_types', 'title', 8, 'مکان نقشه', NULL, NULL);
+INSERT INTO `translations` VALUES (1305, 'en', 'data_types', 'title', 8, 'map location', NULL, NULL);
+INSERT INTO `translations` VALUES (1306, 'ar', 'data_types', 'title', 8, 'المکان النقشه', NULL, NULL);
+INSERT INTO `translations` VALUES (1307, 'fa', 'user_types', 'title', 1, 'کاربر', NULL, NULL);
+INSERT INTO `translations` VALUES (1308, 'en', 'user_types', 'title', 1, 'user', NULL, NULL);
+INSERT INTO `translations` VALUES (1309, 'ar', 'user_types', 'title', 1, 'الکاربر', NULL, NULL);
+INSERT INTO `translations` VALUES (1310, 'fa', 'user_types', 'title', 2, 'مشتری', NULL, NULL);
+INSERT INTO `translations` VALUES (1311, 'en', 'user_types', 'title', 2, 'customer', NULL, NULL);
+INSERT INTO `translations` VALUES (1312, 'ar', 'user_types', 'title', 2, 'المشتری', NULL, NULL);
+INSERT INTO `translations` VALUES (1313, 'fa', 'document_types', 'title', 1, 'گالری', NULL, NULL);
+INSERT INTO `translations` VALUES (1314, 'en', 'document_types', 'title', 1, 'gallery', NULL, NULL);
+INSERT INTO `translations` VALUES (1315, 'ar', 'document_types', 'title', 1, '-', NULL, NULL);
+INSERT INTO `translations` VALUES (1316, 'fa', 'document_types', 'title', 2, 'تصویر', NULL, NULL);
+INSERT INTO `translations` VALUES (1317, 'en', 'document_types', 'title', 2, 'image file', NULL, NULL);
+INSERT INTO `translations` VALUES (1318, 'ar', 'document_types', 'title', 2, '-', NULL, NULL);
+INSERT INTO `translations` VALUES (1319, 'fa', 'document_types', 'title', 3, 'اسلاید صفحه اصلی', NULL, NULL);
+INSERT INTO `translations` VALUES (1320, 'en', 'document_types', 'title', 3, 'main slide', NULL, NULL);
+INSERT INTO `translations` VALUES (1321, 'ar', 'document_types', 'title', 3, '-', NULL, NULL);
+INSERT INTO `translations` VALUES (1322, 'fa', 'document_types', 'title', 4, 'اسلاید صفحه دوم', NULL, NULL);
+INSERT INTO `translations` VALUES (1323, 'en', 'document_types', 'title', 4, 'second slide', NULL, NULL);
+INSERT INTO `translations` VALUES (1324, 'ar', 'document_types', 'title', 4, '-', NULL, NULL);
+INSERT INTO `translations` VALUES (1325, 'fa', 'document_types', 'title', 5, 'برگه', NULL, NULL);
+INSERT INTO `translations` VALUES (1326, 'en', 'document_types', 'title', 5, 'page', NULL, NULL);
+INSERT INTO `translations` VALUES (1327, 'ar', 'document_types', 'title', 5, '-', NULL, NULL);
+INSERT INTO `translations` VALUES (1328, 'fa', 'document_types', 'title', 22, 'ویدئو', NULL, NULL);
+INSERT INTO `translations` VALUES (1329, 'en', 'document_types', 'title', 22, 'video file', NULL, NULL);
+INSERT INTO `translations` VALUES (1330, 'ar', 'document_types', 'title', 22, '-', NULL, NULL);
+INSERT INTO `translations` VALUES (1331, 'fa', 'document_types', 'title', 23, 'فایل فلش', NULL, NULL);
+INSERT INTO `translations` VALUES (1332, 'en', 'document_types', 'title', 23, 'swf file', NULL, NULL);
+INSERT INTO `translations` VALUES (1333, 'ar', 'document_types', 'title', 23, '-', NULL, NULL);
+INSERT INTO `translations` VALUES (1334, 'fa', 'conversation_types', 'title', 1, 'مکالمه', NULL, NULL);
+INSERT INTO `translations` VALUES (1335, 'en', 'conversation_types', 'title', 1, 'conversation', NULL, NULL);
+INSERT INTO `translations` VALUES (1336, 'ar', 'conversation_types', 'title', 1, '-', NULL, NULL);
+INSERT INTO `translations` VALUES (1337, 'fa', 'conversation_types', 'title', 2, 'پیام', NULL, NULL);
+INSERT INTO `translations` VALUES (1338, 'en', 'conversation_types', 'title', 2, 'message', NULL, NULL);
+INSERT INTO `translations` VALUES (1339, 'ar', 'conversation_types', 'title', 2, '-', NULL, NULL);
+INSERT INTO `translations` VALUES (1340, 'fa', 'conversation_types', 'title', 3, 'دیدگاه', NULL, NULL);
+INSERT INTO `translations` VALUES (1341, 'en', 'conversation_types', 'title', 3, 'comment', NULL, NULL);
+INSERT INTO `translations` VALUES (1342, 'ar', 'conversation_types', 'title', 3, '-', NULL, NULL);
+INSERT INTO `translations` VALUES (1343, 'fa', 'conversation_types', 'title', 4, 'شکایت', NULL, NULL);
+INSERT INTO `translations` VALUES (1344, 'en', 'conversation_types', 'title', 4, 'complaint', NULL, NULL);
+INSERT INTO `translations` VALUES (1345, 'ar', 'conversation_types', 'title', 4, '-', NULL, NULL);
+INSERT INTO `translations` VALUES (1346, 'fa', 'conversation_types', 'title', 5, 'رتبه بندی', NULL, NULL);
+INSERT INTO `translations` VALUES (1347, 'en', 'conversation_types', 'title', 5, 'rating', NULL, NULL);
+INSERT INTO `translations` VALUES (1348, 'ar', 'conversation_types', 'title', 5, '-', NULL, NULL);
+INSERT INTO `translations` VALUES (1349, 'fa', 'communication_types', 'title', 1, 'ایمیل', NULL, NULL);
+INSERT INTO `translations` VALUES (1350, 'en', 'communication_types', 'title', 1, 'email', NULL, NULL);
+INSERT INTO `translations` VALUES (1351, 'ar', 'communication_types', 'title', 1, '-', NULL, NULL);
+INSERT INTO `translations` VALUES (1352, 'fa', 'communication_types', 'title', 2, 'پیام کوتاه', NULL, NULL);
+INSERT INTO `translations` VALUES (1353, 'en', 'communication_types', 'title', 2, 'sms', NULL, NULL);
+INSERT INTO `translations` VALUES (1354, 'ar', 'communication_types', 'title', 2, '-', NULL, NULL);
+INSERT INTO `translations` VALUES (1355, 'fa', 'communication_types', 'title', 3, 'سامانه چت', NULL, NULL);
+INSERT INTO `translations` VALUES (1356, 'en', 'communication_types', 'title', 3, 'external chat system', NULL, NULL);
+INSERT INTO `translations` VALUES (1357, 'ar', 'communication_types', 'title', 3, '-', NULL, NULL);
+INSERT INTO `translations` VALUES (1358, 'fa', 'service_types', 'title', 1, 'رزرو', NULL, NULL);
+INSERT INTO `translations` VALUES (1359, 'en', 'service_types', 'title', 1, 'reserve', NULL, NULL);
+INSERT INTO `translations` VALUES (1360, 'ar', 'service_types', 'title', 1, '-', NULL, NULL);
+INSERT INTO `translations` VALUES (1361, 'en', 'navigation_item_assigned_properties', 'value', 295, 'Video Files', NULL, NULL);
+INSERT INTO `translations` VALUES (1362, 'fa', 'navigation_item_assigned_properties', 'value', 295, 'فایل های ویدئو', NULL, NULL);
+INSERT INTO `translations` VALUES (1363, 'ar', 'navigation_item_assigned_properties', 'value', 295, '-', NULL, NULL);
+INSERT INTO `translations` VALUES (1364, 'en', 'navigation_item_assigned_properties', 'value', 300, 'SWF Files', NULL, NULL);
+INSERT INTO `translations` VALUES (1365, 'fa', 'navigation_item_assigned_properties', 'value', 300, 'فایل های فلش', NULL, NULL);
+INSERT INTO `translations` VALUES (1366, 'ar', 'navigation_item_assigned_properties', 'value', 300, '-', NULL, NULL);
+INSERT INTO `translations` VALUES (1367, 'en', 'navigation_item_assigned_properties', 'value', 305, 'External Chat System', NULL, NULL);
+INSERT INTO `translations` VALUES (1368, 'fa', 'navigation_item_assigned_properties', 'value', 305, 'سیستم چت آنلاین', NULL, NULL);
+INSERT INTO `translations` VALUES (1369, 'ar', 'navigation_item_assigned_properties', 'value', 305, '-', NULL, NULL);
+INSERT INTO `translations` VALUES (1370, 'en', 'navigation_item_assigned_properties', 'value', 310, 'Data Types', NULL, NULL);
+INSERT INTO `translations` VALUES (1371, 'fa', 'navigation_item_assigned_properties', 'value', 310, 'انواع داده', NULL, NULL);
+INSERT INTO `translations` VALUES (1372, 'ar', 'navigation_item_assigned_properties', 'value', 310, '-', NULL, NULL);
+INSERT INTO `translations` VALUES (1373, 'en', 'navigation_item_assigned_properties', 'value', 313, 'User Types', NULL, NULL);
+INSERT INTO `translations` VALUES (1374, 'fa', 'navigation_item_assigned_properties', 'value', 313, 'انواع کاربران', NULL, NULL);
+INSERT INTO `translations` VALUES (1375, 'ar', 'navigation_item_assigned_properties', 'value', 313, '-', NULL, NULL);
+INSERT INTO `translations` VALUES (1376, 'en', 'navigation_item_assigned_properties', 'value', 316, 'Service Types', NULL, NULL);
+INSERT INTO `translations` VALUES (1377, 'fa', 'navigation_item_assigned_properties', 'value', 316, 'انواع سرویس ها', NULL, NULL);
+INSERT INTO `translations` VALUES (1378, 'ar', 'navigation_item_assigned_properties', 'value', 316, '-', NULL, NULL);
+INSERT INTO `translations` VALUES (1379, 'en', 'navigation_item_assigned_properties', 'value', 319, 'Document Types', NULL, NULL);
+INSERT INTO `translations` VALUES (1380, 'fa', 'navigation_item_assigned_properties', 'value', 319, 'انواع اسناد', NULL, NULL);
+INSERT INTO `translations` VALUES (1381, 'ar', 'navigation_item_assigned_properties', 'value', 319, '-', NULL, NULL);
+INSERT INTO `translations` VALUES (1382, 'en', 'navigation_item_assigned_properties', 'value', 322, 'Communication Types', NULL, NULL);
+INSERT INTO `translations` VALUES (1383, 'fa', 'navigation_item_assigned_properties', 'value', 322, 'انواع ارتباط ها', NULL, NULL);
+INSERT INTO `translations` VALUES (1384, 'ar', 'navigation_item_assigned_properties', 'value', 322, '-', NULL, NULL);
+INSERT INTO `translations` VALUES (1385, 'en', 'navigation_item_assigned_properties', 'value', 325, 'Conversation Types', NULL, NULL);
+INSERT INTO `translations` VALUES (1386, 'fa', 'navigation_item_assigned_properties', 'value', 325, 'انواع مکالمه ها', NULL, NULL);
+INSERT INTO `translations` VALUES (1387, 'ar', 'navigation_item_assigned_properties', 'value', 325, '-', NULL, NULL);
 
 -- ----------------------------
 -- Table structure for user_assigned_properties
@@ -6609,7 +6716,7 @@ CREATE TABLE `user_assigned_properties`  (
   `created_at` timestamp(0) NULL DEFAULT NULL,
   `updated_at` timestamp(0) NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 451 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 452 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of user_assigned_properties
@@ -6622,6 +6729,7 @@ INSERT INTO `user_assigned_properties` VALUES (431, 1, 9, '09365982333', NULL, N
 INSERT INTO `user_assigned_properties` VALUES (448, 114, 5, 'ewrewrewr', NULL, NULL);
 INSERT INTO `user_assigned_properties` VALUES (449, 114, 8, '3rewrewr', NULL, NULL);
 INSERT INTO `user_assigned_properties` VALUES (450, 114, 9, '09365982334', NULL, NULL);
+INSERT INTO `user_assigned_properties` VALUES (451, 6, 8, 'سیامک خانجانی', NULL, NULL);
 
 -- ----------------------------
 -- Table structure for user_assigned_property_values
@@ -6775,37 +6883,37 @@ CREATE TABLE `widget_parts`  (
   `created_at` timestamp(0) NULL DEFAULT NULL,
   `updated_at` timestamp(0) NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 58 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 64 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of widget_parts
 -- ----------------------------
-INSERT INTO `widget_parts` VALUES (1, 1, 2, 'subview:admin.items.subviews.card_view_with_side_bar,widget:admin.items.widgets.single_card', NULL, NULL);
-INSERT INTO `widget_parts` VALUES (3, 2, 2, 'subview:admin.items.subviews.table_view_with_action_bar,widget:admin.items.widgets.single_card', NULL, NULL);
-INSERT INTO `widget_parts` VALUES (4, 3, 2, 'subview:admin.items.subviews.table_view_with_action_bar,widget:admin.items.widgets.single_card', NULL, NULL);
-INSERT INTO `widget_parts` VALUES (5, 4, 2, 'subview:admin.items.subviews.card_view_with_media_hover_effect,widget:admin.properties.widgets.single_card', NULL, NULL);
-INSERT INTO `widget_parts` VALUES (6, 5, 2, 'subview:admin.items.subviews.card_view_with_media_hover_effect,widget:admin.items.widgets.gallery', NULL, NULL);
-INSERT INTO `widget_parts` VALUES (7, 6, 2, 'subview:admin.items.subviews.card_view_with_media_hover_effect,widget:admin.items.widgets.document', NULL, NULL);
-INSERT INTO `widget_parts` VALUES (8, 7, 2, 'subview:admin.items.subviews.card_view_with_media_hover_effect,widget:admin.items.widgets.document', NULL, NULL);
+INSERT INTO `widget_parts` VALUES (1, 1, 2, 'subview:admin.layouts.subviews.card_view_with_side_bar|widget:admin.items.widgets.single_card', NULL, NULL);
+INSERT INTO `widget_parts` VALUES (3, 2, 2, 'subview:admin.layouts.subviews.table_view_with_action_bar|widget:admin.items.widgets.table_view', NULL, NULL);
+INSERT INTO `widget_parts` VALUES (4, 3, 2, 'subview:admin.layouts.subviews.table_view_with_action_bar|widget:admin.items.widgets.table_view', NULL, NULL);
+INSERT INTO `widget_parts` VALUES (5, 4, 2, 'subview:admin.layouts.subviews.table_view_with_action_bar|widget:admin.properties.widgets.table_view', NULL, NULL);
+INSERT INTO `widget_parts` VALUES (6, 5, 2, 'subview:admin.layouts.subviews.card_view_with_media_hover_effect|widget:admin.items.widgets.media_card_view_hover_effect', NULL, NULL);
+INSERT INTO `widget_parts` VALUES (7, 6, 2, 'subview:admin.layouts.subviews.card_view_with_media_hover_effect|widget:admin.items.widgets.media_card_view_hover_effect', NULL, NULL);
+INSERT INTO `widget_parts` VALUES (8, 7, 2, 'subview:admin.layouts.subviews.card_view_with_media_hover_effect|widget:admin.items.widgets.media_card_view_hover_effect', NULL, NULL);
 INSERT INTO `widget_parts` VALUES (9, 8, 2, '-', NULL, NULL);
-INSERT INTO `widget_parts` VALUES (10, 9, 2, 'admin.items.widgets.single_card', NULL, NULL);
+INSERT INTO `widget_parts` VALUES (10, 9, 2, 'subview:admin.layouts.subviews.table_view_with_action_bar|widget:admin.items.widgets.table_view', NULL, NULL);
 INSERT INTO `widget_parts` VALUES (11, 11, 2, 'public.themes.hotel.widgets.rooms', NULL, NULL);
 INSERT INTO `widget_parts` VALUES (12, 12, 2, 'public.themes.hotel.widgets.room', NULL, NULL);
 INSERT INTO `widget_parts` VALUES (13, 13, 2, 'public.themes.hotel.widgets.gallery', NULL, NULL);
 INSERT INTO `widget_parts` VALUES (14, 14, 2, 'public.themes.hotel.widgets.contact_us', NULL, NULL);
 INSERT INTO `widget_parts` VALUES (15, 15, 2, 'public.themes.hotel.widgets.about_us', NULL, NULL);
 INSERT INTO `widget_parts` VALUES (16, 16, 2, 'public.themes.hotel.widgets.rules', NULL, NULL);
-INSERT INTO `widget_parts` VALUES (17, 17, 2, 'admin.items.widgets.single_card', NULL, NULL);
-INSERT INTO `widget_parts` VALUES (18, 18, 2, 'subview:admin.items.subviews.card_view_with_media_hover_effect,widget:admin.items.widgets.document', NULL, NULL);
-INSERT INTO `widget_parts` VALUES (19, 19, 2, 'admin.properties.widgets.single_card', NULL, NULL);
+INSERT INTO `widget_parts` VALUES (17, 17, 2, 'subview:admin.layouts.subviews.table_view_with_action_bar|widget:admin.items.widgets.table_view', NULL, NULL);
+INSERT INTO `widget_parts` VALUES (18, 18, 2, 'subview:admin.layouts.subviews.card_view_with_media_hover_effect|widget:admin.items.widgets.media_card_view_hover_effect', NULL, NULL);
+INSERT INTO `widget_parts` VALUES (19, 19, 2, 'subview:admin.layouts.subviews.table_view_with_action_bar|widget:admin.properties.widgets.table_view', NULL, NULL);
 INSERT INTO `widget_parts` VALUES (20, 20, 2, 'public.themes.hotel.widgets.complaints', NULL, NULL);
-INSERT INTO `widget_parts` VALUES (21, 21, 2, 'admin.properties.widgets.single_card', NULL, NULL);
-INSERT INTO `widget_parts` VALUES (22, 22, 2, 'admin.properties.widgets.single_card', NULL, NULL);
+INSERT INTO `widget_parts` VALUES (21, 21, 2, 'subview:admin.layouts.subviews.table_view_with_action_bar|widget:admin.properties.widgets.table_view', NULL, NULL);
+INSERT INTO `widget_parts` VALUES (22, 22, 2, 'subview:admin.layouts.subviews.table_view_with_action_bar|widget:admin.properties.widgets.table_view', NULL, NULL);
 INSERT INTO `widget_parts` VALUES (23, 23, 2, 'public.themes.hotel.widgets.enter', NULL, NULL);
 INSERT INTO `widget_parts` VALUES (24, 24, 2, 'public.themes.hotel.widgets.login', NULL, NULL);
 INSERT INTO `widget_parts` VALUES (25, 25, 2, 'public.themes.hotel.widgets.register', NULL, NULL);
-INSERT INTO `widget_parts` VALUES (26, 26, 2, 'admin.properties.widgets.single_card', NULL, NULL);
-INSERT INTO `widget_parts` VALUES (27, 27, 2, 'admin.items.widgets.single_card', NULL, NULL);
+INSERT INTO `widget_parts` VALUES (26, 26, 2, 'subview:admin.layouts.subviews.table_view_with_action_bar|widget:admin.properties.widgets.table_view', NULL, NULL);
+INSERT INTO `widget_parts` VALUES (27, 27, 2, 'subview:admin.layouts.subviews.table_view_with_action_bar|widget:admin.items.widgets.table_view', NULL, NULL);
 INSERT INTO `widget_parts` VALUES (28, 28, 2, 'public.themes.hotel.templates.empty', '2019-05-18 19:41:03', '2019-05-18 19:41:03');
 INSERT INTO `widget_parts` VALUES (29, 29, 2, 'public.themes.hotel.templates.empty', '2019-05-18 23:15:35', '2019-05-18 23:15:35');
 INSERT INTO `widget_parts` VALUES (30, 30, 2, 'public.themes.hotel.templates.two_rows', '2019-05-19 04:57:57', '2019-05-19 04:57:57');
@@ -6813,29 +6921,35 @@ INSERT INTO `widget_parts` VALUES (31, 31, 2, 'public.themes.hotel.templates.emp
 INSERT INTO `widget_parts` VALUES (32, 32, 2, 'public.themes.hotel.templates.empty', '2019-05-21 01:59:44', '2019-05-21 01:59:44');
 INSERT INTO `widget_parts` VALUES (33, 33, 2, 'public.themes.hotel.templates.empty', '2019-05-21 02:16:19', '2019-05-21 02:16:19');
 INSERT INTO `widget_parts` VALUES (34, 34, 2, 'public.themes.hotel.templates.full_text', '2019-05-21 08:03:25', '2019-05-21 08:03:25');
-INSERT INTO `widget_parts` VALUES (35, 35, 2, 'admin.items.widgets.single_card', NULL, NULL);
-INSERT INTO `widget_parts` VALUES (36, 36, 2, 'admin.items.widgets.single_card', NULL, NULL);
-INSERT INTO `widget_parts` VALUES (37, 37, 2, 'admin.items.widgets.single_card', NULL, NULL);
-INSERT INTO `widget_parts` VALUES (38, 38, 2, 'admin.items.widgets.single_card', NULL, NULL);
-INSERT INTO `widget_parts` VALUES (39, 39, 2, 'admin.properties.widgets.single_card', NULL, NULL);
-INSERT INTO `widget_parts` VALUES (40, 40, 2, 'admin.properties.widgets.single_card', NULL, NULL);
-INSERT INTO `widget_parts` VALUES (41, 41, 2, 'admin.properties.widgets.single_card', NULL, NULL);
-INSERT INTO `widget_parts` VALUES (42, 42, 2, 'admin.properties.widgets.single_card', NULL, NULL);
+INSERT INTO `widget_parts` VALUES (35, 35, 2, 'subview:admin.layouts.subviews.list_view_with_action_bar|widget:admin.items.widgets.single_card', NULL, NULL);
+INSERT INTO `widget_parts` VALUES (36, 36, 2, 'subview:admin.layouts.subviews.list_view_with_action_bar|widget:admin.items.widgets.single_card', NULL, NULL);
+INSERT INTO `widget_parts` VALUES (37, 37, 2, 'subview:admin.layouts.subviews.list_view_with_action_bar|widget:admin.items.widgets.single_card', NULL, NULL);
+INSERT INTO `widget_parts` VALUES (38, 38, 2, 'subview:admin.layouts.subviews.list_view_with_action_bar|widget:admin.items.widgets.single_card', NULL, NULL);
+INSERT INTO `widget_parts` VALUES (39, 39, 2, 'subview:admin.layouts.subviews.table_view_with_action_bar|widget:admin.properties.widgets.table_view', NULL, NULL);
+INSERT INTO `widget_parts` VALUES (40, 40, 2, 'subview:admin.layouts.subviews.table_view_with_action_bar|widget:admin.properties.widgets.table_view', NULL, NULL);
+INSERT INTO `widget_parts` VALUES (41, 41, 2, 'subview:admin.layouts.subviews.table_view_with_action_bar|widget:admin.properties.widgets.table_view', NULL, NULL);
+INSERT INTO `widget_parts` VALUES (42, 42, 2, 'subview:admin.layouts.subviews.table_view_with_action_bar|widget:admin.properties.widgets.table_view', NULL, NULL);
 INSERT INTO `widget_parts` VALUES (43, 43, 2, 'public.themes.hotel.templates.full_feature', '2019-05-26 22:42:00', '2019-05-26 22:42:00');
 INSERT INTO `widget_parts` VALUES (44, 44, 2, 'public.themes.hotel.templates.full_feature', '2019-05-26 22:50:22', '2019-05-26 22:50:22');
 INSERT INTO `widget_parts` VALUES (45, 45, 2, 'public.themes.hotel.templates.full_text', '2019-05-27 00:56:25', '2019-05-27 00:56:25');
 INSERT INTO `widget_parts` VALUES (46, 46, 2, 'public.themes.hotel.templates.full_feature', '2019-06-09 18:18:00', '2019-06-09 18:18:00');
-INSERT INTO `widget_parts` VALUES (47, 47, 2, 'admin.properties.widgets.single_card', NULL, NULL);
-INSERT INTO `widget_parts` VALUES (48, 48, 2, 'admin.properties.widgets.single_card', NULL, NULL);
-INSERT INTO `widget_parts` VALUES (49, 49, 2, 'admin.properties.widgets.single_card', NULL, NULL);
-INSERT INTO `widget_parts` VALUES (50, 50, 2, 'admin.properties.widgets.single_card', NULL, NULL);
-INSERT INTO `widget_parts` VALUES (51, 51, 2, 'admin.items.widgets.single_card', NULL, NULL);
-INSERT INTO `widget_parts` VALUES (52, 52, 2, 'admin.items.widgets.single_card', NULL, NULL);
-INSERT INTO `widget_parts` VALUES (53, 53, 2, 'subview:admin.items.subviews.card_view_with_media_hover_effect,widget:admin.items.widgets.single_card', NULL, NULL);
-INSERT INTO `widget_parts` VALUES (54, 54, 2, 'subview:admin.items.subviews.card_view_with_media_hover_effect,widget:admin.items.widgets.single_card', NULL, NULL);
-INSERT INTO `widget_parts` VALUES (55, 55, 2, 'admin.items.widgets.single_card', NULL, NULL);
+INSERT INTO `widget_parts` VALUES (47, 47, 2, 'subview:admin.layouts.subviews.table_view_with_action_bar|widget:admin.properties.widgets.table_view', NULL, NULL);
+INSERT INTO `widget_parts` VALUES (48, 48, 2, 'subview:admin.layouts.subviews.table_view_with_action_bar|widget:admin.properties.widgets.table_view', NULL, NULL);
+INSERT INTO `widget_parts` VALUES (49, 49, 2, 'subview:admin.layouts.subviews.table_view_with_action_bar|widget:admin.properties.widgets.table_view', NULL, NULL);
+INSERT INTO `widget_parts` VALUES (50, 50, 2, 'subview:admin.layouts.subviews.table_view_with_action_bar|widget:admin.properties.widgets.table_view', NULL, NULL);
+INSERT INTO `widget_parts` VALUES (51, 51, 2, 'subview:admin.layouts.subviews.table_view_with_action_bar|widget:admin.items.widgets.table_view', NULL, NULL);
+INSERT INTO `widget_parts` VALUES (52, 52, 2, 'subview:admin.layouts.subviews.table_view_with_action_bar|widget:admin.items.widgets.table_view', NULL, NULL);
+INSERT INTO `widget_parts` VALUES (53, 53, 2, 'subview:admin.layouts.subviews.card_view_with_media_hover_effect|widget:admin.items.widgets.media_card_view_hover_effect', NULL, NULL);
+INSERT INTO `widget_parts` VALUES (54, 54, 2, 'subview:admin.layouts.subviews.card_view_with_media_hover_effect|widget:admin.items.widgets.media_card_view_hover_effect', NULL, NULL);
+INSERT INTO `widget_parts` VALUES (55, 55, 2, 'subview:admin.layouts.subviews.table_view_with_action_bar|widget:admin.items.widgets.table_view', NULL, NULL);
 INSERT INTO `widget_parts` VALUES (56, 56, 2, 'public.themes.hotel.templates.empty', '2019-07-12 19:14:02', '2019-07-12 19:14:02');
 INSERT INTO `widget_parts` VALUES (57, 57, 2, 'public.themes.hotel.templates.empty', '2019-07-12 20:47:34', '2019-07-12 20:47:34');
+INSERT INTO `widget_parts` VALUES (58, 58, 2, 'subview:admin.layouts.subviews.table_view_with_action_bar|widget:admin.types.widgets.table_view', NULL, NULL);
+INSERT INTO `widget_parts` VALUES (59, 59, 2, 'subview:admin.layouts.subviews.table_view_with_action_bar|widget:admin.types.widgets.table_view', NULL, NULL);
+INSERT INTO `widget_parts` VALUES (60, 60, 2, 'subview:admin.layouts.subviews.table_view_with_action_bar|widget:admin.types.widgets.table_view', NULL, NULL);
+INSERT INTO `widget_parts` VALUES (61, 61, 2, 'subview:admin.layouts.subviews.table_view_with_action_bar|widget:admin.types.widgets.table_view', NULL, NULL);
+INSERT INTO `widget_parts` VALUES (62, 62, 2, 'subview:admin.layouts.subviews.table_view_with_action_bar|widget:admin.types.widgets.table_view', NULL, NULL);
+INSERT INTO `widget_parts` VALUES (63, 63, 2, 'subview:admin.layouts.subviews.table_view_with_action_bar|widget:admin.types.widgets.table_view', NULL, NULL);
 
 -- ----------------------------
 -- Table structure for widgets
@@ -6850,7 +6964,7 @@ CREATE TABLE `widgets`  (
   `created_at` timestamp(0) NULL DEFAULT NULL,
   `updated_at` timestamp(0) NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 58 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 64 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of widgets
@@ -6909,8 +7023,14 @@ INSERT INTO `widgets` VALUES (51, 'data.index', NULL, 1, 7, NULL, NULL);
 INSERT INTO `widgets` VALUES (52, 'data.index', NULL, 1, 8, NULL, NULL);
 INSERT INTO `widgets` VALUES (53, 'document.index', NULL, 4, 22, NULL, NULL);
 INSERT INTO `widgets` VALUES (54, 'document.index', NULL, 4, 23, NULL, NULL);
-INSERT INTO `widgets` VALUES (55, 'communication.index', NULL, 12, 4, NULL, NULL);
+INSERT INTO `widgets` VALUES (55, 'communication.index', NULL, 12, 3, NULL, NULL);
 INSERT INTO `widgets` VALUES (56, 'public.document', 'home.document.all', 4, 25, '2019-07-12 19:14:02', '2019-07-12 19:14:02');
 INSERT INTO `widgets` VALUES (57, 'public.document', 'home.document.all', 4, 26, '2019-07-12 20:47:34', '2019-07-12 20:47:34');
+INSERT INTO `widgets` VALUES (58, 'data.types.index', NULL, 1, 0, NULL, NULL);
+INSERT INTO `widgets` VALUES (59, 'documents.types.index', NULL, 4, 0, NULL, NULL);
+INSERT INTO `widgets` VALUES (60, 'users.types.index', NULL, 2, 0, NULL, NULL);
+INSERT INTO `widgets` VALUES (61, 'communications.types.index', NULL, 12, 0, NULL, NULL);
+INSERT INTO `widgets` VALUES (62, 'services.types.index', NULL, 3, 0, NULL, NULL);
+INSERT INTO `widgets` VALUES (63, 'conversations.types.index', NULL, 10, 0, NULL, NULL);
 
 SET FOREIGN_KEY_CHECKS = 1;

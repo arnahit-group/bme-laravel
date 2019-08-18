@@ -3,6 +3,26 @@
 return [
 
     'hotel' => 'الفندق ......',
+    'list of' => 'List Of ',
+    'properties' => 'Properties Of ',
+    'create new property' => 'Create New Property',
+    'create new item' => 'Create New Item',
+    'create new type' => 'Create New Type',
+
+    'edit existing property' => 'Edit Existing Property',
+    'edit existing item' => 'Edit Existing Item',
+    'edit existing type' => 'Edit  Existing Type',
+
+
+    'types' => [
+        'data'=>'Data Type',
+        'users'=>'User Type',
+        'documents'=>'Document Type',
+        'services'=>'Service Type',
+        'communications'=>'Communication Type',
+        'conversations'=>'Conversation Type',
+    ],
+
 
     'base_types' => [
         'hotel' => 'الفندق',

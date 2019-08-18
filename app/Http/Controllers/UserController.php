@@ -19,7 +19,9 @@ use Validator;
 class UserController extends Controller
 {
 
-    public static function getBaseInforamation(&$data,$type)
+    protected static $types_table_name = 'user_types';
+
+    public static function getBaseInforamation(&$data, $type)
     {
         $navs = NavigationController::getNavigation('admin');
 
@@ -273,7 +275,7 @@ class UserController extends Controller
     {
 
         $data = BaseController::createBaseInformations();
-        self::getBaseInforamation($data,$type);
+        self::getBaseInforamation($data, $type);
 
 
         $bt_id = UserType::where('title', '=', $type)->first();
@@ -291,13 +293,15 @@ class UserController extends Controller
         $data['permissions'] = self::getPermissions($type);
         $data['urls'] = self::getUrls($type);
 
+        $data['page_title'] = trans('messages.list of') . MyPluralizer::plural(TranslationController::getTranslatedForCell(App::getLocale(), self::$types_table_name, 'title', $bt_id->id));
+
         $data['breadcrumbs'] = [
             [
                 'title' => trans('messages.navigation_titles.dashboard'),
                 'url' => route('admin.index')
             ],
             [
-                'title' => MyPluralizer::plural(TranslationController::getTranslatedForCell(App::getLocale(), 'user_types', 'title', $bt_id->id)),
+                'title' => MyPluralizer::plural(TranslationController::getTranslatedForCell(App::getLocale(), self::$types_table_name, 'title', $bt_id->id)),
                 'url' => ''
             ]
         ];
@@ -316,7 +320,7 @@ class UserController extends Controller
     {
 
         $data = BaseController::createBaseInformations();
-        self::getBaseInforamation($data,$type);
+        self::getBaseInforamation($data, $type);
 
 
         $data['type'] = $type;
@@ -418,6 +422,27 @@ class UserController extends Controller
 
 //        return $data;
 
+
+        $bt_id = UserType::where('title', '=', $type)->first();
+
+        $data['page_title'] = trans('messages.list of') . MyPluralizer::plural(TranslationController::getTranslatedForCell(App::getLocale(), self::$types_table_name, 'title', $bt_id->id));
+
+        $data['breadcrumbs'] = [
+            [
+                'title' => trans('messages.navigation_titles.dashboard'),
+                'url' => route('admin.index')
+            ],
+            [
+                'title' => MyPluralizer::plural(TranslationController::getTranslatedForCell(App::getLocale(), self::$types_table_name, 'title', $bt_id->id)),
+                'url' => route('users.index', ['type' => $type])
+            ],
+            [
+                'title' => trans('messages.create new item'),
+                'url' => ''
+            ]
+        ];
+
+
         return view("admin.items.views.create", $data);
 
         //
@@ -507,7 +532,7 @@ class UserController extends Controller
     public function edit($type, $id)
     {
         $data = BaseController::createBaseInformations();
-        self::getBaseInforamation($data,$type);
+        self::getBaseInforamation($data, $type);
 
         $data ['images'] = DocumentController::getItems('general');
         $data['type'] = $type;
@@ -518,6 +543,27 @@ class UserController extends Controller
 
         $data['permissions'] = self::getPermissions($type);
         $data['urls'] = self::getUrls($type, $id);
+
+
+        $bt_id = UserType::where('title', '=', $type)->first();
+
+        $data['page_title'] = trans('messages.list of') . MyPluralizer::plural(TranslationController::getTranslatedForCell(App::getLocale(), self::$types_table_name, 'title', $bt_id->id));
+
+        $data['breadcrumbs'] = [
+            [
+                'title' => trans('messages.navigation_titles.dashboard'),
+                'url' => route('admin.index')
+            ],
+            [
+                'title' => MyPluralizer::plural(TranslationController::getTranslatedForCell(App::getLocale(), self::$types_table_name, 'title', $bt_id->id)),
+                'url' => route('users.index', ['type' => $type])
+            ],
+            [
+                'title' => trans('messages.edit existing item'),
+                'url' => ''
+            ]
+        ];
+
 
         return view("admin.items.views.edit", $data);
 

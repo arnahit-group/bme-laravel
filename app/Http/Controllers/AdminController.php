@@ -42,7 +42,7 @@ class AdminController extends Controller
         $today_timestamp = round($gr_st_date->getTimestamp() * 1000, 0);
 
 
-        $data['today'] =  $d . "-" . $m . ' - ' . $y;
+        $data['today'] =  $d . "-" . $m . '-' . $y;
 
 //        return $data;
         return view('admin.index', $data);

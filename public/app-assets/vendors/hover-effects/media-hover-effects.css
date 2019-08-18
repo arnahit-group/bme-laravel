@@ -987,6 +987,13 @@ figure.effect-zoe h2 {
 	float: left;
 }
 
+
+/*TODO MINE*/
+figure.effect-zoe .title {
+	float: left;
+}
+
+
 figure.effect-zoe p.icon-links a {
 	float: right;
 	color: #3c4a50;

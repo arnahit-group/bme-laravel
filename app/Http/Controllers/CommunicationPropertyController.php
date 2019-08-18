@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App;
 use App\CommunicationProperty;
 use App\CommunicationPropertyValue;
 use App\CommunicationType;
+use App\Libraries\MyLib\MyPluralizer;
 use App\Translation;
 use App\User;
 use DB;
@@ -14,6 +16,8 @@ use Validator;
 
 class CommunicationPropertyController extends Controller
 {
+    protected static $types_table_name = 'communication_types';
+
 
     public static function getBaseInformation(&$data, $type)
     {
@@ -110,11 +114,25 @@ class CommunicationPropertyController extends Controller
 
     }
 
+
+    public static function getUrls($type, $id = 0)
+    {
+        $urls = [];
+        $urls['create'] = route("communications.properties.create", ['type' => $type]);
+        $urls['destroy'] = route("communications.properties.ajax.destroy", ['type' => $type]);
+        $urls['store'] = route("communications.properties.store", ['type' => $type]);
+        $urls['index'] = route("communications.properties.index", ['type' => $type]);
+        $urls['update'] = route("communications.properties.update", ['type' => $type, 'id' => $id]);
+        return $urls;
+
+    }
+
+
     public function settings($type)
     {
 
         $data = BaseController::createBaseInformations();
-        self::getBaseInformation($data);
+        self::getBaseInformation($data, $type);
 
         $bt_id = CommunicationType::where('title', '=', $type)->first();
         $setts = CommunicationProperty::where('is_setting', '=', 1)->where('service_type', '=', $bt_id->id)->get();
@@ -225,16 +243,29 @@ class CommunicationPropertyController extends Controller
 
 
         $data ['properties'] = self::getItems($type);
-
-
-        $urls = [];
-        $urls['create'] = route("communications.properties.create", ['type' => $type]);
-        $urls['destroy'] = route("communications.properties.ajax.destroy", ['type' => $type]);
         $data['permissions'] = self::getPermissions($type);
-        $data['urls'] = $urls;
+        $data['urls'] = self::getUrls($type);
 
 
         $data ['widgets'] = WidgetController::getWidgets("communication.property.index", 'communication', $type);
+
+
+        $bt_id = CommunicationType::where('title', '=', $type)->first();
+
+        $data['page_title'] = trans('messages.list of') . trans('messages.properties') . MyPluralizer::plural(TranslationController::getTranslatedForCell(App::getLocale(), self::$types_table_name, 'title', $bt_id->id));
+
+        $data['breadcrumbs'] = [
+            [
+                'title' => trans('messages.navigation_titles.dashboard'),
+                'url' => route('admin.index')
+            ],
+            [
+                'title' => trans('messages.properties') . MyPluralizer::plural(TranslationController::getTranslatedForCell(App::getLocale(), self::$types_table_name, 'title', $bt_id->id)),
+                'url' => ''
+            ]
+        ];
+
+
         return view("admin.properties.views.index", $data);
     }
 
@@ -250,12 +281,29 @@ class CommunicationPropertyController extends Controller
         self::getBaseInformation($data, $type);
 
         $data['type'] = $type;
-        $urls = [];
-        $urls['store'] = route("communications.properties.store", ['type' => $type]);
-        $urls['index'] = route("communication.properties.index", ['type' => $type]);
-
         $data['permissions'] = self::getPermissions($type);
-        $data['urls'] = $urls;
+        $data['urls'] = self::getUrls($type);
+
+
+        $bt_id = CommunicationType::where('title', '=', $type)->first();
+
+        $data['page_title'] = trans('messages.list of') . trans('messages.properties') . MyPluralizer::plural(TranslationController::getTranslatedForCell(App::getLocale(), self::$types_table_name, 'title', $bt_id->id));
+
+        $data['breadcrumbs'] = [
+            [
+                'title' => trans('messages.navigation_titles.dashboard'),
+                'url' => route('admin.index')
+            ],
+            [
+                'title' => trans('messages.properties') . MyPluralizer::plural(TranslationController::getTranslatedForCell(App::getLocale(), self::$types_table_name, 'title', $bt_id->id)),
+                'url' => route('data.properties.index', ['type' => $type])
+            ],
+            [
+                'title' => trans('messages.create new property'),
+                'url' => ''
+            ]
+        ];
+
 
         return view("admin.properties.views.create", $data);
         //
@@ -364,12 +412,28 @@ class CommunicationPropertyController extends Controller
 
         $data['property'] = self::getItem($id);
 
-        $urls = [];
-        $urls['update'] = route("communications.properties.update", ['type' => $type, 'id' => $id]);
-        $urls['index'] = route("communications.properties.index", ['type' => $type]);
 
         $data['permissions'] = self::getPermissions($type);
-        $data['urls'] = $urls;
+        $data['urls'] = self::getUrls($type, $id);
+
+        $bt_id = CommunicationType::where('title', '=', $type)->first();
+
+        $data['page_title'] = trans('messages.list of') . trans('messages.properties') . MyPluralizer::plural(TranslationController::getTranslatedForCell(App::getLocale(), self::$types_table_name, 'title', $bt_id->id));
+
+        $data['breadcrumbs'] = [
+            [
+                'title' => trans('messages.navigation_titles.dashboard'),
+                'url' => route('admin.index')
+            ],
+            [
+                'title' => trans('messages.properties') . MyPluralizer::plural(TranslationController::getTranslatedForCell(App::getLocale(), self::$types_table_name, 'title', $bt_id->id)),
+                'url' => route('data.properties.index', ['type' => $type])
+            ],
+            [
+                'title' => trans('messages.edit existing property'),
+                'url' => ''
+            ]
+        ];
 
 //        return $data;
         return view("admin.properties.views.edit", $data);

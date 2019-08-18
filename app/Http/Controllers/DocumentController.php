@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App;
 use App\Document;
 use App\DocumentProperty;
 use App\DocumentPropertyValue;
 use App\DocumentType;
+use App\Libraries\MyLib\MyPluralizer;
 use App\Template;
 use App\TemplateProperty;
 use DB;
@@ -14,6 +16,8 @@ use stdClass;
 
 class DocumentController extends Controller
 {
+
+    protected static $types_table_name = 'document_types';
 
     public static function getBaseInforamation(&$data, $type)
     {
@@ -35,6 +39,8 @@ class DocumentController extends Controller
     public static function getPermissions($type)
     {
         $permissions = [];
+        $permissions['index'] = "documents.index" . ":" . $type;
+        $permissions['show'] = "documents.show" . ":" . $type;
         $permissions['create'] = "documents.create" . ":" . $type;
         $permissions['store'] = "documents.store" . ":" . $type;
         $permissions['update'] = "documents.update" . ":" . $type;
@@ -206,8 +212,7 @@ class DocumentController extends Controller
             $objects[$i]->urls = $urls;
 
             if (isset($props['path']->title) &&
-                in_array(pathinfo($props['path']->title, PATHINFO_EXTENSION),config('base.image_extensions')))
-            {
+                in_array(pathinfo($props['path']->title, PATHINFO_EXTENSION), config('base.image_extensions'))) {
 
                 $path = $props['path']->title;
                 $base_len = strlen($path);
@@ -270,7 +275,7 @@ class DocumentController extends Controller
     {
 
         $data = BaseController::createBaseInformations();
-        self::getBaseInforamation($data,$type);
+        self::getBaseInforamation($data, $type);
 
         $bt_id = DocumentType::where('title', '=', $type)->first();
 
@@ -297,12 +302,21 @@ class DocumentController extends Controller
         $data['permissions'] = self::getPermissions($type);
         $data['urls'] = self::getUrls($type);
 
-        $breadcrumbs = [];
-        $breadcrumbs [] = ['title' => 'داشبورد', 'url' => route('admin.index')];
-        $breadcrumbs [] = ['title' => 'آیتم ها', 'url' => ''];
-        $data['breadcrumbs'] = $breadcrumbs;
 
-//        return $data;
+
+
+        $data['page_title'] = trans('messages.list of') . MyPluralizer::plural(TranslationController::getTranslatedForCell(App::getLocale(), self::$types_table_name, 'title', $bt_id->id));
+        $data['breadcrumbs'] = [
+            [
+                'title' => trans('messages.navigation_titles.dashboard'),
+                'url' => route('admin.index')
+            ],
+            [
+                'title' => MyPluralizer::plural(TranslationController::getTranslatedForCell(App::getLocale(), self::$types_table_name, 'title', $bt_id->id)),
+                'url' => ''
+            ]
+        ];
+
         return view("admin.items.views.index", $data);
     }
 
@@ -315,7 +329,7 @@ class DocumentController extends Controller
     {
 
         $data = BaseController::createBaseInformations();
-        self::getBaseInforamation($data,$type);
+        self::getBaseInforamation($data, $type);
         $data['properties'] = self::getProperties($type);
         $data['type'] = $type;
         $data ['images'] = DocumentController::getItems('general');
@@ -324,6 +338,27 @@ class DocumentController extends Controller
 
         $data['permissions'] = self::getPermissions($type);
         $data['urls'] = self::getUrls($type);
+
+
+
+        $bt_id = DocumentType::where('title', '=', $type)->first();
+
+        $data['page_title'] = trans('messages.list of') . MyPluralizer::plural(TranslationController::getTranslatedForCell(App::getLocale(), self::$types_table_name, 'title', $bt_id->id));
+
+        $data['breadcrumbs'] = [
+            [
+                'title' => trans('messages.navigation_titles.dashboard'),
+                'url' => route('admin.index')
+            ],
+            [
+                'title' => MyPluralizer::plural(TranslationController::getTranslatedForCell(App::getLocale(), self::$types_table_name, 'title', $bt_id->id)),
+                'url' => route('documents.index', ['type'=>$type])
+            ],
+            [
+                'title' => trans('messages.create new item'),
+                'url' => ''
+            ]
+        ];
 
 
         return view("admin.items.views.create", $data);
@@ -380,7 +415,7 @@ class DocumentController extends Controller
     {
 
         $data = BaseController::createBaseInformations();
-        DocumentController::getBaseInforamation($data,$type);
+        DocumentController::getBaseInforamation($data, $type);
 
         $bt_id = DocumentType::where('title', '=', $type)->first();
         $hotel = Document::where('type', '=', $bt_id->id)->where('id', '=', $id)->get();
@@ -402,7 +437,7 @@ class DocumentController extends Controller
     public function edit($type, $id)
     {
         $data = BaseController::createBaseInformations();
-        DocumentController::getBaseInforamation($data,$type);
+        DocumentController::getBaseInforamation($data, $type);
         $data['type'] = $type;
         $data['properties'] = self::getProperties($type, $id);
         $data ['images'] = DocumentController::getItems('general');
@@ -411,6 +446,25 @@ class DocumentController extends Controller
 
         $data['permissions'] = self::getPermissions($type);
         $data['urls'] = self::getUrls($type, $id);
+
+        $bt_id = DocumentType::where('title', '=', $type)->first();
+
+        $data['page_title'] = trans('messages.list of') . MyPluralizer::plural(TranslationController::getTranslatedForCell(App::getLocale(), self::$types_table_name, 'title', $bt_id->id));
+
+        $data['breadcrumbs'] = [
+            [
+                'title' => trans('messages.navigation_titles.dashboard'),
+                'url' => route('admin.index')
+            ],
+            [
+                'title' => MyPluralizer::plural(TranslationController::getTranslatedForCell(App::getLocale(), self::$types_table_name, 'title', $bt_id->id)),
+                'url' => route('documents.index', ['type'=>$type])
+            ],
+            [
+                'title' => trans('messages.edit existing item'),
+                'url' => ''
+            ]
+        ];
 
 
         return view("admin.items.views.edit", $data);

@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App;
 use App\DataType;
+use App\Libraries\MyLib\MyPluralizer;
 use Illuminate\Http\Request;
 use Validator;
 
@@ -28,6 +30,18 @@ class DataTypeController extends Controller
 
     }
 
+    public static function getUrls($id = 0)
+    {
+        $urls = [];
+        $urls['index'] = route("data.types.index");
+        $urls['create'] = route("data.types.create");
+        $urls['destroy'] = route("data.types.destroy");
+        $urls['store'] = route("data.types.store");
+        $urls['update'] = route("data.types.update", ['id' => $id]);
+        return $urls;
+
+    }
+
 
     /**
      * Display a listing of the resource.
@@ -44,14 +58,22 @@ class DataTypeController extends Controller
 
         $data['datas'] = $datas;
 
-        $urls = [];
-        $urls['create'] = route("data.types.create");
-        $urls['destroy'] = route("data.types.destroy");
-        $urls['index'] = route("data.types.index");
-        $data['urls'] = $urls;
+        $data ['widgets'] = WidgetController::getWidgets("data.types.index", 'data');
 
+        $data['urls'] = self::getUrls();
         $data['permissions'] = self::getPermissions();
 
+        $data['page_title'] = trans('messages.list of') . MyPluralizer::plural(trans('messages.types.data'));
+        $data['breadcrumbs'] = [
+            [
+                'title' => trans('messages.navigation_titles.dashboard'),
+                'url' => route('admin.index')
+            ],
+            [
+                'title' => MyPluralizer::plural(trans('messages.types.data')),
+                'url' => ''
+            ]
+        ];
 
         return view('admin.types.views.index', $data);
 
@@ -69,12 +91,26 @@ class DataTypeController extends Controller
         $data = BaseController::createBaseInformations();
         self::getBaseInforamation($data);
 
-        $urls = [];
-        $urls['store'] = route("data.types.store");
-        $urls['index'] = route("data.types.index");
-        $data['urls'] = $urls;
+        $data['urls'] = self::getUrls();
 
         $data['permissions'] = self::getPermissions();
+
+
+        $data['page_title'] = trans('messages.list of') . MyPluralizer::plural(trans('messages.types.data'));
+        $data['breadcrumbs'] = [
+            [
+                'title' => trans('messages.navigation_titles.dashboard'),
+                'url' => route('admin.index')
+            ],
+            [
+                'title' => MyPluralizer::plural(trans('messages.types.data')),
+                'url' => route('data.types.index')
+            ],
+            [
+                'title' => trans('messages.create new type'),
+                'url' => ''
+            ]
+        ];
 
 
         return view('admin.types.views.create', $data);
@@ -138,12 +174,27 @@ class DataTypeController extends Controller
 
 
         $data['id'] = $id;
-        $urls = [];
-        $urls['update'] = route("data.types.update", ['id' => $id]);
-        $urls['index'] = route("data.types.index");
-        $data['urls'] = $urls;
+        $data['urls'] = self::getUrls($id);
 
         $data['permissions'] = self::getPermissions();
+
+        $data['page_title'] = trans('messages.list of') . MyPluralizer::plural(trans('messages.types.data'));
+        $data['breadcrumbs'] = [
+            [
+                'title' => trans('messages.navigation_titles.dashboard'),
+                'url' => route('admin.index')
+            ],
+            [
+                'title' => MyPluralizer::plural(trans('messages.types.data')),
+                'url' => route('data.types.index')
+            ],
+            [
+                'title' => trans('messages.edit existing type'),
+                'url' => ''
+            ]
+        ];
+
+
 
         return view('admin.types.views.edit', $data);
 
