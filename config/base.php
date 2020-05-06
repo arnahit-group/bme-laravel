@@ -3,6 +3,62 @@
 
 return [
 
+    'convert_types_map' => [
+        'varchar' => 'text',
+        'longtext' => 'text',
+        'int' => 'number',
+    ],
+
+    "built_in_methods" => [
+        'now',
+    ],
+
+    "arithmetic_operators" => [
+        "+",
+        "-",
+        "*",
+        "/",
+        "%",
+    ],
+
+    "comparison_operators" => [
+        '==',
+        '>=',
+        '<=',
+        '!=',
+        '>',
+        '<'
+    ],
+
+    "logical_operators" => [
+        '&&',
+        '||',
+    ],
+
+
+    'weekdays' => [
+        'Saturday',
+        'Sunday',
+        'Monday',
+        'Tuesday',
+        'Wednesday',
+        'Thursday',
+        'Friday'
+    ],
+
+    'image_sizes' => [
+        '160x160' => [160, 160],
+        '200x200' => [200, 200],
+        '320x50' => [320, 50],
+        '300x250' => [300, 250],
+        '480x360' => [480, 360],
+        '160x600' => [160, 600],
+        '728x90' => [728, 90],
+        '120x600' => [120, 600],
+        '336x280' => [336, 280],
+        '1024x768' => [1024, 768],
+    ],
+
 
     'routes' => [
         'data' => [
@@ -434,9 +490,7 @@ return [
         'restaurant' => 6,
         'map' => 7,
         'map-location' => 8,
-        'conversation' => 9,
-        'message' => 10,
-        'comment' => 11,
+        'news' => 9,
 
     ],
     'user_types' => [
@@ -483,6 +537,7 @@ return [
         'conversation_assigned_property' => 11,
         'communication' => 12,
         'communication_assigned_property' => 13,
+        'relation_assigned_property' => 14,
     ],
 
 
@@ -577,7 +632,7 @@ return [
                 'array-date' => 'array-date',
                 'multi-check' => 'multi-check',
                 'multi-text' => 'multi-text',
-                'multi-relation-document-images' => 'multi-relation-document-images',
+                'documents:general' => 'documents:general',
                 'single-relation-price' => 'single-relation-price',
             ],
 
@@ -589,6 +644,17 @@ return [
         'ar'
     ],
 
+    'all_locales' => [
+        'fa',
+        'en',
+        'ar'
+    ],
+
+    'locales_and_flags' => [
+        'fa' => 'flag-icon-ir',
+        'en' => 'flag-icon-gb',
+        'ar' => 'flag-icon-sa'
+    ],
 
     'rtl_locales' => [
         'ar',
@@ -598,6 +664,7 @@ return [
         'ur',
         'ku',
     ],
+
 
     'image_extensions' => [
         'jpg',
@@ -637,32 +704,52 @@ return [
         'avi',
         'wmv',
     ],
-
-    'temp_route_names_to_skip_from_perms' => [
-
-//        'data.properties.ajax.destroy',
-
-//        'users.properties.ajax.destroy',
-
-//        'documents.properties.ajax.destroy',
+    'swf_extensions' => [
+        'swf'
+    ],
 
 
-//        'documents.destroy',
-
-//        'navigation.change',
-
-//        'navigation.get',
-//        'navigation.routes.get',
-
-
-//        'services.get',
-
-//        'services.change',
-
-//        'relations.get',
-//        'services.refresh',
-
-
+    'extensions' => [
+        'images' => [
+            'jpg',
+            'jpeg',
+            'gif',
+            'png',
+            'bmp',
+            'svg',
+            'svgz',
+            'cgm',
+            'djv',
+            'djvu',
+            'ico',
+            'ief',
+            'jpe',
+            'pbm',
+            'pgm',
+            'pnm',
+            'ppm',
+            'ras',
+            'rgb',
+            'tif',
+            'tiff',
+            'wbmp',
+            'xbm',
+            'xpm',
+            'xwd'
+        ],
+        'videos' => [
+            'flv',
+            'mp4',
+            'm3u8',
+            'ts',
+            '3gp',
+            'mov',
+            'avi',
+            'wmv',
+        ],
+        'flashes' => [
+            'swf'
+        ],
     ],
 
 ];

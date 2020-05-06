@@ -183,6 +183,14 @@ return [
         Spatie\Permission\PermissionServiceProvider::class,
         Jenssegers\Agent\AgentServiceProvider::class,
         Larabookir\Gateway\GatewayServiceProvider::class, // <-- add this line at the end of provider array
+
+
+        NotificationChannels\WebPush\WebPushServiceProvider::class,
+
+        Kavenegar\Laravel\ServiceProvider::class,
+
+        PragmaRX\Tracker\Vendor\Laravel\ServiceProvider::class,
+//        Geoip2\ProviderInterface::class,
     ],
 
     /*
@@ -238,6 +246,12 @@ return [
         'Agent' => Jenssegers\Agent\Facades\Agent::class,
 
         'Gateway' => \Larabookir\Gateway\Gateway::class, // <-- add this line at the end of aliases array
+
+
+        'Kavenegar' => Kavenegar\Laravel\Facade::class,
+
+        'Tracker' => PragmaRX\Tracker\Vendor\Laravel\Facade::class,
+
     ],
 
 ];

@@ -9,13 +9,6 @@
           </mappings>
         </serverdata>
       </paths>
-      <paths name="NetworkCMS (1)">
-        <serverdata>
-          <mappings>
-            <mapping local="$PROJECT_DIR$" web="/" />
-          </mappings>
-        </serverdata>
-      </paths>
       <paths name="eris">
         <serverdata>
           <mappings>
@@ -30,24 +23,10 @@
           </mappings>
         </serverdata>
       </paths>
-      <paths name="parsveda">
+      <paths name="shop5.ir">
         <serverdata>
           <mappings>
-            <mapping local="$PROJECT_DIR$" web="/" />
-          </mappings>
-        </serverdata>
-      </paths>
-      <paths name="retrofit_test">
-        <serverdata>
-          <mappings>
-            <mapping local="$PROJECT_DIR$" web="/" />
-          </mappings>
-        </serverdata>
-      </paths>
-      <paths name="retrofit_test (1)">
-        <serverdata>
-          <mappings>
-            <mapping local="$PROJECT_DIR$" web="/" />
+            <mapping deploy="/" local="$PROJECT_DIR$" web="/" />
           </mappings>
         </serverdata>
       </paths>

@@ -1,1036 +1,543 @@
 <!DOCTYPE html>
-<html class="loading" lang="en" data-textdirection="rtl">
+<html class="loading" lang="en" data-textdirection="{{in_array(App::getLocale(),config('base.rtl_locales')) ? 'rtl':'ltr'}}">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
-        <meta name="description"
-              content="Materialize is a Material Design Admin Template,It's modern, responsive and based on Material Design by Google.">
-        <meta name="keywords"
-              content="materialize, admin template, dashboard template, flat admin template, responsive admin template, eCommerce dashboard, analytic dashboard">
-        <meta name="author" content="ThemeSelect">
+        <meta name="description" content="Stack admin is super flexible, powerful, clean &amp; modern responsive bootstrap 4 admin template with unlimited possibilities.">
+        <meta name="keywords" content="admin template, stack admin template, dashboard template, flat admin template, responsive admin template, web app">
+        <meta name="author" content="PIXINVENT">
         <meta name="_token" content="{{csrf_token()}}"/>
-        <title>Dashboard Modern 2 | Materialize - Material Design Admin Template</title>
-        <link rel="apple-touch-icon" href="{{asset('app-assets/images/favicon/apple-touch-icon-152x152.png')}}">
-        <link rel="shortcut icon" type="image/x-icon" href="{{asset('app-assets/images/favicon/favicon-32x32.png')}}">
-        <!-- BEGIN: VENDOR CSS-->
-        <link href="{{asset('app-assets/vendors/vendors.min.css')}}" rel="stylesheet" type="text/css">
+        <title>Dashboard eCommerce - Stack Responsive Bootstrap 4 Admin Template</title>
+        <link rel="apple-touch-icon" href="{{asset('admin-assets/images/ico/apple-icon-120.png')}}">
+        <link rel="shortcut icon" type="image/x-icon" href="{{asset('admin-assets/images/ico/favicon.ico')}}">
+        {{--        <link href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,500i%7COpen+Sans:300,300i,400,400i,600,600i,700,700i" rel="stylesheet">--}}
+        <link href="{{asset('admin-assets/fonts/google/css/fonts.google.css')}}" rel="stylesheet">
+        {{--        <link rel="stylesheet" type="text/css" href="{{asset('admin-assets/vendors/css/flag-icon/css/flag-icon.min.css')}}">--}}
 
-    @yield('vendor-css')
-    <!-- END: VENDOR CSS-->
-        <link href="{{asset('app-assets/css/themes/vertical-modern-menu-template/materialize.css')}}" rel="stylesheet"
-              type="text/css">
-        <link href="{{asset('app-assets/css/themes/vertical-modern-menu-template/materialize-rtl.css')}}"
-              rel="stylesheet"
-              type="text/css">
-        <link href="{{asset('app-assets/css/themes/vertical-modern-menu-template/style.css')}}" rel="stylesheet"
-              type="text/css">
-        <link href="{{asset('app-assets/css/themes/vertical-modern-menu-template/style-rtl.css')}}" rel="stylesheet"
-              type="text/css">
+        @yield('vendor-css')
 
-        <!-- BEGIN: Page Level CSS-->
-    @yield('header')
-    <!-- END: Page Level CSS-->
-        <!-- BEGIN: Custom CSS-->
-        <link rel="stylesheet" type="text/css" href="{{asset('app-assets/css/custom/custom.css')}}">
-        <!-- END: Custom CSS-->
+        @if(in_array(App::getLocale(),config('base.rtl_locales')))
+            <link rel="stylesheet" type="text/css" href="{{asset('admin-assets/css-rtl/bootstrap.min.css')}}">
+            <link rel="stylesheet" type="text/css" href="{{asset('admin-assets/css-rtl/bootstrap-extended.min.css')}}">
+            <link rel="stylesheet" type="text/css" href="{{asset('admin-assets/css-rtl/colors.min.css')}}">
+            <link rel="stylesheet" type="text/css" href="{{asset('admin-assets/css-rtl/components.min.css')}}">
+            <link rel="stylesheet" type="text/css" href="{{asset('admin-assets/css-rtl/custom-rtl.min.css')}}">
+        @else
+            <link rel="stylesheet" type="text/css" href="{{asset('admin-assets/css/bootstrap.min.css')}}">
+            <link rel="stylesheet" type="text/css" href="{{asset('admin-assets/css/bootstrap-extended.min.css')}}">
+            <link rel="stylesheet" type="text/css" href="{{asset('admin-assets/css/colors.min.css')}}">
+            <link rel="stylesheet" type="text/css" href="{{asset('admin-assets/css/components.min.css')}}">
+        @endif
+
+        @yield('header')
+
     </head>
-    <!-- END: Head-->
-    <body dir="rtl"
-          class="vertical-layout vertical-menu-collapsible page-header-dark vertical-modern-menu 2-columns app-page"
-          data-open="click" data-menu="vertical-modern-menu" data-col="2-columns">
+
+    <body class="vertical-layout vertical-menu-modern 2-columns   fixed-navbar content-left-sidebar email-application  " data-open="click" data-menu="vertical-menu-modern"
+          data-col="2-columns">
 
         <!-- BEGIN: Header-->
-        <header class="page-topbar" id="header">
-            <div class="navbar navbar-fixed">
-                <nav class="navbar-main navbar-color nav-collapsible sideNav-lock navbar-dark gradient-45deg-indigo-purple no-shadow">
-                    <div class="nav-wrapper">
-                        <div class="header-search-wrapper hide-on-med-and-down"><i class="material-icons">search</i>
-                            <input class="header-search-input z-depth-2" type="text" name="Search"
-                                   placeholder="Explore Materialize">
-                        </div>
-                        <ul class="navbar-list">
+        {{--        header-navbar navbar-expand-sm navbar navbar-with-menu navbar-light bg-blue bg-lighten-5 border-blue border-lighten-4--}}
+        {{--        header-navbar navbar-expand-lg navbar navbar-with-menu fixed-top navbar-light navbar-border navbar-shadow--}}
+        <nav class="header-navbar navbar-expand-md navbar navbar-with-menu fixed-top navbar-semi-light bg-gradient-x-grey-blue">
+            <div class="navbar-wrapper">
+                <div class="navbar-header">
+                    <ul class="nav navbar-nav flex-row">
+                        <li class="nav-item mobile-menu d-lg-none mr-auto"><a class="nav-link nav-menu-main menu-toggle hidden-xs" href="index.html#"><i
+                                        class="ft-menu font-large-1"></i></a>
+                        </li>
+                        <li class="nav-item mr-auto">
+                            <a class="navbar-brand" href="{{route('admin.index')}}">
+                                <img class="brand-logo" alt="stack admin logo" src="{{asset('admin-assets/images/logo/stack-logo.png')}}">
+                                <h2 class="brand-text">آرناهیت</h2>
+                            </a>
+                        </li>
+                        <li class="nav-item d-none d-lg-block nav-toggle">
+                            <a class="nav-link modern-nav-toggle pr-0" data-toggle="collapse">
+                                <i class="toggle-icon ft-toggle-right font-medium-3 white" data-ticon="ft-toggle-right"></i>
+                            </a>
+                        </li>
+                        <li class="nav-item d-lg-none">
+                            <a class="nav-link open-navbar-container" data-toggle="collapse" data-target="#navbar-mobile">
+                                <i class="fa fa-ellipsis-v"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="navbar-container content">
+                    <div class="collapse navbar-collapse" id="navbar-mobile">
+                        <ul class="nav navbar-nav mr-auto float-left">
+                            <li class="dropdown nav-item mega-dropdown" hidden>
+                                <a class="dropdown-toggle nav-link" href="index.html#" data-toggle="dropdown">Mega</a>
+                                <ul class="mega-dropdown-menu dropdown-menu row">
+                                    <li class="col-md-2 col-sm-6">
+                                        <h6 class="dropdown-menu-header text-uppercase mb-1"><i class="fa fa-newspaper-o"></i> News</h6>
+                                        <div id="mega-menu-carousel-example">
+                                            <div><img class="rounded img-fluid mb-1" src="{{asset('admin-assets/images/slider/slider-2.png')}}" alt="First slide"><a
+                                                        class="news-title mb-0 d-block" href="index.html#">Poster Frame PSD</a>
+                                                <p class="news-content"><span class="font-small-2">January 26, 2016</span></p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="col-md-3 col-sm-6">
+                                        <h6 class="dropdown-menu-header text-uppercase"><i class="fa fa-random"></i> Menu</h6>
+                                        <ul>
+                                            <li class="menu-list">
+                                                <ul>
+                                                    <li><a class="dropdown-item" href="layout-fixed.html"><i class="ft-file"></i> Page layouts</a></li>
+                                                    <li><a class="dropdown-item" href="color-palette-primary.html"><i class="ft-camera"></i> Color pallet</a></li>
+                                                    <li><a class="dropdown-item" href="../../../starter-kit/ltr/vertical-menu-template/layout-static.html"><i class="ft-edit"></i>
+                                                            Starter kit</a></li>
+                                                    <li><a class="dropdown-item" href="changelog.html"><i class="ft-minimize-2"></i> Change log</a></li>
+                                                    <li><a class="dropdown-item" href="../../../../pixinvent_ticksy_default.html"><i class="fa fa-life-ring"></i> Support center</a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="col-md-3 col-sm-6">
+                                        <h6 class="dropdown-menu-header text-uppercase"><i class="fa fa-list-ul"></i> Accordion</h6>
+                                        <div class="mt-1" id="accordionWrap" role="tablist" aria-multiselectable="true">
+                                            <div class="card border-0 box-shadow-0 collapse-icon accordion-icon-rotate">
+                                                <div class="card-header p-0 pb-2 border-0" id="headingOne" role="tab"><a data-toggle="collapse" href="index.html#accordionOne"
+                                                                                                                         aria-expanded="true" aria-controls="accordionOne">Accordion
+                                                        Item #1</a></div>
+                                                <div class="card-collapse collapse show" id="accordionOne" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordionWrap"
+                                                     aria-expanded="true">
+                                                    <div class="card-content">
+                                                        <p class="accordion-text text-small-3">Caramels dessert chocolate cake pastry jujubes bonbon. Jelly wafer jelly beans.
+                                                            Caramels chocolate cake liquorice cake wafer jelly beans croissant apple pie.</p>
+                                                    </div>
+                                                </div>
+                                                <div class="card-header p-0 pb-2 border-0" id="headingTwo" role="tab"><a class="collapsed" data-toggle="collapse"
+                                                                                                                         href="index.html#accordionTwo" aria-expanded="false"
+                                                                                                                         aria-controls="accordionTwo">Accordion Item #2</a></div>
+                                                <div class="card-collapse collapse" id="accordionTwo" role="tabpanel" aria-labelledby="headingTwo" data-parent="#accordionWrap"
+                                                     aria-expanded="false">
+                                                    <div class="card-content">
+                                                        <p class="accordion-text">Sugar plum bear claw oat cake chocolate jelly tiramisu dessert pie. Tiramisu macaroon muffin jelly
+                                                            marshmallow cake. Pastry oat cake chupa chups.</p>
+                                                    </div>
+                                                </div>
+                                                <div class="card-header p-0 pb-2 border-0" id="headingThree" role="tab"><a class="collapsed" data-toggle="collapse"
+                                                                                                                           href="index.html#accordionThree" aria-expanded="false"
+                                                                                                                           aria-controls="accordionThree">Accordion Item #3</a>
+                                                </div>
+                                                <div class="card-collapse collapse" id="accordionThree" role="tabpanel" aria-labelledby="headingThree" data-parent="#accordionWrap"
+                                                     aria-expanded="false">
+                                                    <div class="card-content">
+                                                        <p class="accordion-text">Candy cupcake sugar plum oat cake wafer marzipan jujubes lollipop macaroon. Cake dragée jujubes
+                                                            donut chocolate bar chocolate cake cupcake chocolate topping.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="col-md-4 col-sm-6">
+                                        <h6 class="dropdown-menu-header text-uppercase mb-1"><i class="fa fa-envelope-o"></i> Contact Us</h6>
+                                        <form class="form form-horizontal">
+                                            <div class="form-body">
+                                                <div class="form-group row">
+                                                    <label class="col-sm-3 col-form-label" for="inputName1">Name</label>
+                                                    <div class="col-sm-9">
+                                                        <div class="position-relative has-icon-left">
+                                                            <input class="form-control" type="text" id="inputName1" placeholder="John Doe">
+                                                            <div class="form-control-position pl-1"><i class="fa fa-user-o"></i></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label class="col-sm-3 col-form-label" for="inputEmail1">Email</label>
+                                                    <div class="col-sm-9">
+                                                        <div class="position-relative has-icon-left">
+                                                            <input class="form-control" type="email" id="inputEmail1" placeholder="john@example.com">
+                                                            <div class="form-control-position pl-1"><i class="fa fa-envelope-o"></i></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label class="col-sm-3 col-form-label" for="inputMessage1">Message</label>
+                                                    <div class="col-sm-9">
+                                                        <div class="position-relative has-icon-left">
+                                                            <textarea class="form-control" id="inputMessage1" rows="2" placeholder="Simple Textarea"></textarea>
+                                                            <div class="form-control-position pl-1"><i class="fa fa-commenting-o"></i></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-sm-12 mb-1">
+                                                        <button class="btn btn-primary float-right" type="button"><i class="fa fa-paper-plane-o"></i> Send</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item d-none d-md-block">
+                                <a class="nav-link nav-link-expand" href="#"><i class="ficon ft-maximize"></i></a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" class="nav-link" id="generate-sitemap">
+                                    <span>ایجاد نقشه سایت</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{url('stats')}}" class="nav-link">
+                                    <span>آمار بازدید سایت</span>
+                                </a>
+                            </li>
 
-                            <li>
-                                <a class="waves-effect waves-block waves-light sidenav-trigger " href="#"
-                                   data-target="slide-out-right">
-                                    <i class="material-icons flipX">format_indent_increase</i>
+                            <li class="nav-item">
+                                <a href="{{route('services.index', ['type'=>'reserve', 'filters'=> urlencode(json_encode(  ['situation' =>['values'=>[1, 5],'operator'=>'in']]   ))])}}"
+                                   class="nav-link">
+                                    <span>رزرو تست</span>
                                 </a>
                             </li>
 
 
-                            <li>
-                                <a class="waves-effect waves-block waves-light profile-button"
-                                   href="javascript:void(0);" data-target="profile-dropdown">
-                                    <span class="avatar-status avatar-online">
-                                        <img src="{{asset('app-assets/images/avatar/avatar-7.png')}}"
-                                             alt="avatar"><i></i>
+                            <li class="nav-item nav-search" hidden>
+                                <a class="nav-link nav-link-search" href="#"><i class="ficon ft-search"></i></a>
+                                <div class="search-input">
+                                    <input class="input" type="text" placeholder="Explore Stack...">
+                                </div>
+                            </li>
+                        </ul>
+                        <ul class="nav navbar-nav float-right">
+                            <li class="dropdown dropdown-language nav-item" hidden>
+                                <a class="dropdown-toggle nav-link" id="dropdown-flag" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <i class="flag-icon flag-icon-gb"></i>
+                                    <span class="selected-language"></span>
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="dropdown-flag">
+                                    <a class="dropdown-item" href="#">
+                                        <i class="flag-icon flag-icon-gb"></i>
+                                        English
+                                    </a>
+                                    <a class="dropdown-item" href="#">
+                                        <i class="flag-icon flag-icon-fr"></i>
+                                        French
+                                    </a>
+                                    <a class="dropdown-item" href="#">
+                                        <i class="flag-icon flag-icon-cn"></i>
+                                        Chinese
+                                    </a>
+                                    <a class="dropdown-item" href="#">
+                                        <i class="flag-icon flag-icon-de"></i>
+                                        German
+                                    </a>
+                                </div>
+                            </li>
+                            <li class="dropdown dropdown-notification nav-item" hidden>
+                                <a class="nav-link nav-link-label" href="#" data-toggle="dropdown">
+                                    <i class="ficon ft-bell"></i>
+                                    <span class="badge badge-pill badge-danger badge-up">5</span>
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-media dropdown-menu-right">
+                                    <li class="dropdown-menu-header">
+                                        <h6 class="dropdown-header m-0"><span class="grey darken-2">Notifications</span><span
+                                                    class="notification-tag badge badge-danger float-right m-0">5 New</span></h6>
+                                    </li>
+                                    <li class="scrollable-container media-list"><a href="javascript:void(0)">
+                                            <div class="media">
+                                                <div class="media-left align-self-center"><i class="ft-plus-square icon-bg-circle bg-cyan"></i></div>
+                                                <div class="media-body">
+                                                    <h6 class="media-heading">You have new order!</h6>
+                                                    <p class="notification-text font-small-3 text-muted">Lorem ipsum dolor sit amet, consectetuer elit.</p>
+                                                    <small>
+                                                        <time class="media-meta text-muted" datetime="2015-06-11T18:29:20+08:00">30 minutes ago</time>
+                                                    </small>
+                                                </div>
+                                            </div>
+                                        </a><a href="javascript:void(0)">
+                                            <div class="media">
+                                                <div class="media-left align-self-center"><i class="ft-download-cloud icon-bg-circle bg-red bg-darken-1"></i></div>
+                                                <div class="media-body">
+                                                    <h6 class="media-heading red darken-1">99% Server load</h6>
+                                                    <p class="notification-text font-small-3 text-muted">Aliquam tincidunt mauris eu risus.</p>
+                                                    <small>
+                                                        <time class="media-meta text-muted" datetime="2015-06-11T18:29:20+08:00">Five hour ago</time>
+                                                    </small>
+                                                </div>
+                                            </div>
+                                        </a><a href="javascript:void(0)">
+                                            <div class="media">
+                                                <div class="media-left align-self-center"><i class="ft-alert-triangle icon-bg-circle bg-yellow bg-darken-3"></i></div>
+                                                <div class="media-body">
+                                                    <h6 class="media-heading yellow darken-3">Warning notifixation</h6>
+                                                    <p class="notification-text font-small-3 text-muted">Vestibulum auctor dapibus neque.</p>
+                                                    <small>
+                                                        <time class="media-meta text-muted" datetime="2015-06-11T18:29:20+08:00">Today</time>
+                                                    </small>
+                                                </div>
+                                            </div>
+                                        </a><a href="javascript:void(0)">
+                                            <div class="media">
+                                                <div class="media-left align-self-center"><i class="ft-check-circle icon-bg-circle bg-cyan"></i></div>
+                                                <div class="media-body">
+                                                    <h6 class="media-heading">Complete the task</h6>
+                                                    <small>
+                                                        <time class="media-meta text-muted" datetime="2015-06-11T18:29:20+08:00">Last week</time>
+                                                    </small>
+                                                </div>
+                                            </div>
+                                        </a><a href="javascript:void(0)">
+                                            <div class="media">
+                                                <div class="media-left align-self-center"><i class="ft-file icon-bg-circle bg-teal"></i></div>
+                                                <div class="media-body">
+                                                    <h6 class="media-heading">Generate monthly report</h6>
+                                                    <small>
+                                                        <time class="media-meta text-muted" datetime="2015-06-11T18:29:20+08:00">Last month</time>
+                                                    </small>
+                                                </div>
+                                            </div>
+                                        </a></li>
+                                    <li class="dropdown-menu-footer"><a class="dropdown-item text-muted text-center" href="javascript:void(0)">Read all notifications</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown dropdown-notification nav-item" hidden>
+                                <a class="nav-link nav-link-label" href="#" data-toggle="dropdown">
+                                    <i class="ficon ft-mail"></i><span class="badge badge-pill badge-warning badge-up">3</span>
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-media dropdown-menu-right">
+                                    <li class="dropdown-menu-header">
+                                        <h6 class="dropdown-header m-0"><span class="grey darken-2">Messages</span><span
+                                                    class="notification-tag badge badge-warning float-right m-0">4 New</span></h6>
+                                    </li>
+                                    <li class="scrollable-container media-list"><a href="javascript:void(0)">
+                                            <div class="media">
+                                                <div class="media-left"><span class="avatar avatar-sm avatar-online rounded-circle"><img
+                                                                src="{{asset('admin-assets/images/portrait/small/avatar-s-1.png')}}" alt="avatar"><i></i></span></div>
+                                                <div class="media-body">
+                                                    <h6 class="media-heading">Margaret Govan</h6>
+                                                    <p class="notification-text font-small-3 text-muted">I like your portfolio, let's start.</p>
+                                                    <small>
+                                                        <time class="media-meta text-muted" datetime="2015-06-11T18:29:20+08:00">Today</time>
+                                                    </small>
+                                                </div>
+                                            </div>
+                                        </a><a href="javascript:void(0)">
+                                            <div class="media">
+                                                <div class="media-left"><span class="avatar avatar-sm avatar-busy rounded-circle"><img
+                                                                src="{{asset('admin-assets/images/portrait/small/avatar-s-2.png')}}" alt="avatar"><i></i></span></div>
+                                                <div class="media-body">
+                                                    <h6 class="media-heading">Bret Lezama</h6>
+                                                    <p class="notification-text font-small-3 text-muted">I have seen your work, there is</p>
+                                                    <small>
+                                                        <time class="media-meta text-muted" datetime="2015-06-11T18:29:20+08:00">Tuesday</time>
+                                                    </small>
+                                                </div>
+                                            </div>
+                                        </a><a href="javascript:void(0)">
+                                            <div class="media">
+                                                <div class="media-left"><span class="avatar avatar-sm avatar-online rounded-circle"><img
+                                                                src="{{asset('admin-assets/images/portrait/small/avatar-s-3.png')}}" alt="avatar"><i></i></span></div>
+                                                <div class="media-body">
+                                                    <h6 class="media-heading">Carie Berra</h6>
+                                                    <p class="notification-text font-small-3 text-muted">Can we have call in this week ?</p>
+                                                    <small>
+                                                        <time class="media-meta text-muted" datetime="2015-06-11T18:29:20+08:00">Friday</time>
+                                                    </small>
+                                                </div>
+                                            </div>
+                                        </a><a href="javascript:void(0)">
+                                            <div class="media">
+                                                <div class="media-left"><span class="avatar avatar-sm avatar-away rounded-circle"><img
+                                                                src="{{asset('admin-assets/images/portrait/small/avatar-s-6.png')}}" alt="avatar"><i></i></span></div>
+                                                <div class="media-body">
+                                                    <h6 class="media-heading">Eric Alsobrook</h6>
+                                                    <p class="notification-text font-small-3 text-muted">We have project party this saturday.</p>
+                                                    <small>
+                                                        <time class="media-meta text-muted" datetime="2015-06-11T18:29:20+08:00">last month</time>
+                                                    </small>
+                                                </div>
+                                            </div>
+                                        </a></li>
+                                    <li class="dropdown-menu-footer"><a class="dropdown-item text-muted text-center" href="javascript:void(0)">Read all messages</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown dropdown-user nav-item">
+                                <a class="dropdown-toggle nav-link dropdown-user-link" href="#" data-toggle="dropdown">
+                                    <span class="avatar avatar-online">
+                                        <img src="{{asset('admin-assets/images/portrait/small/avatar-s-1.png')}}" alt="avatar"><i></i>
                                     </span>
+                                    <span class="user-name">{{$user->properties['name']->value}}</span>
                                 </a>
+                                <div class="dropdown-menu dropdown-menu-right">
+                                    <a class="dropdown-item" href="#" hidden>
+                                        <i class="ft-user"></i>
+                                        {{__('layout.public.edit profile')}}
+                                    </a>
+                                    <a class="dropdown-item" href="#">
+                                        <i class="ft-mail"></i>
+                                        {{__('layout.public.messages')}}
+                                    </a>
+                                    <a class="dropdown-item" href="#" hidden>
+                                        <i class="ft-check-square"></i>
+                                        Task
+                                    </a>
+                                    <a class="dropdown-item" href="#">
+                                        <i class="ft-message-square"></i>
+                                        {{__('layout.public.rooms')}}
+                                    </a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="{{route('auth.logout')}}">
+                                        <i class="ft-power"></i>
+                                        {{__('layout.public.logout')}}
+                                    </a>
+                                </div>
                             </li>
-
-                            <li>
-                                <a class="waves-effect waves-block waves-light notification-button"
-                                   href="javascript:void(0);" data-target="notifications-dropdown">
-                                    <i class="material-icons">notifications_none
-                                        <small class="notification-badge">5</small>
-                                    </i>
-                                </a>
-                            </li>
-
-                            <li class="hide-on-large-only">
-                                <a class="waves-effect waves-block waves-light search-button"
-                                   href="javascript:void(0);">
-                                    <i class="material-icons">search</i>
-                                </a>
-                            </li>
-
-
-                            <li class="hide-on-med-and-down">
-                                <a class="waves-effect waves-block waves-light toggle-fullscreen"
-                                   href="javascript:void(0);"><i class="material-icons">settings_overscan</i>
-                                </a>
-                            </li>
-
-
-                            <li class="hide-on-med-and-down">
-                                <a class="waves-effect waves-block waves-light translation-button"
-                                   href="javascript:void(0);" data-target="translation-dropdown">
-                                    <span class="flag-icon flag-icon-gb"></span>
-                                </a>
-                            </li>
-
-
-                        </ul>
-                        <!-- translation-button-->
-                        <ul class="dropdown-content" id="translation-dropdown">
-                            <li><a class="grey-text text-darken-1" href="#!"><i
-                                            class="flag-icon flag-icon-gb"></i> English</a></li>
-                            <li><a class="grey-text text-darken-1" href="#!"><i
-                                            class="flag-icon flag-icon-fr"></i> French</a></li>
-                            <li><a class="grey-text text-darken-1" href="#!"><i
-                                            class="flag-icon flag-icon-cn"></i> Chinese</a></li>
-                            <li><a class="grey-text text-darken-1" href="#!"><i
-                                            class="flag-icon flag-icon-de"></i> German</a></li>
-                        </ul>
-                        <!-- notifications-dropdown-->
-                        <ul class="dropdown-content" id="notifications-dropdown">
-                            <li>
-                                <h6>NOTIFICATIONS<span class="new badge">5</span></h6>
-                            </li>
-                            <li class="divider"></li>
-                            <li><a class="grey-text text-darken-2" href="#!"><span
-                                            class="material-icons icon-bg-circle cyan small">add_shopping_cart</span> A
-                                    new
-                                    order has been placed!</a>
-                                <time class="media-meta" datetime="2015-06-12T20:50:48+08:00">2 hours ago</time>
-                            </li>
-                            <li><a class="grey-text text-darken-2" href="#!"><span
-                                            class="material-icons icon-bg-circle red small">stars</span> Completed the
-                                    task</a>
-                                <time class="media-meta" datetime="2015-06-12T20:50:48+08:00">3 days ago</time>
-                            </li>
-                            <li><a class="grey-text text-darken-2" href="#!"><span
-                                            class="material-icons icon-bg-circle teal small">settings</span> Settings
-                                    updated</a>
-                                <time class="media-meta" datetime="2015-06-12T20:50:48+08:00">4 days ago</time>
-                            </li>
-                            <li><a class="grey-text text-darken-2" href="#!"><span
-                                            class="material-icons icon-bg-circle deep-orange small">today</span>
-                                    Director
-                                    meeting started</a>
-                                <time class="media-meta" datetime="2015-06-12T20:50:48+08:00">6 days ago</time>
-                            </li>
-                            <li><a class="grey-text text-darken-2" href="#!"><span
-                                            class="material-icons icon-bg-circle amber small">trending_up</span>
-                                    Generate
-                                    monthly report</a>
-                                <time class="media-meta" datetime="2015-06-12T20:50:48+08:00">1 week ago</time>
-                            </li>
-                        </ul>
-                        <!-- profile-dropdown-->
-                        <ul class="dropdown-content" id="profile-dropdown">
-                            <li><a class="grey-text text-darken-1" href="user-profile-page.html"><i
-                                            class="material-icons">person_outline</i> Profile</a></li>
-                            <li><a class="grey-text text-darken-1" href="app-chat.html"><i class="material-icons">chat_bubble_outline</i>
-                                    Chat</a></li>
-                            <li><a class="grey-text text-darken-1" href="page-faq.html"><i class="material-icons">help_outline</i>
-                                    Help</a></li>
-                            <li class="divider"></li>
-                            <li><a class="grey-text text-darken-1" href="user-lock-screen.html"><i
-                                            class="material-icons">lock_outline</i> Lock</a></li>
-                            <li><a class="grey-text text-darken-1" href="user-login.html"><i class="material-icons">keyboard_tab</i>
-                                    Logout</a></li>
                         </ul>
                     </div>
-                    <nav class="display-none search-sm">
-                        <div class="nav-wrapper">
-                            <form>
-                                <div class="input-field">
-                                    <input class="search-box-sm" type="search" required="">
-                                    <label class="label-icon" for="search"><i class="material-icons search-sm-icon">search</i></label><i
-                                            class="material-icons search-sm-close">close</i>
-                                </div>
-                            </form>
-                        </div>
-                    </nav>
-                </nav>
-            </div>
-        </header>
-        <!-- END: Header-->
-
-        <!-- BEGIN: SideNav-->
-        <aside class="sidenav-main nav-expanded nav-lock nav-collapsible  sidenav-active-square">
-            <div class="brand-sidebar">
-                <h1 class="logo-wrapper">
-                    <a class="brand-logo darken-1" href="{{route('admin.index')}}">
-                        <img src="{{asset('app-assets/images/logo/materialize-logo-color.png')}}"
-                             alt="materialize logo"/>
-                        <span class="logo-text hide-on-med-and-down">Materialize</span>
-                    </a>
-                    <a class="navbar-toggler"
-                       href="#">
-                        <i class="material-icons">radio_button_checked</i>
-                    </a>
-                </h1>
-            </div>
-
-
-            <ul class="sidenav sidenav-collapsible leftside-navigation collapsible sidenav-fixed menu-shadow"
-                id="slide-out" data-menu="menu-navigation" data-collapsible="menu-accordion">
-
-
-                @if(isset($navigations))
-                    @foreach($navigations as $navigation)
-
-                        @if(isset($navigation->properties->key) and  isset($navigation->properties->value) )
-                            @can($navigation->properties->route . ":" . $navigation->properties->value)
-                                <li>
-                                    <a class="waves-effect waves-cyan {{isset($navigation->active) &&  $navigation->active ? 'active' : ''}}"
-                                       href="{{route($navigation->properties->route, [$navigation->properties->key=>$navigation->properties->value])}}">
-                                        @if(isset($navigation->properties->materialize_icon))
-                                            <i class="material-icons">{{$navigation->properties->materialize_icon}}</i>
-                                        @else
-                                            <i class="material-icons">dashboard</i>
-                                        @endif
-                                        <span class="menu-title" data-i18n="">{{$navigation->properties->title }}</span>
-                                    </a>
-                                </li>
-                            @endcan
-                        @else
-                            @can($navigation->properties->route)
-                                <li>
-                                    <a class="waves-effect waves-cyan {{isset($navigation->active) && $navigation->active ? 'active' : ''}}"
-                                       href="{{route($navigation->properties->route)}}">
-                                        @if(isset($navigation->properties->materialize_icon))
-                                            <i class="material-icons">{{$navigation->properties->materialize_icon}}</i>
-                                        @else
-                                            <i class="material-icons">dashboard</i>
-                                        @endif
-                                        <span class="menu-title" data-i18n="">{{$navigation->properties->title }}</span>
-                                    </a>
-                                </li>
-                            @endcan
-                        @endif
-                    @endforeach
-
-
-                    <li class="bold">
-                        &nbsp;
-                    </li>
-
-                    <li class="bold">
-                        &nbsp;
-                    </li>
-
-
-                @else
-
-
-
-
-                    <li class="bold {{substr(Route::getCurrentRoute()->getName() , 0, strlen("dashboard")) === "dashboard" ? 'active open' : ''}}">
-                        <a class="collapsible-header  waves-effect vawe-cyan" href="#">
-                            <i class="material-icons">settings_input_svideo</i>
-                            <span class="menu-title" data-i18n="">Dashboard</span>
-                            <span class="badge badge pill orange float-right ml-10">3</span>
-                        </a>
-                        <div class="collapsible-body">
-                            <ul class="collapsible collapsible-sub" data-collapsible="accordion">
-                                <li class="{{Route::getCurrentRoute()->getName() == 'dashboard-modern' ? 'active bold open' : ''}}">
-                                    <a class="collapsible-body {{Route::getCurrentRoute()->getName() == 'dashboard-modern' ? 'active' : ''}}"
-                                       href="{{route('dashboard-modern')}}" data-i18n="">
-                                        <i class="material-icons">radio_button_unchecked</i><span>Modern</span>
-                                    </a>
-                                </li>
-                                <li class="{{Route::getCurrentRoute()->getName() == 'dashboard-ecommerce' ? 'active bold open' : ''}}">
-                                    <a class="collapsible-body {{Route::getCurrentRoute()->getName() == 'dashboard-ecommerce' ? 'active' : ''}}"
-                                       href="{{route('dashboard-ecommerce')}}" data-i18n="">
-                                        <i class="material-icons">radio_button_unchecked</i><span>eCommerce</span>
-                                    </a>
-                                </li>
-                                <li class="{{Route::getCurrentRoute()->getName() == 'dashboard-analytics' ? 'active bold open' : ''}}">
-                                    <a class="collapsible-body {{Route::getCurrentRoute()->getName() == 'dashboard-analytics' ? 'active' : ''}}"
-                                       href="{{route('dashboard-analytics')}}" data-i18n=""><i
-                                                class="material-icons">radio_button_unchecked</i><span>Analytics</span></a>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-
-                    <li class="navigation-header">
-                        <a class="navigation-header-text">Applications</a>
-                        <i class="navigation-header-icon material-icons">more_horiz</i>
-                    </li>
-
-
-                    <li class="{{Route::getCurrentRoute()->getName() == 'app-email' ? 'active bold open' : ''}}">
-                        <a class="waves-effect waves-cyan {{Route::getCurrentRoute()->getName() == 'app-email' ? 'active' : ''}}"
-                           href="{{route('app-email')}}">
-                            <i class="material-icons">mail_outline</i>
-                            <span class="menu-title" data-i18n="">Mail</span>
-                            <span class="badge new badge pill pink accent-2 float-right mr-10">5</span>
-                        </a>
-                    </li>
-
-                    <li class="{{Route::getCurrentRoute()->getName() == 'app-chat' ? 'active bold open' : ''}}">
-                        <a class="waves-effect waves-cyan {{Route::getCurrentRoute()->getName() == 'app-chat' ? 'active' : ''}}"
-                           href="{{route('app-chat')}}">
-                            <i class="material-icons">chat_bubble_outline</i>
-                            <span class="menu-title" data-i18n="">Chat</span>
-                        </a>
-                    </li>
-
-                    <li class="{{Route::getCurrentRoute()->getName() == 'app-todo' ? 'active bold open' : ''}}">
-                        <a class="waves-effect waves-cyan {{Route::getCurrentRoute()->getName() == 'app-todo' ? 'active' : ''}}"
-                           href="{{route('app-todo')}}">
-                            <i class="material-icons">check</i>
-                            <span class="menu-title" data-i18n="">ToDo</span>
-                        </a>
-                    </li>
-
-                    <li class="{{Route::getCurrentRoute()->getName() == 'app-contacts' ? 'active bold open' : ''}}">
-                        <a class="waves-effect waves-cyan {{Route::getCurrentRoute()->getName() == 'app-contacts' ? 'active' : ''}}"
-                           href="{{route('app-contacts')}}">
-                            <i class="material-icons">import_contacts</i>
-                            <span class="menu-title" data-i18n="">Contacts</span>
-                        </a>
-                    </li>
-
-                    <li class="{{Route::getCurrentRoute()->getName() == 'app-calendar' ? 'active bold open' : ''}}">
-                        <a class="waves-effect waves-cyan {{Route::getCurrentRoute()->getName() == 'app-calendar' ? 'active' : ''}}"
-                           href="{{route('app-calendar')}}">
-                            <i class="material-icons">today</i>
-                            <span class="menu-title" data-i18n="">Calendar</span>
-                        </a>
-                    </li>
-
-                    <li class="bold {{substr(Route::getCurrentRoute()->getName() , 0, strlen("ecommerce")) === "ecommerce" ? 'active open' : ''}}">
-                        <a class="collapsible-header waves-effect waves-cyan " href="#">
-                            <i class="material-icons">add_shopping_cart</i>
-                            <span class="menu-title" data-i18n="">eCommerce</span>
-                        </a>
-
-                        <div class="collapsible-body">
-                            <ul class="collapsible collapsible-sub" data-collapsible="accordion">
-                                <li class="{{Route::getCurrentRoute()->getName() == 'ecommerce-products-page' ? 'active bold open' : ''}}">
-                                    <a class="collapsible-body {{Route::getCurrentRoute()->getName() == 'ecommerce-products-page' ? 'active' : ''}}"
-                                       href="{{route('ecommerce-products-page')}}"
-                                       data-i18n="">
-                                        <i class="material-icons">radio_button_unchecked</i><span>Products Page</span>
-                                    </a>
-                                </li>
-                                <li class="{{Route::getCurrentRoute()->getName() == 'ecommerce-pricing' ? 'active bold open' : ''}}">
-                                    <a class="collapsible-body {{Route::getCurrentRoute()->getName() == 'ecommerce-pricing' ? 'active' : ''}}"
-                                       href="{{route('ecommerce-pricing')}}" data-i18n="">
-                                        <i class="material-icons">radio_button_unchecked</i><span>Pricing</span>
-                                    </a>
-                                </li>
-                                <li class="{{Route::getCurrentRoute()->getName() == 'ecommerce-invoice' ? 'active bold open' : ''}}">
-                                    <a class="collapsible-body {{Route::getCurrentRoute()->getName() == 'ecommerce-invoice' ? 'active' : ''}}"
-                                       href="{{route('ecommerce-invoice')}}" data-i18n="">
-                                        <i class="material-icons">radio_button_unchecked</i><span>Invoice</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-
-                    <li class="navigation-header">
-                        <a class="navigation-header-text">Pages </a>
-                        <i class="navigation-header-icon material-icons">more_horiz</i>
-                    </li>
-
-                    <li class="bold">
-                        <a class="collapsible-header waves-effect waves-cyan " href="#">
-                            <i class="material-icons">content_paste</i>
-                            <span class="menu-title" data-i18n="">Pages</span>
-                        </a>
-
-                        <div class="collapsible-body">
-                            <ul class="collapsible collapsible-sub" data-collapsible="accordion">
-                                <li class="{{Route::getCurrentRoute()->getName() == 'page-contact' ? 'active bold open' : ''}}">
-                                    <a class="collapsible-body {{Route::getCurrentRoute()->getName() == 'page-contact' ? 'active' : ''}}"
-                                       href="{{route('page-contact')}}" data-i18n="">
-                                        <i class="material-icons">radio_button_unchecked</i><span>Contact</span>
-                                    </a>
-                                </li>
-                                <li class="{{Route::getCurrentRoute()->getName() == 'page-blog-list' ? 'active bold open' : ''}}">
-                                    <a class="collapsible-body {{Route::getCurrentRoute()->getName() == 'page-blog-list' ? 'active' : ''}}"
-                                       href="{{route('page-blog-list')}}" data-i18n="">
-                                        <i class="material-icons">radio_button_unchecked</i><span>Blog</span>
-                                    </a>
-                                </li>
-                                <li class="{{Route::getCurrentRoute()->getName() == 'page-search' ? 'active bold open' : ''}}">
-                                    <a class="collapsible-body {{Route::getCurrentRoute()->getName() == 'page-search' ? 'active' : ''}}"
-                                       href="{{route('page-search')}}" data-i18n="">
-                                        <i class="material-icons">radio_button_unchecked</i><span>Search</span>
-                                    </a>
-                                </li>
-                                <li class="{{Route::getCurrentRoute()->getName() == 'page-knowledge' ? 'active bold open' : ''}}">
-                                    <a class="collapsible-body {{Route::getCurrentRoute()->getName() == 'page-knowledge' ? 'active' : ''}}"
-                                       href="{{route('page-knowledge')}}" data-i18n="">
-                                        <i class="material-icons">radio_button_unchecked</i><span>Knowledge</span>
-                                    </a>
-                                </li>
-                                <li class="{{Route::getCurrentRoute()->getName() == 'page-faq' ? 'active bold open' : ''}}">
-                                    <a class="collapsible-body {{Route::getCurrentRoute()->getName() == 'page-faq' ? 'active' : ''}}"
-                                       href="{{route('page-faq')}}" data-i18n="">
-                                        <i class="material-icons">radio_button_unchecked</i><span>FAQs</span></a>
-                                </li>
-                                <li class="{{Route::getCurrentRoute()->getName() == 'page-blank' ? 'active bold open' : ''}}">
-                                    <a class="collapsible-body {{Route::getCurrentRoute()->getName() == 'page-blank' ? 'active' : ''}}"
-                                       href="{{route('page-blank')}}" data-i18n="">
-                                        <i class="material-icons">radio_button_unchecked</i><span>Page Blank</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-
-                    <li class="bold {{substr(Route::getCurrentRoute()->getName() , 0, strlen("media")) === "media" ? 'active open' : ''}}">
-                        <a class="collapsible-header waves-effect waves-cyan " href="#">
-                            <i class="material-icons">crop_original</i>
-                            <span class="menu-title" data-i18n="">Medias</span>
-                        </a>
-                        <div class="collapsible-body">
-                            <ul class="collapsible collapsible-sub" data-collapsible="accordion">
-                                <li class="{{Route::getCurrentRoute()->getName() == 'media-gallery-page' ? 'active bold open' : ''}}">
-                                    <a class="collapsible-body {{Route::getCurrentRoute()->getName() == 'media-gallery-page' ? 'active' : ''}}"
-                                       href="{{route('media-gallery-page')}}" data-i18n="">
-                                        <i class="material-icons">radio_button_unchecked</i><span>Gallery Page</span>
-                                    </a>
-                                </li>
-                                <li class="{{Route::getCurrentRoute()->getName() == 'media-hover-effects' ? 'active bold open' : ''}}">
-                                    <a class="collapsible-body {{Route::getCurrentRoute()->getName() == 'media-hover-effects' ? 'active' : ''}}"
-                                       href="{{route('media-hover-effects')}}" data-i18n="">
-                                        <i class="material-icons">radio_button_unchecked</i><span>Media Hover Effects</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li class="bold {{substr(Route::getCurrentRoute()->getName() , 0, strlen("user")) === "user" ? 'active open' : ''}}">
-                        <a class="collapsible-header waves-effect waves-cyan " href="#">
-                            <i class="material-icons">face</i><span class="menu-title" data-i18n="">User</span>
-                            <span class="badge badge pill purple float-right mr-10">10</span>
-                        </a>
-                        <div class="collapsible-body">
-                            <ul class="collapsible collapsible-sub" data-collapsible="accordion">
-                                <li class="{{Route::getCurrentRoute()->getName() == 'user-profile-page' ? 'active bold open' : ''}}">
-                                    <a class="collapsible-body {{Route::getCurrentRoute()->getName() == 'user-profile-page' ? 'active' : ''}}"
-                                       href="{{route('user-profile-page')}}" data-i18n="">
-                                        <i class="material-icons">radio_button_unchecked</i><span>User Profile</span>
-                                    </a>
-                                </li>
-                                <li class="{{Route::getCurrentRoute()->getName() == 'user-login' ? 'active bold open' : ''}}">
-                                    <a class="collapsible-body {{Route::getCurrentRoute()->getName() == 'user-login' ? 'active' : ''}}"
-                                       href="{{route('user-login')}}" data-i18n="">
-                                        <i class="material-icons">radio_button_unchecked</i><span>Login</span>
-                                    </a>
-                                </li>
-                                <li class="{{Route::getCurrentRoute()->getName() == 'user-register' ? 'active bold open' : ''}}">
-                                    <a class="collapsible-body {{Route::getCurrentRoute()->getName() == 'user-register' ? 'active' : ''}}"
-                                       href="{{route('user-register')}}" data-i18n="">
-                                        <i class="material-icons">radio_button_unchecked</i><span>Register</span>
-                                    </a>
-                                </li>
-                                <li class="{{Route::getCurrentRoute()->getName() == 'user-forgot-password' ? 'active bold open' : ''}}">
-                                    <a class="collapsible-body {{Route::getCurrentRoute()->getName() == 'user-forgot-password' ? 'active' : ''}}"
-                                       href="{{route('user-forgot-password')}}" data-i18n="">
-                                        <i class="material-icons">radio_button_unchecked</i><span>Forgot Password</span>
-                                    </a>
-                                </li>
-                                <li class="{{Route::getCurrentRoute()->getName() == 'user-lock-screen' ? 'active bold open' : ''}}">
-                                    <a class="collapsible-body {{Route::getCurrentRoute()->getName() == 'user-lock-screen' ? 'active' : ''}}"
-                                       href="{{route('user-lock-screen')}}" data-i18n="">
-                                        <i class="material-icons">radio_button_unchecked</i><span>Lock Screen</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li class="bold {{substr(Route::getCurrentRoute()->getName() , 0, strlen("page")) === "page" ? 'active open' : ''}}">
-                        <a class="collapsible-header waves-effect waves-cyan " href="#">
-                            <i class="material-icons">filter_tilt_shift</i>
-                            <span class="menu-title" data-i18n="">Misc</span>
-                        </a>
-                        <div class="collapsible-body">
-                            <ul class="collapsible collapsible-sub" data-collapsible="accordion">
-                                <li class="{{Route::getCurrentRoute()->getName() == 'page-404' ? 'active bold open' : ''}}">
-                                    <a class="collapsible-body {{Route::getCurrentRoute()->getName() == 'page-404' ? 'active' : ''}}"
-                                       href="{{route('page-404')}}" data-i18n="">
-                                        <i class="material-icons">radio_button_unchecked</i><span>404</span>
-                                    </a>
-                                </li>
-                                <li class="{{Route::getCurrentRoute()->getName() == 'page-maintenance' ? 'active bold open' : ''}}">
-                                    <a class="collapsible-body {{Route::getCurrentRoute()->getName() == 'page-maintenance' ? 'active' : ''}}"
-                                       href="{{route('page-maintenance')}}" data-i18n="">
-                                        <i class="material-icons">radio_button_unchecked</i><span>Page Maintenanace</span>
-                                    </a>
-                                </li>
-                                <li class="{{Route::getCurrentRoute()->getName() == 'page-500' ? 'active bold open' : ''}}">
-                                    <a class="collapsible-body {{Route::getCurrentRoute()->getName() == 'page-500' ? 'active ' : ''}}"
-                                       href="{{route('page-500')}}" data-i18n="">
-                                        <i class="material-icons">radio_button_unchecked</i><span>500</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li class="navigation-header">
-                        <a class="navigation-header-text">User Interface </a>
-                        <i class="navigation-header-icon material-icons">more_horiz</i>
-                    </li>
-                    <li class="bold {{substr(Route::getCurrentRoute()->getName() , 0, strlen("cards")) === "cards" ? 'active open' : ''}}">
-                        <a class="collapsible-header waves-effect waves-cyan " href="#">
-                            <i class="material-icons">cast</i>
-                            <span class="menu-title" data-i18n="">Cards</span>
-                        </a>
-                        <div class="collapsible-body">
-                            <ul class="collapsible collapsible-sub" data-collapsible="accordion">
-                                <li class="{{Route::getCurrentRoute()->getName() == 'cards-basic' ? 'active bold open' : ''}}">
-                                    <a class="collapsible-body {{Route::getCurrentRoute()->getName() == 'cards-basic' ? 'active' : ''}}"
-                                       href="{{route('cards-basic')}}" data-i18n="">
-                                        <i class="material-icons">radio_button_unchecked</i><span>Cards</span>
-                                    </a>
-                                </li>
-                                <li class="{{Route::getCurrentRoute()->getName() == 'cards-advance' ? 'active bold open' : ''}}">
-                                    <a class="collapsible-body {{Route::getCurrentRoute()->getName() == 'cards-advance' ? 'active' : ''}}"
-                                       href="{{route('cards-advance')}}" data-i18n="">
-                                        <i class="material-icons">radio_button_unchecked</i><span>Cards Advance</span>
-                                    </a>
-                                </li>
-                                <li class="{{Route::getCurrentRoute()->getName() == 'cards-extended' ? 'active bold open' : ''}}">
-                                    <a class="collapsible-body {{Route::getCurrentRoute()->getName() == 'cards-extended' ? 'active' : ''}}"
-                                       href="{{route('cards-extended')}}" data-i18n="">
-                                        <i class="material-icons">radio_button_unchecked</i><span>Cards Extended</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-
-
-                    <li class="bold {{substr(Route::getCurrentRoute()->getName() , 0, strlen("css")) === "css" ? 'active open' : ''}}">
-                        <a class="collapsible-header waves-effect waves-cyan " href="#">
-                            <i class="material-icons">invert_colors</i>
-                            <span class="menu-title" data-i18n="">CSS</span>
-                        </a>
-                        <div class="collapsible-body">
-                            <ul class="collapsible collapsible-sub" data-collapsible="accordion">
-                                <li class="{{Route::getCurrentRoute()->getName() == 'css-typography' ? 'active bold open' : ''}}">
-                                    <a class="collapsible-body {{Route::getCurrentRoute()->getName() == 'css-typography' ? 'active' : ''}}"
-                                       href="{{route('css-typography')}}" data-i18n="">
-                                        <i class="material-icons">radio_button_unchecked</i><span>Typograpy</span>
-                                    </a>
-                                </li>
-                                <li class="{{Route::getCurrentRoute()->getName() == 'css-color' ? 'active bold open' : ''}}">
-                                    <a class="collapsible-body {{Route::getCurrentRoute()->getName() == 'css-color' ? 'active' : ''}}"
-                                       href="{{route('css-color')}}" data-i18n="">
-                                        <i class="material-icons">radio_button_unchecked</i><span>Color</span>
-                                    </a>
-                                </li>
-                                <li class="{{Route::getCurrentRoute()->getName() == 'css-grid' ? 'active bold open' : ''}}">
-                                    <a class="collapsible-body {{Route::getCurrentRoute()->getName() == 'css-grid' ? 'active' : ''}}"
-                                       href="{{route('css-grid')}}" data-i18n="">
-                                        <i class="material-icons">radio_button_unchecked</i><span>Grid</span>
-                                    </a>
-                                </li>
-                                <li class="{{Route::getCurrentRoute()->getName() == 'css-helpers' ? 'active bold open' : ''}}">
-                                    <a class="collapsible-body {{Route::getCurrentRoute()->getName() == 'css-helpers' ? 'active' : ''}}"
-                                       href="{{route('css-helpers')}}" data-i18n="">
-                                        <i class="material-icons">radio_button_unchecked</i><span>Helpers</span>
-                                    </a>
-                                </li>
-                                <li class="{{Route::getCurrentRoute()->getName() == 'css-media' ? 'active bold open' : ''}}">
-                                    <a class="collapsible-body {{Route::getCurrentRoute()->getName() == 'css-media' ? 'active' : ''}}"
-                                       href="{{route('css-media')}}" data-i18n="">
-                                        <i class="material-icons">radio_button_unchecked</i><span>Media</span>
-                                    </a>
-                                </li>
-                                <li class="{{Route::getCurrentRoute()->getName() == 'css-pulse' ? 'active bold open' : ''}}">
-                                    <a class="collapsible-body {{Route::getCurrentRoute()->getName() == 'css-pulse' ? 'active' : ''}}"
-                                       href="{{route('css-pulse')}}" data-i18n="">
-                                        <i class="material-icons">radio_button_unchecked</i><span>Pulse</span>
-                                    </a>
-                                </li>
-                                <li class="{{Route::getCurrentRoute()->getName() == 'css-sass' ? 'active bold open' : ''}}">
-                                    <a class="collapsible-body {{Route::getCurrentRoute()->getName() == 'css-sass' ? 'active' : ''}}"
-                                       href="{{route('css-sass')}}" data-i18n="">
-                                        <i class="material-icons">radio_button_unchecked</i><span>Sass</span>
-                                    </a>
-                                </li>
-                                <li class="{{Route::getCurrentRoute()->getName() == 'css-shadow' ? 'active bold open' : ''}}">
-                                    <a class="collapsible-body {{Route::getCurrentRoute()->getName() == 'css-shadow' ? 'active' : ''}}"
-                                       href="{{route('css-shadow')}}" data-i18n="">
-                                        <i class="material-icons">radio_button_unchecked</i><span>Shadow</span>
-                                    </a>
-                                </li>
-                                <li class="{{Route::getCurrentRoute()->getName() == 'css-animations' ? 'active bold open' : ''}}">
-                                    <a class="collapsible-body {{Route::getCurrentRoute()->getName() == 'css-animations' ? 'active' : ''}}"
-                                       href="{{route('css-animations')}}" data-i18n="">
-                                        <i class="material-icons">radio_button_unchecked</i><span>Animations</span>
-                                    </a>
-                                </li>
-                                <li class="{{Route::getCurrentRoute()->getName() == 'css-transitions' ? 'active bold open' : ''}}">
-                                    <a class="collapsible-body {{Route::getCurrentRoute()->getName() == 'css-transitions' ? 'active' : ''}}"
-                                       href="{{route('css-transitions')}}" data-i18n="">
-                                        <i class="material-icons">radio_button_unchecked</i><span>Transitions</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li class="bold {{substr(Route::getCurrentRoute()->getName() , 0, strlen("ui")) === "ui" ? 'active open' : ''}}">
-                        <a class="collapsible-header waves-effect waves-cyan " href="#">
-                            <i class="material-icons">photo_filter</i>
-                            <span class="menu-title" data-i18n="">Basic UI</span>
-                        </a>
-                        <div class="collapsible-body">
-                            <ul class="collapsible collapsible-sub" data-collapsible="accordion">
-                                <li class="{{Route::getCurrentRoute()->getName() == "ui-basic-buttons" || Route::getCurrentRoute()->getName() == "ui-extended-buttons" ? 'bold active open' : ''}}">
-                                    <a class="collapsible-body collapsible-header waves-effect waves-cyan"
-                                       href="#" data-i18n="">
-                                        <i class="material-icons">radio_button_unchecked</i><span>Buttons</span>
-                                    </a>
-                                    <div class="collapsible-body">
-                                        <ul class="collapsible" data-collapsible="accordion">
-                                            <li class="{{Route::getCurrentRoute()->getName() == 'ui-basic-buttons' ? 'active bold open' : ''}}">
-                                                <a class="collapsible-body {{Route::getCurrentRoute()->getName() == 'ui-basic-buttons' ? 'active' : ''}}"
-                                                   href="{{route('ui-basic-buttons')}}"
-                                                   data-i18n="">
-                                                    <i class="material-icons">radio_button_unchecked</i><span>Basic</span>
-                                                </a>
-                                            </li>
-                                            <li class="{{Route::getCurrentRoute()->getName() == 'ui-extended-buttons' ? 'active bold open' : ''}}">
-                                                <a class="collapsible-body {{Route::getCurrentRoute()->getName() == 'ui-extended-buttons' ? 'active' : ''}}"
-                                                   href="{{route('ui-extended-buttons')}}"
-                                                   data-i18n="">
-                                                    <i class="material-icons">radio_button_unchecked</i><span>Extended</span>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </li>
-                                <li class="{{Route::getCurrentRoute()->getName() == 'ui-icons' ? 'active bold open' : ''}}">
-                                    <a class="collapsible-body {{Route::getCurrentRoute()->getName() == 'ui-icons' ? 'active' : ''}}"
-                                       href="{{route('ui-icons')}}" data-i18n="">
-                                        <i class="material-icons">radio_button_unchecked</i><span>Icons</span>
-                                    </a>
-                                </li>
-                                <li class="{{Route::getCurrentRoute()->getName() == 'ui-alerts' ? 'active bold open' : ''}}">
-                                    <a class="collapsible-body {{Route::getCurrentRoute()->getName() == 'ui-alerts' ? 'active' : ''}}"
-                                       href="{{route('ui-alerts')}}" data-i18n="">
-                                        <i class="material-icons">radio_button_unchecked</i><span>Alerts</span>
-                                    </a>
-                                </li>
-                                <li class="{{Route::getCurrentRoute()->getName() == 'ui-badges' ? 'active bold open' : ''}}">
-                                    <a class="collapsible-body {{Route::getCurrentRoute()->getName() == 'ui-badges' ? 'active' : ''}}"
-                                       href="{{route('ui-badges')}}" data-i18n="">
-                                        <i class="material-icons">radio_button_unchecked</i><span>Badges</span>
-                                    </a>
-                                </li>
-                                <li class="{{Route::getCurrentRoute()->getName() == 'ui-breadcrumbs' ? 'active bold open' : ''}}">
-                                    <a class="collapsible-body {{Route::getCurrentRoute()->getName() == 'ui-breadcrumbs' ? 'active' : ''}}"
-                                       href="{{route('ui-breadcrumbs')}}" data-i18n="">
-                                        <i class="material-icons">radio_button_unchecked</i><span>Breadcrumbs</span>
-                                    </a>
-                                </li>
-                                <li class="{{Route::getCurrentRoute()->getName() == 'ui-chips' ? 'active bold open' : ''}}">
-                                    <a class="collapsible-body {{Route::getCurrentRoute()->getName() == 'ui-chips' ? 'active' : ''}}"
-                                       href="{{route('ui-chips')}}" data-i18n="">
-                                        <i class="material-icons">radio_button_unchecked</i><span>Chips</span>
-                                    </a>
-                                </li>
-                                <li class="{{Route::getCurrentRoute()->getName() == 'ui-collections' ? 'active bold open' : ''}}">
-                                    <a class="collapsible-body {{Route::getCurrentRoute()->getName() == 'ui-collections' ? 'active' : ''}}"
-                                       href="{{route('ui-collections')}}" data-i18n="">
-                                        <i class="material-icons">radio_button_unchecked</i><span>Collections</span>
-                                    </a>
-                                </li>
-                                <li class="{{Route::getCurrentRoute()->getName() == 'ui-navbar' ? 'active bold open' : ''}}">
-                                    <a class="collapsible-body {{Route::getCurrentRoute()->getName() == 'ui-navbar' ? 'active' : ''}}"
-                                       href="{{route('ui-navbar')}}" data-i18n="">
-                                        <i class="material-icons">radio_button_unchecked</i><span>Navbar</span>
-                                    </a>
-                                </li>
-                                <li class="{{Route::getCurrentRoute()->getName() == 'ui-pagination' ? 'active bold open' : ''}}">
-                                    <a class="collapsible-body {{Route::getCurrentRoute()->getName() == 'ui-pagination' ? 'active' : ''}}"
-                                       href="{{route('ui-pagination')}}" data-i18n="">
-                                        <i class="material-icons">radio_button_unchecked</i><span>Pagination</span>
-                                    </a>
-                                </li>
-                                <li class="{{Route::getCurrentRoute()->getName() == 'ui-preloader' ? 'active bold open' : ''}}">
-                                    <a class="collapsible-body {{Route::getCurrentRoute()->getName() == 'ui-preloader' ? 'active' : ''}}"
-                                       href="{{route('ui-preloader')}}" data-i18n="">
-                                        <i class="material-icons">radio_button_unchecked</i><span>Preloader</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li class="bold {{substr(Route::getCurrentRoute()->getName() , 0, strlen("advance-ui")) === "advance-ui" ? 'active open' : ''}}">
-                        <a class="collapsible-header waves-effect waves-cyan " href="#">
-                            <i class="material-icons">settings_brightness</i>
-                            <span class="menu-title" data-i18n="">Advanced UI</span>
-                        </a>
-                        <div class="collapsible-body">
-                            <ul class="collapsible collapsible-sub" data-collapsible="accordion">
-                                <li class="{{Route::getCurrentRoute()->getName() == 'advance-ui-carousel' ? 'active bold open' : ''}}">
-                                    <a class="collapsible-body {{Route::getCurrentRoute()->getName() == 'advance-ui-carousel' ? 'active' : ''}}"
-                                       href="{{route('advance-ui-carousel')}}" data-i18n="">
-                                        <i class="material-icons">radio_button_unchecked</i><span>Carousel</span>
-                                    </a>
-                                </li>
-                                <li class="{{Route::getCurrentRoute()->getName() == 'advance-ui-collapsibles' ? 'active bold open' : ''}}">
-                                    <a class="collapsible-body {{Route::getCurrentRoute()->getName() == 'advance-ui-collapsibles' ? 'active' : ''}}"
-                                       href="{{route('advance-ui-collapsibles')}}"
-                                       data-i18n="">
-                                        <i class="material-icons">radio_button_unchecked</i><span>Collapsibles</span>
-                                    </a>
-                                </li>
-                                <li class="{{Route::getCurrentRoute()->getName() == 'advance-ui-toasts' ? 'active bold open' : ''}}">
-                                    <a class="collapsible-body {{Route::getCurrentRoute()->getName() == 'advance-ui-toasts' ? 'active' : ''}}"
-                                       href="{{route('advance-ui-toasts')}}" data-i18n="">
-                                        <i class="material-icons">radio_button_unchecked</i><span>Toasts</span>
-                                    </a>
-                                </li>
-                                <li class="{{Route::getCurrentRoute()->getName() == 'advance-ui-tooltip' ? 'active bold open' : ''}}">
-                                    <a class="collapsible-body {{Route::getCurrentRoute()->getName() == 'advance-ui-tooltip' ? 'active' : ''}}"
-                                       href="{{route('advance-ui-tooltip')}}" data-i18n="">
-                                        <i class="material-icons">radio_button_unchecked</i><span>Tooltip</span>
-                                    </a>
-                                </li>
-                                <li class="{{Route::getCurrentRoute()->getName() == 'advance-ui-dropdown' ? 'active bold open' : ''}}">
-                                    <a class="collapsible-body {{Route::getCurrentRoute()->getName() == 'advance-ui-dropdown' ? 'active' : ''}}"
-                                       href="{{route('advance-ui-dropdown')}}" data-i18n="">
-                                        <i class="material-icons">radio_button_unchecked</i><span>Dropdown</span>
-                                    </a>
-                                </li>
-                                <li class="{{Route::getCurrentRoute()->getName() == 'advance-ui-feature-discovery' ? 'active bold open' : ''}}">
-                                    <a class="collapsible-body {{Route::getCurrentRoute()->getName() == 'advance-ui-feature-discovery' ? 'active' : ''}}"
-                                       href="{{route('advance-ui-feature-discovery')}}"
-                                       data-i18n="">
-                                        <i class="material-icons">radio_button_unchecked</i><span>Discovery</span>
-                                    </a>
-                                </li>
-                                <li class="{{Route::getCurrentRoute()->getName() == 'advance-ui-media' ? 'active bold open' : ''}}">
-                                    <a class="collapsible-body {{Route::getCurrentRoute()->getName() == 'advance-ui-media' ? 'active' : ''}}"
-                                       href="{{route('advance-ui-media')}}" data-i18n="">
-                                        <i class="material-icons">radio_button_unchecked</i><span>Media</span>
-                                    </a>
-                                </li>
-                                <li class="{{Route::getCurrentRoute()->getName() == 'advance-ui-modals' ? 'active bold open' : ''}}">
-                                    <a class="collapsible-body {{Route::getCurrentRoute()->getName() == 'advance-ui-modals' ? 'active' : ''}}"
-                                       href="{{route('advance-ui-modals')}}" data-i18n="">
-                                        <i class="material-icons">radio_button_unchecked</i><span>Modals</span>
-                                    </a>
-                                </li>
-                                <li class="{{Route::getCurrentRoute()->getName() == 'advance-ui-scrollspy' ? 'active bold open' : ''}}">
-                                    <a class="collapsible-body {{Route::getCurrentRoute()->getName() == 'advance-ui-scrollspy' ? 'active' : ''}}"
-                                       href="{{route('advance-ui-scrollspy')}}" data-i18n="">
-                                        <i class="material-icons">radio_button_unchecked</i><span>Scrollspy</span>
-                                    </a>
-                                </li>
-                                <li class="{{Route::getCurrentRoute()->getName() == 'advance-ui-tabs' ? 'active bold open' : ''}}">
-                                    <a class="collapsible-body {{Route::getCurrentRoute()->getName() == 'advance-ui-tabs' ? 'active' : ''}}"
-                                       href="{{route('advance-ui-tabs')}}" data-i18n="">
-                                        <i class="material-icons">radio_button_unchecked</i><span>Tabs</span>
-                                    </a>
-                                </li>
-                                <li class="{{Route::getCurrentRoute()->getName() == 'advance-ui-waves' ? 'active bold open' : ''}}">
-                                    <a class="collapsible-body {{Route::getCurrentRoute()->getName() == 'advance-ui-waves' ? 'active' : ''}}"
-                                       href="{{route('advance-ui-waves')}}" data-i18n="">
-                                        <i class="material-icons">radio_button_unchecked</i><span>Waves</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li class="bold {{substr(Route::getCurrentRoute()->getName() , 0, strlen("extra-components")) === "extra-components" ? 'active open' : ''}}">
-                        <a class="collapsible-header waves-effect waves-cyan " href="#">
-                            <i class="material-icons">add_to_queue</i>
-                            <span class="menu-title" data-i18n="">Extra Components</span>
-                        </a>
-                        <div class="collapsible-body">
-                            <ul class="collapsible collapsible-sub" data-collapsible="accordion">
-                                <li class="{{Route::getCurrentRoute()->getName() == 'extra-components-range-slider' ? 'active bold open' : ''}}">
-                                    <a class="collapsible-body {{Route::getCurrentRoute()->getName() == 'extra-components-range-slider' ? 'active' : ''}}"
-                                       href="{{route('extra-components-range-slider')}}"
-                                       data-i18n="">
-                                        <i class="material-icons">radio_button_unchecked</i><span>Range Slider</span>
-                                    </a>
-                                </li>
-                                <li class="{{Route::getCurrentRoute()->getName() == 'extra-components-sweetalert' ? 'active bold open' : ''}}">
-                                    <a class="collapsible-body {{Route::getCurrentRoute()->getName() == 'extra-components-sweetalert' ? 'active' : ''}}"
-                                       href="{{route('extra-components-sweetalert')}}"
-                                       data-i18n="">
-                                        <i class="material-icons">radio_button_unchecked</i><span>Sweetalert</span>
-                                    </a>
-                                </li>
-                                <li class="{{Route::getCurrentRoute()->getName() == 'extra-components-nestable' ? 'active bold open' : ''}}">
-                                    <a class="collapsible-body {{Route::getCurrentRoute()->getName() == 'extra-components-nestable' ? 'active' : ''}}"
-                                       href="{{route('extra-components-nestable')}}"
-                                       data-i18n="">
-                                        <i class="material-icons">radio_button_unchecked</i><span>Nestable</span>
-                                    </a>
-                                </li>
-                                <li class="{{Route::getCurrentRoute()->getName() == 'extra-components-translation' ? 'active bold open' : ''}}">
-                                    <a class="collapsible-body {{Route::getCurrentRoute()->getName() == 'extra-components-translation' ? 'active' : ''}}"
-                                       href="{{route('extra-components-translation')}}"
-                                       data-i18n="">
-                                        <i class="material-icons">radio_button_unchecked</i><span>Translation</span>
-                                    </a>
-                                </li>
-                                <li class="{{Route::getCurrentRoute()->getName() == 'extra-components-highlight' ? 'active bold open' : ''}}">
-                                    <a class="collapsible-body {{Route::getCurrentRoute()->getName() == 'extra-components-highlight' ? 'active' : ''}}"
-                                       href="{{route('extra-components-highlight')}}"
-                                       data-i18n="">
-                                        <i class="material-icons">radio_button_unchecked</i><span>Highlight</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li class="navigation-header">
-                        <a class="navigation-header-text">Tables &amp; Forms </a>
-                        <i class="navigation-header-icon material-icons">more_horiz</i>
-                    </li>
-                    <li class="{{Route::getCurrentRoute()->getName() == 'table-basic' ? 'active bold open' : ''}}">
-                        <a class="waves-effect waves-cyan {{Route::getCurrentRoute()->getName() == 'table-basic' ? 'active' : ''}}"
-                           href="{{route('table-basic')}}">
-                            <i class="material-icons">border_all</i>
-                            <span class="menu-title" data-i18n="">Basic Tables</span>
-                        </a>
-                    </li>
-                    <li class="{{Route::getCurrentRoute()->getName() == 'table-data-table' ? 'active bold open' : ''}}">
-                        <a class="waves-effect waves-cyan {{Route::getCurrentRoute()->getName() == 'table-data-table' ? 'active' : ''}}"
-                           href="{{route('table-data-table')}}">
-                            <i class="material-icons">grid_on</i>
-                            <span class="menu-title" data-i18n="">Data Tables</span>
-                        </a>
-                    </li>
-                    <li class="bold {{substr(Route::getCurrentRoute()->getName() , 0, strlen("form")) === "form" ? 'active open' : ''}}">
-                        <a class="collapsible-header waves-effect waves-cyan " href="#">
-                            <i class="material-icons">chrome_reader_mode</i>
-                            <span class="menu-title" data-i18n="">Forms</span>
-                        </a>
-                        <div class="collapsible-body">
-                            <ul class="collapsible collapsible-sub" data-collapsible="accordion">
-                                <li class="{{Route::getCurrentRoute()->getName() == 'form-elements' ? 'active bold open' : ''}}">
-                                    <a class="collapsible-body {{Route::getCurrentRoute()->getName() == 'form-elements' ? 'active' : ''}}"
-                                       href="{{route('form-elements')}}" data-i18n="">
-                                        <i class="material-icons">radio_button_unchecked</i><span>Form Elements</span>
-                                    </a>
-                                </li>
-                                <li class="{{Route::getCurrentRoute()->getName() == 'form-validation' ? 'active bold open' : ''}}">
-                                    <a class="collapsible-body {{Route::getCurrentRoute()->getName() == 'form-validation' ? 'active' : ''}}"
-                                       href="{{route('form-validation')}}" data-i18n="">
-                                        <i class="material-icons">radio_button_unchecked</i><span>Form Validation</span>
-                                    </a>
-                                </li>
-                                <li class="{{Route::getCurrentRoute()->getName() == 'form-masks' ? 'active bold open' : ''}}">
-                                    <a class="collapsible-body {{Route::getCurrentRoute()->getName() == 'form-masks' ? 'active' : ''}}"
-                                       href="{{route('form-masks')}}" data-i18n="">
-                                        <i class="material-icons">radio_button_unchecked</i><span>Form Masks</span>
-                                    </a>
-                                </li>
-                                <li class="{{Route::getCurrentRoute()->getName() == 'form-file-uploads' ? 'active bold open' : ''}}">
-                                    <a class="collapsible-body {{Route::getCurrentRoute()->getName() == 'form-file-uploads' ? 'active' : ''}}"
-                                       href="{{route('form-file-uploads')}}" data-i18n="">
-                                        <i class="material-icons">radio_button_unchecked</i><span>File Uploads</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li class="{{Route::getCurrentRoute()->getName() == 'form-layouts' ? 'active bold open' : ''}}">
-                        <a class="waves-effect waves-cyan {{Route::getCurrentRoute()->getName() == 'form-layouts' ? 'active' : ''}}"
-                           href="{{route('form-layouts')}}">
-                            <i class="material-icons">image_aspect_ratio</i>
-                            <span class="menu-title" data-i18n="">Form Layouts</span>
-                        </a>
-                    </li>
-                    <li class="{{Route::getCurrentRoute()->getName() == 'form-wizard' ? 'active bold open' : ''}}">
-                        <a class="waves-effect waves-cyan {{Route::getCurrentRoute()->getName() == 'form-wizard' ? 'active' : ''}}"
-                           href="{{route('form-wizard')}}">
-                            <i class="material-icons">settings_ethernet</i>
-                            <span class="menu-title" data-i18n="">Form Wizard</span>
-                        </a>
-                    </li>
-                    <li class="navigation-header">
-                        <a class="navigation-header-text">Charts &amp; Maps </a>
-                        <i class="navigation-header-icon material-icons">more_horiz</i>
-                    </li>
-                    <li class="bold {{substr(Route::getCurrentRoute()->getName() , 0, strlen("charts")) === "charts" ? 'active open' : ''}}">
-                        <a class="collapsible-header waves-effect waves-cyan " href="#">
-                            <i class="material-icons">pie_chart_outlined</i>
-                            <span class="menu-title" data-i18n="">Chart</span>
-                        </a>
-                        <div class="collapsible-body">
-                            <ul class="collapsible collapsible-sub" data-collapsible="accordion">
-                                <li class="{{Route::getCurrentRoute()->getName() == 'charts-chartjs' ? 'active bold open' : ''}}">
-                                    <a class="collapsible-body {{Route::getCurrentRoute()->getName() == 'charts-chartjs' ? 'active' : ''}}"
-                                       href="{{route('charts-chartjs')}}" data-i18n="">
-                                        <i class="material-icons">radio_button_unchecked</i><span>ChartJS</span>
-                                    </a>
-                                </li>
-                                <li class="{{Route::getCurrentRoute()->getName() == 'charts-chartist' ? 'active bold open' : ''}}">
-                                    <a class="collapsible-body {{Route::getCurrentRoute()->getName() == 'charts-chartist' ? 'active' : ''}}"
-                                       href="{{route('charts-chartist')}}" data-i18n="">
-                                        <i class="material-icons">radio_button_unchecked</i><span>Chartist</span>
-                                    </a>
-                                </li>
-                                <li class="{{Route::getCurrentRoute()->getName() == 'charts-sparklines' ? 'active bold open' : ''}}">
-                                    <a class="collapsible-body {{Route::getCurrentRoute()->getName() == 'charts-sparklines' ? 'active' : ''}}"
-                                       href="{{route('charts-sparklines')}}" data-i18n="">
-                                        <i class="material-icons">radio_button_unchecked</i><span>Sparkline Charts</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li class="navigation-header">
-                        <a class="navigation-header-text">Misc </a>
-                        <i class="navigation-header-icon material-icons">more_horiz</i>
-                    </li>
-                    <li class="bold">
-                        <a class="collapsible-header waves-effect waves-cyan " href="#">
-                            <i class="material-icons">photo_filter</i>
-                            <span class="menu-title" data-i18n="">Menu levels</span>
-                        </a>
-                        <div class="collapsible-body">
-                            <ul class="collapsible collapsible-sub" data-collapsible="accordion">
-                                <li>
-                                    <a class="collapsible-body" href="#" data-i18n="">
-                                        <i class="material-icons">radio_button_unchecked</i>
-                                        <span>Second level</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a class="collapsible-body collapsible-header waves-effect waves-cyan"
-                                       href="#" data-i18n="">
-                                        <i class="material-icons">radio_button_unchecked</i><span>Second level child</span>
-                                    </a>
-                                    <div class="collapsible-body">
-                                        <ul class="collapsible" data-collapsible="accordion">
-                                            <li>
-                                                <a class="collapsible-body" href="#" data-i18n="">
-                                                    <i class="material-icons">radio_button_unchecked</i><span>Third level</span>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li class="{{Route::getCurrentRoute()->getName() == 'changelog' ? 'active bold open' : ''}}">
-                        <a class="waves-effect waves-cyan {{Route::getCurrentRoute()->getName() == 'changelog' ? 'active' : ''}}"
-                           href="{{route('changelog')}}">
-                            <i class="material-icons">track_changes</i>
-                            <span class="menu-title" data-i18n="">Changelog</span>
-                            <span class="badge badge pill light-blue float-right mr-10">5.1</span>
-                        </a>
-                    </li>
-                    <li class="bold">
-                        <a class="waves-effect waves-cyan " href="#">
-                            <i class="material-icons">import_contacts</i>
-                            <span class="menu-title" data-i18n="">Documentation</span>
-                        </a>
-                    </li>
-                    <li class="bold">
-                        <a class="waves-effect waves-cyan " href="#">
-                            <i class="material-icons">help_outline</i>
-                            <span class="menu-title" data-i18n="">Support</span>
-                        </a>
-                    </li>
-
-                @endif
-
-
-            </ul>
-            <div class="navigation-background"></div>
-            <a class="sidenav-trigger btn-sidenav-toggle btn-floating btn-medium waves-effect waves-light hide-on-large-only"
-               href="#" data-target="slide-out"><i class="material-icons">menu</i></a>
-
-
-        </aside>
-        <!-- END: SideNav-->
-
-        <!-- BEGIN: Page Main-->
-    @yield('main')
-    <!-- END: Page Main-->
-
-        <!-- BEGIN: Footer-->
-        <footer class="page-footer footer footer-static footer-dark gradient-45deg-indigo-purple gradient-shadow navbar-border navbar-shadow">
-            <div class="footer-copyright">
-                <div class="container">
-                    <span class="left">
-                        تمامی حقوق مادی و معنوی اثر متعلق به
-                        <a href="http://arnahit.ir" target="_blank">
-                            گروه ارناهیت
-                        </a>
-                        میباشد
-                    </span>
-                    <span class="right hide-on-small-only">
-                        طراحی و اجرا توسط
-                        <a href="#">
-                            گروه ارناهیت
-                        </a>
-                    </span>
                 </div>
             </div>
+        </nav>
+        <!-- END: Header-->
+        <!-- BEGIN: Main Menu-->
+
+        <div class="main-menu menu-fixed menu-light menu-accordion menu-shadow" data-scroll-to-active="true">
+            <div class="main-menu-content">
+                <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
+
+                    @isset($navigations )
+
+                        @php($section="none")
+                        @php($g_name="none")
+                        @foreach($navigations as $k=>$nav)
+                            @php($g_f = current($nav))
+                            @if(isset($g_f->display_rules['section']) && $g_f->display_rules['section'] != $section)
+                                <li class=" navigation-header">
+                                <span>
+                                    {{trans("messages.navigation.sections." . $g_f->display_rules['section'])}}
+                                </span>
+                                    <i class=" ft-minus" data-toggle="tooltip" data-placement="right"
+                                       data-original-title="{{trans("messages.navigation.sections." . $g_f->display_rules['section'])}}"></i>
+                                </li>
+                                @php($section= $g_f->display_rules['section'])
+                            @endif
+                            @if(count($nav)>1 && isset($g_f->display_rules['g_name']))
+
+                                @php($class= "")
+                                @foreach($nav as $k1=>$navigation)
+                                    @if($navigation->active == true)
+                                        @php($class= "active bold open")
+                                        @break
+                                    @endif
+                                @endforeach
+                                <li class=" nav-item">
+                                    <a href="">
+                                        <i class="ft-home"></i>
+                                        <span class="menu-title" data-i18n="">{{trans("messages.navigation.groups." . $g_f->display_rules['g_name'])}}</span>
+                                        {{--                                    <span class="badge badge badge-primary badge-pill float-right mr-2">3</span>--}}
+                                    </a>
+                                    <ul class="menu-content">
+                                        @foreach($nav as $k1=>$navigation)
+                                            @include('admin.layouts.widgets.navigation_item', ['navigation'=> $navigation,'show_icon'=>false])
+                                        @endforeach
+                                    </ul>
+                                </li>
+                            @elseif(count($nav)==1)
+                                @include('admin.layouts.widgets.navigation_item', ['navigation'=> current($nav),'show_icon'=>true])
+                            @endif
+                        @endforeach
+
+                    @endisset
+
+                </ul>
+            </div>
+        </div>
+
+
+        <!-- END: Main Menu-->
+
+        <!-- BEGIN: Content-->
+    @yield('main')
+    <!-- END: Content-->
+
+        <div class="sidenav-overlay"></div>
+        <div class="drag-target"></div>
+
+        <!-- BEGIN: Footer-->
+        <footer class="footer footer-static footer-light navbar-border">
+            <p class="clearfix blue-grey lighten-2 text-sm-center mb-0 px-2">
+                <span class="float-md-left d-block d-md-inline-block">
+                    کپی رایت
+                      &copy; 2019
+                    <a class="text-bold-800 grey darken-2" href="http://arnahit.ir" target="_blank">
+                         گروه آرناهیت
+                    </a>
+                </span>
+                <span class="float-md-right d-none d-lg-block">
+                    ساخته شده توسط
+                    <a href="http://arnahit.ir" target="_blank">
+                        گروه آرناهیت
+                    </a>
+{{--                    <i class="ft-heart pink"></i>--}}
+                </span>
+            </p>
         </footer>
         <!-- END: Footer-->
 
-        <!-- BEGIN VENDOR JS-->
-        @if(in_array(App::getLocale(), config('base.rtl_locales')))
-            <script src="{{asset('app-assets/js/vendors-rtl.min.js')}}" type="text/javascript"></script>
-        @else
-            <script src="{{asset('app-assets/js/vendors.min.js')}}" type="text/javascript"></script>
-        @endif
-    <!-- BEGIN VENDOR JS-->
 
-        <!-- BEGIN PAGE VENDOR JS-->
+        <!-- BEGIN: Vendor JS-->
+        <!-- BEGIN Vendor JS-->
 
-        @yield('vendor-js')
-    <!-- END PAGE VENDOR JS-->
+        <!-- BEGIN: Page Vendor JS-->
+    @yield('vendor-js')
+    <!-- END: Page Vendor JS-->
 
-        <!-- BEGIN THEME  JS-->
-        {{--        <script src="{{asset('app-assets/js/plugins.js')}}" type="text/javascript"></script>--}}
-        @if(in_array(App::getLocale(), config('base.rtl_locales')))
-            <script src="{{asset('app-assets/js/plugins-rtl.js')}}" type="text/javascript"></script>
-        @else
-            <script src="{{asset('app-assets/js/plugins.js')}}" type="text/javascript"></script>
-        @endif
+        <!-- BEGIN: Theme JS-->
+        <script src="{{asset('admin-assets/js/core/app-menu.min.js')}}"></script>
+        <script src="{{asset('admin-assets/js/core/app.min.js')}}"></script>
+        <!-- END: Theme JS-->
 
-        <script src="{{asset('app-assets/js/custom/custom-script.js')}}" type="text/javascript"></script>
-        <!-- END THEME  JS-->
-
-        <!-- BEGIN PAGE LEVEL JS-->
+        <!-- BEGIN: Page JS-->
     @yield('footer')
-    <!-- END PAGE LEVEL JS-->
+    <!-- END: Page JS-->
+
+
+        <script>
+            $("#generate-sitemap").click(function (e) {
+                e.preventDefault();
+                swal({
+                    title: "ایجاد نقشه سایت",
+                    text: "آیا میخواهید نقشه جدید ایجاد شود ؟",
+                    icon: "warning",
+                    buttons: true,
+                    dangerMode: true,
+                    closeModal: false,
+                    closeOnConfirm: false, //It does close the popup when I click on close button
+                    closeOnCancel: false,
+                }).then((willGenerateSitemap) => {
+                    if (willGenerateSitemap) {
+
+                        $.ajaxSetup({
+                            headers: {
+                                'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')
+                            }
+                        });
+                        $.ajax({
+                            url: "{{route('generate-sitemap')}}",
+                            method: 'get',
+
+                            success: function (result) {
+                                if (result.error === false) {
+                                    swal(result.path);
+                                }
+                            },
+                            error: function (result) {
+                                alert(result.status);
+                            }
+                        });
+
+                    } else {
+
+                    }
+                });
+            });
+        </script>
+
     </body>
+    <!-- END: Body-->
 </html>

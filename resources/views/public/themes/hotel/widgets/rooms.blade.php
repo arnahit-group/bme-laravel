@@ -17,7 +17,7 @@
     <div class="row">
         @foreach($datas as $data)
 
-            @include('widgets.data.public.room_widget' , ['data'=>$data])
+            @include('public.themes.hotel.widgets.room_widget' , ['data'=>$data])
 
         @endforeach
     </div>

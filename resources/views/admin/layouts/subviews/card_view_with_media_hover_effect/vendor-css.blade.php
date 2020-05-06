@@ -1,3 +1,8 @@
-<link href="{{asset('app-assets/vendors/flag-icon/css/flag-icon.min.css')}}" rel="stylesheet" type="text/css">
-<link href="{{asset('app-assets/vendors/magnific-popup/magnific-popup.css')}}" rel="stylesheet" type="text/css">
-<link href="{{asset('app-assets/vendors/magnific-popup/magnific-popup.css')}}" rel="stylesheet" type="text/css">
+@if(in_array(App::getLocale(),config('base.rtl_locales')))
+    <link rel="stylesheet" type="text/css" href="{{asset('admin-assets/vendors/css/vendors-rtl.min.css')}}">
+@else
+    <link rel="stylesheet" type="text/css" href="{{asset('admin-assets/vendors/css/vendors.min.css')}}">
+@endif
+
+
+<link rel="stylesheet" type="text/css" href="{{asset('admin-assets/vendors/css/extensions/sweetalert.css')}}">

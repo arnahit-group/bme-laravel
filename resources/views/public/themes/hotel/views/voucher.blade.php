@@ -223,7 +223,7 @@
                     <div class="top-of-box">
 
                         <span class="right-side title-font">تاریخ خروج</span>
-                        <span class="left-side content-font ">{{isset($reserve['ja_end_date']->title) ?$reserve['ja_end_date']->title: '-' }}</span>
+                        <span class="left-side content-font ">{{isset($reserve['end-date']->values['ja']) ?$reserve['end-date']->values['ja']: '-' }}</span>
 
                     </div>
 
@@ -231,7 +231,7 @@
                     <div class="bottom-of-box">
 
                         <span class="left-side title-font">Exit date</span>
-                        <span class="right-side content-font ">{{isset($reserve['gr_end_date']->title) ?$reserve['gr_end_date']->title: '-' }}</span>
+                        <span class="right-side content-font ">{{isset($reserve['end-date']->values['gr']) ?$reserve['end-date']->values['gr']: '-' }}</span>
 
                     </div>
 
@@ -247,7 +247,7 @@
                     <div class="top-of-box">
 
                         <span class="right-side title-font">تاریخ ورود</span>
-                        <span class="left-side content-font ">{{isset($reserve['ja_start_date']->title) ?$reserve['ja_start_date']->title: '-' }}</span>
+                        <span class="left-side content-font ">{{isset($reserve['start-date']->values['ja']) ?$reserve['start-date']->values['ja']: '-' }}</span>
 
                     </div>
 
@@ -255,7 +255,7 @@
                     <div class="bottom-of-box">
 
                         <span class="left-side title-font">Arrival date</span>
-                        <span class="right-side content-font ">{{isset($reserve['gr_start_date']->title) ?$reserve['gr_start_date']->title: '-' }}</span>
+                        <span class="right-side content-font ">{{isset($reserve['start-date']->values['gr']) ?$reserve['start-date']->values['gr']: '-' }}</span>
 
                     </div>
 
@@ -269,7 +269,7 @@
             <h6 class="span-desc rtl-direction">ذخیره فوق توسط خانم/آقای :
                 {{isset($user['name']->title) ?$user['name']->title: '------' }}
                 در تاریخ :
-                {{isset($reserve['ja_confirmation_date']->title) ?$reserve['ja_confirmation_date']->title: '------' }}
+                {{isset($reserve['confirmation-date']->values['ja']) ?$reserve['confirmation-date']->values['ja']: '------' }}
                 با شماره:
                 {{isset($reserve['code']->title) ?$reserve['code']->title: '------' }}
                 تایید گردید.
@@ -277,7 +277,7 @@
             <h6 class="span-desc">Above reservation is confirmed by Mr/Mrs :
                 {{isset($user['name']->title) ?$user['name']->title: '------' }}
                 Date :
-                {{isset($reserve['gr_confirmation_date']->title) ?$reserve['gr_confirmation_date']->title: '------' }}
+                {{isset($reserve['confirmation-date']->values['gr']) ?$reserve['confirmation-date']->values['gr']: '------' }}
                 NO :
                 {{isset($reserve['code']->title) ?$reserve['code']->title: '------' }}
             </h6>
@@ -299,7 +299,9 @@
                 <div class="bottom-of-box-2">
 
                     <span class="right-side title-font">تاریخ</span>
-                    <span class="left-side content-font ">{{isset($reserve['ja_confirmation_date']->title) ?$reserve['ja_confirmation_date']->title: '------' }}</span>
+                    <span class="left-side content-font ">
+                        {{isset($reserve['confirmation-date']->values['ja']) ?$reserve['confirmation-date']->values['ja']: '------' }}
+                    </span>
 
                 </div>
 
@@ -308,7 +310,9 @@
                     <br>
 
                     <span class="left-side title-font">Date</span>
-                    <span class="right-side content-font ">{{isset($reserve['gr_confirmation_date']->title) ?$reserve['gr_confirmation_date']->title: '------' }}</span>
+                    <span class="right-side content-font ">
+                        {{isset($reserve['confirmation-date']->values['gr']) ?$reserve['confirmation-date']->values['gr']: '------' }}
+                    </span>
 
                 </div>
 
@@ -353,7 +357,7 @@
 
                 <span class="span-price">
                     نرخ اتاق :
-                    {{ number_format($room['price']->prices[0])}}
+                    {{ isset($room['price']->prices[0]) ?  number_format($room['price']->prices[0]) : '-'}}
                 </span>
                 <span class="span-price">
                     هزینه ها :
@@ -372,7 +376,8 @@
             <div class="price-box">
                 <span class="span-price">
                     Room rate :
-                    {{ number_format($room['price']->prices[0])}}
+                    {{ isset($room['price']->prices[0]) ?  number_format($room['price']->prices[0]) : '-'}}
+                    {{--                    {{ number_format($room['price']->prices[0])}}--}}
                 </span>
                 <span class="span-price">
                     Costs :

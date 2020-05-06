@@ -2,26 +2,38 @@
 
 @section('vendor-css')
 
-    @include('admin.layouts.subviews.table_view_with_action_bar.vendor-css')
+    @if(isset($widgets[0]->subview))
+        @include("{$widgets[0]->subview}.vendor-css")
+    @endif
+
 @endsection
 
 @section("header")
 
-    @include('admin.layouts.subviews.table_view_with_action_bar.header')
+    @if(isset($widgets[0]->subview))
+        @include("{$widgets[0]->subview}.header")
+    @endif
+
 @endsection
 @section("main")
 
-    @include('admin.layouts.subviews.table_view_with_action_bar.main')
+    @if(isset($widgets[0]->subview))
+        @include("{$widgets[0]->subview}.main", ['datas'=> $datas])
+    @endif
 @endsection
 @section('vendor-js')
 
-    @include('admin.layouts.subviews.table_view_with_action_bar.vendor-js')
+    @if(isset($widgets[0]->subview))
+        @include("{$widgets[0]->subview}.vendor-js")
+    @endif
 
 @endsection
 
 @section("footer")
 
-    @include('admin.layouts.subviews.table_view_with_action_bar.footer')
+    @if(isset($widgets[0]->subview))
+        @include("{$widgets[0]->subview}.footer")
+    @endif
     <script>
 
         $("[id^=del-]").click(function () {

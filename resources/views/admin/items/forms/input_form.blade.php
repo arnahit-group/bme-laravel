@@ -1,145 +1,82 @@
-@foreach($properties as $property)
-    <div class="row">
-        @if($property->level ==1)
-            @if($property->input_type == "text")
-                @include("admin.inputs.text", ['property'=>$property])
-            @elseif($property->input_type == "url")
-                @include("admin.inputs.url", ['property'=>$property])
-            @elseif($property->input_type == "code")
-                @include("admin.inputs.code", ['property'=>$property])
-            @elseif($property->input_type == "file")
-                @include("admin.inputs.file", ['property'=>$property])
-            @elseif($property->input_type == "cropper")
-                @include("admin.inputs.cropper", ['property'=>$property])
-            @elseif($property->input_type == "number")
-                @include("admin.inputs.number", ['property'=>$property])
-            @elseif($property->input_type == "check")
-                @include("admin.inputs.check", ['property'=>$property])
-            @elseif($property->input_type == "radio")
-                @include("admin.inputs.radio", ['property'=>$property])
-            @elseif($property->input_type == "textarea")
-                @include("admin.inputs.textarea", ['property'=>$property])
-            @elseif($property->input_type == "phone")
-                @include("admin.inputs.phone", ['property'=>$property])
+{{--@php($br_after_checks= false)--}}
 
-            @elseif($property->input_type == "select")
-                @include("admin.inputs.select", ['property'=>$property])
-            @elseif($property->input_type == "multi-relation-document-images")
-                @include("admin.inputs.select_image", ['property'=>$property, 'images'=>$images])
-            @elseif($property->input_type == "single-relation-price")
-                @include("admin.inputs.currency", ['property'=>$property])
-            @elseif($property->input_type == "array-text")
+@foreach($groups as  $title=>$group)
+    <div class="row">
+        @foreach($group->properties as $property)
+            @if ($loop->first)
+                <div class="col col-md-12">
+                    <h4 class="form-section"><i class="ft-user"></i>{{$title }}</h4>
+                </div>
+            @endif
+
+            @if($property->rules['type']== "text")
+                @include('admin.inputs.new.text',['property'=>$property])
+            @elseif($property->rules['type']== "select")
+                @include('admin.inputs.new.select',['property'=>$property])
+            @elseif($property->rules['type'] == "select2")
+                @include('admin.inputs.new.select2',['property'=>$property])
+            @elseif($property->rules['type'] == "nestable")
+                @include('admin.inputs.new.nestable',['property'=>$property])
+            @elseif($property->rules['type'] == "check")
+                @php($br_after_checks =true)
+                @include('admin.inputs.new.check',['property'=>$property])
+            @elseif($property->rules['type'] == "tinymce")
+                @include('admin.inputs.new.tinymce',['property'=>$property])
+            @elseif($property->rules['type'] == "select-image")
+                @include("admin.inputs.new.select_image", ['property'=>$property])
+            @elseif($property->rules['type'] == "select-video")
+                @include("admin.inputs.new.select_video", ['property'=>$property])
+            @elseif($property->rules['type'] == "select-flash")
+                @include("admin.inputs.new.select_flash", ['property'=>$property])
+            @elseif($property->rules['type'] == "single-relation-price")
+                @include("admin.inputs.new.currency", ['property'=>$property])
+            @elseif($property->rules['type'] == "textarea")
+                @include("admin.inputs.new.textarea", ['property'=>$property])
+            @elseif($property->rules['type'] == "code")
+                @include("admin.inputs.new.code", ['property'=>$property])
+            @elseif($property->rules['type']== "url")
+                @include("admin.inputs.new.url", ['property'=>$property])
+            @elseif($property->rules['type'] == "email")
+                @include("admin.inputs.new.email", ['property'=>$property])
+            @elseif($property->rules['type'] == "file")
+                @include("admin.inputs.new.file", ['property'=>$property])
+            @elseif($property->rules['type'] == "cropper")
+                @include("admin.inputs.new.cropper", ['property'=>$property])
+            @elseif($property->rules['type'] == "phone")
+                @include("admin.inputs.new.phone", ['property'=>$property])
+            @elseif($property->rules['type'] == "number")
+                @include("admin.inputs.new.number", ['property'=>$property])
+            @elseif($property->rules['type'] == "password")
+                @include("admin.inputs.new.password", ['property'=>$property])
+            @elseif($property->rules['type'] == "dates")
+                @include("admin.inputs.new.expert-datepicker", ['property'=>$property])
+
+            @elseif($property->rules['type'] == "multi-user")
+                @include("admin.inputs.new.multi_user", ['property'=>$property, 'users'=>$users])
+
+            @elseif($property->rules['type'] == "array-text")
                 @foreach($properties as $prop)
                     @php($subs = [])
                     @if($prop->parent == $property->id)
                         @php($subs[] = $prop )
                     @endif
                 @endforeach
-                @include("admin.inputs.array_text", ['property'=>$property, 'subs'=>$subs])
-            @elseif($property->input_type == "summernote")
-                @include("admin.inputs.summernote", ['property'=>$property])
-            @elseif($property->input_type == "multi-user")
-                @include("admin.inputs.multi_user", ['property'=>$property, 'users'=>$users])
+                @include("admin.inputs.new.array_text", ['property'=>$property, 'subs'=>$subs])
 
+            @elseif($property->rules['type'] == "multi-text")
+                @include("admin.inputs.new.multi_text", ['property'=>$property])
             @endif
-        @endif
-    </div>
-@endforeach
 
-<div class="row">
-    @foreach($properties as $property)
-        @if($property->level ==2)
-            <div class="col s3">
-                @if($property->input_type == "text")
-                    @include("admin.inputs.text", ['property'=>$property])
-                @elseif($property->input_type == "url")
-                    @include("admin.inputs.url", ['property'=>$property])
-                @elseif($property->input_type == "code")
-                    @include("admin.inputs.code", ['property'=>$property])
-                @elseif($property->input_type == "file")
-                    @include("admin.inputs.file", ['property'=>$property])
-                @elseif($property->input_type == "cropper")
-                    @include("admin.inputs.cropper", ['property'=>$property])
+            @if($loop->last)
+                @if(isset($property->fillation_rules['can_add_same']))
+                    <div class="col col-md-3">
+                        <a data-toggle="modal" class="{{$property->input_type == 'text' ? 'btn btn-primary' : '' }}" data-target="#mdl-add-new-property"
+                           data-backdrop="true"><i class="ft-plus"></i></a>
 
-                @elseif($property->input_type == "phone")
-                    @include("admin.inputs.phone", ['property'=>$property])
-
-                @elseif($property->input_type == "check")
-                    @include("admin.inputs.check", ['property'=>$property])
-                @elseif($property->input_type == "radio")
-                    @include("admin.inputs.radio", ['property'=>$property])
-                @elseif($property->input_type == "textarea")
-                    @include("admin.inputs.textarea", ['property'=>$property])
-                @elseif($property->input_type == "select")
-                    @include("admin.inputs.select", ['property'=>$property])
-                @elseif($property->input_type == "multi-relation-document-images")
-                    @include("admin.inputs.select_image", ['property'=>$property, 'images'=>$images])
-                @elseif($property->input_type == "single-relation-price")
-                    @include("admin.inputs.currency", ['property'=>$property])
-                @elseif($property->input_type == "array-text")
-                    @foreach($properties as $prop)
-                        @php($subs = [])
-                        @if($prop->parent == $property->id)
-                            @php($subs[] = $prop )
-                        @endif
-                    @endforeach
-                    @include("admin.inputs.array_text", ['property'=>$property, 'subs'=>$subs])
-
-                @elseif($property->input_type == "summernote")
-                    @include("admin.inputs.summernote", ['property'=>$property])
-                @elseif($property->input_type == "multi-user")
-                    @include("admin.inputs.multi_user", ['property'=>$property, 'users'=>$users])
-
+                        <input type="hidden" id="group" name="group" value="{{$property->fillation_rules['group']}}">
+                    </div>
                 @endif
-            </div>
-        @endif
-    @endforeach
-</div>
-
-@foreach($properties as $property)
-    <div class="row">
-        @if($property->level ==3)
-            <div class="col s3">
-                @if($property->input_type == "text")
-                    @include("admin.inputs.text", ['property'=>$property])
-                @elseif($property->input_type == "url")
-                    @include("admin.inputs.url", ['property'=>$property])
-                @elseif($property->input_type == "code")
-                    @include("admin.inputs.code", ['property'=>$property])
-                @elseif($property->input_type == "file")
-                    @include("admin.inputs.file", ['property'=>$property])
-                @elseif($property->input_type == "cropper")
-                    @include("admin.inputs.cropper", ['property'=>$property])
-                @elseif($property->input_type == "phone")
-                    @include("admin.inputs.phone", ['property'=>$property])
-                @elseif($property->input_type == "check")
-                    @include("admin.inputs.check", ['property'=>$property])
-                @elseif($property->input_type == "radio")
-                    @include("admin.inputs.radio", ['property'=>$property])
-                @elseif($property->input_type == "textarea")
-                    @include("admin.inputs.textarea", ['property'=>$property])
-                @elseif($property->input_type == "select")
-                    @include("admin.inputs.select", ['property'=>$property])
-                @elseif($property->input_type == "multi-relation-document-images")
-                    @include("admin.inputs.select_image", ['property'=>$property, 'images'=>$images])
-                @elseif($property->input_type == "single-relation-price")
-                    @include("admin.inputs.currency", ['property'=>$property])
-                @elseif($property->input_type == "array-text")
-                    @foreach($properties as $prop)
-                        @php($subs = [])
-                        @if($prop->parent == $property->id)
-                            @php($subs[] = $prop )
-                        @endif
-                    @endforeach
-                    @include("admin.inputs.array_text", ['property'=>$property, 'subs'=>$subs])
-
-                @elseif($property->input_type == "summernote")
-                    @include("admin.inputs.summernote", ['property'=>$property])
-                @elseif($property->input_type == "multi-user")
-                    @include("admin.inputs.multi_user", ['property'=>$property, 'users'=>$users])
-
-                @endif
-            </div>
-        @endif
+            @endif
+        @endforeach
     </div>
 @endforeach

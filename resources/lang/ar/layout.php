@@ -9,6 +9,7 @@ return [
         'hotel online reservation system version' => 'نظام حجز الفنادق الآمن في الفندق',
         'login or register' => 'تسجيل الدخول أو العضوية',
         'check reservation' => 'تتبع الحجز',
+        'reserves history' => 'Reserves History',
         'we are ready to serve you' => 'نحن مسؤولون',
         'hotel online reservation system is very safe online system' => 'نظام الحجز الخاص هو فندق مرموق ، الموقع الآمن متاح للحجز على صبر الفندق.',
         'check reservation place holder' => 'رمز تتبع الحجز الخاص بك ...',
@@ -17,6 +18,25 @@ return [
         'useful links'=>'روابط مفيدة',
         'get to know us a bit'=>'تعرف علينا قليلا',
         'logout'=>'الخروج',
+        'edit profile' => 'Edit Profile',
+        'messages' => 'Messages',
+        'rooms' => 'Rooms',
+
+        'total users' => 'Total Users',
+        'total customers' => 'Total Customers',
+        'total income' => 'Total Income',
+
+        'start'=>'Start',
+        'end'=>'End',
+        'select date range'=>'Select Date Range',
+        'select week days'=>'Select Week Days',
+        'data to be saved'=>'Data To Be Saved',
+
+        'today'=>'اليوم',
+        'this week'=>'هذا الاسبوع',
+        'this month'=>'هذا الشهر',
+        'total'=>'مجموع',
+
     ],
 
     'room' => [
@@ -46,8 +66,8 @@ return [
         'per night price' => 'البقاء كل ليلة',
         'extra bed costs' => 'خدمة سرير إضافي:',
 
-
         'hotel archives' => 'فندق المحفوظات',
+        'news archives' => 'أرشيف الأخبار',
         'you can see our rooms here' => 'هنا يمكنك رؤية أنواع غرفنا هنا ، ويمكنك رؤية مجموعة متنوعة من الغرف هنا',
 
     ],

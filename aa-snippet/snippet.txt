@@ -1,0 +1,6 @@
+//            $tci = self::getTableStructure(self::$item_table);
+//            return self::$item_table_structure;
+//            foreach ($tableColumnInfos as $tableColumnInfo) {
+//                echo $tableColumnInfo->Field . ' ' . $tableColumnInfo->Comment;
+//                echo "<br>";
+//            }

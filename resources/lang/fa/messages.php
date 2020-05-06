@@ -5,6 +5,7 @@ return [
     'hotel' => 'هتل',
     'list of' => 'فهرست ',
     'properties' => 'خاصیت های ',
+    'settings' => 'تنظیمات ',
     'create new property' => 'ایجاد خاصیت جدید',
     'create new item' => 'ایجاد آیتم جدید',
     'create new type' => 'ایجاد نوع جدید',
@@ -12,6 +13,30 @@ return [
     'edit existing property' => 'ویرایش خاصیت موجود',
     'edit existing item' => 'ویرایش آیتم موجود',
     'edit existing type' => 'ویرایش نوع موجود',
+
+
+    'facilities' => 'امکانات',
+
+    'media' => 'رسانه',
+    'levels' => [
+        '1' => 'سطح 1',
+        '2' => 'سطح 2',
+        '3' => 'سطح 3',
+        '4' => 'سطح 4',
+        '5' => 'سطح 5',
+    ],
+
+    'input_types' => [
+        "text" => 'text',
+        "select" => 'select',
+        "check" => 'check',
+        "number" => 'number',
+        "multi_upload" => 'multi_upload',
+        "array_date" => 'array_date',
+        "documents:general" => 'documents:general',
+        "single-relation-price" => 'single-relation-price',
+        "multi-text" => 'multi-text'
+    ],
 
 
     'types' => [
@@ -82,6 +107,41 @@ return [
 
     ],
 
+    'navigation' => [
+
+        'sections' => [
+
+            'main_info' => 'اطلاعات اصلی',
+            'media' => 'رسانه و فایل ها',
+            'conversations' => 'مکالمات',
+            'users' => 'کاربران',
+            'navigation' => 'منوها',
+            'pages' => 'برگه ها',
+            'permissions' => 'سطوح دسترسی',
+            'extra_info' => 'اطلاعات بیشتر',
+            'settings' => 'تنظیمات',
+            'su' => 'سوپروایزر',
+            'news' => 'اخبار',
+        ],
+        'groups' => [
+            'rooms' => 'اتاقها',
+            'reserve' => 'رزرو',
+            'customers' => 'مشتریان',
+            'media' => 'فایل ها و تصاویر',
+            'slideshow' => 'اسلاید شو',
+            'messages' => 'پیام ها',
+            'comments' => 'دیدگاه ها',
+            'complaints' => 'شکایات',
+            'rating' => 'رتبه بندی ها',
+            'users' => 'کاربران',
+            'map' => 'نقشه',
+            'settings' => 'تنظیمات',
+            'su' => 'سوپروایزر',
+            'news' => 'اخبار',
+        ],
+    ],
+
+
     'navigation_titles' => [
         'dashboard' => 'داشبورد',
         'rooms' => 'فهرست اتاق ها',
@@ -123,6 +183,7 @@ return [
         'add locale' => 'اضافه کردن متن به زبان های دیگر',
         'values' => 'مقادیر ثبت شده',
         'confirm' => 'تایید',
+        'submit' => 'ارسال',
     ],
 
 
@@ -153,6 +214,31 @@ return [
     'register_now' => 'ثبت نام',
     'have_account' => 'آیا قبلا ثبت نام کرده اید ؟',
     'forgot_password' => 'بازیابی رمز عبور',
+
+
+    'weekdays' => [
+        'Saturday' => 'شنبه',
+        'Sunday' => 'یکشنبه',
+        'Monday' => 'دوشنبه',
+        'Tuesday' => 'سه شنبه',
+        'Wednesday' => 'چهار شنبه',
+        'Thursday' => 'پنج شنبه',
+        'Friday' => 'جمعه'
+    ],
+
+    'filter_operators' => [
+        'eq' => 'مساوی با',
+        'lt' => 'کمتر از',
+        'lte' => 'کمتر یا مساوی با',
+        'gt' => 'بیشتر از',
+        'gte' => 'بیشتر یا مساوی با',
+        'neq' => 'نابرار با',
+        'in' => 'موجود در فهرست',
+        'all' => 'تمامی گزینه ها موجود در فهرست',
+        'bt' => 'مابین مقادیر',
+    ],
+
+
     /*
     |--------------------------------------------------------------------------
     | Authentication Language Lines

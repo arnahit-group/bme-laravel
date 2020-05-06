@@ -1,1 +1,5 @@
-<script src="{{asset('app-assets/js/scripts/app-contacts.js')}}" type="text/javascript"></script>
+<!-- BEGIN: Page JS-->
+<script src="{{asset('admin-assets/js/scripts/pages/app-contacts.min.js')}}"></script>
+<!-- END: Page JS-->
+
+<script src="{{asset('admin-assets/js/scripts/forms/switch.min.js')}}"></script>

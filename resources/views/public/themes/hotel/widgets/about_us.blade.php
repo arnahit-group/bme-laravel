@@ -34,14 +34,14 @@
                 <div id="btn-mail" class="col l5 s12 btn-mail-address center">
 
                     <img class="mail-icon" src="{{asset('images/main-address.png')}}">
-                    <span>{{$data['email']->title}}</span>
+                    <span>{{$hotel['email']->title}}</span>
 
                 </div>
 
                 <div id="btn-number" class="col l5 offset-l1 s12 btn-mail-address center">
 
                     <img class="mail-icon" src="{{asset('images/telephone.png')}}">
-                    @foreach($data['phone']->title as $t)
+                    @foreach($hotel['phone']->title as $t)
                         <span dir="ltr">{{$t}}</span>
                     @endforeach
                 </div>
@@ -62,7 +62,7 @@
                 {{--<img src="{{asset('images/google_map_img.jpg')}}" class="col s12" hidden>--}}
 
                 <div class="col s12 spn-address">
-                    <span> {{$data['address']->title}}</span>
+                    <span> {{$hotel['address']->title}}</span>
                 </div>
 
                 <!--content-left-side-->

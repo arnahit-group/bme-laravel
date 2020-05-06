@@ -87,12 +87,9 @@
 .dp2 {
 
     border: solid #ebebeb 1px !important;
-
     border-radius: 4px !important;
     font-family: iransans;
-
     margin-top: 15px !important;
-
 }
 
 .dp2:hover, .dp2:focus {

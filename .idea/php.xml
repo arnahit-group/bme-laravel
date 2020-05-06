@@ -125,6 +125,42 @@
       <path value="$PROJECT_DIR$/vendor/larabook/gateway" />
       <path value="$PROJECT_DIR$/vendor/paypal/rest-api-sdk-php" />
       <path value="$PROJECT_DIR$/vendor/larabook - Copy/gateway" />
+      <path value="$PROJECT_DIR$/vendor/paragonie/sodium_compat" />
+      <path value="$PROJECT_DIR$/vendor/web-token/jwt-signature-algorithm-hmac" />
+      <path value="$PROJECT_DIR$/vendor/web-token/jwt-key-mgmt" />
+      <path value="$PROJECT_DIR$/vendor/web-token/jwt-signature-algorithm-none" />
+      <path value="$PROJECT_DIR$/vendor/web-token/jwt-signature-algorithm-ecdsa" />
+      <path value="$PROJECT_DIR$/vendor/web-token/jwt-signature-algorithm-eddsa" />
+      <path value="$PROJECT_DIR$/vendor/web-token/jwt-core" />
+      <path value="$PROJECT_DIR$/vendor/web-token/jwt-signature-algorithm-rsa" />
+      <path value="$PROJECT_DIR$/vendor/web-token/jwt-util-ecc" />
+      <path value="$PROJECT_DIR$/vendor/web-token/jwt-signature" />
+      <path value="$PROJECT_DIR$/vendor/minishlink/web-push" />
+      <path value="$PROJECT_DIR$/vendor/spomky-labs/base64url" />
+      <path value="$PROJECT_DIR$/vendor/laravel-notification-channels/webpush" />
+      <path value="$PROJECT_DIR$/vendor/fgrosse/phpasn1" />
+      <path value="$PROJECT_DIR$/vendor/kavenegar/laravel" />
+      <path value="$PROJECT_DIR$/vendor/kavenegar/php" />
+      <path value="$PROJECT_DIR$/vendor/chriskonnertz/string-calc" />
+      <path value="$PROJECT_DIR$/vendor/spatie/temporary-directory" />
+      <path value="$PROJECT_DIR$/vendor/spatie/crawler" />
+      <path value="$PROJECT_DIR$/vendor/spatie/browsershot" />
+      <path value="$PROJECT_DIR$/vendor/spatie/laravel-sitemap" />
+      <path value="$PROJECT_DIR$/vendor/spatie/robots-txt" />
+      <path value="$PROJECT_DIR$/vendor/league/glide" />
+      <path value="$PROJECT_DIR$/vendor/spatie/image" />
+      <path value="$PROJECT_DIR$/vendor/spatie/image-optimizer" />
+      <path value="$PROJECT_DIR$/vendor/nicmart/tree" />
+      <path value="$PROJECT_DIR$/vendor/tightenco/collect" />
+      <path value="$PROJECT_DIR$/vendor/symfony/dom-crawler" />
+      <path value="$PROJECT_DIR$/vendor/snowplow/referer-parser" />
+      <path value="$PROJECT_DIR$/vendor/pragmarx/datatables" />
+      <path value="$PROJECT_DIR$/vendor/pragmarx/tracker" />
+      <path value="$PROJECT_DIR$/vendor/pragmarx/support" />
+      <path value="$PROJECT_DIR$/vendor/ua-parser/uap-php" />
+      <path value="$PROJECT_DIR$/vendor/geoip2/geoip2" />
+      <path value="$PROJECT_DIR$/vendor/maxmind/web-service-common" />
+      <path value="$PROJECT_DIR$/vendor/maxmind-db/reader" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="7.1" />

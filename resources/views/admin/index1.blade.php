@@ -632,8 +632,8 @@
                         var tbl_reserve_info = $("#tbl-reserve-info");
                         var s = "<tr><th>کد رهگیری</th><th>تاریخ ورود</th><th>تاریخ خروج</th></tr>";
                         s += "<tr><td>" + service.properties['code'].title + "</td>";
-                        s += "<td>" + service.properties['ja_start_date'].title + "<br>" + service.properties['gr_start_date'].title + "</td>";
-                        s += "<td>" + service.properties['ja_end_date'].title + "<br>" + service.properties['gr_end_date'].title + "</td></tr>";
+                        s += "<td>" + service.properties['ja-start-date'].title + "<br>" + service.properties['gr-start-date'].title + "</td>";
+                        s += "<td>" + service.properties['ja-end-date'].title + "<br>" + service.properties['gr-end-date'].title + "</td></tr>";
                         tbl_reserve_info.html("");
                         tbl_reserve_info.html(s);
                         $("#hdn-service-id").val(service.id);

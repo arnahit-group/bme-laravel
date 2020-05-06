@@ -5,6 +5,7 @@ return [
     'hotel' => 'hotel ......',
     'list of' => 'List Of ',
     'properties' => 'Properties Of ',
+    'settings' => 'Settings Of ',
     'create new property' => 'Create New Property',
     'create new item' => 'Create New Item',
     'create new type' => 'Create New Type',
@@ -15,6 +16,29 @@ return [
     'edit existing type' => 'Edit  Existing Type',
 
 
+    'facilities'=>'Facilities',
+    'media'=>'Media',
+
+
+    'levels' => [
+        '1' => 'Level 1',
+        '2' => 'Level 2',
+        '3' => 'Level 3',
+        '4' => 'Level 4',
+        '5' => 'Level 5',
+    ],
+
+    'input_types' => [
+        "text" => 'text',
+        "select" => 'select',
+        "check" => 'check',
+        "number" => 'number',
+        "multi_upload" => 'multi_upload',
+        "array_date" => 'array_date',
+        "documents:general" => 'documents:general',
+        "single-relation-price" => 'single-relation-price',
+        "multi-text" => 'multi-text'
+    ],
 
     'types' => [
         'data' => 'Data Type',
@@ -84,6 +108,47 @@ return [
 
     ],
 
+    'navigation' => [
+
+        'sections' => [
+
+            'main_info'=>'Main Information',
+            'media'=>'Media',
+            'conversations'=>'Conversations',
+            'users'=>'Users',
+            'navigation'=>'Navigation',
+            'pages'=>'Pages',
+            'permissions'=>'Permissions',
+            'extra_info'=>'Extra Information',
+            'settings'=>'Settings',
+            'su'=>'Super Admin',
+            'news'=>'News',
+        ],
+        'groups' => [
+
+            'rooms' => 'Rooms',
+            'reserve' => 'Reserve',
+            'customers' => 'Customers',
+            'media' => 'Media',
+            'slideshow' => 'Slide Show',
+            'messages' => 'Messages',
+            'comments' => 'Comments',
+            'complaints' => 'Complaints',
+            'rating' => 'Rating',
+            'users' => 'Users',
+            'map' => 'Map',
+            'settings' => 'Settings',
+            'su' => 'Super Admin',
+            'news'=>'News',
+
+
+
+
+
+        ],
+    ],
+
+
     'navigation_titles' => [
         'dashboard' => 'Dashboard',
         'rooms' => 'Rooms',
@@ -125,6 +190,7 @@ return [
         'add locale' => 'Add Locale',
         'values' => 'Values',
         'confirm' => 'Confirm',
+        'submit' => 'Submit',
     ],
 
 
@@ -156,6 +222,27 @@ return [
     'have_account' => 'Already have an account ? ',
     'forgot_password' => 'Forgot password ? ',
 
+    'weekdays'=>[
+        'Saturday'=>'Saturday',
+        'Sunday'=>'Sunday',
+        'Monday'=>'Monday',
+        'Tuesday'=>'Tuesday',
+        'Wednesday'=>'Wednesday',
+        'Thursday'=>'Thursday',
+        'Friday'=>'Friday'
+    ],
+
+    'filter_operators' => [
+        'eq' => 'Equal To',
+        'lt' => 'Less Than',
+        'lte' => 'Less Than Or Equal To',
+        'gt' => 'Greater Than',
+        'gte' => 'Greater Than Or Equal To',
+        'neq' => 'not Equal To',
+        'in' => 'In The List',
+        'all' => 'All Items In The List',
+        'bt' => 'Between',
+    ],
 
     /*
      *

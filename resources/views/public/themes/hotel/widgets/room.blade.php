@@ -25,7 +25,21 @@
                 @if( isset($data->properties['price']) )
                     <span class="span-post" id="span-post">
                                 {{__('layout.room.price per night')}}
-                        {{number_format($data->properties['price']->prices[0])}}
+
+                        @isset($data->properties['price']->prices)
+                            @if(count($data->properties['price']->prices[$current_date]) == 2
+                            &&  $data->properties['price']->prices[$current_date][0] < $data->properties['price']->prices[$current_date][1] )
+                                <span>
+                                    {{number_format($data->properties['price']->prices[$current_date][0])}}
+                                </span>
+                                <span style="text-decoration: line-through;">
+                                    {{number_format($data->properties['price']->prices[$current_date][1])}}
+                            </span>
+                            @elseif(count($data->properties['price']->prices) == 1)
+                                {{isset($data->properties['price']->prices[$current_date][0]) ? number_format($data->properties['price']->prices[$current_date][0]) : '0'}}
+                            @endif
+                        @endisset
+
                         {{__('layout.room.tooman')}}
                             </span>
                 @endif
@@ -35,7 +49,7 @@
             <div class="col l6 m12 s12 center-on-small-only" style="padding-left: 10px !important;">
 
 
-                @if((isset($data->properties['available']) and $data->properties['available']->title ==1))
+                @if(isset($data->properties['available']) and ($data->properties['available']->title ==1 or $data->properties['available']->title ==0))
                     <a href="#modal1" class="btn-small btn-cream margin-top modal-trigger" id="btn-res">
                         {{__('layout.room.reserve it')}}
                     </a>
@@ -96,18 +110,28 @@
                                                id="alternateField"
                                                name="start"
                                                placeholder="تاریخ را انتخاب نمایید">
-                                        <date-picker
-                                                :min="today"
-                                                v-model="date"
-                                                format="jYYYY/jMM/jDD"
-                                                element="alternateField">
-                                        </date-picker>
+                                        @if($inactives == "")
+                                            <date-picker
+                                                    :min="today"
+                                                    v-model="date"
+                                                    format="jYYYY/jMM/jDD"
+                                                    element="alternateField">
+                                            </date-picker>
+                                        @else
+                                            <date-picker
+                                                    :min="today"
+                                                    :disable="{{$inactives}}"
+                                                    v-model="date"
+                                                    format="jYYYY/jMM/jDD"
+                                                    element="alternateField">
+                                            </date-picker>
+                                        @endif
                                     </div>
 
-{{--                                    <input style="z-index: 5 !important;" type="text" class="datePicker dp1"--}}
-{{--                                           value="todayUnix"/>--}}
-{{--                                    <input type="hidden"--}}
-{{--                                           id="alternateField" name="start"/>--}}
+                                    {{--                                    <input style="z-index: 5 !important;" type="text" class="datePicker dp1"--}}
+                                    {{--                                           value="todayUnix"/>--}}
+                                    {{--                                    <input type="hidden"--}}
+                                    {{--                                           id="alternateField" name="start"/>--}}
 
                                     <input type="hidden" value="1"
                                            id="step" name="step"/>
@@ -450,7 +474,7 @@
                     @if( isset($data->properties['price']) )
                         <a href="#" class="btn-small btn-red btn-price">
                             {{__('layout.room.per night price')}}
-                            {{number_format($data->properties['price']->prices[0])}}
+                            {{isset($data->properties['price']->prices[$current_date][0]) ? number_format($data->properties['price']->prices[$current_date][0]) : '0'}}
                             {{__('layout.room.tooman')}}
                         </a>
                     @endif

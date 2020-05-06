@@ -57,18 +57,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 @endsection
 
 @section("footer")
@@ -132,21 +120,20 @@
 
         $("#btn-send-message-contact").click(function () {
 
-//            alert("test 111");
-//            return;
+            // alert("test 111");
+            // return;
 
             var error = false;
-
             var input_email = $('#input-email');
             var input_name = $('#input-name');
             var input_mobile = $('#input-mobile');
-            var input_location = $('#input-location');
+            // var input_location = $('#input-location');
             var txt_area = $('#txt-area');
 
             var spn_name_alert = $("#spn-name-alert");
             var spn_email_alert = $("#spn-email-alert");
             var spn_mobile_alert = $("#spn-mobile-alert");
-            var spn_location_alert = $("#spn-location-alert");
+            // var spn_location_alert = $("#spn-location-alert");
             var spn_content_alert = $("#spn-content-alert");
 
 
@@ -172,12 +159,12 @@
                 spn_mobile_alert.prop('hidden', true);
             }
 
-            if (input_location.val().trim() == "") {
-                spn_location_alert.prop('hidden', false);
-                error = true;
-            } else {
-                spn_location_alert.prop('hidden', true);
-            }
+            // if (input_location.val().trim() == "") {
+            //     spn_location_alert.prop('hidden', false);
+            //     error = true;
+            // } else {
+            //     spn_location_alert.prop('hidden', true);
+            // }
 
             if (txt_area.val().trim() == "") {
                 spn_content_alert.prop('hidden', false);
@@ -201,36 +188,134 @@
             var email = input_email.val();
             var name = input_name.val();
             var mobile = input_mobile.val();
-            var location = input_location.val();
             var content = txt_area.val();
 
 //            alert(email + " " + name + " " + mobile + " " + location + " " + message);
 //            return;
 
             $.ajax({
-                url: "{{url("/documents/ajax/save")}}",
+                url: "{{route('home.message.store')}}",
                 timeout: 30000,
                 method: 'post',
                 data: {
                     'email': email,
                     'name': name,
                     'mobile': mobile,
-                    'location': location,
                     'content': content,
-                    'type': '{{$type}}'
+                    'type': 'message'
                 },
                 success: function (result) {
                     input_email.val("");
                     input_name.val("");
                     input_mobile.val("");
-                    input_location.val("");
                     txt_area.val("");
 
                     alert("پیغام با موفقیت ارسال شد");
 
                 },
                 error: function (result) {
-                   alert("error code :" + result.status);
+                    alert("error code :" + result.status);
+                }
+            });
+        });
+
+        $("#btn-send-complaint-contact").click(function () {
+
+            // alert("test 111");
+            // return;
+
+            var error = false;
+            var input_email = $('#input-email');
+            var input_name = $('#input-name');
+            var input_mobile = $('#input-mobile');
+            // var input_location = $('#input-location');
+            var txt_area = $('#txt-area');
+
+            var spn_name_alert = $("#spn-name-alert");
+            var spn_email_alert = $("#spn-email-alert");
+            var spn_mobile_alert = $("#spn-mobile-alert");
+            // var spn_location_alert = $("#spn-location-alert");
+            var spn_content_alert = $("#spn-content-alert");
+
+
+            if (input_name.val().trim() == "") {
+                spn_name_alert.prop('hidden', false);
+                error = true;
+            } else {
+                spn_name_alert.prop('hidden', true);
+            }
+
+            if (input_email.val().trim() == "") {
+                spn_email_alert.prop('hidden', false);
+                error = true;
+            } else {
+                spn_email_alert.prop('hidden', true);
+            }
+
+
+            if (input_mobile.val().trim() == "") {
+                spn_mobile_alert.prop('hidden', false);
+                error = true;
+            } else {
+                spn_mobile_alert.prop('hidden', true);
+            }
+
+            // if (input_location.val().trim() == "") {
+            //     spn_location_alert.prop('hidden', false);
+            //     error = true;
+            // } else {
+            //     spn_location_alert.prop('hidden', true);
+            // }
+
+            if (txt_area.val().trim() == "") {
+                spn_content_alert.prop('hidden', false);
+                error = true;
+            } else {
+                spn_content_alert.prop('hidden', true);
+            }
+
+//            alert(error);
+
+            if (error == true)
+                return;
+
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')
+                }
+            });
+
+
+            var email = input_email.val();
+            var name = input_name.val();
+            var mobile = input_mobile.val();
+            var content = txt_area.val();
+
+//            alert(email + " " + name + " " + mobile + " " + location + " " + message);
+//            return;
+
+            $.ajax({
+                url: "{{route('home.message.store')}}",
+                timeout: 30000,
+                method: 'post',
+                data: {
+                    'email': email,
+                    'name': name,
+                    'mobile': mobile,
+                    'content': content,
+                    'type': 'complaint'
+                },
+                success: function (result) {
+                    input_email.val("");
+                    input_name.val("");
+                    input_mobile.val("");
+                    txt_area.val("");
+
+                    alert("پیغام با موفقیت ارسال شد");
+
+                },
+                error: function (result) {
+                    alert("error code :" + result.status);
                 }
             });
         });

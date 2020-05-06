@@ -10,12 +10,13 @@ class AdminMiddleware
     /**
      * Handle an incoming request.
      *
-     * @param  \Illuminate\Http\Request $request
-     * @param  \Closure $next
+     * @param \Illuminate\Http\Request $request
+     * @param \Closure $next
      * @return mixed
      */
     public function handle($request, Closure $next)
     {
+
 //        return $request->user()->permissions();
 
 //        $params = $request->route()->parameters();
@@ -29,7 +30,7 @@ class AdminMiddleware
             $route_name = $request->route()->getName();
 
             $temp_routes = config("base.temp_route_names_to_skip_from_perms");
-            if(in_array($route_name ,$temp_routes)){
+            if (in_array($route_name, $temp_routes)) {
                 return $next($request);
             }
 

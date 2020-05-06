@@ -25,9 +25,9 @@
 
         <div class="container">
             <span>درباره ما</span> <br>
-            <h5>{{$data['name']->title}}</h5>
+            <h5>{{$hotel['name']->title}}</h5>
             <p id="about-us-p">
-                {{$data['description']->title}}
+                {{$hotel['description']->title}}
             </p>
         </div>
 
@@ -121,12 +121,12 @@
     <div class="reservation">
 
         <span>سامانه رزرواسیون آنلاین</span> <br>
-        <h5>{{$data['name']->title}}</h5>
+        <h5>{{$hotel['name']->title}}</h5>
 
         <div class="container">
             <div class="row">
                 @foreach($rooms as $room)
-                    @include('widgets.data.public.room_widget' , ['data'=>$room])
+                    @include('public.themes.hotel.widgets.room_widget' , ['data'=>$room])
                 @endforeach
             </div>
         </div>
@@ -140,7 +140,7 @@
                 <img id="in-parallax-img" src="{{asset('images/restaurant-txt.png')}}"
                      class="responsive-img restaurant-img">
                 <span id="in-parallax-span">
-                {{$data['description']->title}}
+                {{$hotel['description']->title}}
                 </span>
             </div>
             <div class="parallax"><img src="{{asset('images/footer_bg.jpg')}}"></div>
@@ -173,7 +173,7 @@
         <div class="container">
             <div class="row center-on-small-only" style="margin: 0 !important;">
                 <div class="col l1 s12"><img src="{{asset('images/location.png')}}"></div>
-                <div class="col l9 s12"><span>{{$data['address']->title}}</span>
+                <div class="col l9 s12"><span>{{$hotel['address']->title}}</span>
                 </div>
             </div>
         </div>

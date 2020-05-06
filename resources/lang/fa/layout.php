@@ -9,14 +9,37 @@ return [
         'has been launched' => 'راه اندازی شد.',
         'login or register' => 'ورود یا عضویت',
         'check reservation' => 'پیگیری رزرو',
+        'reserves history' => 'تاریخچه رزرو ها',
         'we are ready to serve you' => 'پاسخگوی شما هستیم',
         'hotel online reservation system is very safe online system' => 'سامانه خصـوصی رزرو هتــل ممتاز صبوری، وبسـایتی ایــمن جهت رزرو آنلاین هتل صبوری می باشد.',
         'check reservation place holder' => 'کد پیگیری رزرو شما ...',
         'all right reserved to hotel sabouri' => 'تمامی حقوق این سایت نزد هتل سه ستاره صبوری محفوظ است.',
-        'hotel sabouri facilities'=>'امکانات هتل صبوری',
-        'useful links'=>'لینک های مفید',
-        'get to know us a bit'=>'کمی با ما آشنا شوید',
-        'logout'=>'خروج',
+        'hotel sabouri facilities' => 'امکانات هتل صبوری',
+        'useful links' => 'لینک های مفید',
+        'get to know us a bit' => 'کمی با ما آشنا شوید',
+        'logout' => 'خروج',
+        'edit profile' => 'ویرایش پروفایل',
+        'messages' => 'پیغام ها',
+        'rooms' => 'اتاق ها',
+        'tasks' => 'وظایف',
+
+        'total users' => 'تعداد کاربران',
+        'total customers' => 'تعداد مشتریان',
+        'total income' => 'کل فروش',
+
+        'start' => 'شروع',
+        'end' => 'پایان',
+        'select date range' => 'انتخاب محدوده',
+        'select week days' => 'انتخاب روزهای هفته',
+        'data to be saved' => 'داده ها جهت ذخیره سازی',
+
+
+        'today'=>'امروز',
+        'this week'=>'هفته جاری',
+        'this month'=>'ماه جاری',
+        'total'=>'کل',
+
+
     ],
 
 
@@ -47,6 +70,7 @@ return [
         'per night price' => 'اقامت هر شب',
         'extra bed costs' => 'سرویس خواب اضافه :',
         'hotel archives' => 'آرشیو هتل',
+        'news archives' => 'آرشیو اخبار',
         'you can see our rooms here' => 'اینجا می توانید انواع اتاق های ما را مشاهده کنید',
     ],
 
@@ -120,28 +144,33 @@ return [
 
 
     'user' => [
-        'please login'=>'وارد شوید',
-        'email place holder'=>'  آدرس ایمیل',
-        'password place holder'=>'  رمز عبور',
-        'repeat password place holder'=>'  رمز عبور مجدد',
-        'mobile place holder'=>'   شماره همراه',
-        'login'=>'ورود به سایت',
-        'forgot your password'=>'رمز عبور خود را فراموش کرده اید؟',
-        'register'=>'عضویت در سایت',
-        'check website rules'=>'مشاهده قوانین سایت',
+        'please login' => 'وارد شوید',
+        'email place holder' => '  آدرس ایمیل',
+        'password place holder' => '  رمز عبور',
+        'repeat password place holder' => '  رمز عبور مجدد',
+        'mobile place holder' => '   شماره همراه',
+        'login' => 'ورود به سایت',
+        'forgot your password' => 'رمز عبور خود را فراموش کرده اید؟',
+        'register' => 'عضویت در سایت',
+        'check website rules' => 'مشاهده قوانین سایت',
     ],
 
     'permissions' => [
-        'access items'=>'دسترسی به ایتم ها',
-        'create new item'=>'ایجاد آیتم جدید',
-        'edit items'=>'ویرایش آیتم',
-        'delete item'=>'حذف ایتم',
-        'access properties'=>'دسترسی به خاصیت ها',
-        'create new property'=>'ایجاد خاصیت جدید',
-        'edit properties'=>'ویراایش خاصیت ها',
-        'delete property'=>'حذف خاصیت',
-        'access settings'=>'دستری به تنطیمات',
-        'admin dashboard'=>'داشبورد مدیریت',
+        'access items' => 'دسترسی به ایتم ها',
+        'create new item' => 'ایجاد آیتم جدید',
+        'edit items' => 'ویرایش آیتم',
+        'delete item' => 'حذف ایتم',
+        'access properties' => 'دسترسی به خاصیت ها',
+        'create new property' => 'ایجاد خاصیت جدید',
+        'edit properties' => 'ویراایش خاصیت ها',
+        'delete property' => 'حذف خاصیت',
+        'access settings' => 'دستری به تنطیمات',
+        'admin dashboard' => 'داشبورد مدیریت',
+        'access types' => 'دسترسی به نوع ها',
+        'create new type' => 'ایجاد نوع جدید',
+        'edit types' => 'ویرایش نوع ها',
+        'delete types' => 'حذف نوع ها',
+
     ],
 
 

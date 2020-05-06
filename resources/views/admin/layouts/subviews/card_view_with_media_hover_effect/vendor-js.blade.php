@@ -1,4 +1,7 @@
-<script src="{{asset('app-assets/vendors/magnific-popup/jquery.magnific-popup.min.js')}}"
-        type="text/javascript"></script>
-<script src="{{asset('app-assets/vendors/imagesloaded.pkgd.min.js')}}" type="text/javascript"></script>
-<script src="{{asset('app-assets/vendors/masonry.pkgd.min.js')}}" type="text/javascript"></script>
+<!-- BEGIN: Vendor JS-->
+<script src="{{asset('admin-assets/vendors/js/vendors.min.js')}}"></script>
+<!-- BEGIN Vendor JS-->
+
+<!-- BEGIN: Page Vendor JS-->
+<script src="{{asset('admin-assets/vendors/js/extensions/sweetalert.min.js')}}"></script>
+<!-- END: Page Vendor JS-->

@@ -1,6 +1,5 @@
-<table class="display" id="data-table-contact" style="width:100%">
+<table id="users-contacts" class="table table-white-space table-bordered row-grouping display no-wrap icheck table-middle text-center">
     <thead>
-
         <tr>
             <th class="background-image-none center-align">
                 <label>
@@ -13,11 +12,7 @@
             <th>زیر شاخه دارد ؟</th>
             <th>حداکثر تعداد آیتم ها</th>
             <th>عملیات</th>
-            <!-- <th class="background-image-none"><i class="material-icons">star_border</i></th>
-            <th class="background-image-none"><i class="material-icons">delete_outline</i></th> -->
         </tr>
-
-
     </thead>
     <tbody>
 
@@ -36,10 +31,14 @@
                 <td>{{$data->can_have_item}}</td>
                 <td>
                     @can($permissions['edit'])
-                        <a href="{{$data->urls['edit']}}"><i class="material-icons delete">edit</i></a>
+                        <a href="{{$data->urls['edit']}}" class="primary edit mr-1">
+                            <i class="fa fa-pencil"></i>
+                        </a>
                     @endcan
                     @can($permissions['destroy'])
-                        <a href="#"><i class="material-icons delete">delete</i></a>
+                        <a class="danger delete mr-1">
+                            <i class="fa fa-trash-o"></i>
+                        </a>
                     @endcan
 
                 </td>
@@ -48,4 +47,16 @@
         @endforeach
 
     </tbody>
+    <tfoot>
+        <tr>
+            <th>
+            </th>
+
+            <th>عنوان</th>
+            <th>زیر شاخه دارد ؟</th>
+            <th>حداکثر تعداد آیتم ها</th>
+            <th>عملیات</th>
+        </tr>
+    </tfoot>
+
 </table>

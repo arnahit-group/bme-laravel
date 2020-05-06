@@ -67,9 +67,9 @@
         <script src="{{asset('scripts/jquery.steps.js')}}"></script>
         <script src="{{asset('scripts/jquery.countdown360.min.js')}}"></script>
 
-{{--        <script src="https://cdn.jsdelivr.net/npm/vue"></script>--}}
+        {{--        <script src="https://cdn.jsdelivr.net/npm/vue"></script>--}}
         <script src="{{asset('vendors/vue/dist/vue.js')}}"></script>
-{{--        <script src="https://cdn.jsdelivr.net/npm/moment"></script>--}}
+        {{--        <script src="https://cdn.jsdelivr.net/npm/moment"></script>--}}
         <script src="{{asset('vendors/moment/min/moment.min.js')}}"></script>
         <script src="{{asset('vendors/moment-jalaali/build/moment-jalaali.js')}}"></script>
         <script src="{{asset('vendors/vue-persian-datetime-picker-master/dist/vue-persian-datetime-picker-browser.js')}}"></script>
@@ -93,7 +93,7 @@
 
                 <div class="mini-phone-left-side hide-on-med-and-down">
 
-                    @foreach($data['mobile']->title as $t)
+                    @foreach($hotel['mobile']->title as $t)
                         <span dir="ltr">{{$t}}</span>
                     @endforeach
                     <img class="icon10 responsive-img" src="{{asset('images/telephone.png')}}">
@@ -184,7 +184,7 @@
                         <a hidden href="#">
                             <span class="track-booking-span">{{__('layout.public.check reservation')}}</span>
                         </a>
-                        <img  hidden class="icon10 responsive-img" src="{{asset('images/verified.png')}}">
+                        <img hidden class="icon10 responsive-img" src="{{asset('images/verified.png')}}">
 
                     </div>
 
@@ -304,13 +304,12 @@
         <script src="{{asset('scripts/jquery.slide.min.js')}}"></script>
         <script src="{{asset('scripts/init.js')}}"></script>
 
+
         <script language=Javascript>
-            function isNumberKey(evt)
-            {
+            function isNumberKey(evt) {
                 var charCode = (evt.which) ? evt.which : event.keyCode;
                 if (charCode > 31 && (charCode < 48 || charCode > 57))
                     return false;
-
                 return true;
             }
         </script>

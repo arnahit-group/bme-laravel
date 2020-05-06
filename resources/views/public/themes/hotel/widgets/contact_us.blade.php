@@ -34,21 +34,21 @@
                 <div id="btn-mail" class="col l5 s12 btn-mail-address center">
 
                     <img class="mail-icon" src="{{asset('images/main-address.png')}}">
-                    <span>{{$data['email']->title}}</span>
+                    <span>{{$hotel['email']->title}}</span>
 
                 </div>
 
                 <div id="btn-number" class="col l5 offset-l1 s12 btn-mail-address center">
 
                     <img class="mail-icon" src="{{asset('images/telephone.png')}}">
-                    @foreach($data['phone']->title as $t)
+                    @foreach($hotel['phone']->title as $t)
                         <span dir="ltr">{{$t}}</span>
                     @endforeach
 
                 </div>
 
                 <div class="col s12 spn-address">
-                    <span> {{$data['address']->title}}</span>
+                    <span> {{$hotel['address']->title}}</span>
                 </div>
 
             </div>
@@ -96,17 +96,17 @@
                     <br>
 
 
-                    <input type="text" id="input-location" name="input-location" class="input-cu col s12 left"
-                           placeholder="محل زندگی">
+{{--                    <input type="text" id="input-location" name="input-location" class="input-cu col s12 left"--}}
+{{--                           placeholder="محل زندگی">--}}
 
-                    <span id="spn-location-alert" class="invalid-feedback" role="alert" hidden>
-                        <strong>
-                                                {{__('layout.pages.enter your origin city')}}
+{{--                    <span id="spn-location-alert" class="invalid-feedback" role="alert" hidden>--}}
+{{--                        <strong>--}}
+{{--                                                {{__('layout.pages.enter your origin city')}}--}}
 
-                        </strong>
-                    </span>
+{{--                        </strong>--}}
+{{--                    </span>--}}
 
-                    <br>
+{{--                    <br>--}}
 
                     <textarea id="txt-area" name="txt-area" class="txt-area col s12 left"
                               placeholder="درخواستی از هتل دارید؟ اینجا بنویسید."></textarea>

@@ -43,17 +43,18 @@
 
 @section('container')
 
+
     @if(isset($datas))
-        <div class="container">
-            <div class="row">
+{{--        <div class="container">--}}
+{{--            <div class="row">--}}
                 @if(count($widgets) > 0 and $widgets[0]->type == 'main')
                     @include($widgets[0]->name, ['datas'=>$datas])
                 @endif
-            </div>
-        </div>
+{{--            </div>--}}
+{{--        </div>--}}
     @else
         @if(count($widgets) > 0 and $widgets[0]->type == 'main')
-            @include($widgets[0]->name, ['data' =>$object, 'hotel'=>$data])
+            @include($widgets[0]->name, ['data' =>$object])
         @endif
     @endif
 
@@ -69,7 +70,7 @@
                 <img id="in-parallax-img" src="{{asset('images/restaurant-txt.png')}}"
                      class="responsive-img restaurant-img">
                 <span id="in-parallax-span">
-                    {{$data['description']->title}}
+                    {{$hotel['description']->title}}
                 </span>
             </div>
             <div class="parallax"><img src="{{asset('images/footer_bg.jpg')}}"></div>
@@ -109,7 +110,7 @@
             <div class="row center-on-small-only" style="margin: 0 !important;">
                 <div class="col l1 s12"><img src="{{asset('images/location.png')}}"></div>
                 <div class="col l9 s12"><span>
-                        {{$data['address']->title}}
+                        {{$hotel['address']->title}}
                     </span>
                 </div>
             </div>
@@ -262,6 +263,7 @@
             data: {
                 date:  moment().format('jYYYY/jMM/jDD'),
                 today: moment().format('jYYYY/jMM/jDD'),
+                // disable:"['1398/07/13']",
             },
             components: {
                 DatePicker: VuePersianDatetimePicker

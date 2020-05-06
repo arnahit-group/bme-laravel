@@ -97,10 +97,10 @@
                                                 </div>
 
 
-{{--                                                <input style="z-index: 5 !important;" type="text" class="datePicker dp1"--}}
-{{--                                                       value="09-22-2019"/>--}}
-{{--                                                <input style="z-index: 5 !important; display: block;" type="hidden"--}}
-{{--                                                       id="alternateField" name="start"/>--}}
+                                                {{--                                                <input style="z-index: 5 !important;" type="text" class="datePicker dp1"--}}
+                                                {{--                                                       value="09-22-2019"/>--}}
+                                                {{--                                                <input style="z-index: 5 !important; display: block;" type="hidden"--}}
+                                                {{--                                                       id="alternateField" name="start"/>--}}
 
 
                                             </div>
@@ -396,13 +396,23 @@
                             <div class="col s12  room-day-price" id="dv-dates">
 
                                 @php($p=0)
-                                @foreach($dates as $d)
-                                    <span class="black-text">{{$d}}</span>
-                                    <span class="txt-red-price">{{number_format($object->properties['price']->prices[0])}}
+                                @foreach($dates_prices as $k=>$d)
+                                    <span class="black-text">{{$k}}</span>
+                                    <span class="txt-red-price">
+
+                                        @if(count($d)  == 2)
+                                            @if($d[0] < $d[1] )
+                                                <s>{{number_format($d[1])}}</s>&nbsp;&nbsp;
+                                                {{number_format($d[0])}}
+                                            @endif
+                                        @elseif(count($d)  == 1)
+                                            {{number_format($d[0])}}
+                                        @endif
+
                                         {{__('layout.reserve.tooman')}}
                                 </span>
                                     <br>
-                                    @php($p+=$object->properties['price']->prices[0])
+                                    @php($p+=$d[0])
                                 @endforeach
                                 {{--<span class="black-text">سه شنبه، 28 فروردین 1398</span>--}}
                                 {{--<span class="left">7/568/245 ریال</span>--}}
@@ -415,7 +425,8 @@
                             </div>
 
                             <input type="hidden" id="input-price" value="{{$p}}">
-                            <a id="btn-grey" href="#" class="btn-small btn-grey "> {{number_format($p)}}
+                            <a id="btn-grey" href="#" class="btn-small btn-grey ">
+                                {{number_format($p)}}
                                 {{__('layout.reserve.total')}}
                             </a>
                             <a href="#modal1" class="btn-small left btn-dash modal-trigger">ویرایش تقویم</a>
@@ -445,7 +456,7 @@
                             <div class="col s12 left" id="btn-green">
 
 
-                                <a class="btn-green" href="#">
+                                <a  class="btn-green" href="#">
                                     {{__('layout.reserve.total')}}
                                     {{ number_format($p) }}
                                     {{__('layout.reserve.tooman')}}
@@ -552,11 +563,11 @@
                                 </div>
 
 
-{{--                                <div class="sup-box hide-on-med-and-down">--}}
+                                {{--                                <div class="sup-box hide-on-med-and-down">--}}
 
-{{--                                    <span>{{__('layout.reserve.hotel support')}}</span>--}}
-{{--                                    <a class="btn-green_2" href="#">{{__('layout.reserve.contact us')}}</a>--}}
-{{--                                </div>--}}
+                                {{--                                    <span>{{__('layout.reserve.hotel support')}}</span>--}}
+                                {{--                                    <a class="btn-green_2" href="#">{{__('layout.reserve.contact us')}}</a>--}}
+                                {{--                                </div>--}}
 
                             </div>
 
@@ -761,7 +772,6 @@
                         </div>
 
 
-
                         <div class="col l3 s12 right-s"></div>
                         <div class="col l6 s12 right-s">
                             <div class="row">
@@ -782,27 +792,21 @@
                             </div>
                         </div>
                         <div class="col l3 s12 right-s"></div>
-{{--                        <div id="left-s" class="col l6 s12 left-s" hidden>--}}
-{{--                            <div class="row" >--}}
-{{--                                <div id="img-bg-gb" class="col l4 s12 img-bg-gb center-on-small-only">--}}
-{{--                                    <img src="{{asset('images/print.png')}}">--}}
-{{--                                </div>--}}
-{{--                                <div class="col l8 s12 desc-bg center-on-small-only">--}}
-{{--                                    <h6>{{__('layout.reserve.payment invoice')}}</h6>--}}
-{{--                                    <p>--}}
-{{--                                        {{__('layout.reserve.the payment gateway payment invoice')}}--}}
-{{--                                    </p>--}}
-{{--                                    <input type="button" href="#" value="پرینت فاکتور پرداخت"--}}
-{{--                                           class="btn-small btn-red btn-submit btn-print btn-unavailable">--}}
-{{--                                </div>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-
-
-
-
-
-
+                        {{--                        <div id="left-s" class="col l6 s12 left-s" hidden>--}}
+                        {{--                            <div class="row" >--}}
+                        {{--                                <div id="img-bg-gb" class="col l4 s12 img-bg-gb center-on-small-only">--}}
+                        {{--                                    <img src="{{asset('images/print.png')}}">--}}
+                        {{--                                </div>--}}
+                        {{--                                <div class="col l8 s12 desc-bg center-on-small-only">--}}
+                        {{--                                    <h6>{{__('layout.reserve.payment invoice')}}</h6>--}}
+                        {{--                                    <p>--}}
+                        {{--                                        {{__('layout.reserve.the payment gateway payment invoice')}}--}}
+                        {{--                                    </p>--}}
+                        {{--                                    <input type="button" href="#" value="پرینت فاکتور پرداخت"--}}
+                        {{--                                           class="btn-small btn-red btn-submit btn-print btn-unavailable">--}}
+                        {{--                                </div>--}}
+                        {{--                            </div>--}}
+                        {{--                        </div>--}}
 
 
                     </div>

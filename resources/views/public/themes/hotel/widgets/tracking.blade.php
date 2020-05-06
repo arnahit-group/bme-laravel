@@ -71,14 +71,14 @@
                             <div class="col s12 m6 pay-msg">
                         <span>
                         تاریخ ورود :
-                            {{$reserve['ja_start_date']->title}}
+                            {{$reserve['start-date']->values['ja']}}
                         </span>
                             </div>
 
                             <div class="col s12 m6 pay-msg">
                         <span>
                         تاریخ خروج :
-                            {{$reserve['ja_end_date']->title}}
+                            {{$reserve['end-date']->values['ja']}}
                         </span>
                             </div>
                         </div>
@@ -100,7 +100,7 @@
                                     <p>
                                         {{__('layout.reserve.you need a witch to stay in your room')}}
                                     </p>
-                                    @if($reserve['situation']->title == 7)
+                                    @if($reserve['situation']->title == 7 || $reserve['situation']->title == 9)
                                         <a href="{{route('home.voucher.print' , ['code'=> Request::get('code')])}}"
                                            id="btn-print-voucher"
                                            class="btn-small btn-red btn-submit btn-print" target="_blank">

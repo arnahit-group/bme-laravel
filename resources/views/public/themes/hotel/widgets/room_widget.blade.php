@@ -1,33 +1,30 @@
 <div class="col s12 l4">
-    <div class="reservation-div-1">
-        <div class="reservation-div">
-            <div class="reservation-img" id="reservation10"></div>
-            <h6>{{$data->properties['title']->title}}</h6>
-            {{--<br>--}}
-            <h5>
-                {{__('layout.room.price per night')}}
-                {{number_format($data->properties['price']->prices[0])}}
-                {{__('layout.room.tooman')}}
-            </h5>
-
-            {{--<br>--}}
-            <a class="more-information"
-               href="{{route('home.data' , ['type'=>'room' , 'id'=>$data->id])}}">
-                <img class="left responsive-img"
-                     src="{{asset('images/left-arrow.png')}}">
-                {{__('layout.room.more information')}}
-            </a>
-
-            @if(isset($data->properties['available']) and $data->properties['available']->title==1 )
-                @if(isset($data->situation) and $data->situation == 'free')
-                    <a href="{{route('home.data' , ['type'=>'room' , 'id'=>$data->id])}}"
-                       class="reservation-btn left">
-                        {{__('layout.room.reserve it')}}
-                    </a>
+    <a href="{{route('home.data' , ['type'=>'room' , 'id'=>$data->id])}}">
+        <div class="card small" style="border-top-right-radius: 10px !important;  border-top-left-radius: 10px !important;">
+            <div class="card-image" style="border-top-right-radius: 10px !important;  border-top-left-radius: 10px !important;">
+                @if(isset($data->properties['featuring-image']->slides[0]))
+                    <img src="{{$data->properties['featuring-image']->slides[0]}}" alt="{{$data->properties['title']->title}}">
+                @elseif(isset($data->properties['slide-images']->slides[0]))
+                    <img src="{{$data->properties['slide-images']->slides[0]}}" alt="{{$data->properties['title']->title}}">
+                @else
+                    <img src="{{asset('images/post1.jpg')}}" alt="{{$data->properties['title']->title}}">
                 @endif
-            @else
-                {{--<a href="#" class="reservation-btn left">غیر فعال</a>--}}
-            @endif
+
+            </div>
+            <div class="card-content">
+                <h6>
+                    {{$data->properties['title']->title}}
+                </h6>
+                <p class="red-text">
+                    {{__('layout.room.price per night')}}
+                    {{isset($data->properties['price']->prices[$current_date][0]) ?  number_format($data->properties['price']->prices[$current_date][0]) : '0'}}
+                    {{__('layout.room.tooman')}}
+                </p>
+                <a class="orange-text" href="{{route('home.data' , ['type'=>'room' , 'id'=>$data->id])}}">
+                    {{__('layout.room.more information')}}
+                </a>
+
+            </div>
         </div>
-    </div>
+    </a>
 </div>

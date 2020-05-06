@@ -3,6 +3,9 @@
 /public/storage
 /storage/*.key
 /vendor
+/resources/views/templates
+/resources/views/public/themes/alibaba
+/resources/views/public/themes/hotel
 .env
 .phpunit.result.cache
 Homestead.json

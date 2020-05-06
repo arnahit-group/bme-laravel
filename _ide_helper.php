@@ -3,7 +3,7 @@
 
 /**
  * A helper file for Laravel 5, to provide autocomplete information to your IDE
- * Generated for Laravel 5.7.22 on 2019-06-16 21:31:35.
+ * Generated for Laravel 5.7.22 on 2020-03-13 12:38:56.
  *
  * This file should not be included in your code, only analyzed by your IDE!
  *
@@ -15177,6 +15177,826 @@ namespace Jenssegers\Agent\Facades {
  
 }
 
+namespace Larabookir\Gateway { 
+
+    /**
+     * 
+     *
+     * @see \Larabookir\Gateway\GatewayResolver
+     */ 
+    class Gateway {
+        
+        /**
+         * Get supported ports
+         *
+         * @return array 
+         * @static 
+         */ 
+        public static function getSupportedPorts()
+        {
+                        /** @var \Larabookir\Gateway\GatewayResolver $instance */
+                        return $instance->getSupportedPorts();
+        }
+        
+        /**
+         * Gets query builder from you transactions table
+         *
+         * @return mixed 
+         * @static 
+         */ 
+        public static function getTable()
+        {
+                        /** @var \Larabookir\Gateway\GatewayResolver $instance */
+                        return $instance->getTable();
+        }
+        
+        /**
+         * Callback
+         *
+         * @return \Larabookir\Gateway\$this->port 
+         * @throws InvalidRequestException
+         * @throws NotFoundTransactionException
+         * @throws PortNotFoundException
+         * @throws RetryException
+         * @static 
+         */ 
+        public static function verify()
+        {
+                        /** @var \Larabookir\Gateway\GatewayResolver $instance */
+                        return $instance->verify();
+        }
+        
+        /**
+         * Create new object from port class
+         *
+         * @param int $port
+         * @throws PortNotFoundException
+         * @static 
+         */ 
+        public static function make($port)
+        {
+                        /** @var \Larabookir\Gateway\GatewayResolver $instance */
+                        return $instance->make($port);
+        }
+         
+    }
+ 
+}
+
+namespace Kavenegar\Laravel { 
+
+    /**
+     * 
+     *
+     */ 
+    class Facade {
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function Send($sender, $receptor, $message, $date = null, $type = null, $localid = null)
+        {
+                        /** @var \Kavenegar\KavenegarApi $instance */
+                        return $instance->Send($sender, $receptor, $message, $date, $type, $localid);
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function SendArray($sender, $receptor, $message, $date = null, $type = null, $localmessageid = null)
+        {
+                        /** @var \Kavenegar\KavenegarApi $instance */
+                        return $instance->SendArray($sender, $receptor, $message, $date, $type, $localmessageid);
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function Status($messageid)
+        {
+                        /** @var \Kavenegar\KavenegarApi $instance */
+                        return $instance->Status($messageid);
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function StatusLocalMessageId($localid)
+        {
+                        /** @var \Kavenegar\KavenegarApi $instance */
+                        return $instance->StatusLocalMessageId($localid);
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function Select($messageid)
+        {
+                        /** @var \Kavenegar\KavenegarApi $instance */
+                        return $instance->Select($messageid);
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function SelectOutbox($startdate, $enddate, $sender)
+        {
+                        /** @var \Kavenegar\KavenegarApi $instance */
+                        return $instance->SelectOutbox($startdate, $enddate, $sender);
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function LatestOutbox($pagesize, $sender)
+        {
+                        /** @var \Kavenegar\KavenegarApi $instance */
+                        return $instance->LatestOutbox($pagesize, $sender);
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function CountOutbox($startdate, $enddate, $status = 0)
+        {
+                        /** @var \Kavenegar\KavenegarApi $instance */
+                        return $instance->CountOutbox($startdate, $enddate, $status);
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function Cancel($messageid)
+        {
+                        /** @var \Kavenegar\KavenegarApi $instance */
+                        return $instance->Cancel($messageid);
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function Receive($linenumber, $isread = 0)
+        {
+                        /** @var \Kavenegar\KavenegarApi $instance */
+                        return $instance->Receive($linenumber, $isread);
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function CountInbox($startdate, $enddate, $linenumber, $isread = 0)
+        {
+                        /** @var \Kavenegar\KavenegarApi $instance */
+                        return $instance->CountInbox($startdate, $enddate, $linenumber, $isread);
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function CountPostalcode($postalcode)
+        {
+                        /** @var \Kavenegar\KavenegarApi $instance */
+                        return $instance->CountPostalcode($postalcode);
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function SendbyPostalcode($sender, $postalcode, $message, $mcistartindex, $mcicount, $mtnstartindex, $mtncount, $date)
+        {
+                        /** @var \Kavenegar\KavenegarApi $instance */
+                        return $instance->SendbyPostalcode($sender, $postalcode, $message, $mcistartindex, $mcicount, $mtnstartindex, $mtncount, $date);
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function AccountInfo()
+        {
+                        /** @var \Kavenegar\KavenegarApi $instance */
+                        return $instance->AccountInfo();
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function AccountConfig($apilogs, $dailyreport, $debug, $defaultsender, $mincreditalarm, $resendfailed)
+        {
+                        /** @var \Kavenegar\KavenegarApi $instance */
+                        return $instance->AccountConfig($apilogs, $dailyreport, $debug, $defaultsender, $mincreditalarm, $resendfailed);
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function VerifyLookup($receptor, $token, $token2, $token3, $template, $type = null)
+        {
+                        /** @var \Kavenegar\KavenegarApi $instance */
+                        return $instance->VerifyLookup($receptor, $token, $token2, $token3, $template, $type);
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function CallMakeTTS($receptor, $message, $date = null, $localid = null)
+        {
+                        /** @var \Kavenegar\KavenegarApi $instance */
+                        return $instance->CallMakeTTS($receptor, $message, $date, $localid);
+        }
+         
+    }
+ 
+}
+
+namespace PragmaRX\Tracker\Vendor\Laravel { 
+
+    /**
+     * 
+     *
+     */ 
+    class Facade {
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function allSessions()
+        {
+                        /** @var \PragmaRX\Tracker\Tracker $instance */
+                        return $instance->allSessions();
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function boot()
+        {
+                        /** @var \PragmaRX\Tracker\Tracker $instance */
+                        return $instance->boot();
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function checkCurrentUser()
+        {
+                        /** @var \PragmaRX\Tracker\Tracker $instance */
+                        return $instance->checkCurrentUser();
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function currentSession()
+        {
+                        /** @var \PragmaRX\Tracker\Tracker $instance */
+                        return $instance->currentSession();
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function errors($minutes, $results = true)
+        {
+                        /** @var \PragmaRX\Tracker\Tracker $instance */
+                        return $instance->errors($minutes, $results);
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function events($minutes, $results = true)
+        {
+                        /** @var \PragmaRX\Tracker\Tracker $instance */
+                        return $instance->events($minutes, $results);
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function getAgentId()
+        {
+                        /** @var \PragmaRX\Tracker\Tracker $instance */
+                        return $instance->getAgentId();
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function getConfig($key)
+        {
+                        /** @var \PragmaRX\Tracker\Tracker $instance */
+                        return $instance->getConfig($key);
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function getCookieId()
+        {
+                        /** @var \PragmaRX\Tracker\Tracker $instance */
+                        return $instance->getCookieId();
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function getDeviceId()
+        {
+                        /** @var \PragmaRX\Tracker\Tracker $instance */
+                        return $instance->getDeviceId();
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function getLanguageId()
+        {
+                        /** @var \PragmaRX\Tracker\Tracker $instance */
+                        return $instance->getLanguageId();
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function getDomainId($domain)
+        {
+                        /** @var \PragmaRX\Tracker\Tracker $instance */
+                        return $instance->getDomainId($domain);
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function getGeoIpId()
+        {
+                        /** @var \PragmaRX\Tracker\Tracker $instance */
+                        return $instance->getGeoIpId();
+        }
+        
+        /**
+         * 
+         *
+         * @return array 
+         * @static 
+         */ 
+        public static function getLogData()
+        {
+                        /** @var \PragmaRX\Tracker\Tracker $instance */
+                        return $instance->getLogData();
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function getLogger()
+        {
+                        /** @var \PragmaRX\Tracker\Tracker $instance */
+                        return $instance->getLogger();
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function getPathId()
+        {
+                        /** @var \PragmaRX\Tracker\Tracker $instance */
+                        return $instance->getPathId();
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function getQueryId()
+        {
+                        /** @var \PragmaRX\Tracker\Tracker $instance */
+                        return $instance->getQueryId();
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function getRefererId()
+        {
+                        /** @var \PragmaRX\Tracker\Tracker $instance */
+                        return $instance->getRefererId();
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function getRoutePathId()
+        {
+                        /** @var \PragmaRX\Tracker\Tracker $instance */
+                        return $instance->getRoutePathId();
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function getSessionId($updateLastActivity = false)
+        {
+                        /** @var \PragmaRX\Tracker\Tracker $instance */
+                        return $instance->getSessionId($updateLastActivity);
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function getUserId()
+        {
+                        /** @var \PragmaRX\Tracker\Tracker $instance */
+                        return $instance->getUserId();
+        }
+        
+        /**
+         * 
+         *
+         * @param \Exception $exception
+         * @static 
+         */ 
+        public static function handleException($exception)
+        {
+                        /** @var \PragmaRX\Tracker\Tracker $instance */
+                        return $instance->handleException($exception);
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function isEnabled()
+        {
+                        /** @var \PragmaRX\Tracker\Tracker $instance */
+                        return $instance->isEnabled();
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function isRobot()
+        {
+                        /** @var \PragmaRX\Tracker\Tracker $instance */
+                        return $instance->isRobot();
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function isTrackable()
+        {
+                        /** @var \PragmaRX\Tracker\Tracker $instance */
+                        return $instance->isTrackable();
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function isTrackableEnvironment()
+        {
+                        /** @var \PragmaRX\Tracker\Tracker $instance */
+                        return $instance->isTrackableEnvironment();
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function isTrackableIp()
+        {
+                        /** @var \PragmaRX\Tracker\Tracker $instance */
+                        return $instance->isTrackableIp();
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function logByRouteName($name, $minutes = null)
+        {
+                        /** @var \PragmaRX\Tracker\Tracker $instance */
+                        return $instance->logByRouteName($name, $minutes);
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function logEvents()
+        {
+                        /** @var \PragmaRX\Tracker\Tracker $instance */
+                        return $instance->logEvents();
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function logIsEnabled()
+        {
+                        /** @var \PragmaRX\Tracker\Tracker $instance */
+                        return $instance->logIsEnabled();
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function logSqlQuery($query, $bindings, $time, $name)
+        {
+                        /** @var \PragmaRX\Tracker\Tracker $instance */
+                        return $instance->logSqlQuery($query, $bindings, $time, $name);
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function pageViews($minutes, $results = true)
+        {
+                        /** @var \PragmaRX\Tracker\Tracker $instance */
+                        return $instance->pageViews($minutes, $results);
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function pageViewsByCountry($minutes, $results = true)
+        {
+                        /** @var \PragmaRX\Tracker\Tracker $instance */
+                        return $instance->pageViewsByCountry($minutes, $results);
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function allowConsole()
+        {
+                        /** @var \PragmaRX\Tracker\Tracker $instance */
+                        return $instance->allowConsole();
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function parserIsAvailable()
+        {
+                        /** @var \PragmaRX\Tracker\Tracker $instance */
+                        return $instance->parserIsAvailable();
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function routeIsTrackable()
+        {
+                        /** @var \PragmaRX\Tracker\Tracker $instance */
+                        return $instance->routeIsTrackable();
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function pathIsTrackable()
+        {
+                        /** @var \PragmaRX\Tracker\Tracker $instance */
+                        return $instance->pathIsTrackable();
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function routerMatched($log)
+        {
+                        /** @var \PragmaRX\Tracker\Tracker $instance */
+                        return $instance->routerMatched($log);
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function sessionLog($uuid, $results = true)
+        {
+                        /** @var \PragmaRX\Tracker\Tracker $instance */
+                        return $instance->sessionLog($uuid, $results);
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function sessions($minutes = 1440, $results = true)
+        {
+                        /** @var \PragmaRX\Tracker\Tracker $instance */
+                        return $instance->sessions($minutes, $results);
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function onlineUsers($minutes = 3, $results = true)
+        {
+                        /** @var \PragmaRX\Tracker\Tracker $instance */
+                        return $instance->onlineUsers($minutes, $results);
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function track()
+        {
+                        /** @var \PragmaRX\Tracker\Tracker $instance */
+                        return $instance->track();
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function trackEvent($event)
+        {
+                        /** @var \PragmaRX\Tracker\Tracker $instance */
+                        return $instance->trackEvent($event);
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function trackVisit($route, $request)
+        {
+                        /** @var \PragmaRX\Tracker\Tracker $instance */
+                        return $instance->trackVisit($route, $request);
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function turnOff()
+        {
+                        /** @var \PragmaRX\Tracker\Tracker $instance */
+                        return $instance->turnOff();
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function userDevices($minutes, $user_id = null, $results = true)
+        {
+                        /** @var \PragmaRX\Tracker\Tracker $instance */
+                        return $instance->userDevices($minutes, $user_id, $results);
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function users($minutes, $results = true)
+        {
+                        /** @var \PragmaRX\Tracker\Tracker $instance */
+                        return $instance->users($minutes, $results);
+        }
+        
+        /**
+         * Get the messages.
+         *
+         * @return \Illuminate\Support\Collection 
+         * @static 
+         */ 
+        public static function getMessages()
+        {
+                        /** @var \PragmaRX\Tracker\Tracker $instance */
+                        return $instance->getMessages();
+        }
+        
+        /**
+         * Update the GeoIp2 database.
+         *
+         * @return bool 
+         * @static 
+         */ 
+        public static function updateGeoIp()
+        {
+                        /** @var \PragmaRX\Tracker\Tracker $instance */
+                        return $instance->updateGeoIp();
+        }
+         
+    }
+ 
+}
+
 namespace Maatwebsite\Excel\Facades { 
 
     /**
@@ -16006,6 +16826,230 @@ namespace niklasravnsborg\LaravelPdf\Facades {
         {
                         /** @var \niklasravnsborg\LaravelPdf\PdfWrapper $instance */
                         return $instance->loadView($view, $data, $mergeData, $config);
+        }
+         
+    }
+ 
+}
+
+namespace Bllim\Datatables\Facade { 
+
+    /**
+     * 
+     *
+     */ 
+    class Datatables {
+        
+        /**
+         * Will take an input array and return the formatted dataTables data as an array
+         *
+         * @param array $input
+         * @return array 
+         * @static 
+         */ 
+        public static function processData($input = array())
+        {
+                        /** @var \Bllim\Datatables\Datatables $instance */
+                        return $instance->processData($input);
+        }
+        
+        /**
+         * 
+         *
+         * @return array $this->input
+         * @static 
+         */ 
+        public static function getData()
+        {
+                        /** @var \Bllim\Datatables\Datatables $instance */
+                        return $instance->getData();
+        }
+        
+        /**
+         * Sets input data.
+         * 
+         * Can be used when not wanting to use default Input data.
+         *
+         * @param array $data
+         * @static 
+         */ 
+        public static function setData($data)
+        {
+                        /** @var \Bllim\Datatables\Datatables $instance */
+                        return $instance->setData($data);
+        }
+        
+        /**
+         * Gets query and returns instance of class
+         *
+         * @param \Illuminate\Database\Query\Builder|\Illuminate\Database\Eloquent\Builder $query
+         * @param null $dataFullSupport
+         * @return \Bllim\Datatables\Datatables 
+         * @static 
+         */ 
+        public static function of($query, $dataFullSupport = null)
+        {
+                        return \Bllim\Datatables\Datatables::of($query, $dataFullSupport);
+        }
+        
+        /**
+         * Organizes works
+         *
+         * @param bool $mDataSupport
+         * @param bool $raw
+         * @return array|\Bllim\Datatables\json 
+         * @static 
+         */ 
+        public static function make($mDataSupport = false, $raw = false)
+        {
+                        /** @var \Bllim\Datatables\Datatables $instance */
+                        return $instance->make($mDataSupport, $raw);
+        }
+        
+        /**
+         * Adds additional columns to added_columns
+         *
+         * @param string $name
+         * @param string|callable $content
+         * @param bool $order
+         * @return \Bllim\Datatables\Datatables 
+         * @static 
+         */ 
+        public static function addColumn($name, $content, $order = false)
+        {
+                        /** @var \Bllim\Datatables\Datatables $instance */
+                        return $instance->addColumn($name, $content, $order);
+        }
+        
+        /**
+         * Adds column names to edit_columns
+         *
+         * @param string $name
+         * @param string|callable $content
+         * @return \Bllim\Datatables\Datatables 
+         * @static 
+         */ 
+        public static function editColumn($name, $content)
+        {
+                        /** @var \Bllim\Datatables\Datatables $instance */
+                        return $instance->editColumn($name, $content);
+        }
+        
+        /**
+         * This will remove the columns from the returned data.  It will also cause it to skip any filters for those removed columns.
+         * 
+         * Adds a list of columns to removed_columns
+         *
+         * @params strings ...,... As many individual string parameters matching column names
+         * @return \Bllim\Datatables\Datatables 
+         * @static 
+         */ 
+        public static function removeColumn()
+        {
+                        /** @var \Bllim\Datatables\Datatables $instance */
+                        return $instance->removeColumn();
+        }
+        
+        /**
+         * The filtered columns will add query sql options for the specified columns
+         * Adds column filter to filter_columns
+         *
+         * @param string $column
+         * @param string $method
+         * @param mixed  ...,... All the individual parameters required for specified $method
+         * @return \Bllim\Datatables\Datatables 
+         * @static 
+         */ 
+        public static function filterColumn($column, $method)
+        {
+                        /** @var \Bllim\Datatables\Datatables $instance */
+                        return $instance->filterColumn($column, $method);
+        }
+        
+        /**
+         * Sets the DT_RowID for the DataTables index column (as used to set, e.g., id of the <tr> tags) to the named column
+         * If the index matches a column, then that column value will be set as the id of th <tr>.
+         * 
+         * If the index doesn't, it will be parsed as either a callback or blade template and that returned value will be the
+         * id of the <tr>
+         *
+         * @param string $name
+         * @return \Bllim\Datatables\Datatables 
+         * @static 
+         */ 
+        public static function setIndexColumn($name)
+        {
+                        /** @var \Bllim\Datatables\Datatables $instance */
+                        return $instance->setIndexColumn($name);
+        }
+        
+        /**
+         * Sets DT_RowClass template
+         * result: <tr class="output_from_your_template">
+         *
+         * @param string|callable $content
+         * @return \Bllim\Datatables\Datatables 
+         * @static 
+         */ 
+        public static function setRowClass($content)
+        {
+                        /** @var \Bllim\Datatables\Datatables $instance */
+                        return $instance->setRowClass($content);
+        }
+        
+        /**
+         * Sets DT_RowData template for given attribute name
+         * result: Datatables invoking $(row).data(name, output_from_your_template)
+         *
+         * @param string $name
+         * @param string|callable $content
+         * @return \Bllim\Datatables\Datatables 
+         * @static 
+         */ 
+        public static function setRowData($name, $content)
+        {
+                        /** @var \Bllim\Datatables\Datatables $instance */
+                        return $instance->setRowData($name, $content);
+        }
+        
+        /**
+         * This will format the keyword as needed for "LIKE" based on config settings
+         * If $value already has %, it doesn't motify and just returns the value.
+         *
+         * @param string $value
+         * @return string 
+         * @static 
+         */ 
+        public static function formatKeyword($value)
+        {
+                        /** @var \Bllim\Datatables\Datatables $instance */
+                        return $instance->formatKeyword($value);
+        }
+        
+        /**
+         * Adds % wildcards to the given string
+         *
+         * @param $str
+         * @param bool $lowercase
+         * @return string 
+         * @static 
+         */ 
+        public static function formatWildcard($str, $lowercase = true)
+        {
+                        /** @var \Bllim\Datatables\Datatables $instance */
+                        return $instance->formatWildcard($str, $lowercase);
+        }
+        
+        /**
+         * Returns current database prefix
+         *
+         * @return string 
+         * @static 
+         */ 
+        public static function databasePrefix()
+        {
+                        /** @var \Bllim\Datatables\Datatables $instance */
+                        return $instance->databasePrefix();
         }
          
     }
@@ -18626,6 +19670,12 @@ namespace  {
 
     class Agent extends \Jenssegers\Agent\Facades\Agent {}
 
+    class Gateway extends \Larabookir\Gateway\Gateway {}
+
+    class Kavenegar extends \Kavenegar\Laravel\Facade {}
+
+    class Tracker extends \PragmaRX\Tracker\Vendor\Laravel\Facade {}
+
     class Excel extends \Maatwebsite\Excel\Facades\Excel {}
 
     class PdfReport extends \Jimmyjs\ReportGenerator\Facades\PdfReportFacade {}
@@ -18635,6 +19685,8 @@ namespace  {
     class CSVReport extends \Jimmyjs\ReportGenerator\Facades\CSVReportFacade {}
 
     class PDF extends \niklasravnsborg\LaravelPdf\Facades\Pdf {}
+
+    class Datatable extends \Bllim\Datatables\Facade\Datatables {}
  
 }
 

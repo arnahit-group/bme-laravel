@@ -103,15 +103,15 @@
     @if(Request::route()->getName() == 'home.service')
 
         @if(Request::get('step') == 1)
-            @include('widgets.services.public.reserve', ['room'=>$object, 'count'=> $count, 'dates'=>$dates])
+            @include('public.themes.hotel.widgets.reserve', ['room'=>$object, 'count'=> $count, 'dates'=>$dates])
         @elseif(Request::get('step') == 2)
-            @include('widgets.services.public.reserve')
+            @include('public.themes.hotel.widgets.reserve')
         @elseif(Request::get('step') == 3)
-            @include('widgets.services.public.reserve')
+            @include('public.themes.hotel.widgets.reserve')
         @endif
 
     @else
-        @include('widgets.services.public.tracking')
+        @include('public.themes.hotel.widgets.tracking')
     @endif
 
 
@@ -127,7 +127,6 @@
         var countdowntimer;
         var url = "{{url('/documents/ajax/voucher/')}}";
         var url_payout = "{{url('/services/payout/')}}";
-
 
         $(document).ready(function () {
             $('.parallax').parallax();
@@ -147,7 +146,6 @@
             var instances = M.Parallax.init(elems, options);
         });
 
-
     </script>
 
     @if(Request::get('step') == 1)
@@ -157,7 +155,7 @@
             var app = new Vue({
                 el: '#app',
                 data: {
-                    date:  moment().format('jYYYY/jMM/jDD'),
+                    date: moment().format('jYYYY/jMM/jDD'),
                     today: moment().format('jYYYY/jMM/jDD'),
                 },
                 components: {
@@ -192,26 +190,62 @@
                     data: {
                         'start': start.val(),
                         'count': count.val(),
-                        'price': '{{$object->properties['price']->prices[0]}}'
+                        'object_id': '{{$object->id}}'
                     },
                     success: function (result) {
 
+
                         var p = 0;
-                        var price = result.message.price;
+                        // var price = result.message.price;
+                        var dates_prices = result.message.dates_prices;
+
+                        // console.log(dates_prices);
+
+
+                        var dates = result.message.dates;
+                        //
+                        // for (i = 0; i < dates.length; i++) {
+                        //
+                        //     var d = "<span class='black-text'>" + dates[i] + "</span><span class='left'>" + price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + "  " + " تومان " + "</span><br>";
+                        //     dv_dates.append(d);
+                        //     p += Number(price);
+                        //
+                        // }
 
                         dv_dates.html("");
-                        var dates = result.message.dates;
-                        for (i = 0; i < dates.length; i++) {
-                            var d = "<span class='black-text'>" + dates[i] + "</span><span class='left'>" + price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + "  " + " تومان " + "</span><br>"
+                        $.each(dates_prices, function (index, prices) {
+
+                            var d = "<span class='black-text'>" + index + "</span><span class='left'>";
+
+                            if (prices.length === 2) {
+
+                                if (Number(prices[0]) < Number(prices[1])) {
+                                    d += "<s>" + prices[1].toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + "</s>&nbsp;&nbsp;";
+                                    d += prices[0].toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                                } else {
+                                    d += prices[0].toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                                }
+
+                            } else if (prices.length === 1) {
+                                d += prices[0].toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                            }
+
+                            d += "  " + " تومان ";
+                            d += "</span><br>";
+
                             dv_dates.append(d);
-                            p += Number(price);
-                        }
+                            p += Number(prices[0]);
+
+                        });
 
                         spn_start_date.html(dates[0]);
                         spn_end_date.html(dates[dates.length - 1]);
+
+
                         input_price.val(p);
                         btn_grey.html(p.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + " مجموع");
                         $("#btn-grey-2").html("مجموع:" + p.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + " تومان");
+                        $("#btn-green a").html("مجموع:" + p.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + " تومان");
                         $("#modal1").modal('close');
 
                     },
@@ -282,8 +316,8 @@
                         'mobile': mobile,
                         'phone': phone,
                         'price': price,
-                        'start_date': start_date,
-                        'end_date': end_date,
+                        'start-date': start_date,
+                        'end-date': end_date,
                         'data_id': '{{$object->id}}',
                         'type': 'room'
                     },
@@ -337,6 +371,7 @@
                                     alert('متاسفانه روزو شما جهت ادامه و پردداخت تایید نگردید');
                                     // TODO should change window location here after time out
 //                                            window.location = '/';
+                                    window.location = '{{route('home.index2')}}';
                                 },
                                 error: function (result) {
                                     alert(result.status);
@@ -413,6 +448,7 @@
 
                                             } else if (value == 6) {
                                                 $("#h-counter-info").html("رسید پرداخت شما تایید نگردید")
+
                                             }
 
                                             $("#countdown-1").prop('hidden', true);
@@ -532,7 +568,7 @@
 
                                                     alert('متاسفانه به علت پرداخت نکردن رقم رزرو رزرو تایید نشد');
                                                     // TODO should change window location here after time out
-//                                            window.location = '/';
+                                                    window.location = '{{route('home.index2')}}';
                                                 },
                                                 error: function (result) {
                                                     alert(result.status);

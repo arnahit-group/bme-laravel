@@ -1,1 +1,0 @@
-<script src="{{asset('app-assets/js/scripts/app-email.js')}}" type="text/javascript"></script>

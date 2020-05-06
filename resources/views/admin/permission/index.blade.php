@@ -1,147 +1,233 @@
 @extends("admin.layouts.admin")
 @section('vendor-css')
 
+    @if(in_array(App::getLocale(),config('base.rtl_locales')))
+        <link rel="stylesheet" type="text/css" href="{{asset('admin-assets/vendors/css/vendors-rtl.min.css')}}">
+    @else
+        <link rel="stylesheet" type="text/css" href="{{asset('admin-assets/vendors/css/vendors.min.css')}}">
+    @endif
+
+
+    <link rel="stylesheet" type="text/css" href="{{asset('admin-assets/vendors/css/tables/datatable/dataTables.bootstrap4.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('admin-assets/vendors/css/tables/extensions/rowReorder.dataTables.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('admin-assets/vendors/css/tables/extensions/responsive.dataTables.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('admin-assets/vendors/css/forms/icheck/icheck.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('admin-assets/vendors/css/forms/icheck/custom.css')}}">
+    <!-- END: Vendor CSS-->
+    <link rel="stylesheet" type="text/css" href="{{asset('admin-assets/vendors/css/forms/toggle/switchery.min.css')}}">
 @endsection
 
 
 @section("header")
 
+    @if(in_array(App::getLocale(),config('base.rtl_locales')))
+        <link rel="stylesheet" type="text/css" href="{{asset('admin-assets/css-rtl/core/menu/menu-types/vertical-menu-modern.css')}}">
+        <link rel="stylesheet" type="text/css" href="{{asset('admin-assets/css-rtl/core/colors/palette-gradient.min.css')}}">
+        <link rel="stylesheet" type="text/css" href="{{asset('admin-assets/css-rtl/pages/app-contacts.min.css')}}">
+        <link rel="stylesheet" type="text/css" href="{{asset('admin-assets/css-rtl/plugins/forms/switch.min.css')}}">
+        <link rel="stylesheet" type="text/css" href="../../../assets/css/style-rtl.css">
+    @else
+        <link rel="stylesheet" type="text/css" href="{{asset('admin-assets/css/core/menu/menu-types/vertical-menu-modern.css')}}">
+        <link rel="stylesheet" type="text/css" href="{{asset('admin-assets/css/core/colors/palette-gradient.min.css')}}">
+        <link rel="stylesheet" type="text/css" href="{{asset('admin-assets/css/pages/app-contacts.min.css')}}">
+        <link rel="stylesheet" type="text/css" href="{{asset('admin-assets/css/plugins/forms/switch.min.css')}}">
+        <link rel="stylesheet" type="text/css" href="../../../assets/css/style.css">
+    @endif
 
 
 
-
-    <style type="text/css">
-
-
-        body {
-            direction: rtl
-        }
-
-        /*  align the checkbox to the right    */
-        [type="checkbox"] + label:before, [type="checkbox"] + label:after {
-            right: 0px !important;
-        }
-
-        /*  align the v in the center of the checkbox    */
-        [type="checkbox"].filled-in:checked + label:before {
-            right: 11px !important;
-        }
-
-        /*  align the label left to the checkbox   */
-        [type="checkbox"] + label {
-            padding-right: 27px !important;
-        }
-    </style>
 
 @endsection
 @section("main")
 
-    <div id="main">
-        <div class="row">
-            <div class="col s12">
-
-                <div class="container">
-                    <div class="divider"></div>
-
-
-                    <div class="divider"></div>
-                    <div id="horizontal-card" class="section">
-                        <div class="row">
-                            <div class="input-field col s12 m12">
-                                <select id="navs" name="navs">
-                                    <option value="" disabled selected>Select Main Navigation</option>
-                                    @foreach($roles as $role)
-                                        <option value="{{$role->name}}">{{$role->name}}</option>
-                                    @endforeach
-                                </select>
-                                <label>Main Navigation</label>
+    <div class="app-content content">
+        <div class="content-wrapper">
+            @include('admin.layouts.widgets.breadcrumbs', ['page_title'=>$page_title , 'breadcrumbs'=> $breadcrumbs])
+            <div class="content-detached content-right">
+                <div class="content-body">
+                    <div class="content-overlay"></div>
+                    <section class="row">
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="bug-list-search">
+                                        <div class="bug-list-search-content">
+                                            <div class="sidebar-toggle d-block d-lg-none"><i class="ft-menu font-large-1"></i></div>
+                                            <form action="#">
+                                                <div class="position-relative">
+                                                    <input type="search" id="search-contacts" class="form-control" placeholder="Search contacts...">
+                                                    <div class="form-control-position">
+                                                        <i class="fa fa-search text-size-base text-muted la-rotate-270"></i>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        <div class="row">
+                    </section>
 
+                    <section class="row all-contacts">
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-content">
+                                    <div class="card-body">
 
-                            <div class="col s12 m3">
-                                <div class="card-panel">
-                                    <h4 class="header2">ثبت سطح دسترسی جدید </h4>
-                                    <div class="row">
-                                        <form class="col s12"
-                                              action="{{route("navigation.store")}}"
-                                              method="post">
-                                            {{@csrf_field()}}
-                                            <div class="row">
-                                                <div class="input-field col s12 m12">
-                                                    <select id="type" name="type">
-                                                        <option value="" disabled selected>Select Object Type</option>
-                                                        <option value="data">data</option>
-                                                        <option value="documents">documents</option>
-                                                        <option value="navigation">navigation</option>
-                                                        <option value="services">services</option>
-                                                        <option value="conversations">conversations</option>
-                                                        <option value="communications">communications</option>
-                                                        <option value="users">users</option>
-                                                    </select>
-                                                    <label for="type">OBJECT TYPE:</label>
+                                        <div class="container">
+                                            <div class="divider"></div>
+                                            <div class="divider"></div>
+                                            <div id="horizontal-card" class="section">
+                                                <div class="row">
+                                                    <div class="form-group col col-sm-12 con-md-12">
+                                                        <label for="navs">نقش ها</label>
+                                                        <select class="form-control" id="navs" name="navs">
+                                                            <option value="" disabled selected>Select Main Navigation</option>
+                                                            @foreach($roles as $role)
+                                                                <option value="{{$role->name}}">{{$role->name}}</option>
+                                                            @endforeach
+                                                        </select>
+
+                                                    </div>
                                                 </div>
+                                                <div class="row">
 
-                                                <div id="page-container" class="input-field col s12 m12">
-                                                    <select id="sub_type" name="pages">
-                                                        <option value="" disabled selected>Select Sub Type</option>
-                                                        <option value="room">room</option>
-                                                        <option value="hotel">hotel</option>
-                                                        <option value="application">application</option>
-                                                        <option value="website">website</option>
-                                                    </select>
-                                                    <label for="sub_type">SUB TYPE:</label>
-                                                </div>
-                                                <div class="input-field col s12 m12">
-                                                    <select id="oparation" name="pages">
-                                                        <option value="" disabled selected>Select Operation</option>
-                                                        <option value="add">add</option>
-                                                        <option value="edit">edit</option>
-                                                        <option value="delete">delete</option>
-                                                    </select>
-                                                    <label for="sub_type">SUB TYPE:</label>
-                                                </div>
 
-                                                <div class="input-field col s12 m12">
-                                                    <button class="btn cyan waves-effect waves-light right"
-                                                            type="submit"
-                                                            id="submit" disabled
-                                                            name="submit">{{ __('messages.input_titles')['submit']}}
-                                                        <i class="material-icons right">send</i>
-                                                    </button>
-                                                </div>
+                                                    <div class="col col-sm-12 m9">
+                                                        <div class="row">
+                                                            <div class="card-panel" id="items">
 
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
-                                        </form>
+
+                                        </div>
+
+
                                     </div>
                                 </div>
                             </div>
-
-
-                            <div class="col s12 m9">
-                                <div class="row">
-                                    <div class="card-panel" id="items">
-
-
+                        </div>
+                    </section>
+                </div>
+            </div>
+            <div class="sidebar-detached sidebar-left">
+                <div class="sidebar">
+                    <div class="bug-list-sidebar-content">
+                        <!-- Predefined Views -->
+                        <div class="card">
+                            <div class="card-head">
+                                <div class="media p-1">
+                                    <div class="media-left pr-1">
+                                    </div>
+                                    <div class="media-body media-middle">
+                                        <h5 class="media-heading">
+                                            {{--                                            {{$page_title}}--}}
+                                        </h5>
                                     </div>
                                 </div>
+                            </div>
+                            <div class="card-body">
+                                <p class="lead">اطلاعات:</p>
+                                <ul class="list-group">
+                                    <li class="list-group-item">
+                                    <span class="badge badge-primary badge-pill float-right">
+{{--                                        {{count($datas)}}--}}
+                                    </span>
+                                        <a href="#">
+                                            تعداد آیتم ها
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!--/ Groups-->
+
+                            <!--More-->
+                            <div class="card-body ">
+                                <p class="lead">عملیات:</p>
+                                <ul class="list-group">
+                                    <li class="list-group-item">
+                                        <a href="#" id="permission-clear-cache">
+                                            بروز رسانی سطح دسترسی ها
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="card-body ">
+                                <p class="lead">فیلتر ها:</p>
+                                <ul class="list-group">
+                                </ul>
                             </div>
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>
     </div>
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 @endsection
 @section('vendor-js')
+
+    <!-- BEGIN: Vendor JS-->
+    <script src="{{asset('admin-assets/vendors/js/vendors.min.js')}}"></script>
+    <!-- BEGIN Vendor JS-->
+
+    <!-- BEGIN: Page Vendor JS-->
+    <script src="{{asset('admin-assets/vendors/js/tables/jquery.dataTables.min.js')}}"></script>
+    <script src="{{asset('admin-assets/vendors/js/extensions/jquery.raty.js')}}"></script>
+    <script src="{{asset('admin-assets/vendors/js/tables/datatable/dataTables.bootstrap4.min.js')}}"></script>
+    <script src="{{asset('admin-assets/vendors/js/tables/datatable/dataTables.responsive.min.js')}}"></script>
+    <script src="{{asset('admin-assets/vendors/js/tables/datatable/dataTables.rowReorder.min.js')}}"></script>
+    <script src="{{asset('admin-assets/vendors/js/forms/icheck/icheck.min.js')}}"></script>
+    <!-- END: Page Vendor JS-->
+    <script src="{{asset('admin-assets/vendors/js/forms/toggle/switchery.min.js')}}"></script>
+
 @endsection
 
 @section("footer")
 
+    <script src="{{asset('admin-assets/js/scripts/pages/app-contacts.min.js')}}"></script>
+    <script src="{{asset('admin-assets/js/scripts/forms/switch.min.js')}}"></script>
 
     <script>
 
@@ -234,6 +320,7 @@
 
 
             $("#items").on('change', '[id^=perm-]', function () {
+
 
                 var s = $(this).attr('id');
                 var ss = s.split('-');
@@ -372,6 +459,15 @@
 
         });
 
+
+        $("#permission-clear-cache").click(function (e) {
+            e.preventDefault();
+
+
+
+
+
+        });
 
     </script>
 

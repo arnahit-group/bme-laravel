@@ -9,10 +9,8 @@
         {{__('layout.pages.hotel gallery')}}
     @endif
 </h6>
-<span class="center contact_us_span"
-      style="display: block">
-                        {{__('layout.pages.enjoy to see hotel pictures')}}
-
+<span class="center contact_us_span" style="display: block">
+    {{__('layout.pages.enjoy to see hotel pictures')}}
 </span>
 
 
@@ -35,7 +33,7 @@
                                 {{$data->properties['title']->title }}
                             </span>
                             </a>
-                            <p style="color: #18006a;">{{$data->properties['title']->title }}</p>
+{{--                            <p style="color: #18006a;">{{$data->properties['title']->title }}</p>--}}
                         </div>
                     @endforeach
                 @endif

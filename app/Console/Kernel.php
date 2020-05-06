@@ -13,9 +13,9 @@ class Kernel extends ConsoleKernel
      * @var array
      */
     protected $commands = [
-        //
+        Commands\DemoCron::class,
+        Commands\TypesScheduleCron::class,
     ];
-
     /**
      * Define the application's command schedule.
      *
@@ -24,6 +24,11 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
+        $schedule->command('demo:cron')
+            ->everyMinute();
+        $schedule->command('types:cron')
+            ->everyMinute();
+        $schedule->command('sitemap:generate')->daily();
         // $schedule->command('inspire')
         //          ->hourly();
     }

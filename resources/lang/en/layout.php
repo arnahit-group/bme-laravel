@@ -11,6 +11,7 @@ return [
         'has been launched' => 'has been launched',
         'login or register' => 'login or register',
         'check reservation' => 'check reservation',
+        'reserves history' => 'Reserves History',
         'we are ready to serve you' => 'we are ready to serve you',
         'hotel online reservation system is very safe online system' => 'hotel online reservation system is very safe online system',
         'check reservation place holder' => 'check reservation ...',
@@ -18,7 +19,27 @@ return [
         'hotel sabouri facilities' => 'Hotel Sabouri Facilities',
         'useful links' => 'Useful Links',
         'get to know us a bit' => 'Get to Know us a Bit',
-         'logout'=>'Logout',
+        'logout' => 'Logout',
+        'edit profile' => 'Edit Profile',
+        'messages' => 'Messages',
+        'rooms' => 'Rooms',
+        'tasks' => 'Tasks',
+
+        'total users' => 'Total Users',
+        'total customers' => 'Total Customers',
+        'total income' => 'Total Income',
+
+        'start'=>'Start',
+        'end'=>'End',
+        'select date range'=>'Select Date Range',
+        'select week days'=>'Select Week Days',
+        'data to be saved'=>'Data To Be Saved',
+
+
+        'today'=>'Today',
+        'this week'=>'This Week',
+        'this month'=>'This Month',
+        'total'=>'Total',
     ],
 
     'room' => [
@@ -50,6 +71,7 @@ return [
 
 
         'hotel archives' => 'hotel archives',
+        'news archives' => 'News archives',
         'you can see our rooms here' => 'you can see our rooms here',
 
     ],
@@ -138,16 +160,21 @@ return [
     ],
 
     'permissions' => [
-        'access items'=>'Access items',
-        'create new item'=>'Create new item',
-        'edit items'=>'Edit items',
-        'delete item'=>'Delete item',
-        'access properties'=>'Access properties',
-        'create new property'=>'Create new property',
-        'edit properties'=>'Edit properties',
-        'delete property'=>'Delete property',
-        'access settings'=>'Access settings',
-        'admin dashboard'=>'Admin dashboard',
+        'access items' => 'Access items',
+        'create new item' => 'Create new item',
+        'edit items' => 'Edit items',
+        'delete item' => 'Delete item',
+        'access properties' => 'Access properties',
+        'create new property' => 'Create new property',
+        'edit properties' => 'Edit properties',
+        'delete property' => 'Delete property',
+        'access settings' => 'Access settings',
+        'admin dashboard' => 'Admin dashboard',
+        'access types' => 'Access Types',
+        'create new type' => 'Create new Type',
+        'edit types' => 'Edit Types',
+        'delete types' => 'Delete Type',
+
     ],
 
 ];

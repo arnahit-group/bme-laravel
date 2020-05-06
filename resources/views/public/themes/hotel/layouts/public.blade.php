@@ -59,7 +59,7 @@
 
                 <div class="mini-phone-left-side hide-on-med-and-down">
 
-                    @foreach($data['mobile']->title as $t)
+                    @foreach($hotel['mobile']->title as $t)
                         <span dir="ltr">{{$t}}</span>
                     @endforeach
                     <img class="icon10 responsive-img" src="{{asset('images/telephone.png')}}">
@@ -398,7 +398,7 @@
 
                             <img src="{{asset('images/telephone_num.png')}}">
 
-                            @foreach($data['phone']->title as $t)
+                            @foreach($hotel['phone']->title as $t)
                                 <span dir="ltr">{{$t}}</span>
                             @endforeach
                         </div>
