@@ -11,7 +11,7 @@
  Target Server Version : 100128
  File Encoding         : 65001
 
- Date: 06/05/2020 18:52:10
+ Date: 25/05/2020 05:24:58
 */
 
 SET NAMES utf8mb4;
@@ -2014,13 +2014,14 @@ CREATE TABLE `reserves`  (
   `created_at` timestamp(0) NULL DEFAULT NULL,
   `updated_at` timestamp(0) NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 55 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 56 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of reserves
 -- ----------------------------
 INSERT INTO `reserves` VALUES (53, '1399/01/20', '1399/02/02', '1399/02/05', 120000, 1, 'BME0001', '1', NULL, NULL, NULL);
 INSERT INTO `reserves` VALUES (54, '1399/01/20', '1399/01/24', '1399/02/05', 120000, 1, 'BME0001', '1', NULL, NULL, NULL);
+INSERT INTO `reserves` VALUES (55, '1399/01/20', '1399/03/21', '1399/02/05', 120000, 1, 'BME0001', '1', NULL, NULL, NULL);
 
 -- ----------------------------
 -- Table structure for role_has_permissions
@@ -3191,7 +3192,7 @@ CREATE TABLE `tracker_agents`  (
   INDEX `tracker_agents_created_at_index`(`created_at`) USING BTREE,
   INDEX `tracker_agents_updated_at_index`(`updated_at`) USING BTREE,
   INDEX `tracker_agents_browser_index`(`browser`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 8 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 9 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of tracker_agents
@@ -3203,6 +3204,7 @@ INSERT INTO `tracker_agents` VALUES (4, 'Mozilla/5.0 (Windows NT 6.3; Win64; x64
 INSERT INTO `tracker_agents` VALUES (5, 'Mozilla/5.0 (Windows NT 6.3; Win64; x64; rv:73.0) Gecko/20100101 Firefox/73.0', 'Firefox', '73.0', '2020-02-29 18:31:34', '2020-02-29 18:31:34', '257c72861cb00b258b5bee346dcdb08f505658f8a2bcc97c6a190f936a4ea710');
 INSERT INTO `tracker_agents` VALUES (6, 'Mozilla/5.0 (Windows NT 6.3; Win64; x64; rv:74.0) Gecko/20100101 Firefox/74.0', 'Firefox', '74.0', '2020-03-15 15:01:42', '2020-03-15 15:01:42', 'b6784b7647510e585687a854e1d8c2f56f5d2703ec999dc86cb57ae161bd95a6');
 INSERT INTO `tracker_agents` VALUES (7, 'Mozilla/5.0 (Windows NT 6.3; Win64; x64; rv:75.0) Gecko/20100101 Firefox/75.0', 'Firefox', '75.0', '2020-04-14 12:23:58', '2020-04-14 12:23:58', '2d4211b2cce6b9c3c1e157d9f086acfc05eaa27ecd2f57803177fa17adcd04da');
+INSERT INTO `tracker_agents` VALUES (8, 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.61 Safari/537.36 Edg/83.0.478.37', 'Edge', '83.0.478', '2020-05-24 23:28:54', '2020-05-24 23:28:54', '1713e2fe98c480baddf1ec34cdbb5c7c6c127aed5777530bf106d452a2be8e79');
 
 -- ----------------------------
 -- Table structure for tracker_connections
@@ -3263,13 +3265,14 @@ CREATE TABLE `tracker_devices`  (
   INDEX `tracker_devices_model_index`(`model`) USING BTREE,
   INDEX `tracker_devices_platform_index`(`platform`) USING BTREE,
   INDEX `tracker_devices_platform_version_index`(`platform_version`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 3 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 4 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of tracker_devices
 -- ----------------------------
 INSERT INTO `tracker_devices` VALUES (1, 'Computer', '0', 'Windows', '8.1', 0, '2019-10-28 18:41:02', '2019-10-28 18:41:02');
 INSERT INTO `tracker_devices` VALUES (2, 'Computer', '0', 'Other', '', 0, '2019-10-28 22:25:01', '2019-10-28 22:25:01');
+INSERT INTO `tracker_devices` VALUES (3, 'Computer', 'WebKit', 'Windows', '8.1', 0, '2020-05-24 23:28:53', '2020-05-24 23:28:53');
 
 -- ----------------------------
 -- Table structure for tracker_domains
@@ -3408,13 +3411,14 @@ CREATE TABLE `tracker_languages`  (
   INDEX `tracker_languages_updated_at_index`(`updated_at`) USING BTREE,
   INDEX `tracker_languages_preference_index`(`preference`) USING BTREE,
   INDEX `tracker_languages_language_range_index`(`language-range`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 3 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 4 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of tracker_languages
 -- ----------------------------
 INSERT INTO `tracker_languages` VALUES (1, 'en-us', 'en-us,en', '2019-10-28 18:41:02', '2019-10-28 18:41:02');
 INSERT INTO `tracker_languages` VALUES (2, 'en', '', '2019-10-28 22:25:02', '2019-10-28 22:25:02');
+INSERT INTO `tracker_languages` VALUES (3, 'en-us', 'en-us,en,fa,mt,fr,it,pt', '2020-05-24 23:28:54', '2020-05-24 23:28:54');
 
 -- ----------------------------
 -- Table structure for tracker_log
@@ -3450,7 +3454,7 @@ CREATE TABLE `tracker_log`  (
   CONSTRAINT `tracker_log_query_id_foreign` FOREIGN KEY (`query_id`) REFERENCES `tracker_queries` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `tracker_log_route_path_id_foreign` FOREIGN KEY (`route_path_id`) REFERENCES `tracker_route_paths` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `tracker_log_session_id_foreign` FOREIGN KEY (`session_id`) REFERENCES `tracker_sessions` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE = InnoDB AUTO_INCREMENT = 9126 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 9202 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of tracker_log
@@ -12545,6 +12549,82 @@ INSERT INTO `tracker_log` VALUES (9122, 36, 172, NULL, 'GET', 172, 0, 0, 0, 0, N
 INSERT INTO `tracker_log` VALUES (9123, 36, 172, NULL, 'GET', 172, 0, 0, 0, 0, NULL, '2020-05-06 12:57:06', '2020-05-06 12:57:06', NULL);
 INSERT INTO `tracker_log` VALUES (9124, 36, 172, NULL, 'GET', 172, 0, 0, 0, 0, NULL, '2020-05-06 12:57:19', '2020-05-06 12:57:19', NULL);
 INSERT INTO `tracker_log` VALUES (9125, 36, 172, NULL, 'GET', 172, 0, 0, 0, 0, NULL, '2020-05-06 12:58:08', '2020-05-06 12:58:08', NULL);
+INSERT INTO `tracker_log` VALUES (9126, 37, 12, NULL, 'GET', 166, 0, 0, 0, 0, NULL, '2020-05-24 23:28:54', '2020-05-24 23:28:55', NULL);
+INSERT INTO `tracker_log` VALUES (9127, 37, 12, NULL, 'GET', 166, 0, 0, 0, 0, NULL, '2020-05-24 23:29:44', '2020-05-24 23:29:44', NULL);
+INSERT INTO `tracker_log` VALUES (9128, 37, 12, NULL, 'GET', 166, 0, 0, 0, 0, NULL, '2020-05-24 23:30:51', '2020-05-24 23:30:51', NULL);
+INSERT INTO `tracker_log` VALUES (9129, 37, 12, NULL, 'GET', 166, 0, 0, 0, 0, NULL, '2020-05-24 23:37:31', '2020-05-24 23:37:31', NULL);
+INSERT INTO `tracker_log` VALUES (9130, 37, 12, NULL, 'GET', 166, 0, 0, 0, 0, NULL, '2020-05-24 23:38:36', '2020-05-24 23:38:36', NULL);
+INSERT INTO `tracker_log` VALUES (9131, 37, 12, NULL, 'GET', 166, 0, 0, 0, 0, NULL, '2020-05-24 23:39:39', '2020-05-24 23:39:39', NULL);
+INSERT INTO `tracker_log` VALUES (9132, 37, 12, NULL, 'GET', 166, 0, 0, 0, 0, NULL, '2020-05-24 23:40:42', '2020-05-24 23:40:42', NULL);
+INSERT INTO `tracker_log` VALUES (9133, 37, 1, NULL, 'GET', 161, 0, 0, 0, 0, NULL, '2020-05-24 23:52:02', '2020-05-24 23:52:02', NULL);
+INSERT INTO `tracker_log` VALUES (9134, 37, 1, NULL, 'GET', 161, 0, 0, 0, 0, NULL, '2020-05-24 23:52:15', '2020-05-24 23:52:15', NULL);
+INSERT INTO `tracker_log` VALUES (9135, 37, 173, NULL, 'GET', 173, 0, 0, 0, 0, NULL, '2020-05-25 00:13:22', '2020-05-25 00:13:22', 109);
+INSERT INTO `tracker_log` VALUES (9136, 37, 139, NULL, 'GET', 162, 0, 0, 0, 0, NULL, '2020-05-25 00:13:28', '2020-05-25 00:13:28', 111);
+INSERT INTO `tracker_log` VALUES (9137, 37, 1, NULL, 'GET', 161, 0, 0, 0, 0, NULL, '2020-05-25 00:13:33', '2020-05-25 00:13:33', 110);
+INSERT INTO `tracker_log` VALUES (9138, 37, 3, NULL, 'GET', 3, 0, 0, 0, 0, NULL, '2020-05-25 00:13:45', '2020-05-25 00:13:45', NULL);
+INSERT INTO `tracker_log` VALUES (9139, 37, 5, NULL, 'GET', 5, 0, 0, 0, 0, NULL, '2020-05-25 00:13:46', '2020-05-25 00:13:47', NULL);
+INSERT INTO `tracker_log` VALUES (9140, 37, 11, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-05-25 00:13:49', '2020-05-25 00:13:49', 91);
+INSERT INTO `tracker_log` VALUES (9141, 37, 8, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-05-25 00:13:49', '2020-05-25 00:13:49', 91);
+INSERT INTO `tracker_log` VALUES (9142, 37, 9, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-05-25 00:13:50', '2020-05-25 00:13:50', 91);
+INSERT INTO `tracker_log` VALUES (9143, 37, 10, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-05-25 00:13:50', '2020-05-25 00:13:50', 91);
+INSERT INTO `tracker_log` VALUES (9144, 37, 7, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-05-25 00:13:51', '2020-05-25 00:13:51', 91);
+INSERT INTO `tracker_log` VALUES (9145, 37, 6, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-05-25 00:13:51', '2020-05-25 00:13:51', 91);
+INSERT INTO `tracker_log` VALUES (9146, 37, 5, NULL, 'POST', 6, 0, 0, 0, 0, NULL, '2020-05-25 00:14:05', '2020-05-25 00:14:05', 91);
+INSERT INTO `tracker_log` VALUES (9147, 37, 3, NULL, 'GET', 3, 0, 0, 0, 0, NULL, '2020-05-25 00:14:06', '2020-05-25 00:14:07', 91);
+INSERT INTO `tracker_log` VALUES (9148, 37, 9, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-05-25 00:14:17', '2020-05-25 00:14:17', 92);
+INSERT INTO `tracker_log` VALUES (9149, 37, 10, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-05-25 00:14:18', '2020-05-25 00:14:18', 92);
+INSERT INTO `tracker_log` VALUES (9150, 37, 7, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-05-25 00:14:18', '2020-05-25 00:14:18', 92);
+INSERT INTO `tracker_log` VALUES (9151, 37, 6, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-05-25 00:14:18', '2020-05-25 00:14:18', 92);
+INSERT INTO `tracker_log` VALUES (9152, 37, 8, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-05-25 00:14:19', '2020-05-25 00:14:19', 92);
+INSERT INTO `tracker_log` VALUES (9153, 37, 11, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-05-25 00:14:19', '2020-05-25 00:14:19', 92);
+INSERT INTO `tracker_log` VALUES (9154, 37, 154, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-05-25 00:14:20', '2020-05-25 00:14:20', 92);
+INSERT INTO `tracker_log` VALUES (9155, 37, 154, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-05-25 00:31:03', '2020-05-25 00:31:03', 92);
+INSERT INTO `tracker_log` VALUES (9156, 37, 11, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-05-25 00:31:03', '2020-05-25 00:31:03', 92);
+INSERT INTO `tracker_log` VALUES (9157, 37, 8, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-05-25 00:31:04', '2020-05-25 00:31:04', 92);
+INSERT INTO `tracker_log` VALUES (9158, 37, 10, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-05-25 00:31:04', '2020-05-25 00:31:04', 92);
+INSERT INTO `tracker_log` VALUES (9159, 37, 9, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-05-25 00:31:04', '2020-05-25 00:31:04', 92);
+INSERT INTO `tracker_log` VALUES (9160, 37, 7, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-05-25 00:31:05', '2020-05-25 00:31:05', 92);
+INSERT INTO `tracker_log` VALUES (9161, 37, 6, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-05-25 00:31:05', '2020-05-25 00:31:05', 92);
+INSERT INTO `tracker_log` VALUES (9162, 37, 154, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-05-25 00:31:06', '2020-05-25 00:31:06', 92);
+INSERT INTO `tracker_log` VALUES (9163, 37, 11, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-05-25 00:31:14', '2020-05-25 00:31:14', 103);
+INSERT INTO `tracker_log` VALUES (9164, 37, 8, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-05-25 00:31:15', '2020-05-25 00:31:15', 103);
+INSERT INTO `tracker_log` VALUES (9165, 37, 9, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-05-25 00:31:15', '2020-05-25 00:31:15', 103);
+INSERT INTO `tracker_log` VALUES (9166, 37, 7, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-05-25 00:31:15', '2020-05-25 00:31:15', 103);
+INSERT INTO `tracker_log` VALUES (9167, 37, 6, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-05-25 00:31:15', '2020-05-25 00:31:15', 103);
+INSERT INTO `tracker_log` VALUES (9168, 37, 10, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-05-25 00:31:16', '2020-05-25 00:31:16', 103);
+INSERT INTO `tracker_log` VALUES (9169, 37, 154, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-05-25 00:31:16', '2020-05-25 00:31:16', 103);
+INSERT INTO `tracker_log` VALUES (9170, 37, 154, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-05-25 00:31:23', '2020-05-25 00:31:23', 92);
+INSERT INTO `tracker_log` VALUES (9171, 37, 11, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-05-25 00:31:23', '2020-05-25 00:31:23', 92);
+INSERT INTO `tracker_log` VALUES (9172, 37, 7, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-05-25 00:31:23', '2020-05-25 00:31:23', 92);
+INSERT INTO `tracker_log` VALUES (9173, 37, 10, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-05-25 00:31:24', '2020-05-25 00:31:24', 92);
+INSERT INTO `tracker_log` VALUES (9174, 37, 8, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-05-25 00:31:24', '2020-05-25 00:31:24', 92);
+INSERT INTO `tracker_log` VALUES (9175, 37, 9, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-05-25 00:31:24', '2020-05-25 00:31:24', 92);
+INSERT INTO `tracker_log` VALUES (9176, 37, 6, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-05-25 00:31:25', '2020-05-25 00:31:25', 92);
+INSERT INTO `tracker_log` VALUES (9177, 37, 154, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-05-25 00:31:25', '2020-05-25 00:31:25', 92);
+INSERT INTO `tracker_log` VALUES (9178, 37, 154, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-05-25 00:31:42', '2020-05-25 00:31:42', 92);
+INSERT INTO `tracker_log` VALUES (9179, 37, 11, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-05-25 00:31:42', '2020-05-25 00:31:42', 92);
+INSERT INTO `tracker_log` VALUES (9180, 37, 9, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-05-25 00:31:43', '2020-05-25 00:31:43', 92);
+INSERT INTO `tracker_log` VALUES (9181, 37, 8, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-05-25 00:31:43', '2020-05-25 00:31:43', 92);
+INSERT INTO `tracker_log` VALUES (9182, 37, 10, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-05-25 00:31:44', '2020-05-25 00:31:44', 92);
+INSERT INTO `tracker_log` VALUES (9183, 37, 7, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-05-25 00:31:44', '2020-05-25 00:31:44', 92);
+INSERT INTO `tracker_log` VALUES (9184, 37, 6, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-05-25 00:31:44', '2020-05-25 00:31:44', 92);
+INSERT INTO `tracker_log` VALUES (9185, 37, 143, NULL, 'GET', 137, 0, 0, 0, 0, NULL, '2020-05-25 00:31:45', '2020-05-25 00:31:45', NULL);
+INSERT INTO `tracker_log` VALUES (9186, 37, 154, NULL, 'GET', NULL, 0, 0, 0, 0, NULL, '2020-05-25 00:31:46', '2020-05-25 00:31:46', 92);
+INSERT INTO `tracker_log` VALUES (9187, 37, 158, NULL, 'GET', 147, 0, 0, 0, 0, NULL, '2020-05-25 00:31:55', '2020-05-25 00:31:55', NULL);
+INSERT INTO `tracker_log` VALUES (9188, 37, 162, NULL, 'POST', 151, 1, 0, 0, 0, NULL, '2020-05-25 00:32:02', '2020-05-25 00:32:02', 106);
+INSERT INTO `tracker_log` VALUES (9189, 37, 163, NULL, 'GET', 156, 0, 0, 0, 0, NULL, '2020-05-25 00:32:03', '2020-05-25 00:32:03', 106);
+INSERT INTO `tracker_log` VALUES (9190, 37, 156, NULL, 'GET', 145, 0, 0, 0, 0, NULL, '2020-05-25 00:32:04', '2020-05-25 00:32:04', NULL);
+INSERT INTO `tracker_log` VALUES (9191, 37, 157, NULL, 'POST', 146, 1, 0, 0, 0, NULL, '2020-05-25 00:32:17', '2020-05-25 00:32:17', 105);
+INSERT INTO `tracker_log` VALUES (9192, 37, 157, NULL, 'POST', 146, 1, 0, 0, 0, NULL, '2020-05-25 00:46:35', '2020-05-25 00:46:36', 105);
+INSERT INTO `tracker_log` VALUES (9193, 37, 144, NULL, 'POST', 138, 0, 0, 0, 0, NULL, '2020-05-25 00:46:37', '2020-05-25 00:46:37', 105);
+INSERT INTO `tracker_log` VALUES (9194, 37, 174, NULL, 'GET', 175, 0, 0, 0, 0, NULL, '2020-05-25 00:46:38', '2020-05-25 00:46:38', 105);
+INSERT INTO `tracker_log` VALUES (9195, 37, 162, NULL, 'POST', 151, 1, 0, 0, 0, NULL, '2020-05-25 00:46:45', '2020-05-25 00:46:45', 112);
+INSERT INTO `tracker_log` VALUES (9196, 37, 163, NULL, 'GET', 156, 0, 0, 0, 0, NULL, '2020-05-25 00:46:45', '2020-05-25 00:46:46', 112);
+INSERT INTO `tracker_log` VALUES (9197, 37, 164, NULL, 'GET', 163, 0, 0, 0, 0, NULL, '2020-05-25 00:46:46', '2020-05-25 00:46:46', 112);
+INSERT INTO `tracker_log` VALUES (9198, 37, 167, NULL, 'GET', 167, 0, 0, 0, 0, NULL, '2020-05-25 00:46:50', '2020-05-25 00:46:50', 108);
+INSERT INTO `tracker_log` VALUES (9199, 37, 170, NULL, 'GET', 170, 0, 0, 0, 0, NULL, '2020-05-25 00:46:51', '2020-05-25 00:46:51', 108);
+INSERT INTO `tracker_log` VALUES (9200, 37, 164, NULL, 'GET', 163, 0, 0, 0, 0, NULL, '2020-05-25 00:46:54', '2020-05-25 00:46:54', 112);
+INSERT INTO `tracker_log` VALUES (9201, 37, 156, NULL, 'GET', 145, 0, 0, 0, 0, NULL, '2020-05-25 00:46:56', '2020-05-25 00:46:56', NULL);
 
 -- ----------------------------
 -- Table structure for tracker_paths
@@ -12559,7 +12639,7 @@ CREATE TABLE `tracker_paths`  (
   INDEX `tracker_paths_created_at_index`(`created_at`) USING BTREE,
   INDEX `tracker_paths_updated_at_index`(`updated_at`) USING BTREE,
   INDEX `tracker_paths_path_index`(`path`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 173 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 175 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of tracker_paths
@@ -12736,6 +12816,8 @@ INSERT INTO `tracker_paths` VALUES (169, 'services/booking/11/%7B%22room%22%3A1%
 INSERT INTO `tracker_paths` VALUES (170, 'services/booking/11', '2020-05-06 04:49:08', '2020-05-06 04:49:08');
 INSERT INTO `tracker_paths` VALUES (171, 'items/room/2', '2020-05-06 09:04:01', '2020-05-06 09:04:01');
 INSERT INTO `tracker_paths` VALUES (172, 'items/room/1', '2020-05-06 12:53:08', '2020-05-06 12:53:08');
+INSERT INTO `tracker_paths` VALUES (173, 'items/gallery', '2020-05-25 00:13:21', '2020-05-25 00:13:21');
+INSERT INTO `tracker_paths` VALUES (174, 'services/booking/3', '2020-05-25 00:46:38', '2020-05-25 00:46:38');
 
 -- ----------------------------
 -- Table structure for tracker_queries
@@ -12959,7 +13041,7 @@ CREATE TABLE `tracker_referers`  (
   INDEX `tracker_referers_source_index`(`source`) USING BTREE,
   INDEX `tracker_referers_search_terms_hash_index`(`search_terms_hash`) USING BTREE,
   CONSTRAINT `tracker_referers_domain_id_foreign` FOREIGN KEY (`domain_id`) REFERENCES `tracker_domains` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE = InnoDB AUTO_INCREMENT = 111 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 113 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of tracker_referers
@@ -13074,6 +13156,8 @@ INSERT INTO `tracker_referers` VALUES (107, 1, 'http://localhost/online-service-
 INSERT INTO `tracker_referers` VALUES (108, 1, 'http://localhost/online-service-v.2/services/booking/9', 'localhost', '2020-05-06 03:09:49', '2020-05-06 03:09:49', NULL, NULL, NULL);
 INSERT INTO `tracker_referers` VALUES (109, 1, 'http://localhost/online-service-v.2/home', 'localhost', '2020-05-06 07:30:11', '2020-05-06 07:30:11', NULL, NULL, NULL);
 INSERT INTO `tracker_referers` VALUES (110, 1, 'http://localhost/online-service-v.2/items/room', 'localhost', '2020-05-06 09:03:59', '2020-05-06 09:03:59', NULL, NULL, NULL);
+INSERT INTO `tracker_referers` VALUES (111, 1, 'http://localhost/online-service-v.2/items/gallery', 'localhost', '2020-05-25 00:13:28', '2020-05-25 00:13:28', NULL, NULL, NULL);
+INSERT INTO `tracker_referers` VALUES (112, 1, 'http://localhost/online-service-v.2/services/booking/3', 'localhost', '2020-05-25 00:46:44', '2020-05-25 00:46:44', NULL, NULL, NULL);
 
 -- ----------------------------
 -- Table structure for tracker_referers_search_terms
@@ -13115,7 +13199,7 @@ CREATE TABLE `tracker_route_path_parameters`  (
   INDEX `tracker_route_path_parameters_parameter_index`(`parameter`) USING BTREE,
   INDEX `tracker_route_path_parameters_value_index`(`value`) USING BTREE,
   CONSTRAINT `tracker_route_path_parameters_route_path_id_foreign` FOREIGN KEY (`route_path_id`) REFERENCES `tracker_route_paths` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE = InnoDB AUTO_INCREMENT = 232 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 236 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of tracker_route_path_parameters
@@ -13351,6 +13435,10 @@ INSERT INTO `tracker_route_path_parameters` VALUES (228, 171, 'type', 'room', '2
 INSERT INTO `tracker_route_path_parameters` VALUES (229, 171, 'id', '2', '2020-05-06 09:04:02', '2020-05-06 09:04:02');
 INSERT INTO `tracker_route_path_parameters` VALUES (230, 172, 'type', 'room', '2020-05-06 12:53:09', '2020-05-06 12:53:09');
 INSERT INTO `tracker_route_path_parameters` VALUES (231, 172, 'id', '1', '2020-05-06 12:53:09', '2020-05-06 12:53:09');
+INSERT INTO `tracker_route_path_parameters` VALUES (232, 173, 'type', 'gallery', '2020-05-25 00:13:22', '2020-05-25 00:13:22');
+INSERT INTO `tracker_route_path_parameters` VALUES (233, 174, 'type', 'message', '2020-05-25 00:30:54', '2020-05-25 00:30:54');
+INSERT INTO `tracker_route_path_parameters` VALUES (234, 175, 'type', 'booking', '2020-05-25 00:46:38', '2020-05-25 00:46:38');
+INSERT INTO `tracker_route_path_parameters` VALUES (235, 175, 'step', '3', '2020-05-25 00:46:38', '2020-05-25 00:46:38');
 
 -- ----------------------------
 -- Table structure for tracker_route_paths
@@ -13368,7 +13456,7 @@ CREATE TABLE `tracker_route_paths`  (
   INDEX `tracker_route_paths_route_id_index`(`route_id`) USING BTREE,
   INDEX `tracker_route_paths_path_index`(`path`) USING BTREE,
   CONSTRAINT `tracker_route_paths_route_id_foreign` FOREIGN KEY (`route_id`) REFERENCES `tracker_routes` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE = InnoDB AUTO_INCREMENT = 173 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 176 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of tracker_route_paths
@@ -13545,6 +13633,9 @@ INSERT INTO `tracker_route_paths` VALUES (169, 56, 'services/booking/11/%7B%22ro
 INSERT INTO `tracker_route_paths` VALUES (170, 56, 'services/booking/11', '2020-05-06 04:49:08', '2020-05-06 04:49:08');
 INSERT INTO `tracker_route_paths` VALUES (171, 64, 'items/room/2', '2020-05-06 09:04:02', '2020-05-06 09:04:02');
 INSERT INTO `tracker_route_paths` VALUES (172, 64, 'items/room/1', '2020-05-06 12:53:09', '2020-05-06 12:53:09');
+INSERT INTO `tracker_route_paths` VALUES (173, 62, 'items/gallery', '2020-05-25 00:13:22', '2020-05-25 00:13:22');
+INSERT INTO `tracker_route_paths` VALUES (174, 50, 'admin/items/message', '2020-05-25 00:30:54', '2020-05-25 00:30:54');
+INSERT INTO `tracker_route_paths` VALUES (175, 56, 'services/booking/3', '2020-05-25 00:46:38', '2020-05-25 00:46:38');
 
 -- ----------------------------
 -- Table structure for tracker_routes
@@ -13667,7 +13758,7 @@ CREATE TABLE `tracker_sessions`  (
   CONSTRAINT `tracker_sessions_geoip_id_foreign` FOREIGN KEY (`geoip_id`) REFERENCES `tracker_geoip` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `tracker_sessions_language_id_foreign` FOREIGN KEY (`language_id`) REFERENCES `tracker_languages` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `tracker_sessions_referer_id_foreign` FOREIGN KEY (`referer_id`) REFERENCES `tracker_referers` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE = InnoDB AUTO_INCREMENT = 37 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 38 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of tracker_sessions
@@ -13708,6 +13799,7 @@ INSERT INTO `tracker_sessions` VALUES (33, '4d6da350-f56a-4755-9961-bd47441e82c5
 INSERT INTO `tracker_sessions` VALUES (34, '7f1cba7a-ed56-4dd1-8dc8-0fc83ec0db6b', NULL, 1, 6, '::1', NULL, NULL, NULL, 0, '2020-04-05 04:38:48', '2020-04-06 12:58:12', 1);
 INSERT INTO `tracker_sessions` VALUES (35, '58426c97-776d-4c37-9d98-837f78a083ff', NULL, 1, 6, '::1', NULL, NULL, NULL, 0, '2020-04-06 16:08:03', '2020-04-10 17:49:11', 1);
 INSERT INTO `tracker_sessions` VALUES (36, '1cec468f-b60f-4733-80fb-316cedff8c8d', NULL, 1, 7, '::1', NULL, NULL, NULL, 0, '2020-05-06 00:52:40', '2020-05-06 12:58:07', 1);
+INSERT INTO `tracker_sessions` VALUES (37, '2a8c6c2c-9928-4183-befd-48a94b1a1639', NULL, 3, 8, '::1', NULL, NULL, NULL, 0, '2020-05-24 23:28:54', '2020-05-25 00:46:56', 3);
 
 -- ----------------------------
 -- Table structure for tracker_sql_queries
@@ -15613,13 +15705,13 @@ CREATE TABLE `websites`  (
   `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
   `base_locale` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   `title` varchar(2000) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
-  `meta-description` varchar(2000) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
-  `meta-keywords` varchar(2000) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `meta_description` varchar(2000) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `meta_keywords` varchar(2000) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   `telegram` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   `instagram` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   `enamad` varchar(2000) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   `samandehi` varchar(2000) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
-  `active-chat-system` tinyint(255) NULL DEFAULT NULL,
+  `active_chat_system` tinyint(255) NULL DEFAULT NULL,
   `created_at` timestamp(0) NULL DEFAULT NULL,
   `updated_at` timestamp(0) NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
