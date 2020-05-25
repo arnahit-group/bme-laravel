@@ -3,11 +3,11 @@
     <head>
         <meta charset="UTF-8">
 
-        <title>{{$website['title']->value}}</title>
+        <title>{{$website->title}}</title>
         <meta name="description"
-              content="{{ isset($website['meta-description']->value) ?  $website['meta-description']->value : '' }}">
+              content="{{ isset($website->meta_description) ?  $website->meta_description : '' }}">
         <meta name="keywords"
-              content="{{ isset($website['meta-keywords']->value) ?  $website['meta-keywords']->value : '' }}">
+              content="{{ isset($website->meta_keywords) ?  $website->meta_keywords : '' }}">
 
         <link rel="stylesheet" href="{{asset('style/materialize.min.css')}}">
         <link rel="stylesheet" href="{{asset('style/rtl.css')}}">
@@ -26,6 +26,7 @@
 
             $(function () {
                 $('body').vegas({
+                    @if(isset($datas))
                     slides: [
                             @foreach($datas as $data)
                         {
@@ -34,6 +35,15 @@
 
                         @endforeach
                     ]
+                    @else
+                    slides: [
+                        {
+                            src: '{{asset('uploads/slider1.jpg')}}'
+                        },
+
+                    ]
+
+                    @endif
                 });
             });
 

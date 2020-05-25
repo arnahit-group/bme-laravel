@@ -5,9 +5,9 @@
         <title>{{$website->title}}</title>
 
         <meta name="description"
-              content="{{ isset($website->{'meta-description'}) ?  $website->{'meta-description'} : '' }}">
+              content="{{ isset($website->meta_description) ?  $website->meta_description : '' }}">
         <meta name="keywords"
-              content="{{ isset($website->{'meta-keywords'}) ?  $website->{'meta-keywords'} : '' }}">
+              content="{{ isset($website->meta_keywords) ?  $website->meta_keywords : '' }}">
 
         <link rel="canonical" href="{{url('/')}}"/>
 
@@ -538,7 +538,7 @@
     {{--                    })();--}}
     {{--                </script>--}}
 
-    @if( isset($website->{'active-chat-system'}) && $website->{'active-chat-system'}== 1)
+    @if( isset($website->active_chat_system) && $website->active_chat_system== 1)
         @isset($chats )
             @foreach($chats as $chat)
                 @if($chat->properties['active']->value == 1)

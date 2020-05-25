@@ -102,7 +102,6 @@ class ItemUtility
             }
         }
 
-
         return $items;
 
     }

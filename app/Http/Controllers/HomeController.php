@@ -59,7 +59,7 @@ class HomeController extends Controller
         $data = BaseController::createBaseInformations();
         self::getBaseInformation($data);
         $data['navigations'] = NavigationController::getNavigation('index');
-        $data ['datas'] = DocumentController::getItems3('main-slide-show');
+//        $data ['datas'] = DocumentController::getItems3('main-slide-show');
         return view('public.themes.hotel-new.views.index', $data);
 
     }
