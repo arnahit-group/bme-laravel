@@ -1,7 +1,7 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
     "content-hash": "bfa97a31d84ee8777f649fae0f8c5ad1",
@@ -764,16 +764,16 @@
         },
         {
             "name": "erusev/parsedown",
-            "version": "1.7.1",
+            "version": "1.7.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/erusev/parsedown.git",
-                "reference": "92e9c27ba0e74b8b028b111d1b6f956a15c01fc1"
+                "reference": "cb17b6477dfff935958ba01325f2e8a2bfa6dab3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/erusev/parsedown/zipball/92e9c27ba0e74b8b028b111d1b6f956a15c01fc1",
-                "reference": "92e9c27ba0e74b8b028b111d1b6f956a15c01fc1",
+                "url": "https://api.github.com/repos/erusev/parsedown/zipball/cb17b6477dfff935958ba01325f2e8a2bfa6dab3",
+                "reference": "cb17b6477dfff935958ba01325f2e8a2bfa6dab3",
                 "shasum": ""
             },
             "require": {
@@ -806,7 +806,11 @@
                 "markdown",
                 "parser"
             ],
-            "time": "2018-03-08T01:11:30+00:00"
+            "support": {
+                "issues": "https://github.com/erusev/parsedown/issues",
+                "source": "https://github.com/erusev/parsedown/tree/1.7.x"
+            },
+            "time": "2019-12-30T22:54:17+00:00"
         },
         {
             "name": "fgrosse/phpasn1",
@@ -6964,61 +6968,6 @@
             "time": "2018-12-13T10:34:14+00:00"
         },
         {
-            "name": "beberlei/assert",
-            "version": "v3.2.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/beberlei/assert.git",
-                "reference": "fd82f4c8592c8128dd74481034c31da71ebafc56"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/beberlei/assert/zipball/fd82f4c8592c8128dd74481034c31da71ebafc56",
-                "reference": "fd82f4c8592c8128dd74481034c31da71ebafc56",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^7"
-            },
-            "require-dev": {
-                "friendsofphp/php-cs-fixer": "*",
-                "phpstan/phpstan-shim": "*",
-                "phpunit/phpunit": "*"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Assert\\": "lib/Assert"
-                },
-                "files": [
-                    "lib/Assert/functions.php"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-2-Clause"
-            ],
-            "authors": [
-                {
-                    "name": "Benjamin Eberlei",
-                    "email": "kontakt@beberlei.de",
-                    "role": "Lead Developer"
-                },
-                {
-                    "name": "Richard Quadling",
-                    "email": "rquadling@gmail.com",
-                    "role": "Collaborator"
-                }
-            ],
-            "description": "Thin assertion library for input validation in business models.",
-            "keywords": [
-                "assert",
-                "assertion",
-                "validation"
-            ],
-            "time": "2018-12-24T15:25:25+00:00"
-        },
-        {
             "name": "beyondcode/laravel-dump-server",
             "version": "1.2.2",
             "source": {
@@ -7606,91 +7555,6 @@
             "time": "2019-01-14T23:55:14+00:00"
         },
         {
-            "name": "larabook/gateway",
-            "version": "3.3.5",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/larabook/gateway.git",
-                "reference": "91063b8e5633164f6775bfe80c9d97b870be65d0"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/larabook/gateway/zipball/91063b8e5633164f6775bfe80c9d97b870be65d0",
-                "reference": "91063b8e5633164f6775bfe80c9d97b870be65d0",
-                "shasum": ""
-            },
-            "require": {
-                "nesbot/carbon": "*",
-                "paypal/rest-api-sdk-php": "*"
-            },
-            "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "Larabookir\\Gateway\\GatewayServiceProvider"
-                    ],
-                    "aliases": {
-                        "Gateway": "Larabookir\\Gateway\\Gateway"
-                    }
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Larabookir\\Gateway\\": "src/",
-                    "Larabookir\\Gateway\\Tests\\": "tests/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "MohammadReza Honarkhah",
-                    "email": "m.honar@gmail.com"
-                },
-                {
-                    "name": "Hamed Pakdaman",
-                    "email": "pakdaman.it@gmail.com"
-                },
-                {
-                    "name": "Amir Khorsandi",
-                    "email": "Khorsandi@me.com"
-                }
-            ],
-            "description": "A Laravel package for connecting to all Iraninan payment  gateways",
-            "homepage": "https://github.com/larabook/gateway",
-            "keywords": [
-                "Bank",
-                "Meli",
-                "Payline",
-                "asan-pardakht",
-                "dargah",
-                "gateway",
-                "ipay",
-                "iran",
-                "iranian-banks",
-                "jahanpay",
-                "laravel",
-                "mellat",
-                "pardakht",
-                "parsian",
-                "pasargad",
-                "pay",
-                "pay-ir",
-                "payment",
-                "paypal",
-                "persian-banks",
-                "poolport",
-                "port",
-                "sadad",
-                "saman",
-                "shaparak",
-                "zarinpal"
-            ],
-            "time": "2019-06-28T06:52:24+00:00"
-        },
-        {
             "name": "mockery/mockery",
             "version": "1.2.0",
             "source": {
@@ -7818,55 +7682,6 @@
                 "symfony"
             ],
             "time": "2018-11-21T21:40:54+00:00"
-        },
-        {
-            "name": "paypal/rest-api-sdk-php",
-            "version": "1.14.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/paypal/PayPal-PHP-SDK.git",
-                "reference": "72e2f2466975bf128a31e02b15110180f059fc04"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/paypal/PayPal-PHP-SDK/zipball/72e2f2466975bf128a31e02b15110180f059fc04",
-                "reference": "72e2f2466975bf128a31e02b15110180f059fc04",
-                "shasum": ""
-            },
-            "require": {
-                "ext-curl": "*",
-                "ext-json": "*",
-                "php": ">=5.3.0",
-                "psr/log": "^1.0.0"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "^4.8.35"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-0": {
-                    "PayPal": "lib/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "Apache-2.0"
-            ],
-            "authors": [
-                {
-                    "name": "PayPal",
-                    "homepage": "https://github.com/paypal/rest-api-sdk-php/contributors"
-                }
-            ],
-            "description": "PayPal's PHP SDK for REST APIs",
-            "homepage": "http://paypal.github.io/PayPal-PHP-SDK/",
-            "keywords": [
-                "payments",
-                "paypal",
-                "rest",
-                "sdk"
-            ],
-            "time": "2019-01-04T20:04:25+00:00"
         },
         {
             "name": "phar-io/manifest",
@@ -9330,5 +9145,6 @@
         "ext-json": "*",
         "ext-openssl": "*"
     },
-    "platform-dev": []
+    "platform-dev": [],
+    "plugin-api-version": "2.2.0"
 }
